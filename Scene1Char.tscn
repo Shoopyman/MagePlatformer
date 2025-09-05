@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dvwrec2rkx2u3"]
+
+[node name="root" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="Node2D" type="Node2D" parent="CharacterBody2D"]
