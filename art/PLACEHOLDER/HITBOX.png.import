@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5twk57n6sehn"
-path="res://.godot/imported/ez player.png-0fcb63fa165eaca413d979e7be085636.ctex"
+uid="uid://r21g6aylf8oi"
+path="res://.godot/imported/HITBOX.png-9b25cecb065489bd4e811c5e3985d70c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ez player.png"
-dest_files=["res://.godot/imported/ez player.png-0fcb63fa165eaca413d979e7be085636.ctex"]
+source_file="res://art/PLACEHOLDER/HITBOX.png"
+dest_files=["res://.godot/imported/HITBOX.png-9b25cecb065489bd4e811c5e3985d70c.ctex"]
 
 [params]
 

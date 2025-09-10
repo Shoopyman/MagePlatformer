@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd4tsn3pqbki"
-path="res://.godot/imported/16place.png-747babd5743263c30680b620cde7fbae.ctex"
+uid="uid://bhsnb7rtf8bnp"
+path="res://.godot/imported/black guy  1-Sheet.png-79886fb2aa0286982f13640c1ca29474.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/16place.png"
-dest_files=["res://.godot/imported/16place.png-747babd5743263c30680b620cde7fbae.ctex"]
+source_file="res://art/NPCS/black guy  1-Sheet.png"
+dest_files=["res://.godot/imported/black guy  1-Sheet.png-79886fb2aa0286982f13640c1ca29474.ctex"]
 
 [params]
 
