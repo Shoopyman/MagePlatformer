@@ -8,8 +8,8 @@ points = PackedVector2Array(-7, 15, -7, 0, 0, -15, 7, 0, 7, 15)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_kpjcp")
-speed = 275
-jump_velocity = -500
+jump_velocity = -442
+max_speed = 170.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -18,7 +18,8 @@ texture = ExtResource("2_kpjcp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("ConvexPolygonShape2D_kpjcp")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.6, 1.6)
+[node name="MainCamera" type="Camera2D" parent="."]
+offset = Vector2(100, 0)
+position_smoothing_speed = 30.0
 
 [node name="Node2D" type="Node2D" parent="."]
