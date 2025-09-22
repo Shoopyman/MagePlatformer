@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://b0u0f4yqagwhf"]
+[gd_scene load_steps=5 format=4 uid="uid://b0u0f4yqagwhf"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_t7iv1"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Player.tscn" id="2_2nifc"]
 [ext_resource type="PackedScene" uid="uid://cswc02wnt828d" path="res://NPCS/BlackGuy1.tscn" id="3_2nifc"]
+[ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://MainCamera.tscn" id="4_wkftn"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,3 +26,6 @@ position = Vector2(224, 77)
 
 [node name="root" parent="." instance=ExtResource("2_2nifc")]
 position = Vector2(-38, -294)
+
+[node name="Camera2D" parent="." instance=ExtResource("4_wkftn")]
+player_path = NodePath("../root")
