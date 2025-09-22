@@ -32,5 +32,3 @@ func _process(delta):
 	# --- Smooth lerp ---
 	var target_position = global_position + move
 	global_position = global_position.lerp(target_position, follow_speed * delta)
-
-	# --- Pixel snap ---
