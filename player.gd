@@ -61,4 +61,8 @@ func _physics_process(delta):
 		velocity.y *= 0.5   # if jump released, slow down (short hops)
 
 	self.velocity = velocity
+	
+	
+func _process(delta):
 	move_and_slide()
+	

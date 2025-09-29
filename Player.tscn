@@ -1,7 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjk38ntrabpqb"]
+[gd_scene load_steps=5 format=3 uid="uid://cjk38ntrabpqb"]
 
 [ext_resource type="Script" uid="uid://711d1tg6d08w" path="res://player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://8alxoyiqx5cr" path="res://art/PLACEHOLDER/player better sizing.png" id="2_kpjcp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpjcp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kpjcp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kpjcp"]
 points = PackedVector2Array(-7, 15, -7, 0, 0, -15, 7, 0, 7, 15)
@@ -11,15 +22,12 @@ script = ExtResource("1_kpjcp")
 jump_velocity = -442
 max_speed = 170.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_kpjcp")
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_kpjcp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("ConvexPolygonShape2D_kpjcp")
-
-[node name="MainCamera" type="Camera2D" parent="."]
-offset = Vector2(100, 0)
-position_smoothing_speed = 30.0
 
 [node name="Node2D" type="Node2D" parent="."]
