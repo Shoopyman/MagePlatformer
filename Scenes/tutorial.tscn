@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyck65kfbkhdt"]
+
+[ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_ka2pi"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(3, 22)
+tile_set = ExtResource("1_ka2pi")
