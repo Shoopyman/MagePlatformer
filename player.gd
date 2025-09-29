@@ -11,6 +11,7 @@ extends CharacterBody2D
 @export var max_speed = 200.0
 @export var jump_buffer = 0.1 #seconds
 @export var coyote_time = 0.1 #seconds
+@onready var double_jump = $double_jump
 
 var coyote_timer = 0.0
 var jump_buffer_timer = 0.0
@@ -24,6 +25,8 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0
 		coyote_timer = coyote_time #grounded, so reset coyote timer
+		if double_jump:
+			double_jump.reset_jumps()
 
 
 	#update timers
@@ -55,6 +58,10 @@ func _physics_process(delta):
 		#i actually remember playing red ball 3, where they did let you do this.
 		jump_buffer_timer = 0
 		coyote_timer = 0
+	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor():
+		var new_jump = double_jump.try_double_jump()
+		if new_jump != 0.0:
+			velocity.y = new_jump
 
 	#jump height
 	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
@@ -65,4 +72,5 @@ func _physics_process(delta):
 	
 func _process(delta):
 	move_and_slide()
+
 	
