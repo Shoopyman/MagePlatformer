@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8alxoyiqx5cr"
-path="res://.godot/imported/player better sizing.png-d5f3110e7f629fcdbc27c6497a8ed0f1.ctex"
+uid="uid://bh5ehv0408k24"
+path="res://.godot/imported/Background0.png-eabdab3312972e78d5e112041a2274bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/PLACEHOLDER/player better sizing.png"
-dest_files=["res://.godot/imported/player better sizing.png-d5f3110e7f629fcdbc27c6497a8ed0f1.ctex"]
+source_file="res://art/CityArt/Parallax/Background0.png"
+dest_files=["res://.godot/imported/Background0.png-eabdab3312972e78d5e112041a2274bf.ctex"]
 
 [params]
 
