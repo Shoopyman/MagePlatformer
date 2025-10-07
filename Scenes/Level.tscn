@@ -56,15 +56,15 @@ position = Vector2(2533, 433)
 position = Vector2(-4.25, -39.5)
 shape = SubResource("RectangleShape2D_xylue")
 
-[node name="Death Box2" type="Area2D" parent="."]
+[node name="Checkpoint" type="Area2D" parent="."]
 position = Vector2(1444, 439)
 scale = Vector2(0.04001, 0.16)
 script = ExtResource("7_ienac")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Box2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint"]
 position = Vector2(-174.953, -175)
 shape = SubResource("RectangleShape2D_ienac")
 
 [connection signal="body_entered" from="Death Box" to="Death Box" method="_on_body_entered"]
 [connection signal="body_entered" from="EndOfLevel" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Death Box2" to="Death Box2" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint" to="Checkpoint" method="_on_body_entered"]

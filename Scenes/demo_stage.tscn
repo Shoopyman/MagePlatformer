@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://bh41kylebmio8"]
+[gd_scene load_steps=8 format=4 uid="uid://bh41kylebmio8"]
 
 [ext_resource type="Texture2D" uid="uid://ie7gjg58csbl" path="res://art/PLACEHOLDER/Placeholder Tile.png" id="1_fegxi"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Player.tscn" id="2_d7dw7"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://MainCamera.tscn" id="3_fkv8s"]
+[ext_resource type="Script" uid="uid://dmdhhmfvlrguf" path="res://Scripts/death_box.gd" id="4_fkv8s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x5lp"]
 texture = ExtResource("1_fegxi")
@@ -19,6 +20,9 @@ texture = ExtResource("1_fegxi")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0x5lp")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5e64"]
+size = Vector2(599.852, 437.5)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -32,3 +36,15 @@ position = Vector2(41, 259)
 [node name="Camera2D" parent="." instance=ExtResource("3_fkv8s")]
 position = Vector2(82, 602)
 player_path = NodePath("../root")
+
+[node name="Death Box" type="Area2D" parent="."]
+position = Vector2(-116, 331)
+scale = Vector2(1.64, 1)
+script = ExtResource("4_fkv8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Box"]
+position = Vector2(1618.5, 493)
+scale = Vector2(5.18032, 1.83703)
+shape = SubResource("RectangleShape2D_v5e64")
+
+[connection signal="body_entered" from="Death Box" to="Death Box" method="_on_body_entered"]
