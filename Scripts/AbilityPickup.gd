@@ -6,10 +6,13 @@ extends Area2D
 
 var base_y = 0.0
 var time = 0.0
+var sprite: AnimatedSprite2D
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	base_y = position.y
+	sprite = $AnimatedSprite2D
+	sprite.play("Idle")
 
 func _process(delta):
 	time += delta
