@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1ygk4fgelae"]
+
+[ext_resource type="PackedScene" uid="uid://2yfk2pgcmdyi" path="res://Scenes/AbilityPickup.tscn" id="1_f4dh7"]
+[ext_resource type="Texture2D" uid="uid://r4m1ndt417kd" path="res://art/Instruments/CymbalsOverworld/cymbals.png" id="2_0x8fn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxgwt"]
+atlas = ExtResource("2_0x8fn")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glmsv"]
+atlas = ExtResource("2_0x8fn")
+region = Rect2(30, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pltv5"]
+atlas = ExtResource("2_0x8fn")
+region = Rect2(60, 0, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iftnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxgwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glmsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pltv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glmsv")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]
+
+[node name="AbilityPickup" instance=ExtResource("1_f4dh7")]
+ability_name = "cymbals"
+float_speed = 2.2
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_iftnh")

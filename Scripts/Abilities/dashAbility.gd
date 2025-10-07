@@ -9,26 +9,37 @@ var dash_available = true
 var is_dashing = false
 var dash_timer = 0.0
 var dash_dir = 0
+var cooldown_timer = 0.0
 
+func on_unlock():
+	print("on unlock called")
+	# play unlock vfx Trombone solo
+	pass
 
 func update(player, delta):
+	
+	if cooldown_timer > 0.0:
+		cooldown_timer -= delta
+	
 	if is_dashing:
 		dash_timer -= delta
-		if dash_timer <= 0:
+		#override velocity
+		player.velocity.x = dash_dir * dash_speed
+		player.velocity.y = 0
+		if dash_timer <= 0.0:
 			is_dashing = false
+			cooldown_timer = dash_cooldown
+		return
 	
-	else:
-		if player.is_on_floor():
-			dash_available = true
+	if player.is_on_floor():
+		dash_available = true
 	
-	if Input.is_action_just_pressed("dash") and dash_available:
+	# activate dash
+	if Input.is_action_just_pressed("dash") and dash_available and cooldown_timer <= 0.0:
 		dash_available = false
 		is_dashing = true
 		dash_timer = dash_duration
-		var axis_of_input = sign(Input.get_axis("ui_left","ui_right"))
-		dash_dir = axis_of_input if axis_of_input != 0 else player.facing_direction
-		player.velocity = Vector2(dash_dir*dash_speed, 0)
-	elif not is_dashing:
-		return #go back to normal physics process
-		
-	player.move_and_slide() 
+		var axis = int(sign(Input.get_axis("ui_left","ui_right")))
+		dash_dir = axis if axis != 0 else player.facing_direction
+		player.velocity.y = 0
+		# PLAY SOUND OF DASH

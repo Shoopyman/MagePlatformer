@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjk38ntrabpqb"]
+[gd_scene load_steps=8 format=3 uid="uid://cjk38ntrabpqb"]
 
 [ext_resource type="Script" uid="uid://711d1tg6d08w" path="res://Scripts/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://8alxoyiqx5cr" path="res://art/PLACEHOLDER/player better sizing.png" id="2_kpjcp"]
+[ext_resource type="Script" uid="uid://dnb1yxo4jc72l" path="res://Scripts/abilityManager.gd" id="3_cxr5p"]
 [ext_resource type="Script" uid="uid://vguwotrmwrxp" path="res://Scripts/Abilities/dashAbility.gd" id="3_e80uo"]
 [ext_resource type="Script" uid="uid://dhw2vwj3rejvx" path="res://Scripts/Abilities/wallJumpAbility.gd" id="4_cxr5p"]
 
@@ -19,7 +20,7 @@ animations = [{
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kpjcp"]
 points = PackedVector2Array(-7, 15, -7, 0, 0, -15, 7, 0, 7, 15)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_kpjcp")
 jump_velocity = -442
 max_speed = 170.0
@@ -34,10 +35,13 @@ shape = SubResource("ConvexPolygonShape2D_kpjcp")
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="DashAbility" type="Node" parent="."]
+[node name="AbilityManager" type="Node" parent="."]
+script = ExtResource("3_cxr5p")
+
+[node name="WallJumpAbility" type="Node" parent="AbilityManager"]
+script = ExtResource("4_cxr5p")
+
+[node name="DashAbility" type="Node" parent="AbilityManager"]
 script = ExtResource("3_e80uo")
 dash_duration = 0.3
 dash_cooldown = 0.4
-
-[node name="WallJumpAbility" type="Node" parent="."]
-script = ExtResource("4_cxr5p")
