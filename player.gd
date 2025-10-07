@@ -1,9 +1,8 @@
-#Sam Trout's Love Child
+# Sam Trout's Love Child
 
 extends CharacterBody2D
 
-
-#list of constants that I can change easily for tuning
+# --- Tunable constants ---
 @export var accel = 2400
 @export var jump_velocity = -400
 @export var gravity = 1200
@@ -13,10 +12,21 @@ extends CharacterBody2D
 @export var coyote_time = 0.1 #seconds
 @onready var double_jump = $double_jump
 
+# --- Timers ---
 var coyote_timer = 0.0
 var jump_buffer_timer = 0.0
 
+# --- Interpolation ---
+var last_position: Vector2
+var current_position: Vector2
+
+func _ready():
+	last_position = global_position
+	current_position = global_position
+
 func _physics_process(delta):
+	last_position = global_position
+
 	var velocity = self.velocity
 
 	# Gravity
@@ -28,34 +38,26 @@ func _physics_process(delta):
 		if double_jump:
 			double_jump.reset_jumps()
 
-
-	#update timers
+	# Update timers
 	if coyote_timer > 0:
 		coyote_timer -= delta
 	if jump_buffer_timer > 0:
 		jump_buffer_timer -= delta
-	
-	
-	# horizontal movement with acceleration
-	var input_dir = Input.get_axis("ui_left", "ui_right")
 
+	# Horizontal movement with acceleration
+	var input_dir = Input.get_axis("ui_left", "ui_right")
 	if input_dir != 0:
 		velocity.x = move_toward(velocity.x, input_dir * max_speed, accel * delta)
 	else:
-		# friction when no input (slow down precise landings)
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
-
-	#jump queue
+	# Jump queue
 	if Input.is_action_just_pressed("ui_accept"):
-		jump_buffer_timer = jump_buffer #set the timer to land within the buffer
-	
-	# Jump if coyote and buffer
+		jump_buffer_timer = jump_buffer
+
+	# Jump if buffer + coyote overlap
 	if jump_buffer_timer > 0 and coyote_timer > 0:
 		velocity.y = jump_velocity
-		#reset the clocks
-		#if i dont do this, then you could do two jumps instantly and gain huge verticality
-		#i actually remember playing red ball 3, where they did let you do this.
 		jump_buffer_timer = 0
 		coyote_timer = 0
 	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor():
@@ -63,14 +65,15 @@ func _physics_process(delta):
 		if new_jump != 0.0:
 			velocity.y = new_jump
 
-	#jump height
+	# Variable jump height (short hops)
 	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
-		velocity.y *= 0.5   # if jump released, slow down (short hops)
+		velocity.y *= 0.5
 
 	self.velocity = velocity
-	
-	
-func _process(delta):
 	move_and_slide()
 
-	
+	current_position = global_position
+
+func _process(delta):
+	var alpha = Engine.get_physics_interpolation_fraction()
+	global_position = last_position.lerp(current_position, alpha)
