@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjk38ntrabpqb"]
 
-[ext_resource type="Script" uid="uid://711d1tg6d08w" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://711d1tg6d08w" path="res://Scripts/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://8alxoyiqx5cr" path="res://art/PLACEHOLDER/player better sizing.png" id="2_kpjcp"]
 [ext_resource type="Script" uid="uid://d3cv5n13qgmla" path="res://double_jump.gd" id="3_kne1u"]
 

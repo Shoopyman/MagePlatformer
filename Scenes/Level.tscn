@@ -1,11 +1,30 @@
-[gd_scene load_steps=5 format=4 uid="uid://b0u0f4yqagwhf"]
+[gd_scene load_steps=10 format=4 uid="uid://b0u0f4yqagwhf"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_t7iv1"]
+[ext_resource type="Script" uid="uid://cpspuhy5mp681" path="res://Scripts/level.gd" id="1_xylue"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Player.tscn" id="2_2nifc"]
 [ext_resource type="PackedScene" uid="uid://cswc02wnt828d" path="res://NPCS/BlackGuy1.tscn" id="3_2nifc"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://MainCamera.tscn" id="4_wkftn"]
+[ext_resource type="Script" uid="uid://dmdhhmfvlrguf" path="res://Scripts/death_box.gd" id="6_tj5wv"]
+[ext_resource type="Script" uid="uid://cd03ir75hihsy" path="res://Scripts/checkpoint.gd" id="7_ienac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ienac"]
+size = Vector2(599.852, 437.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xylue"]
+size = Vector2(111.5, 101)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_xylue")
+
+[node name="Death Box" type="Area2D" parent="."]
+position = Vector2(-611, 513)
+script = ExtResource("6_tj5wv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Box"]
+position = Vector2(1618.5, 493)
+scale = Vector2(5.18032, 1.83703)
+shape = SubResource("RectangleShape2D_ienac")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(3, 22)
@@ -24,8 +43,28 @@ position = Vector2(213, 77)
 [node name="NPC4" parent="." instance=ExtResource("3_2nifc")]
 position = Vector2(224, 77)
 
-[node name="root" parent="." instance=ExtResource("2_2nifc")]
+[node name="root" parent="." groups=["player"] instance=ExtResource("2_2nifc")]
 position = Vector2(-38, -294)
 
 [node name="Camera2D" parent="." instance=ExtResource("4_wkftn")]
 player_path = NodePath("../root")
+
+[node name="EndOfLevel" type="Area2D" parent="."]
+position = Vector2(2533, 433)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfLevel"]
+position = Vector2(-4.25, -39.5)
+shape = SubResource("RectangleShape2D_xylue")
+
+[node name="Checkpoint" type="Area2D" parent="."]
+position = Vector2(1444, 439)
+scale = Vector2(0.04001, 0.16)
+script = ExtResource("7_ienac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint"]
+position = Vector2(-174.953, -175)
+shape = SubResource("RectangleShape2D_ienac")
+
+[connection signal="body_entered" from="Death Box" to="Death Box" method="_on_body_entered"]
+[connection signal="body_entered" from="EndOfLevel" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Checkpoint" to="Checkpoint" method="_on_body_entered"]
