@@ -1,9 +1,9 @@
 extends Node
 
 # --- Dash Settings ---
-@export var dash_speed = 500.0
-@export var dash_duration = 0.2 #seconds
-@export var dash_cooldown = 0.3 #for use on ground
+@export var dash_speed = 700.0
+@export var dash_duration = 0.15 #seconds
+@export var dash_cooldown = 0.25 #for use on ground
 
 var dash_available = true
 var is_dashing = false
@@ -12,7 +12,6 @@ var dash_dir = 0
 var cooldown_timer = 0.0
 
 func on_unlock():
-	print("on unlock called")
 	# play unlock vfx Trombone solo
 	pass
 
@@ -24,7 +23,7 @@ func update(player, delta):
 	if is_dashing:
 		dash_timer -= delta
 		#override velocity
-		player.velocity.x = dash_dir * dash_speed
+		player.velocity.x = dash_dir*dash_speed
 		player.velocity.y = 0
 		if dash_timer <= 0.0:
 			is_dashing = false

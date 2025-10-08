@@ -1,7 +1,6 @@
-[gd_scene load_steps=20 format=4 uid="uid://b0u0f4yqagwhf"]
+[gd_scene load_steps=18 format=4 uid="uid://b0u0f4yqagwhf"]
 
 [ext_resource type="Script" uid="uid://cpspuhy5mp681" path="res://Scripts/Levels and Main Menu/level.gd" id="1_a1gik"]
-[ext_resource type="Script" uid="uid://dmdhhmfvlrguf" path="res://Scripts/Objects/death_box.gd" id="2_umfvy"]
 [ext_resource type="Texture2D" uid="uid://dwlxen6w80khh" path="res://art/CityArt/Parallax/Sky.png" id="3_8loo1"]
 [ext_resource type="Texture2D" uid="uid://drxrmbowt3e0k" path="res://art/CityArt/Parallax/Background2.png" id="4_4hk1l"]
 [ext_resource type="Texture2D" uid="uid://b0io2m10kxl1q" path="res://art/CityArt/Parallax/Background1.png" id="5_bi7sv"]
@@ -10,19 +9,16 @@
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="8_xmo3k"]
 [ext_resource type="PackedScene" uid="uid://cswc02wnt828d" path="res://Scenes/NPCS/BlackGuy1.tscn" id="9_1rxo4"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/MainCamera.tscn" id="10_x2ay6"]
-[ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Pickups/CymbalsPickup.tscn" id="11_k3aso"]
-[ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Pickups/TrombonePickup.tscn" id="12_803qd"]
-[ext_resource type="Script" uid="uid://cd03ir75hihsy" path="res://Scripts/Objects/checkpoint.gd" id="13_ba3al"]
+[ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Ability Pickups/CymbalsPickup.tscn" id="11_k3aso"]
+[ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="12_803qd"]
 [ext_resource type="Texture2D" uid="uid://b4pt2hslpxs5w" path="res://art/CityArt/large-building.png" id="14_v5qxt"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="15_uxcut"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="16_8loo1"]
 [ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scenes/Objects/DeathBox.tscn" id="17_4hk1l"]
+[ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="18_4hk1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xylue"]
 size = Vector2(111.5, 101)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ienac"]
-size = Vector2(599.852, 437.5)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_a1gik")
@@ -40,7 +36,7 @@ position = Vector2(219, -7)
 texture = ExtResource("5_bi7sv")
 
 [node name="Clouds" type="Sprite2D" parent="."]
-position = Vector2(-469, 368)
+position = Vector2(243, -5)
 texture = ExtResource("6_jk42q")
 
 [node name="Background0" type="Sprite2D" parent="."]
@@ -80,29 +76,11 @@ position = Vector2(2533, 433)
 position = Vector2(-4.25, -39.5)
 shape = SubResource("RectangleShape2D_xylue")
 
-[node name="Checkpoint" type="Area2D" parent="."]
-position = Vector2(1444, 439)
-scale = Vector2(0.04001, 0.16)
-script = ExtResource("13_ba3al")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint"]
-position = Vector2(-174.953, -175)
-shape = SubResource("RectangleShape2D_ienac")
-
-[node name="Area2D" parent="." instance=ExtResource("16_8loo1")]
+[node name="Checkpoint 1" parent="." instance=ExtResource("16_8loo1")]
 position = Vector2(715, -89)
 
-[node name="Area2D2" parent="." instance=ExtResource("17_4hk1l")]
-position = Vector2(1631, 103)
-
-[node name="Death Box" type="Area2D" parent="."]
-position = Vector2(-477, 507)
-script = ExtResource("2_umfvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Box"]
-position = Vector2(1618.5, 493)
-scale = Vector2(5.18032, 1.83703)
-shape = SubResource("RectangleShape2D_ienac")
+[node name="DeathPlanes" parent="." instance=ExtResource("17_4hk1l")]
+position = Vector2(1886, 687)
 
 [node name="Large-building" type="Sprite2D" parent="."]
 position = Vector2(846, 358)
@@ -120,9 +98,16 @@ texture = ExtResource("14_v5qxt")
 position = Vector2(-171, -59)
 
 [node name="Large-building4" type="Sprite2D" parent="."]
-position = Vector2(580, 358)
+position = Vector2(568, 361)
 texture = ExtResource("14_v5qxt")
 
+[node name="AbilityPickup3" parent="." instance=ExtResource("18_4hk1l")]
+position = Vector2(337, 72)
+
+[node name="Area2D" parent="." instance=ExtResource("17_4hk1l")]
+position = Vector2(-156, 671)
+
+[node name="Area2D2" parent="." instance=ExtResource("16_8loo1")]
+position = Vector2(1255, 439)
+
 [connection signal="body_entered" from="EndOfLevel" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Checkpoint" to="Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Death Box" to="Death Box" method="_on_body_entered"]

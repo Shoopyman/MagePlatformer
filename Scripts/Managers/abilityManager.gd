@@ -27,7 +27,6 @@ func register_ability(name: String, ability: Node) -> void:
 	ability.set_process(false)
 	
 func unlock(name: String) -> void:
-	print("unlock called")
 	if not abilities.has(name):
 		# if someone picks up an ability they already have
 		push_warning("Ability already registered: %s" %name)
@@ -35,7 +34,6 @@ func unlock(name: String) -> void:
 	if unlocked.get(name, false):
 		return
 	unlocked[name] = true
-	print("set to true")
 	var ab = abilities[name]
 	ab.set_process(true)
 	if ab.has_method("on_unlock"):

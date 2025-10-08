@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://e40ojd5hmhpl"]
+
+[ext_resource type="PackedScene" uid="uid://2yfk2pgcmdyi" path="res://Scenes/Inheritance/AbilityPickup.tscn" id="1_82hvq"]
+[ext_resource type="Texture2D" uid="uid://rghv25663dfx" path="res://art/Instruments/bongosOverworld/bongo.png" id="2_vrs0t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpk4k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vrs0t")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="AbilityPickup" instance=ExtResource("1_82hvq")]
+ability_name = "bongos"
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_jpk4k")
