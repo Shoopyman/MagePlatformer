@@ -5,7 +5,6 @@ extends Node
 
 func on_unlock():
 	#play SFX of unlcoking
-	print("on unlock called")
 	pass
 
 func update(player, delta):
