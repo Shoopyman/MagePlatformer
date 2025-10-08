@@ -23,24 +23,45 @@ size = Vector2(111.5, 101)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_a1gik")
 
-[node name="Sky" type="Sprite2D" parent="."]
-position = Vector2(220, -8)
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sky" type="Sprite2D" parent="Background/ParallaxLayer"]
+position = Vector2(100, 0)
 texture = ExtResource("3_8loo1")
 
-[node name="Background2" type="Sprite2D" parent="."]
-position = Vector2(229, -6)
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Background2" type="Sprite2D" parent="Background/ParallaxLayer2"]
+position = Vector2(101, 0)
 texture = ExtResource("4_4hk1l")
 
-[node name="Background1" type="Sprite2D" parent="."]
-position = Vector2(219, -7)
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Background1" type="Sprite2D" parent="Background/ParallaxLayer3"]
+position = Vector2(100, 0)
 texture = ExtResource("5_bi7sv")
 
-[node name="Clouds" type="Sprite2D" parent="."]
-position = Vector2(243, -5)
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Clouds" type="Sprite2D" parent="Background/ParallaxLayer4"]
+position = Vector2(99, -1)
 texture = ExtResource("6_jk42q")
 
-[node name="Background0" type="Sprite2D" parent="."]
-position = Vector2(221, -20)
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Background0" type="Sprite2D" parent="Background/ParallaxLayer5"]
+position = Vector2(101, 0)
 texture = ExtResource("7_1tq5b")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -59,9 +80,6 @@ position = Vector2(213, 77)
 
 [node name="NPC4" parent="." instance=ExtResource("9_1rxo4")]
 position = Vector2(224, 77)
-
-[node name="Camera2D" parent="." instance=ExtResource("10_x2ay6")]
-player_path = NodePath("../root")
 
 [node name="AbilityPickup" parent="." instance=ExtResource("11_k3aso")]
 position = Vector2(488, 71)
@@ -94,9 +112,6 @@ texture = ExtResource("14_v5qxt")
 position = Vector2(679, 357)
 texture = ExtResource("14_v5qxt")
 
-[node name="root" parent="." instance=ExtResource("15_uxcut")]
-position = Vector2(-171, -59)
-
 [node name="Large-building4" type="Sprite2D" parent="."]
 position = Vector2(568, 361)
 texture = ExtResource("14_v5qxt")
@@ -109,5 +124,11 @@ position = Vector2(-156, 671)
 
 [node name="Area2D2" parent="." instance=ExtResource("16_8loo1")]
 position = Vector2(1255, 439)
+
+[node name="Camera2D" parent="." instance=ExtResource("10_x2ay6")]
+player_path = NodePath("../root")
+
+[node name="root" parent="." instance=ExtResource("15_uxcut")]
+position = Vector2(-171, -59)
 
 [connection signal="body_entered" from="EndOfLevel" to="." method="_on_area_2d_body_entered"]
