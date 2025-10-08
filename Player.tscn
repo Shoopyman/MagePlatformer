@@ -45,3 +45,5 @@ script = ExtResource("4_cxr5p")
 script = ExtResource("3_e80uo")
 dash_duration = 0.3
 dash_cooldown = 0.4
+[node name="double_jump" type="Node" parent="."]
+script = ExtResource("3_kne1u")

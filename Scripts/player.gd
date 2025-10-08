@@ -8,11 +8,14 @@ extends CharacterBody2D
 @export var gravity = 1200
 @export var friction = 1500.0
 @export var max_speed = 200.0
+
 @export var jump_buffer = 0.1 # seconds
 @export var coyote_time = 0.1 # seconds
 
 # --- ability reference ---
 var ability_manager: Node = null
+
+@onready var double_jump = $double_jump
 
 # --- Timers ---
 var coyote_timer = 0.0
@@ -46,7 +49,9 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	else:
 		velocity.y = 0
-		coyote_timer = coyote_time  # grounded, reset coyote timer
+		coyote_timer = coyote_time #grounded, so reset coyote timer
+		if double_jump:
+			double_jump.reset_jumps()
 
 	# Update timers
 	if coyote_timer > 0:
@@ -71,19 +76,22 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 		jump_buffer_timer = 0
 		coyote_timer = 0
+	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor():
+		var new_jump = double_jump.try_double_jump()
+		if new_jump != 0.0:
+			velocity.y = new_jump
 
 	# Variable jump height (short hops)
-	if Input.is_action_just_released("jump") and velocity.y < 0:
+	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
 		velocity.y *= 0.5
-		
+
 	self.velocity = velocity
-	
-	# update ability activation
+  
+  # update ability activation
 	if ability_manager:
 		ability_manager.update_all(self, delta)
 	
 	$AnimatedSprite2D.flip_h = facing_direction < 0
-	
 	move_and_slide()
 
 	current_position = global_position

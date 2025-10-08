@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8alxoyiqx5cr"
-path="res://.godot/imported/player better sizing.png-d5f3110e7f629fcdbc27c6497a8ed0f1.ctex"
+uid="uid://bpxmni2dk8hkq"
+path="res://.godot/imported/Clouds.png-4e62516dc60b26548b42d5924fd0fb11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/PLACEHOLDER/player better sizing.png"
-dest_files=["res://.godot/imported/player better sizing.png-d5f3110e7f629fcdbc27c6497a8ed0f1.ctex"]
+source_file="res://art/CityArt/Parallax/Clouds.png"
+dest_files=["res://.godot/imported/Clouds.png-4e62516dc60b26548b42d5924fd0fb11.ctex"]
 
 [params]
 
