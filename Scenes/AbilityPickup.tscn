@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://2yfk2pgcmdyi"]
+
+[ext_resource type="Script" uid="uid://cjespq3gqpux5" path="res://Scripts/AbilityPickup.gd" id="1_hdy6j"]
+[ext_resource type="Texture2D" uid="uid://cbwpri62eo3f3" path="res://art/Instruments/TromboneOverworld/PixelTromboneSheet.png" id="2_qg4ei"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kggq"]
+atlas = ExtResource("2_qg4ei")
+region = Rect2(0, 0, 50, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqiim"]
+atlas = ExtResource("2_qg4ei")
+region = Rect2(50, 0, 50, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tes6p"]
+atlas = ExtResource("2_qg4ei")
+region = Rect2(100, 0, 50, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u62tx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kggq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqiim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tes6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqiim")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s75b6"]
+
+[node name="AbilityPickup" type="Area2D"]
+script = ExtResource("1_hdy6j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u62tx")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s75b6")

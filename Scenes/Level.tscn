@@ -3,8 +3,10 @@
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_t7iv1"]
 [ext_resource type="Script" uid="uid://cpspuhy5mp681" path="res://Scripts/level.gd" id="1_xylue"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Player.tscn" id="2_2nifc"]
-[ext_resource type="PackedScene" uid="uid://cswc02wnt828d" path="res://NPCS/BlackGuy1.tscn" id="3_2nifc"]
+[ext_resource type="PackedScene" uid="uid://cswc02wnt828d" path="res://Scenes/NPCS/BlackGuy1.tscn" id="3_2nifc"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://MainCamera.tscn" id="4_wkftn"]
+[ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Pickups/CymbalsPickup.tscn" id="5_tj5wv"]
+[ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Pickups/TrombonePickup.tscn" id="6_ienac"]
 [ext_resource type="Script" uid="uid://dmdhhmfvlrguf" path="res://Scripts/death_box.gd" id="6_tj5wv"]
 [ext_resource type="Script" uid="uid://cd03ir75hihsy" path="res://Scripts/checkpoint.gd" id="7_ienac"]
 
@@ -49,6 +51,11 @@ position = Vector2(-38, -294)
 [node name="Camera2D" parent="." instance=ExtResource("4_wkftn")]
 player_path = NodePath("../root")
 
+[node name="AbilityPickup" parent="." instance=ExtResource("5_tj5wv")]
+position = Vector2(488, 71)
+
+[node name="AbilityPickup2" parent="." instance=ExtResource("6_ienac")]
+position = Vector2(693, -88)
 [node name="EndOfLevel" type="Area2D" parent="."]
 position = Vector2(2533, 433)
 
