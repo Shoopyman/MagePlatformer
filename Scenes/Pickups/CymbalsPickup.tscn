@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d1ygk4fgelae"]
 
-[ext_resource type="PackedScene" uid="uid://2yfk2pgcmdyi" path="res://Scenes/AbilityPickup.tscn" id="1_f4dh7"]
+[ext_resource type="PackedScene" uid="uid://2yfk2pgcmdyi" path="res://Scenes/Inheritance/AbilityPickup.tscn" id="1_f4dh7"]
 [ext_resource type="Texture2D" uid="uid://r4m1ndt417kd" path="res://art/Instruments/CymbalsOverworld/cymbals.png" id="2_0x8fn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxgwt"]

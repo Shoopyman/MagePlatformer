@@ -12,12 +12,11 @@ config_version=5
 
 config/name="MagicPlatformer2025"
 run/main_scene="uid://b0u0f4yqagwhf"
-config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
-CheckpointManager="*res://Scripts/checkpointManager.gd"
+CheckpointManager="*res://Scripts/Managers/checkpointManager.gd"
 
 [display]
 

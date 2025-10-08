@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm6valxgmkmtm"]
+
+[ext_resource type="Script" uid="uid://cd03ir75hihsy" path="res://Scripts/Objects/checkpoint.gd" id="1_awlgn"]
+[ext_resource type="Texture2D" uid="uid://dk4dw5s6614sv" path="res://art/objects/checkpoints/musicStand.png" id="2_7vnxx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo3y2"]
+size = Vector2(48, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0l8ev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7vnxx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_awlgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_lo3y2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0l8ev")

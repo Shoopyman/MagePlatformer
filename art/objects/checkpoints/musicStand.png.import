@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8alxoyiqx5cr"
-path="res://.godot/imported/player better sizing.png-d5f3110e7f629fcdbc27c6497a8ed0f1.ctex"
+uid="uid://dk4dw5s6614sv"
+path="res://.godot/imported/musicStand.png-512e53cb3fd2576a9a581c942d045344.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/PLACEHOLDER/player better sizing.png"
-dest_files=["res://.godot/imported/player better sizing.png-d5f3110e7f629fcdbc27c6497a8ed0f1.ctex"]
+source_file="res://art/objects/checkpoints/musicStand.png"
+dest_files=["res://.godot/imported/musicStand.png-512e53cb3fd2576a9a581c942d045344.ctex"]
 
 [params]
 

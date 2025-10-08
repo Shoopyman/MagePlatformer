@@ -76,13 +76,13 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 		jump_buffer_timer = 0
 		coyote_timer = 0
-	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor():
+	elif Input.is_action_just_pressed("jump") and not is_on_floor():
 		var new_jump = double_jump.try_double_jump()
 		if new_jump != 0.0:
 			velocity.y = new_jump
 
 	# Variable jump height (short hops)
-	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
+	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.5
 
 	self.velocity = velocity

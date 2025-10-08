@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=4 uid="uid://bh41kylebmio8"]
 
 [ext_resource type="Texture2D" uid="uid://ie7gjg58csbl" path="res://art/PLACEHOLDER/Placeholder Tile.png" id="1_fegxi"]
-[ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Player.tscn" id="2_d7dw7"]
-[ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://MainCamera.tscn" id="3_fkv8s"]
-[ext_resource type="Script" uid="uid://dmdhhmfvlrguf" path="res://Scripts/death_box.gd" id="4_fkv8s"]
+[ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="2_d7dw7"]
+[ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/MainCamera.tscn" id="3_fkv8s"]
+[ext_resource type="Script" uid="uid://dmdhhmfvlrguf" path="res://Scripts/Objects/death_box.gd" id="4_fkv8s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x5lp"]
 texture = ExtResource("1_fegxi")

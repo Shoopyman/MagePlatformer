@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://2yfk2pgcmdyi"]
 
-[ext_resource type="Script" uid="uid://cjespq3gqpux5" path="res://Scripts/AbilityPickup.gd" id="1_hdy6j"]
+[ext_resource type="Script" uid="uid://cjespq3gqpux5" path="res://Scripts/Abilities/AbilityPickup.gd" id="1_hdy6j"]
 [ext_resource type="Texture2D" uid="uid://cbwpri62eo3f3" path="res://art/Instruments/TromboneOverworld/PixelTromboneSheet.png" id="2_qg4ei"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2kggq"]

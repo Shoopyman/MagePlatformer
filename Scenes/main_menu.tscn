@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cf2w4lbwfyrow"]
 
-[ext_resource type="Script" uid="uid://da3e2xt23gpb4" path="res://Scripts/sceneChangerMenu.gd" id="1_28flt"]
+[ext_resource type="Script" uid="uid://da3e2xt23gpb4" path="res://Scripts/Levels and Main Menu/sceneChangerMenu.gd" id="1_28flt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_erv1k"]
 font_size = 40
