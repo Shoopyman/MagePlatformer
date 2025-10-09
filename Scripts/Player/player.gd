@@ -86,11 +86,13 @@ func _physics_process(delta):
 	if ability_manager:
 		ability_manager.update_all(self, delta)
 	
-	$AnimatedSprite2D.flip_h = facing_direction < 0
+	$Visual/AnimatedSprite2D.flip_h = facing_direction < 0
 	move_and_slide()
 
 	current_position = global_position
 
 func _process(delta):
 	var alpha = Engine.get_physics_interpolation_fraction()
-	global_position = last_position.lerp(current_position, alpha)
+	var interpolated_pos = last_position.lerp(current_position, alpha)
+	$Visual.position = interpolated_pos - global_position
+	

@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://d3cv5n13qgmla" path="res://Scripts/Abilities/double_jump.gd" id="3_kne1u"]
 [ext_resource type="Script" uid="uid://dhw2vwj3rejvx" path="res://Scripts/Abilities/wallJumpAbility.gd" id="4_cxr5p"]
 
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kpjcp"]
+points = PackedVector2Array(-7, 15, -7, 0, 0, -15, 7, 0, 7, 15)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_kpjcp"]
 animations = [{
 "frames": [{
@@ -18,23 +21,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kpjcp"]
-points = PackedVector2Array(-7, 15, -7, 0, 0, -15, 7, 0, 7, 15)
-
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_kpjcp")
 jump_velocity = -442
 max_speed = 170.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-texture_repeat = 1
-sprite_frames = SubResource("SpriteFrames_kpjcp")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("ConvexPolygonShape2D_kpjcp")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual"]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_kpjcp")
 
 [node name="AbilityManager" type="Node" parent="."]
 script = ExtResource("3_cxr5p")

@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://bh41kylebmio8"]
+[gd_scene load_steps=11 format=4 uid="uid://bh41kylebmio8"]
 
 [ext_resource type="Texture2D" uid="uid://ie7gjg58csbl" path="res://art/PLACEHOLDER/Placeholder Tile.png" id="1_fegxi"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="2_d7dw7"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/MainCamera.tscn" id="3_fkv8s"]
 [ext_resource type="Script" uid="uid://dmdhhmfvlrguf" path="res://Scripts/Objects/death_box.gd" id="4_fkv8s"]
+[ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="5_k3a1b"]
+[ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Ability Pickups/CymbalsPickup.tscn" id="6_ithkd"]
+[ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="7_r3dtc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x5lp"]
 texture = ExtResource("1_fegxi")
@@ -57,5 +60,14 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 2
 text = "Move using Left or Right arrow key, 
 Press spacebar to jump"
+
+[node name="AbilityPickup" parent="." instance=ExtResource("5_k3a1b")]
+position = Vector2(76, 315)
+
+[node name="AbilityPickup2" parent="." instance=ExtResource("6_ithkd")]
+position = Vector2(115, 315)
+
+[node name="AbilityPickup3" parent="." instance=ExtResource("7_r3dtc")]
+position = Vector2(205, 314)
 
 [connection signal="body_entered" from="Death Box" to="Death Box" method="_on_body_entered"]
