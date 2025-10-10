@@ -1,8 +1,8 @@
 extends Node
 
 # --- Dash Settings ---
-@export var dash_speed = 700.0
-@export var dash_duration = 0.15 #seconds
+@export var dash_speed = 600.0
+@export var dash_duration = 0.12 #seconds
 @export var dash_cooldown = 0.25 #for use on ground
 
 var dash_available = true
