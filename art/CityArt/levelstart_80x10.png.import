@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4pt2hslpxs5w"
-path="res://.godot/imported/large-building.png-2d7a662a6a964bf3deef9adfde298146.ctex"
+uid="uid://bu01r3oed3o12"
+path="res://.godot/imported/levelstart_80x10.png-eb994f9b3d5474c772cf1950d318637b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/CityArt/large-building.png"
-dest_files=["res://.godot/imported/large-building.png-2d7a662a6a964bf3deef9adfde298146.ctex"]
+source_file="res://art/CityArt/levelstart_80x10.png"
+dest_files=["res://.godot/imported/levelstart_80x10.png-eb994f9b3d5474c772cf1950d318637b.ctex"]
 
 [params]
 

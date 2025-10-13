@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="10_x2ay6"]
 [ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Ability Pickups/CymbalsPickup.tscn" id="11_k3aso"]
 [ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="12_803qd"]
-[ext_resource type="Texture2D" uid="uid://b4pt2hslpxs5w" path="res://art/CityArt/large-building.png" id="14_v5qxt"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="15_uxcut"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="16_8loo1"]
 [ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scenes/Objects/DeathBox.tscn" id="17_4hk1l"]
@@ -15,6 +14,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xylue"]
 size = Vector2(111.5, 101)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vkf7a"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(9, 0)
@@ -58,19 +59,19 @@ position = Vector2(1886, 687)
 
 [node name="Large-building" type="Sprite2D" parent="."]
 position = Vector2(846, 358)
-texture = ExtResource("14_v5qxt")
+texture = SubResource("CompressedTexture2D_vkf7a")
 
 [node name="Large-building2" type="Sprite2D" parent="."]
 position = Vector2(782, 358)
-texture = ExtResource("14_v5qxt")
+texture = SubResource("CompressedTexture2D_vkf7a")
 
 [node name="Large-building3" type="Sprite2D" parent="."]
 position = Vector2(679, 357)
-texture = ExtResource("14_v5qxt")
+texture = SubResource("CompressedTexture2D_vkf7a")
 
 [node name="Large-building4" type="Sprite2D" parent="."]
 position = Vector2(568, 361)
-texture = ExtResource("14_v5qxt")
+texture = SubResource("CompressedTexture2D_vkf7a")
 
 [node name="AbilityPickup3" parent="." instance=ExtResource("18_4hk1l")]
 position = Vector2(337, 72)
