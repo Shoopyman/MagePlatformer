@@ -35,10 +35,13 @@ func _ready():
 	ability_manager.register_ability("trombone", load("res://Scripts/Abilities/dashAbility.gd").new())
 	ability_manager.register_ability("cymbals", load("res://Scripts/Abilities/wallJumpAbility.gd").new())
 	ability_manager.register_ability("bongos", load("res://Scripts/Abilities/double_jump.gd").new())
+	ability_manager.register_ability("tuba", load("res://Scripts/Abilities/slamAbility.gd").new())
+	
 	
 	# Delete hashtags to test abilities without grabbing objects
 	# ability_manager.unlock("trombone")
 	# ability_manager.unlock("cymbals")
+	# ability_manager.unlock("tuba")
 	
 
 func _physics_process(delta):
@@ -79,20 +82,35 @@ func _physics_process(delta):
 	# Variable jump height (short hops)
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= 0.5
-
+		
+	# Terminal falling speed
+	if velocity.y > 400.0:
+		velocity.y = 400.0
+		
 	self.velocity = velocity
   
   # update ability activation
 	if ability_manager:
 		ability_manager.update_all(self, delta)
+		velocity = self.velocity
+		
 	
 	$Visual/AnimatedSprite2D.flip_h = facing_direction < 0
 	move_and_slide()
-
+	
 	current_position = global_position
-
+	
+	
+	
 func _process(delta):
 	var alpha = Engine.get_physics_interpolation_fraction()
 	var interpolated_pos = last_position.lerp(current_position, alpha)
 	$Visual.position = interpolated_pos - global_position
 	
+func is_dashing() -> bool:
+	var dash = ability_manager.get_ability("trombone")
+	return dash and dash.is_dashing
+
+func is_slamming() -> bool:
+	var slam = ability_manager.get_ability("tuba")
+	return slam and slam.is_slaming
