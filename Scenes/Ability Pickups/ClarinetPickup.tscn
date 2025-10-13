@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://db3thb2ste3m2"]
+
+[ext_resource type="PackedScene" uid="uid://2yfk2pgcmdyi" path="res://Scenes/Inheritance/AbilityPickup.tscn" id="1_e83dm"]
+[ext_resource type="Texture2D" uid="uid://ufhwnfqelydo" path="res://art/Instruments/pixil-frame-0 (2).png" id="2_pt3y6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gb5in"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pt3y6")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="AbilityPickup" instance=ExtResource("1_e83dm")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(3, 6)
+scale = Vector2(0.89, 0.8)
+sprite_frames = SubResource("SpriteFrames_gb5in")

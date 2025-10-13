@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjk38ntrabpqb"]
+[gd_scene load_steps=9 format=3 uid="uid://cjk38ntrabpqb"]
 
 [ext_resource type="Script" uid="uid://711d1tg6d08w" path="res://Scripts/Player/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://8alxoyiqx5cr" path="res://art/PLACEHOLDER/player better sizing.png" id="2_kpjcp"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://vguwotrmwrxp" path="res://Scripts/Abilities/dashAbility.gd" id="3_e80uo"]
 [ext_resource type="Script" uid="uid://d3cv5n13qgmla" path="res://Scripts/Abilities/double_jump.gd" id="3_kne1u"]
 [ext_resource type="Script" uid="uid://dhw2vwj3rejvx" path="res://Scripts/Abilities/wallJumpAbility.gd" id="4_cxr5p"]
-[ext_resource type="Script" uid="uid://bwmrotxytq8s3" path="res://Scripts/Abilities/grapplingHook.gd" id="6_t26db"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kpjcp"]
 points = PackedVector2Array(-7, 15, -7, 0, 0, -15, 7, 0, 7, 15)
@@ -52,10 +51,9 @@ dash_cooldown = 0.4
 script = ExtResource("3_kne1u")
 
 [node name="Grapple" type="Node2D" parent="."]
-script = ExtResource("6_t26db")
 
 [node name="RayCast2D" type="RayCast2D" parent="Grapple"]
-target_position = Vector2(200, 0)
+target_position = Vector2(500, 0)
 
 [node name="Line2D" type="Line2D" parent="Grapple"]
 points = PackedVector2Array(0, 0, 0, 0)

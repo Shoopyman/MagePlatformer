@@ -23,5 +23,6 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		var am = body.get_node("AbilityManager") if body.has_node("AbilityManager") else null
 		if am:
+			print(ability_name)
 			am.unlock(ability_name)
 			queue_free()

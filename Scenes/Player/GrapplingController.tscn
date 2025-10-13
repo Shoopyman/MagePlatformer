@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmqnavhouiky6"]
+
+[ext_resource type="Script" uid="uid://bwmrotxytq8s3" path="res://Scripts/Abilities/grapplingHook.gd" id="1_5jg37"]
+
+[node name="GrapplingController" type="Node2D"]
+script = ExtResource("1_5jg37")

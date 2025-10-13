@@ -16,6 +16,8 @@ extends CharacterBody2D
 var ability_manager: Node = null
 
 @onready var double_jump = $double_jump
+@onready var gc := $Grapple
+
 
 # --- Timers ---
 var coyote_timer = 0.0
@@ -35,10 +37,12 @@ func _ready():
 	ability_manager.register_ability("trombone", load("res://Scripts/Abilities/dashAbility.gd").new())
 	ability_manager.register_ability("cymbals", load("res://Scripts/Abilities/wallJumpAbility.gd").new())
 	ability_manager.register_ability("bongos", load("res://Scripts/Abilities/double_jump.gd").new())
+	#ability_manager.register_ability("clarinet", load("res://Scripts/Abilities/grapplingHook.gd").new())
 	
 	# Delete hashtags to test abilities without grabbing objects
 	# ability_manager.unlock("trombone")
 	# ability_manager.unlock("cymbals")
+	# ability_manager.unlock("clarinet")
 	
 
 func _physics_process(delta):
@@ -67,9 +71,9 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
 	# Jump queue
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") :
 		jump_buffer_timer = jump_buffer
-
+	
 	# Jump if buffer + coyote overlap
 	if jump_buffer_timer > 0 and coyote_timer > 0:
 		velocity.y = jump_velocity
