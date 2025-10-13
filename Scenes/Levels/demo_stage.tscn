@@ -53,17 +53,6 @@ position = Vector2(1487.02, 493)
 scale = Vector2(5.18032, 1.83703)
 shape = SubResource("RectangleShape2D_v5e64")
 
-[node name="Basic Controls" type="Label" parent="."]
-offset_left = -2311.0
-offset_top = 337.0
-offset_right = -2276.0
-offset_bottom = 350.0
-scale = Vector2(9.73472, 10.1463)
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 2
-text = "Move using Left or Right arrow key, 
-Press spacebar to jump"
-
 [node name="AbilityPickup" parent="." instance=ExtResource("5_k3a1b")]
 position = Vector2(1117, 320)
 
@@ -140,5 +129,45 @@ position = Vector2(1179, 318)
 
 [node name="Area2D3" parent="checkpoints" instance=ExtResource("10_jjyqn")]
 position = Vector2(3068, 27)
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1643.0
+offset_top = 206.0
+offset_right = 1990.0
+offset_bottom = 281.0
+text = "Pick up cymbals to wall Jumo
+Press C while facing the wall to jump of it"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1016.0
+offset_top = 354.0
+offset_right = 1363.0
+offset_bottom = 429.0
+text = "Pick up Bongos to jump again while in the air
+Press c while in the air"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 140.0
+offset_right = 322.0
+offset_bottom = 215.0
+text = "Press C to jump
+Pick up Trombone to dash
+Press x to Dash"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 2641.0
+offset_top = -673.0
+offset_right = 2876.0
+offset_bottom = -624.0
+text = "Pick up trombone to slam
+Press Z to slam through boxes"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 2293.0
+offset_top = -665.0
+offset_right = 2528.0
+offset_bottom = -632.0
+text = "Press X to dash through Boxes"
 
 [connection signal="body_entered" from="Death Box" to="Death Box" method="_on_body_entered"]
