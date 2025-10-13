@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjk38ntrabpqb"]
+[gd_scene load_steps=10 format=3 uid="uid://cjk38ntrabpqb"]
 
 [ext_resource type="Script" uid="uid://711d1tg6d08w" path="res://Scripts/Player/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://8alxoyiqx5cr" path="res://art/PLACEHOLDER/player better sizing.png" id="2_kpjcp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://vguwotrmwrxp" path="res://Scripts/Abilities/dashAbility.gd" id="3_e80uo"]
 [ext_resource type="Script" uid="uid://d3cv5n13qgmla" path="res://Scripts/Abilities/double_jump.gd" id="3_kne1u"]
 [ext_resource type="Script" uid="uid://dhw2vwj3rejvx" path="res://Scripts/Abilities/wallJumpAbility.gd" id="4_cxr5p"]
+[ext_resource type="Script" uid="uid://44yscbb408yf" path="res://Scripts/Abilities/slamAbility.gd" id="6_t26db"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kpjcp"]
 points = PackedVector2Array(-7, 15, -7, 0, 0, -15, 7, 0, 7, 15)
@@ -46,6 +47,9 @@ script = ExtResource("4_cxr5p")
 script = ExtResource("3_e80uo")
 dash_duration = 0.3
 dash_cooldown = 0.4
+
+[node name="tuba" type="Node" parent="AbilityManager"]
+script = ExtResource("6_t26db")
 
 [node name="double_jump" type="Node" parent="."]
 script = ExtResource("3_kne1u")
