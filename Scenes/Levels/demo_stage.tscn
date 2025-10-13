@@ -100,4 +100,22 @@ position = Vector2(2921, -350)
 [node name="Area2D8" parent="." instance=ExtResource("9_r3dtc")]
 position = Vector2(2939, -350)
 
+[node name="Node2D" parent="." instance=ExtResource("9_r3dtc")]
+position = Vector2(491, 211)
+
+[node name="Node2D2" parent="." instance=ExtResource("9_r3dtc")]
+position = Vector2(513, 295)
+
+[node name="Node2D3" parent="." instance=ExtResource("9_r3dtc")]
+position = Vector2(371, 322)
+
+[node name="Node2D4" parent="." instance=ExtResource("9_r3dtc")]
+position = Vector2(594, 338)
+
+[node name="Node2D5" parent="." instance=ExtResource("9_r3dtc")]
+position = Vector2(611, 338)
+
+[node name="Node2D6" parent="." instance=ExtResource("9_r3dtc")]
+position = Vector2(628, 339)
+
 [connection signal="body_entered" from="Death Box" to="Death Box" method="_on_body_entered"]

@@ -1,29 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjtrm40afwx2n"]
+[gd_scene load_steps=6 format=3 uid="uid://cjtrm40afwx2n"]
 
 [ext_resource type="Script" uid="uid://cikiuwvcni4d" path="res://Scripts/Objects/destructible_box.gd" id="1_6huvp"]
 [ext_resource type="Texture2D" uid="uid://b5p4ght4ung6l" path="res://art/objects/box.png" id="2_7yhg7"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7yhg7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_7yhg7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6huvp"]
+size = Vector2(16, 16)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7yhg7"]
+diffuse_texture = ExtResource("2_7yhg7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buk6l"]
-size = Vector2(18, 18)
+size = Vector2(28, 31)
 
-[node name="Area2D" type="Area2D"]
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6huvp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_7yhg7")
+
+[node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_6huvp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_7yhg7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.745906, 0.854449)
 shape = SubResource("RectangleShape2D_buk6l")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

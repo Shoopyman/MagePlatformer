@@ -93,14 +93,24 @@ func _physics_process(delta):
 	if ability_manager:
 		ability_manager.update_all(self, delta)
 		velocity = self.velocity
+		
 	
 	$Visual/AnimatedSprite2D.flip_h = facing_direction < 0
 	move_and_slide()
 	
 	current_position = global_position
 	
+	
+	
 func _process(delta):
 	var alpha = Engine.get_physics_interpolation_fraction()
 	var interpolated_pos = last_position.lerp(current_position, alpha)
 	$Visual.position = interpolated_pos - global_position
 	
+func is_dashing() -> bool:
+	var dash = ability_manager.get_ability("trombone")
+	return dash and dash.is_dashing
+
+func is_slamming() -> bool:
+	var slam = ability_manager.get_ability("tuba")
+	return slam and slam.is_slaming
