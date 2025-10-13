@@ -26,7 +26,7 @@ func _break_box():
 	if static_body:
 		for shape in static_body.get_children():
 			if shape is CollisionShape2D:
-				shape.disabled = true
+				shape.call_deferred("set_disabled", true)
 		static_body.collision_layer = 0
 		static_body.collision_mask = 0
 

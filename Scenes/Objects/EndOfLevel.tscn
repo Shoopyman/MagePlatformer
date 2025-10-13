@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3e1uu6sba3m1"]
+
+[ext_resource type="Script" uid="uid://ceufx2olbtb7y" path="res://Scenes/Objects/end_of_level.gd" id="1_ochb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhcoq"]
+size = Vector2(111.5, 101)
+
+[node name="EndOfLevel" type="Node2D"]
+
+[node name="EndOfLevel" type="Area2D" parent="."]
+script = ExtResource("1_ochb5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfLevel"]
+scale = Vector2(0.997355, 1)
+shape = SubResource("RectangleShape2D_xhcoq")
+
+[connection signal="body_entered" from="EndOfLevel" to="EndOfLevel" method="_on_body_entered"]

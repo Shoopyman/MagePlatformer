@@ -23,6 +23,7 @@ shape = SubResource("RectangleShape2D_6huvp")
 texture = SubResource("CanvasTexture_7yhg7")
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1.4)
 script = ExtResource("1_6huvp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

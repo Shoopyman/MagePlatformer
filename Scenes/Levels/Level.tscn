@@ -7,13 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="10_x2ay6"]
 [ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Ability Pickups/CymbalsPickup.tscn" id="11_k3aso"]
 [ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="12_803qd"]
+[ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="12_rbpxy"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="15_uxcut"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="16_8loo1"]
 [ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scenes/Objects/DeathBox.tscn" id="17_4hk1l"]
 [ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="18_4hk1l"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xylue"]
-size = Vector2(111.5, 101)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vkf7a"]
 
@@ -43,13 +41,6 @@ position = Vector2(488, 71)
 
 [node name="AbilityPickup2" parent="." instance=ExtResource("12_803qd")]
 position = Vector2(693, -88)
-
-[node name="EndOfLevel" type="Area2D" parent="."]
-position = Vector2(2533, 433)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfLevel"]
-position = Vector2(-4.25, -39.5)
-shape = SubResource("RectangleShape2D_xylue")
 
 [node name="Checkpoint 1" parent="." instance=ExtResource("16_8loo1")]
 position = Vector2(715, -89)
@@ -88,4 +79,6 @@ player_path = NodePath("../root")
 [node name="root" parent="." instance=ExtResource("15_uxcut")]
 position = Vector2(-171, -59)
 
-[connection signal="body_entered" from="EndOfLevel" to="." method="_on_area_2d_body_entered"]
+[node name="EndOfLevel" parent="." instance=ExtResource("12_rbpxy")]
+position = Vector2(2521, 399)
+scale = Vector2(0.67998, 1)
