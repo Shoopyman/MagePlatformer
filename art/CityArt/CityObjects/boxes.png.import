@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doesmkcx8bki5"
-path="res://.godot/imported/building5.png-01f93e3f61a676f62193fc2b6e5c4075.ctex"
+uid="uid://bpj7ww5a8kcry"
+path="res://.godot/imported/boxes.png-8c3406ede894d8b484e252ae35e30783.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/CityArt/buildings/building5.png"
-dest_files=["res://.godot/imported/building5.png-01f93e3f61a676f62193fc2b6e5c4075.ctex"]
+source_file="res://art/CityArt/CityObjects/boxes.png"
+dest_files=["res://.godot/imported/boxes.png-8c3406ede894d8b484e252ae35e30783.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doesmkcx8bki5"
-path="res://.godot/imported/building5.png-01f93e3f61a676f62193fc2b6e5c4075.ctex"
+uid="uid://be2byaxcqleup"
+path="res://.godot/imported/truss-tileset.png-1baa8377d7bbce9820d4581bdd4f7bc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/CityArt/buildings/building5.png"
-dest_files=["res://.godot/imported/building5.png-01f93e3f61a676f62193fc2b6e5c4075.ctex"]
+source_file="res://art/CityArt/truss-tileset.png"
+dest_files=["res://.godot/imported/truss-tileset.png-1baa8377d7bbce9820d4581bdd4f7bc7.ctex"]
 
 [params]
 
