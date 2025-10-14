@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://by12rpvxc714"]
+[gd_scene load_steps=15 format=4 uid="uid://by12rpvxc714"]
 
 [ext_resource type="PackedScene" uid="uid://blnhngp26b6wi" path="res://Scenes/Background/background.tscn" id="1_ibv4f"]
 [ext_resource type="PackedScene" uid="uid://cc5ixko7l578w" path="res://Scenes/Level Building/TileMap.tscn" id="2_f5ku8"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://doesmkcx8bki5" path="res://art/CityArt/buildings/building5.png" id="11_8yvus"]
 [ext_resource type="Texture2D" uid="uid://b2h2x54lg3fd0" path="res://art/CityArt/buildings/buildingx.png" id="11_ot486"]
 [ext_resource type="Texture2D" uid="uid://dlt08r3j34xg7" path="res://art/CityArt/buildings/building5tall.png" id="12_8yvus"]
+[ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="13_5pgco"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="13_u4lmr"]
 
 [node name="Tutorial Level" type="Node2D"]
@@ -31,44 +32,11 @@ position = Vector2(-145, 148)
 position = Vector2(6, 0)
 player_path = NodePath("../Player")
 
-[node name="Area2D" parent="." instance=ExtResource("4_ohf4p")]
-position = Vector2(1198, 266)
-scale = Vector2(2, 1)
-
-[node name="Area2D2" parent="." instance=ExtResource("6_ohf4p")]
-position = Vector2(1155, 20)
-
-[node name="Area2D3" parent="." instance=ExtResource("6_ohf4p")]
-position = Vector2(2187, -156)
-
-[node name="Area2D4" parent="." instance=ExtResource("4_ohf4p")]
-position = Vector2(499, -271)
-
-[node name="Area2D5" parent="." instance=ExtResource("6_ohf4p")]
-position = Vector2(1587, -588)
-
-[node name="Area2D6" parent="." instance=ExtResource("6_ohf4p")]
-position = Vector2(-175, -589)
-
-[node name="Area2D7" parent="." instance=ExtResource("4_ohf4p")]
-position = Vector2(666, -737)
-scale = Vector2(0.6, 0.5)
-
 [node name="AbilityPickup" parent="." instance=ExtResource("7_68caq")]
 position = Vector2(658, -906)
 
 [node name="AbilityPickup2" parent="." instance=ExtResource("8_4kucd")]
 position = Vector2(1786, -728)
-
-[node name="Area2D8" parent="." instance=ExtResource("6_ohf4p")]
-position = Vector2(1355, -877)
-
-[node name="Area2D9" parent="." instance=ExtResource("4_ohf4p")]
-position = Vector2(2402, -841)
-scale = Vector2(0.3, 1)
-
-[node name="Area2D10" parent="." instance=ExtResource("6_ohf4p")]
-position = Vector2(2095, -1036)
 
 [node name="Levelstart80x10" type="Sprite2D" parent="."]
 position = Vector2(362, 243)
@@ -89,3 +57,44 @@ texture = ExtResource("12_8yvus")
 [node name="EndOfLevel" parent="." instance=ExtResource("13_u4lmr")]
 position = Vector2(2851, -1289)
 scale = Vector2(-0.399692, 0.873623)
+
+[node name="DeathBoxes" type="Node" parent="."]
+
+[node name="Area2D" parent="DeathBoxes" instance=ExtResource("4_ohf4p")]
+position = Vector2(1198, 266)
+scale = Vector2(2, 1)
+
+[node name="Area2D4" parent="DeathBoxes" instance=ExtResource("4_ohf4p")]
+position = Vector2(499, -271)
+
+[node name="Area2D7" parent="DeathBoxes" instance=ExtResource("4_ohf4p")]
+position = Vector2(666, -737)
+scale = Vector2(0.6, 0.5)
+
+[node name="Area2D9" parent="DeathBoxes" instance=ExtResource("4_ohf4p")]
+position = Vector2(2402, -841)
+scale = Vector2(0.3, 1)
+
+[node name="Checkpoints" type="Node" parent="."]
+
+[node name="Area2D2" parent="Checkpoints" instance=ExtResource("6_ohf4p")]
+position = Vector2(1155, 20)
+
+[node name="Area2D3" parent="Checkpoints" instance=ExtResource("6_ohf4p")]
+position = Vector2(2187, -156)
+
+[node name="Area2D5" parent="Checkpoints" instance=ExtResource("6_ohf4p")]
+position = Vector2(1587, -588)
+
+[node name="Area2D6" parent="Checkpoints" instance=ExtResource("6_ohf4p")]
+position = Vector2(-175, -589)
+
+[node name="Area2D8" parent="Checkpoints" instance=ExtResource("6_ohf4p")]
+position = Vector2(1355, -877)
+
+[node name="Area2D10" parent="Checkpoints" instance=ExtResource("6_ohf4p")]
+position = Vector2(2095, -1036)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("13_5pgco")]

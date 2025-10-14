@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bh41kylebmio8"]
+[gd_scene load_steps=16 format=4 uid="uid://bh41kylebmio8"]
 
 [ext_resource type="Texture2D" uid="uid://ie7gjg58csbl" path="res://art/PLACEHOLDER/Placeholder Tile.png" id="1_fegxi"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="2_d7dw7"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cjtrm40afwx2n" path="res://Scenes/Objects/DestructibleBox.tscn" id="9_r3dtc"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="10_jjyqn"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="11_nd4lh"]
+[ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="12_qrq7a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x5lp"]
 texture = ExtResource("1_fegxi")
@@ -173,5 +174,9 @@ text = "Press X to dash through Boxes"
 
 [node name="EndOfLevel" parent="." instance=ExtResource("11_nd4lh")]
 position = Vector2(3336, -11)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("12_qrq7a")]
 
 [connection signal="body_entered" from="Death Box" to="Death Box" method="_on_body_entered"]
