@@ -55,7 +55,7 @@ position = Vector2(2074, -341)
 texture = ExtResource("12_8yvus")
 
 [node name="EndOfLevel" parent="." instance=ExtResource("13_u4lmr")]
-position = Vector2(2851, -1289)
+position = Vector2(2858, -1258)
 scale = Vector2(-0.399692, 0.873623)
 
 [node name="DeathBoxes" type="Node" parent="."]

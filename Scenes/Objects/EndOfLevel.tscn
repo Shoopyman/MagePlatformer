@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3e1uu6sba3m1"]
+[gd_scene load_steps=5 format=3 uid="uid://b3e1uu6sba3m1"]
 
-[ext_resource type="Script" uid="uid://ceufx2olbtb7y" path="res://Scenes/Objects/end_of_level.gd" id="1_ochb5"]
+[ext_resource type="Script" uid="uid://ceufx2olbtb7y" path="res://Scripts/Objects/end_of_level.gd" id="1_ochb5"]
+[ext_resource type="Texture2D" uid="uid://cb81jnn2yiv4e" path="res://art/objects/endLevelSprites/pixil-frame-0 (4).png" id="2_xhcoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhcoq"]
-size = Vector2(111.5, 101)
+size = Vector2(40.1061, 45)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cgo1w"]
+diffuse_texture = ExtResource("2_xhcoq")
 
 [node name="EndOfLevel" type="Node2D"]
 
@@ -11,7 +15,13 @@ size = Vector2(111.5, 101)
 script = ExtResource("1_ochb5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfLevel"]
+position = Vector2(5, -0.5)
 scale = Vector2(0.997355, 1)
 shape = SubResource("RectangleShape2D_xhcoq")
+
+[node name="Sprite2D" type="Sprite2D" parent="EndOfLevel"]
+position = Vector2(5, -7)
+scale = Vector2(1, 1.21)
+texture = SubResource("CanvasTexture_cgo1w")
 
 [connection signal="body_entered" from="EndOfLevel" to="EndOfLevel" method="_on_body_entered"]

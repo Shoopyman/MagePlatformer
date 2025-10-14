@@ -80,5 +80,5 @@ player_path = NodePath("../root")
 position = Vector2(-171, -59)
 
 [node name="EndOfLevel" parent="." instance=ExtResource("12_rbpxy")]
-position = Vector2(2521, 399)
+position = Vector2(2519, 439)
 scale = Vector2(0.67998, 1)
