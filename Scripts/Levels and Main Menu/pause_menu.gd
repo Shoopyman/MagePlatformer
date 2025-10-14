@@ -25,6 +25,7 @@ func _on_resume_pressed():
 	
 func _on_restart_pressed():
 	print("Restart")
+	CheckpointManager.reset_to_default()
 	resume()
 	get_tree().reload_current_scene()
 	
