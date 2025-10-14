@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cjk38ntrabpqb"]
 
 [ext_resource type="Script" uid="uid://711d1tg6d08w" path="res://Scripts/Player/player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://8alxoyiqx5cr" path="res://art/PLACEHOLDER/player better sizing.png" id="2_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://dcxgkqoycxn5d" path="res://art/salaryman.png" id="2_t26db"]
 [ext_resource type="Script" uid="uid://dnb1yxo4jc72l" path="res://Scripts/Managers/abilityManager.gd" id="3_cxr5p"]
 [ext_resource type="Script" uid="uid://vguwotrmwrxp" path="res://Scripts/Abilities/dashAbility.gd" id="3_e80uo"]
 [ext_resource type="Script" uid="uid://d3cv5n13qgmla" path="res://Scripts/Abilities/double_jump.gd" id="3_kne1u"]
@@ -15,7 +15,7 @@ points = PackedVector2Array(-7, 15, -7, 0, 0, -15, 7, 0, 7, 15)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_kpjcp")
+"texture": ExtResource("2_t26db")
 }],
 "loop": true,
 "name": &"default",

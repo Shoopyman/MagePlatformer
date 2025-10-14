@@ -137,7 +137,7 @@ offset_left = 1643.0
 offset_top = 206.0
 offset_right = 1990.0
 offset_bottom = 281.0
-text = "Pick up cymbals to wall Jumo
+text = "Pick up Cymbals to wall Jumo
 Press C while facing the wall to jump of it"
 
 [node name="Label2" type="Label" parent="."]
@@ -146,7 +146,7 @@ offset_top = 354.0
 offset_right = 1363.0
 offset_bottom = 429.0
 text = "Pick up Bongos to jump again while in the air
-Press c while in the air"
+Press C while in the air"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 120.0
@@ -162,7 +162,7 @@ offset_left = 2641.0
 offset_top = -673.0
 offset_right = 2876.0
 offset_bottom = -624.0
-text = "Pick up trombone to slam
+text = "Pick up Tuba to slam
 Press Z to slam through boxes"
 
 [node name="Label4" type="Label" parent="."]
