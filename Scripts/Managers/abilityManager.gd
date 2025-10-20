@@ -1,58 +1,42 @@
 extends Node
-class_name AbilityManager
 
-var abilities := {}
-var unlocked := {}
+# Preload all ability scripts once so they’re ready to use
+var registered_abilities = {
+	"trombone": preload("res://Scripts/Abilities/dashAbility.gd"),
+	"cymbals": preload("res://Scripts/Abilities/wallJumpAbility.gd"),
+	"bongos": preload("res://Scripts/Abilities/double_jump.gd"),
+}
 
-func _ready():
-	# register the children
-	for child in get_children():
-		if child is Node and child.has_method("update"):
-			#condition for abilities
-			register_ability(child.name, child)
+var current_ability: Node = null
+var current_name: String = ""
 
-#register ability instance
-func register_ability(name: String, ability: Node) -> void:
-	if abilities.has(name):
-		# if someone picks up an ability they already have
-		push_warning("Ability already registered: %s" %name)
+func register_ability(name: String, ability_script: Resource):
+	# This is optional now, since we already have them in registered_abilities
+	registered_abilities[name] = ability_script
+
+func unlock(name: String, player: CharacterBody2D):
+	# Remove old ability
+	if current_ability:
+		current_ability.queue_free()
+
+	# Check if we know this ability
+	if not registered_abilities.has(name):
+		push_warning("Unknown ability: %s" % name)
 		return
-	abilities[name] = ability
-	ability.name = name
-	if ability.get_parent() != self:
-		add_child(ability)
-		#shouldnt  be called but just in case
-	unlocked[name] = false
-	# dont call update unless unlocked
-	ability.set_process(false)
-	
-func unlock(name: String) -> void:
-	if not abilities.has(name):
-		# if someone picks up an ability they already have
-		push_warning("Ability already registered: %s" %name)
-		return
-	if unlocked.get(name, false):
-		return
-	unlocked[name] = true
-	var ab = abilities[name]
-	ab.set_process(true)
-	if ab.has_method("on_unlock"):
-		ab.on_unlock()
-		
-func lock(name: String) -> void:
-	if abilities.has(name):
-		unlocked[name] = false
-		abilities[name].set_process(false)
 
-func is_unlocked(name: String) -> bool:
-	return unlocked.get(name, false)
-	
-func get_ability(name: String) -> Node:
-	return abilities.get(name, null)
-	
-func update_all(player, delta) -> void:
-	for name in abilities.keys():
-		if is_unlocked(name):
-			var ab = abilities[name]
-			if ab and ab.has_method("update"):
-				ab.update(player, delta)
+	# Instantiate the ability
+	var ability_script = registered_abilities[name]
+	var new_ability = ability_script.new()
+	player.add_child(new_ability)
+	current_ability = new_ability
+	current_name = name
+
+	# Reset or refresh usage
+	if new_ability.has_method("on_equipped"):
+		new_ability.on_equipped(player)
+
+	print("Equipped new ability:", name)
+
+func update_all(player, delta):
+	if current_ability and current_ability.has_method("update"):
+		current_ability.update(player, delta)

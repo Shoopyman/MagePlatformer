@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://by12rpvxc714"]
+[gd_scene load_steps=15 format=4 uid="uid://l0ckr8va6384"]
 
 [ext_resource type="PackedScene" uid="uid://blnhngp26b6wi" path="res://Scenes/Background/background.tscn" id="1_ibv4f"]
 [ext_resource type="PackedScene" uid="uid://cc5ixko7l578w" path="res://Scenes/Level Building/TileMap.tscn" id="2_f5ku8"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b2h2x54lg3fd0" path="res://art/CityArt/buildings/buildingx.png" id="11_ot486"]
 [ext_resource type="Texture2D" uid="uid://dlt08r3j34xg7" path="res://art/CityArt/buildings/building5tall.png" id="12_8yvus"]
 [ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="13_5pgco"]
-[ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="13_u4lmr"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/EndOfLevel.tscn" id="13_u4lmr"]
 
 [node name="Tutorial Level" type="Node2D"]
 

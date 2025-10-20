@@ -30,13 +30,7 @@ func _ready():
 	last_position = global_position
 	current_position = global_position
 	
-	# load ability files
 	ability_manager = $AbilityManager
-	ability_manager.register_ability("trombone", load("res://Scripts/Abilities/dashAbility.gd").new())
-	ability_manager.register_ability("cymbals", load("res://Scripts/Abilities/wallJumpAbility.gd").new())
-	ability_manager.register_ability("bongos", load("res://Scripts/Abilities/double_jump.gd").new())
-	ability_manager.register_ability("tuba", load("res://Scripts/Abilities/slamAbility.gd").new())
-	
 	
 	# Delete hashtags to test abilities without grabbing objects
 	# ability_manager.unlock("trombone")
@@ -92,8 +86,6 @@ func _physics_process(delta):
   # update ability activation
 	if ability_manager:
 		ability_manager.update_all(self, delta)
-		velocity = self.velocity
-		
 	
 	$Visual/AnimatedSprite2D.flip_h = facing_direction < 0
 	move_and_slide()
