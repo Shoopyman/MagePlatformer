@@ -55,6 +55,9 @@ func _physics_process(delta):
 	if jump_buffer_timer > 0:
 		jump_buffer_timer -= delta
 
+	if self.is_on_wall() and not self.is_on_floor():
+		velocity.x = 0;
+
 	# Horizontal movement with acceleration
 	var input_dir = Input.get_axis("ui_left", "ui_right")
 	if input_dir != 0:
@@ -63,6 +66,8 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
+
+	
 	# Jump queue
 	if Input.is_action_just_pressed("jump"):
 		jump_buffer_timer = jump_buffer

@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/Abilities/slamAbility.gd" id="6_t26db"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kpjcp"]
-points = PackedVector2Array(-7, 15, -7, 0, 0, -15, 7, 0, 7, 15)
+points = PackedVector2Array(-5, 15, -5, 0, 0, -11, 5, 0, 5, 15)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kpjcp"]
 animations = [{

@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="5_k3a1b"]
 [ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Ability Pickups/CymbalsPickup.tscn" id="6_ithkd"]
 [ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="7_r3dtc"]
-[ext_resource type="PackedScene" path="res://Scenes/Ability Pickups/TubaPickup.tscn" id="8_ithkd"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/DestructibleBox.tscn" id="9_r3dtc"]
+[ext_resource type="PackedScene" uid="uid://cucjxmvqj81xo" path="res://Scenes/Ability Pickups/TubaPickup.tscn" id="8_ithkd"]
+[ext_resource type="PackedScene" uid="uid://cjtrm40afwx2n" path="res://Scenes/Objects/DestructibleBox.tscn" id="9_r3dtc"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="10_jjyqn"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/EndOfLevel.tscn" id="11_nd4lh"]
+[ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="11_nd4lh"]
 [ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="12_qrq7a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0x5lp"]
