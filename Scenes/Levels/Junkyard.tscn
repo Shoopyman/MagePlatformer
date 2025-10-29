@@ -216,9 +216,6 @@ position = Vector2(9581, -607)
 [node name="AbilityPickup5" parent="." instance=ExtResource("10_tocsk")]
 position = Vector2(9624, -612)
 
-[node name="AbilityPickup6" parent="." instance=ExtResource("10_tocsk")]
-position = Vector2(10060, -722)
-
 [node name="AbilityPickup7" parent="." instance=ExtResource("7_mkn5q")]
 position = Vector2(10170, -795)
 
