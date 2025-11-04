@@ -53,7 +53,7 @@ func _on_timer_timeout() -> void:
 			current_body.bounce(bounceHeight)
 		
 		#Allows time for animation to finish
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(.9).timeout
 		
 		state = State.WAITING
 		sprite.play("Idle")
