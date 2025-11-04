@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://2yfk2pgcmdyi" path="res://Scenes/Inheritance/AbilityPickup.tscn" id="1_6osac"]
 
 [node name="AbilityPickup" instance=ExtResource("1_6osac")]
+ability_name = "trombone"

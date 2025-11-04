@@ -16,4 +16,5 @@ func update(player, delta):
 		jumps_left -= 1
 		player.velocity.y = jump_velocity
 	
-	
+func on_equipped(player):
+	jumps_left = max_extra_jumps

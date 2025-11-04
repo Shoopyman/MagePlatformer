@@ -13,9 +13,11 @@ var cooldown_timer = 0.0
 
 func on_unlock():
 	# play unlock vfx Trombone solo
+	print("unlocked dash")
 	pass
 
 func update(player, delta):
+	
 	
 	if cooldown_timer > 0.0:
 		cooldown_timer -= delta
@@ -42,3 +44,8 @@ func update(player, delta):
 		dash_dir = axis if axis != 0 else player.facing_direction
 		player.velocity.y = 0
 		# PLAY SOUND OF DASH
+		
+		
+func on_equipped(player):
+	var dash_available = true
+	print("equipped")

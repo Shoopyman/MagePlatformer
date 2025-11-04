@@ -30,13 +30,7 @@ func _ready():
 	last_position = global_position
 	current_position = global_position
 	
-	# load ability files
 	ability_manager = $AbilityManager
-	ability_manager.register_ability("trombone", load("res://Scripts/Abilities/dashAbility.gd").new())
-	ability_manager.register_ability("cymbals", load("res://Scripts/Abilities/wallJumpAbility.gd").new())
-	ability_manager.register_ability("bongos", load("res://Scripts/Abilities/double_jump.gd").new())
-	ability_manager.register_ability("tuba", load("res://Scripts/Abilities/slamAbility.gd").new())
-	
 	
 	# Delete hashtags to test abilities without grabbing objects
 	# ability_manager.unlock("trombone")
@@ -61,6 +55,9 @@ func _physics_process(delta):
 	if jump_buffer_timer > 0:
 		jump_buffer_timer -= delta
 
+	if self.is_on_wall() and not self.is_on_floor():
+		velocity.x = 0;
+
 	# Horizontal movement with acceleration
 	var input_dir = Input.get_axis("ui_left", "ui_right")
 	if input_dir != 0:
@@ -69,6 +66,8 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
+
+	
 	# Jump queue
 	if Input.is_action_just_pressed("jump"):
 		jump_buffer_timer = jump_buffer
@@ -92,8 +91,6 @@ func _physics_process(delta):
   # update ability activation
 	if ability_manager:
 		ability_manager.update_all(self, delta)
-		velocity = self.velocity
-		
 	
 	$Visual/AnimatedSprite2D.flip_h = facing_direction < 0
 	move_and_slide()
