@@ -201,9 +201,6 @@ offset_right = 10.0
 
 [node name="Crushers" type="Node" parent="."]
 
-[node name="CharacterBody2D" parent="Crushers" instance=ExtResource("12_uae6t")]
-position = Vector2(910, -35)
-
 [node name="CharacterBody2D2" parent="Crushers" instance=ExtResource("12_uae6t")]
 position = Vector2(1139, -35)
 
@@ -267,3 +264,6 @@ position = Vector2(11824, -607)
 
 [node name="Checkpoint1" parent="Checkpoints" instance=ExtResource("5_y0tkb")]
 position = Vector2(1538, 33)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("12_uae6t")]
+position = Vector2(914, -37)

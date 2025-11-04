@@ -105,9 +105,8 @@ func _process(delta):
 	$Visual.position = interpolated_pos - global_position
 	
 func is_dashing() -> bool:
-	var dash = ability_manager.get_ability("trombone")
-	return dash and dash.is_dashing
+	return ability_manager.get_ability("trombone")
 
 func is_slamming() -> bool:
-	var slam = ability_manager.get_ability("tuba")
-	return slam and slam.is_slaming
+	return ability_manager.get_ability("tuba")
+	

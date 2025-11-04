@@ -40,3 +40,9 @@ func unlock(name: String, player: CharacterBody2D):
 func update_all(player, delta):
 	if current_ability and current_ability.has_method("update"):
 		current_ability.update(player, delta)
+		
+func get_ability(name: String) -> bool:
+	if(name == current_name):
+		return true
+	else:
+		return false

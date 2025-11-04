@@ -25,8 +25,6 @@ func _ready():
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
 
-	# Connect Area2D signal
-	area.body_entered.connect(_on_area_2d_body_entered)
 
 	# Play idle animation
 	if sprite and sprite.sprite_frames:
@@ -61,6 +59,6 @@ func _on_timer_timeout():
 			state = State.RISING
 
 func _on_area_2d_body_entered(body: Node2D):
-	if body.is_in_group("player") and state == State.FALLING:
+	if body.is_in_group("player"):
 		print("Hi")
 		CheckpointManager.respawn_player()
