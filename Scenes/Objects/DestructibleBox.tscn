@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjtrm40afwx2n"]
 
-[ext_resource type="Script" uid="uid://cikiuwvcni4d" path="res://Scripts/Objects/destructible_box.gd" id="1_6huvp"]
+[ext_resource type="Script" uid="uid://cikiuwvcni4d" path="res://Objects/destructible_box.gd" id="1_6huvp"]
 [ext_resource type="Texture2D" uid="uid://b5p4ght4ung6l" path="res://art/objects/box.png" id="2_7yhg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6huvp"]
