@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://ceuvj4j0nv0n8"]
+
+[ext_resource type="Texture2D" uid="uid://b0d5u35syqhwi" path="res://art/objects/Spring/Spring1.png" id="1_yntkp"]
+[ext_resource type="Texture2D" uid="uid://cf842r2r61pux" path="res://art/objects/Spring/spring2.png" id="2_78g4v"]
+[ext_resource type="Texture2D" uid="uid://br02nuwjsct1n" path="res://art/objects/Spring/spring3.png" id="3_gylv2"]
+[ext_resource type="Texture2D" uid="uid://cp2ub5msivbls" path="res://art/objects/Spring/spring4.png" id="4_tlo4n"]
+[ext_resource type="Texture2D" uid="uid://jwke2y1lwstr" path="res://art/objects/Spring/spring5.png" id="5_m53wi"]
+[ext_resource type="Script" uid="uid://uwlivhvylje2" path="res://Scripts/objects/spring.gd" id="6_78g4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yntkp"]
+size = Vector2(23, 3)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5fcqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yntkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_78g4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gylv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tlo4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m53wi")
+}],
+"loop": true,
+"name": &"Action",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yntkp")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Spring" type="CharacterBody2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("6_78g4v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 11.5)
+shape = SubResource("RectangleShape2D_yntkp")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+wait_time = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_5fcqt")
+animation = &"Action"
+frame_progress = 0.0718749
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-13, 16, -13, 14, -12, 14, -12, 13, -10, 13, -10, 11, 10, 11, 10, 13, 12, 13, 12, 14, 13, 14, 13, 16)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

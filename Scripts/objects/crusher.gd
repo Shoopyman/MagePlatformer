@@ -26,9 +26,6 @@ func _ready():
 	timer.start()
 
 
-	# Play idle animation
-	if sprite and sprite.sprite_frames:
-		sprite.play("idle")
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -60,5 +57,4 @@ func _on_timer_timeout():
 
 func _on_area_2d_body_entered(body: Node2D):
 	if body.is_in_group("player"):
-		print("Hi")
 		CheckpointManager.respawn_player()

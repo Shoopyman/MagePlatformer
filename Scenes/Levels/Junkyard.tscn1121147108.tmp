@@ -269,7 +269,5 @@ position = Vector2(11824, -607)
 [node name="Checkpoint1" parent="Checkpoints" instance=ExtResource("5_y0tkb")]
 position = Vector2(1538, 33)
 
-[node name="Springs" type="Node" parent="."]
-
-[node name="Spring" parent="Springs" instance=ExtResource("14_plxt6")]
+[node name="Spring" parent="." instance=ExtResource("14_plxt6")]
 position = Vector2(652, 208)

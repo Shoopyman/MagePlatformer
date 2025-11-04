@@ -20,6 +20,8 @@ var ability_manager: Node = null
 # --- Timers ---
 var coyote_timer = 0.0
 var jump_buffer_timer = 0.0
+var bounce_timer := 0.0
+
 
 # --- Interpolation ---
 var last_position: Vector2
@@ -42,12 +44,16 @@ func _physics_process(delta):
 	last_position = global_position
 	var velocity = self.velocity
 	
-	# Gravity
-	if not is_on_floor():
-		velocity.y += gravity * delta
+	#bounce timer
+	if bounce_timer > 0:
+		bounce_timer -= delta
 	else:
-		velocity.y = 0
-		coyote_timer = coyote_time #grounded, so reset coyote timer
+		# Gravity
+		if not is_on_floor():
+			velocity.y += gravity * delta
+		else:
+			velocity.y = 0
+			coyote_timer = coyote_time #grounded, so reset coyote timer
 
 	# Update timers
 	if coyote_timer > 0:
@@ -109,4 +115,9 @@ func is_dashing() -> bool:
 
 func is_slamming() -> bool:
 	return ability_manager.get_ability("tuba")
+	
+func bounce(bounceHeight: float):
+	print("hi")
+	velocity.y -= bounceHeight
+	bounce_timer = .2
 	
