@@ -9,10 +9,10 @@ font_size = 40
 script = ExtResource("1_28flt")
 
 [node name="Demo_button" type="Button" parent="."]
-offset_left = 252.0
-offset_top = 137.0
-offset_right = 353.0
-offset_bottom = 168.0
+offset_left = 31.0
+offset_top = 313.0
+offset_right = 132.0
+offset_bottom = 344.0
 text = "Demo Stage"
 
 [node name="Tutorial_Button" type="Button" parent="."]
@@ -32,13 +32,21 @@ label_settings = SubResource("LabelSettings_erv1k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="Exit_button" type="Button" parent="."]
 offset_left = 531.0
 offset_top = 316.0
 offset_right = 613.0
 offset_bottom = 347.0
 text = "Quit"
 
+[node name="Level_1_button" type="Button" parent="."]
+offset_left = 261.0
+offset_top = 136.0
+offset_right = 346.0
+offset_bottom = 167.0
+text = "Level One"
+
 [connection signal="pressed" from="Demo_button" to="." method="_on_demo_button_pressed"]
 [connection signal="pressed" from="Tutorial_Button" to="." method="_on_tutorial_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Exit_button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level_1_button" to="." method="_on_level_1_button_pressed"]
