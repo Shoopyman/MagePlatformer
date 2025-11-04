@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcxgkqoycxn5d"
-path="res://.godot/imported/salaryman.png-b2da5664544e7ce88d9698bf3a11e961.ctex"
+uid="uid://1rmuy40qo006"
+path="res://.godot/imported/mainCharacter.png-08b3a3b75d8d816e930e244d1e696e8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/salaryman.png"
-dest_files=["res://.godot/imported/salaryman.png-b2da5664544e7ce88d9698bf3a11e961.ctex"]
+source_file="res://art/mainCharacter.png"
+dest_files=["res://.godot/imported/mainCharacter.png-08b3a3b75d8d816e930e244d1e696e8e.ctex"]
 
 [params]
 

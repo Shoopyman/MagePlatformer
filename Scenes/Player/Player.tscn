@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cjk38ntrabpqb"]
 
 [ext_resource type="Script" uid="uid://711d1tg6d08w" path="res://Scripts/Player/player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://dcxgkqoycxn5d" path="res://art/salaryman.png" id="2_t26db"]
+[ext_resource type="Texture2D" uid="uid://1rmuy40qo006" path="res://art/mainCharacter.png" id="2_t26db"]
 [ext_resource type="Script" uid="uid://dnb1yxo4jc72l" path="res://Scripts/Managers/abilityManager.gd" id="3_cxr5p"]
 [ext_resource type="Script" uid="uid://vguwotrmwrxp" path="res://Scripts/Abilities/dashAbility.gd" id="3_e80uo"]
 [ext_resource type="Script" uid="uid://d3cv5n13qgmla" path="res://Scripts/Abilities/double_jump.gd" id="3_kne1u"]
@@ -35,6 +35,7 @@ shape = SubResource("ConvexPolygonShape2D_kpjcp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual"]
 texture_filter = 1
 texture_repeat = 1
+position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_kpjcp")
 
 [node name="AbilityManager" type="Node" parent="."]
