@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://l0ckr8va6384"]
+[gd_scene load_steps=17 format=4 uid="uid://l0ckr8va6384"]
 
 [ext_resource type="PackedScene" uid="uid://blnhngp26b6wi" path="res://Scenes/Background/background.tscn" id="1_ibv4f"]
 [ext_resource type="PackedScene" uid="uid://cc5ixko7l578w" path="res://Scenes/Level Building/TileMap.tscn" id="2_f5ku8"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://dlt08r3j34xg7" path="res://art/CityArt/buildings/building5tall.png" id="12_8yvus"]
 [ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="13_5pgco"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="13_u4lmr"]
+[ext_resource type="Texture2D" uid="uid://dyouoo0rgyix4" path="res://art/CityArt/big1.png" id="16_5pgco"]
+[ext_resource type="Texture2D" uid="uid://5fvd6ej1uc4h" path="res://art/CityArt/big2.png" id="16_w685s"]
 
 [node name="Tutorial Level" type="Node2D"]
 
@@ -100,3 +102,11 @@ position = Vector2(2095, -1036)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("13_5pgco")]
+
+[node name="Big1" type="Sprite2D" parent="."]
+position = Vector2(1919, 75)
+texture = ExtResource("16_5pgco")
+
+[node name="Big2" type="Sprite2D" parent="."]
+position = Vector2(1734, -295)
+texture = ExtResource("16_w685s")
