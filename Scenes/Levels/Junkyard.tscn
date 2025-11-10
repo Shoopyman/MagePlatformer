@@ -34,43 +34,6 @@ position = Vector2(2060, -569)
 
 [node name="Delete LATER" type="Node" parent="."]
 
-[node name="Label" type="Label" parent="Delete LATER"]
-offset_left = 581.0
-offset_top = 198.0
-offset_right = 670.0
-offset_bottom = 221.0
-text = "Spring here"
-
-[node name="Label" type="Label" parent="Delete LATER/Label"]
-layout_mode = 0
-offset_left = 1550.0
-offset_top = -782.0
-offset_right = 1639.0
-offset_bottom = -759.0
-text = "Spring here"
-
-[node name="Label2" type="Label" parent="Delete LATER"]
-offset_left = 861.0
-offset_top = -57.0
-offset_right = 962.0
-offset_bottom = -34.0
-text = "Crusher here"
-
-[node name="Label3" type="Label" parent="Delete LATER"]
-offset_left = 1089.0
-offset_top = -53.0
-offset_right = 1190.0
-offset_bottom = -30.0
-text = "Crusher here"
-
-[node name="Label7" type="Label" parent="Delete LATER"]
-offset_left = 1747.0
-offset_top = -606.0
-offset_right = 1848.0
-offset_bottom = -583.0
-scale = Vector2(0.757431, 1.44108)
-text = "Crusher here"
-
 [node name="Label5" type="Label" parent="Delete LATER"]
 offset_left = 883.0
 offset_top = 93.0
@@ -86,34 +49,6 @@ offset_right = 1519.0
 offset_bottom = 142.0
 text = "Have cracked floor texture or something smushed for effect. Since I would assume
 Crushers would leaves cracks or smooshed items underneath"
-
-[node name="Label4" type="Label" parent="Delete LATER"]
-offset_left = 1325.0
-offset_top = -60.0
-offset_right = 1426.0
-offset_bottom = -37.0
-text = "Crusher here"
-
-[node name="Label12" type="Label" parent="Delete LATER"]
-offset_left = 4855.0
-offset_top = -701.0
-offset_right = 4956.0
-offset_bottom = -678.0
-text = "Crusher here"
-
-[node name="Label13" type="Label" parent="Delete LATER"]
-offset_left = 5170.0
-offset_top = -710.0
-offset_right = 5271.0
-offset_bottom = -687.0
-text = "Crusher here"
-
-[node name="Label14" type="Label" parent="Delete LATER"]
-offset_left = 5579.0
-offset_top = -698.0
-offset_right = 5680.0
-offset_bottom = -675.0
-text = "Crusher here"
 
 [node name="Label8" type="Label" parent="Delete LATER"]
 offset_left = 2270.0
@@ -150,6 +85,13 @@ offset_right = 8862.0
 offset_bottom = -523.0
 text = "Add fire to bottom, delete platform above later, when swinging platform is here"
 
+[node name="Label" type="Label" parent="Delete LATER"]
+offset_left = 6445.0
+offset_top = -783.0
+offset_right = 6842.0
+offset_bottom = -760.0
+text = "Spike wall descends and begins chasing player here"
+
 [node name="Label16" type="Label" parent="Delete LATER"]
 offset_left = 8339.0
 offset_top = -985.0
@@ -158,14 +100,6 @@ offset_bottom = -910.0
 text = "Swinging platform here that goes from one side to the other. 
 Shaped like a claw, (think of fire pit scene from toy story 3)
 "
-
-[node name="Label" type="Label" parent="Delete LATER/Label16"]
-layout_mode = 0
-offset_left = -1894.0
-offset_top = 202.0
-offset_right = -1497.0
-offset_bottom = 225.0
-text = "Spike wall descends and begins chasing player here"
 
 [node name="TEMP DEATH BOX" parent="." instance=ExtResource("8_dgo5n")]
 position = Vector2(4367, -127)
@@ -273,3 +207,6 @@ position = Vector2(1538, 33)
 
 [node name="Spring" parent="Springs" instance=ExtResource("14_plxt6")]
 position = Vector2(652, 208)
+
+[node name="Spring" parent="." instance=ExtResource("14_plxt6")]
+position = Vector2(2212, -576)
