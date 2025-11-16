@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 CheckpointManager="*res://Scripts/Managers/checkpointManager.gd"
+BeatManager="*res://Scripts/Managers/beat_manager.gd"
 
 [display]
 

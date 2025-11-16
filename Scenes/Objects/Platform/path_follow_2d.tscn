@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5ixcin3rvvwq"]
+
+[ext_resource type="Script" uid="uid://cvu8he3q8j1hm" path="res://Scripts/objects/platformFollow.gd" id="1_1mdc7"]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+script = ExtResource("1_1mdc7")
