@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfu0iwx6p66rw"]
+
+[ext_resource type="Script" uid="uid://boui2ickrpaw" path="res://Scripts/objects/turret.gd" id="1_jnmbf"]
+[ext_resource type="PackedScene" uid="uid://dg2wxwqucn12u" path="res://Scenes/Objects/Bullet.tscn" id="2_3snqa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3snqa"]
+
+[node name="Turret" type="Node2D"]
+script = ExtResource("1_jnmbf")
+bullet_scene = ExtResource("2_3snqa")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3snqa")
+
+[node name="Head" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="Head"]
+
+[node name="Line2D" type="Line2D" parent="Head"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Head"]
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

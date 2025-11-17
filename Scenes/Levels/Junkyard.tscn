@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://dg4i4ki85xwdj"]
+[gd_scene load_steps=16 format=4 uid="uid://dg4i4ki85xwdj"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
+[ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
 [ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Ability Pickups/CymbalsPickup.tscn" id="2_yfloh"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="3_y0tkb"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="4_yfloh"]
@@ -16,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ceuvj4j0nv0n8" path="res://Scenes/Objects/Spring.tscn" id="14_plxt6"]
 
 [node name="Junkyard" type="Node2D"]
+script = ExtResource("1_x2u4r")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(1, 0)
@@ -203,10 +205,13 @@ position = Vector2(11824, -607)
 [node name="Checkpoint1" parent="Checkpoints" instance=ExtResource("5_y0tkb")]
 position = Vector2(1538, 33)
 
+[node name="Area2D4" parent="Checkpoints" instance=ExtResource("5_y0tkb")]
+position = Vector2(509, 209)
+
 [node name="Springs" type="Node" parent="."]
 
 [node name="Spring" parent="Springs" instance=ExtResource("14_plxt6")]
 position = Vector2(652, 208)
 
-[node name="Spring" parent="." instance=ExtResource("14_plxt6")]
+[node name="Spring2" parent="Springs" instance=ExtResource("14_plxt6")]
 position = Vector2(2212, -576)

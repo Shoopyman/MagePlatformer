@@ -1,0 +1,101 @@
+extends Node2D
+
+enum TurretState{
+	Scanning,
+	Attack,
+	Recharging,
+	Broken
+}
+
+#Duration for Attack/Recharge
+@export var firing_time = .5
+@export var recharge_time = 1
+
+#Vars for bullets
+@export var bullet_scene: PackedScene
+@export var bullet_speed := 400.0
+
+#Grab refrences to nodes needed
+
+@onready var animations = $Animations
+@onready var raycast = $Head/RayCast2D
+@onready var line = $Head/Line2D
+
+#Var for if player dashed into turrets
+var player_inside: Node2D = null
+
+#Default State  
+var current_state: TurretState = TurretState.Scanning
+var state_timer: float = 0.0
+
+#Function to change between the states of the turrets
+func change_state(new_state: TurretState):
+	current_state = new_state
+	match current_state:
+		TurretState.Scanning:
+			animations.play('scanning')
+			line.visible = true
+		TurretState.Attack:
+			animations.play('attack')
+			state_timer = firing_time
+			line.visible = false
+		TurretState.Recharging:
+			animations.play('recharging')
+			state_timer = recharge_time
+			line.visible= false
+		TurretState.Broken:
+			animations.play('broken')
+			# Maybe need state timer here
+
+
+func _physics_process(delta: float) -> void:
+	if current_state != TurretState.Scanning:
+		return
+	# Fire when the Player intersects the raycast.
+	_check_break()
+	var collider = raycast.get_collider()
+	if collider and collider.is_in_group('player'):
+		change_state(TurretState.Attack)
+
+# Count down the timers and transition states when appropriate
+func _process(delta: float) -> void:
+	match current_state:
+		TurretState.Attack:
+			fireBullets()
+			state_timer -= delta
+			if state_timer <= 0.0:
+				change_state(TurretState.Recharging)
+		TurretState.Recharging:
+			state_timer -= delta
+			if state_timer <= 0.0:
+				change_state(TurretState.Scanning)
+
+#Fires bullets at player's position when collied with raycast
+func fireBullets():
+	var collider = raycast.get_collider()
+	if collider == null:
+		return
+	if not collider.is_in_group('player') :
+		return
+	
+	# Get player position when collided with raycast
+	var target_pos = collider.global_position
+	
+	var bullet = bullet_scene.instantiate()
+	get_tree().current_scene.add_child(bullet)
+	
+	# Get direction to fire toward
+	var direction = (target_pos - global_position).normalized()
+
+	# Tell bullet what direction to move
+	bullet.direction = direction
+	bullet.speed = bullet_speed
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		player_inside = body
+		_check_break() #
+		
+func _check_break() -> void:
+	if player_inside and (player_inside.is_dashing() or player_inside.is_slamming()):
+		current_state = TurretState.Broken
