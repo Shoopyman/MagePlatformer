@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dg4i4ki85xwdj"]
+[gd_scene load_steps=17 format=4 uid="uid://dg4i4ki85xwdj"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
 [ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dloyktlfuoply" path="res://Scenes/Objects/Crusher.tscn" id="12_uae6t"]
 [ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="13_ky3da"]
 [ext_resource type="PackedScene" uid="uid://ceuvj4j0nv0n8" path="res://Scenes/Objects/Spring.tscn" id="14_plxt6"]
+[ext_resource type="PackedScene" uid="uid://cfu0iwx6p66rw" path="res://Scenes/Bosses/Junkyard_Boss/Turret.tscn" id="16_afpsc"]
 
 [node name="Junkyard" type="Node2D"]
 script = ExtResource("1_x2u4r")
@@ -215,3 +216,9 @@ position = Vector2(652, 208)
 
 [node name="Spring2" parent="Springs" instance=ExtResource("14_plxt6")]
 position = Vector2(2212, -576)
+
+[node name="Turret" parent="." instance=ExtResource("16_afpsc")]
+position = Vector2(12480, -606)
+
+[node name="Turret2" parent="." instance=ExtResource("16_afpsc")]
+position = Vector2(1028, 33)

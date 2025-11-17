@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfu0iwx6p66rw"]
+[gd_scene load_steps=5 format=3 uid="uid://cfu0iwx6p66rw"]
 
 [ext_resource type="Script" uid="uid://boui2ickrpaw" path="res://Scripts/objects/turret.gd" id="1_jnmbf"]
 [ext_resource type="PackedScene" uid="uid://dg2wxwqucn12u" path="res://Scenes/Objects/Bullet.tscn" id="2_3snqa"]
+[ext_resource type="Texture2D" uid="uid://1rmuy40qo006" path="res://art/mainCharacter.png" id="3_8e2ux"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3snqa"]
 
@@ -17,10 +18,12 @@ shape = SubResource("RectangleShape2D_3snqa")
 [node name="Head" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="Head"]
+target_position = Vector2(-51, 0)
 
 [node name="Line2D" type="Line2D" parent="Head"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Head"]
+texture = ExtResource("3_8e2ux")
 
 [node name="Animations" type="AnimationPlayer" parent="."]
 

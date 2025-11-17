@@ -8,8 +8,9 @@ enum TurretState{
 }
 
 #Duration for Attack/Recharge
-@export var firing_time = .5
+@export var fire_timer = .5
 @export var recharge_time = 1
+@export var fire_interval = .2
 
 #Vars for bullets
 @export var bullet_scene: PackedScene
@@ -37,7 +38,7 @@ func change_state(new_state: TurretState):
 			line.visible = true
 		TurretState.Attack:
 			animations.play('attack')
-			state_timer = firing_time
+			state_timer = fire_timer
 			line.visible = false
 		TurretState.Recharging:
 			animations.play('recharging')
@@ -55,19 +56,27 @@ func _physics_process(delta: float) -> void:
 	_check_break()
 	var collider = raycast.get_collider()
 	if collider and collider.is_in_group('player'):
+		print("Ready to fire Bullets")
 		change_state(TurretState.Attack)
 
 # Count down the timers and transition states when appropriate
 func _process(delta: float) -> void:
 	match current_state:
 		TurretState.Attack:
-			fireBullets()
+			fire_timer -= delta
+			if fire_timer <= 0.0:
+				fireBullets()
+				fire_timer = fire_interval
+
 			state_timer -= delta
 			if state_timer <= 0.0:
+				print("Recharging")
 				change_state(TurretState.Recharging)
+				fire_timer = 0.0  # reset for next Attack
 		TurretState.Recharging:
 			state_timer -= delta
 			if state_timer <= 0.0:
+				print("Looking for player")
 				change_state(TurretState.Scanning)
 
 #Fires bullets at player's position when collied with raycast
@@ -79,10 +88,12 @@ func fireBullets():
 		return
 	
 	# Get player position when collided with raycast
+	print("Firing Bullets")
 	var target_pos = collider.global_position
 	
 	var bullet = bullet_scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
+	bullet.global_position = global_position
 	
 	# Get direction to fire toward
 	var direction = (target_pos - global_position).normalized()
@@ -90,6 +101,8 @@ func fireBullets():
 	# Tell bullet what direction to move
 	bullet.direction = direction
 	bullet.speed = bullet_speed
+	
+	print("Bullet going this direction")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -97,5 +110,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		_check_break() #
 		
 func _check_break() -> void:
-	if player_inside and (player_inside.is_dashing() or player_inside.is_slamming()):
-		current_state = TurretState.Broken
+	if player_inside and (player_inside.is_dashing()):
+		change_state(TurretState.Broken)

@@ -5,3 +5,4 @@ var speed := 400.0
 
 func _physics_process(delta):
 	global_position += direction * speed * delta
+	

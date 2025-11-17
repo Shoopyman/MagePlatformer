@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg2wxwqucn12u"]
+[gd_scene load_steps=4 format=3 uid="uid://dg2wxwqucn12u"]
 
 [ext_resource type="Script" uid="uid://cxnc2owancexy" path="res://Scripts/objects/bullet.gd" id="1_ss5a3"]
+[ext_resource type="Texture2D" uid="uid://b5p4ght4ung6l" path="res://art/objects/box.png" id="2_nl5gi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8u8oc"]
 
@@ -11,3 +12,4 @@ script = ExtResource("1_ss5a3")
 shape = SubResource("RectangleShape2D_8u8oc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nl5gi")
