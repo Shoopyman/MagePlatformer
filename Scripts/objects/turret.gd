@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	if current_state != TurretState.Scanning:
 		return
 	# Fire when the Player intersects the raycast.
-	_check_break()
+	
 	var collider = raycast.get_collider()
 	if collider and collider.is_in_group('player'):
 		print("Ready to fire Bullets")
@@ -104,11 +104,5 @@ func fireBullets():
 	
 	print("Bullet going this direction")
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		player_inside = body
-		_check_break() #
+
 		
-func _check_break() -> void:
-	if player_inside and (player_inside.is_dashing()):
-		change_state(TurretState.Broken)

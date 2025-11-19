@@ -20,12 +20,13 @@ func respawn_player() -> void:
 		player.global_position = current_checkpoint_position
 
 func load_saved_progression():
-	if current_scene_progression == "":
-		print("No saved scene progression!")
+	if current_scene_progression == null:
+		get_tree().reload_current_scene()
 		return
 
 	# Change to that scene
-	get_tree().change_scene_to_file(current_scene_progression)
+	else: 
+		get_tree().change_scene_to_file(current_scene_progression)
 
 func reset_to_default():
 	print("Checkpoint reset to default:", default_spawn_position)
