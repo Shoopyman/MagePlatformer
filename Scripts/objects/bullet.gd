@@ -10,6 +10,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("player")):
-		CheckpointManager.load_saved_progression()
+		pass
+		#CheckpointManager.load_saved_progression()
 	else:
 		queue_free()

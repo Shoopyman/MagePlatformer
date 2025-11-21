@@ -111,13 +111,18 @@ func _process(delta):
 	$Visual.position = interpolated_pos - global_position
 	
 func is_dashing() -> bool:
-	return ability_manager.get_ability("trombone")
+	if ability_manager.get_ability("trombone"):
+		return ability_manager.current_ability.isDashing()
+	else:
+		return false
 
 func is_slamming() -> bool:
-	return ability_manager.get_ability("tuba")
+	if ability_manager.get_ability("tuba"):
+		return ability_manager.current_ability.isDashing()
+	else:
+		return false
 	
 func bounce(bounceHeight: float):
-	print("hi")
 	velocity.y -= bounceHeight
 	bounce_timer = .2
 	

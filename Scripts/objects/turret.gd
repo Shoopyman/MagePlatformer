@@ -8,8 +8,8 @@ enum TurretState{
 }
 
 #Duration for Attack/Recharge
-@export var fire_timer = .5
-@export var recharge_time = 1
+@export var fire_timer = .7
+@export var recharge_time = 2.5
 @export var fire_interval = .2
 
 #Vars for bullets
@@ -19,15 +19,16 @@ enum TurretState{
 #Grab refrences to nodes needed
 
 @onready var animations = $Animations
-@onready var raycast = $Head/RayCast2D
-@onready var line = $Head/Line2D
+@onready var raycast = $TurretHead/RayCast2D
+@onready var line = $TurretHead/Line2D
+@onready var turretHead = $TurretHead
 
 #Var for if player dashed into turrets
 var player_inside: Node2D = null
 
 #Default State  
 var current_state: TurretState = TurretState.Scanning
-var state_timer: float = 0.0
+var state_timer: float = 5.0
 
 #Function to change between the states of the turrets
 func change_state(new_state: TurretState):
@@ -45,15 +46,16 @@ func change_state(new_state: TurretState):
 			state_timer = recharge_time
 			line.visible= false
 		TurretState.Broken:
+			pass
 			animations.play('broken')
 			# Maybe need state timer here
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if current_state != TurretState.Scanning:
 		return
-	# Fire when the Player intersects the raycast.
 	
+	# Fire when the Player intersects the raycast.
 	var collider = raycast.get_collider()
 	if collider and collider.is_in_group('player'):
 		print("Ready to fire Bullets")
@@ -78,6 +80,8 @@ func _process(delta: float) -> void:
 			if state_timer <= 0.0:
 				print("Looking for player")
 				change_state(TurretState.Scanning)
+		TurretState.Broken:
+			print("Broken Turret")
 
 #Fires bullets at player's position when collied with raycast
 func fireBullets():
@@ -93,7 +97,7 @@ func fireBullets():
 	
 	var bullet = bullet_scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
-	bullet.global_position = global_position
+	bullet.global_position = turretHead.global_position
 	
 	# Get direction to fire toward
 	var direction = (target_pos - global_position).normalized()
