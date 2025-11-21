@@ -7,47 +7,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3snqa"]
 
-[sub_resource type="Animation" id="Animation_7yicx"]
-resource_name = "scanning"
-length = 4.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TurretHead:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 3.03, 4.05),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.579449, -0.581195, 0.0]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
-}
-
-[sub_resource type="Animation" id="Animation_ypih2"]
-resource_name = "broken"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TurretHead:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -0.773181]
-}
+[sub_resource type="Animation" id="Animation_pbqu6"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_kfiig"]
 resource_name = "attack"
@@ -64,6 +25,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, -12), Vector2(3, -12), Vector2(0, -12)]
+}
+
+[sub_resource type="Animation" id="Animation_ypih2"]
+resource_name = "broken"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurretHead:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.773181]
 }
 
 [sub_resource type="Animation" id="Animation_tgnak"]
@@ -94,8 +71,9 @@ tracks/1/keys = {
 "values": [Vector2(0, -12), Vector2(-1, -11), Vector2(-3, -13), Vector2(-2, -17), Vector2(0, -18), Vector2(0, -18), Vector2(0, -15), Vector2(1, -18), Vector2(-2, -18), Vector2(7.15256e-07, -15), Vector2(-1, -13), Vector2(0, -12)]
 }
 
-[sub_resource type="Animation" id="Animation_pbqu6"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_7yicx"]
+resource_name = "scanning"
+length = 4.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -103,22 +81,21 @@ tracks/0/path = NodePath("TurretHead:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1, 3.03, 4.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.579449, -0.581195, 0.0]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TurretHead:position")
+tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -18)]
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ypih2"]
@@ -140,12 +117,12 @@ bullet_scene = ExtResource("2_3snqa")
 shape = SubResource("RectangleShape2D_3snqa")
 
 [node name="TurretHead" type="Sprite2D" parent="."]
-position = Vector2(0, -18)
+position = Vector2(0, -12)
 texture = ExtResource("4_ypih2")
 
 [node name="RayCast2D" type="RayCast2D" parent="TurretHead"]
 position = Vector2(-8, -1)
-target_position = Vector2(-408, -1)
+target_position = Vector2(-1042, 0)
 
 [node name="Line2D" type="Line2D" parent="TurretHead"]
 position = Vector2(0, 12)

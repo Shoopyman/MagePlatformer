@@ -1,11 +1,15 @@
 extends Area2D
 
 var player_inside: Node2D = null
+var spikeWall_inside: Node2D = null
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_inside = body
 		_check_break() # immediate check in case already slamming
+	elif body.is_in_group("spikeWall"):
+		spikeWall_inside = body
+		_check_break()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body == player_inside:
@@ -16,6 +20,9 @@ func _physics_process(_delta: float) -> void:
 
 func _check_break() -> void:
 	if player_inside and (player_inside.is_dashing() or player_inside.is_slamming()):
+		_break_box()
+	elif  spikeWall_inside:
+		print("SpikeWallDestroyingBox")
 		_break_box()
 
 func _break_box():
