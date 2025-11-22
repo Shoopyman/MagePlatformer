@@ -11,6 +11,7 @@ func _ready()->void:
 	boss.set_process(false)
 	boss.connect("boss_defeated", Callable(self, "_on_boss_defeated"))
 	spikeWall.hide()
+	animations.play('crane-swing')
 #Add Area 2d for when spike wall to descend
 #Add area 2d to begin cutscene of boss intro
 
