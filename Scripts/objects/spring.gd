@@ -2,7 +2,7 @@ extends Area2D
 
 # constant values
 @export var bounceHeight = 600
-@export var wait_time := 3.0 # Time Until Spring activates after cycle complete
+@export var wait_time := 2.0 # Time Until Spring activates after cycle complete
 
 # Nodes
 @onready var timer: Timer = $Timer
@@ -21,7 +21,7 @@ func _ready():
 	timer.start()
 	sprite.play("Idle")
 		
-func _physics_process(delta):
+func _physics_process(_delta):
 	match state:
 		State.WAITING:
 			sprite.play("Idle")
@@ -33,7 +33,7 @@ func _on_body_entered(body: Node2D) -> void:
 	current_body = body
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	objectInArea = false
 	current_body = null
 
