@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dg4i4ki85xwdj"]
+[gd_scene load_steps=18 format=4 uid="uid://dg4i4ki85xwdj"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
 [ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
@@ -346,87 +346,28 @@ position = Vector2(652, 208)
 [node name="Spring2" parent="Springs" instance=ExtResource("14_plxt6")]
 position = Vector2(2212, -576)
 
-[node name="Spring3" parent="Springs" instance=ExtResource("14_plxt6")]
-position = Vector2(8036, -576)
+[node name="DesertGroundLarge4" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(2360, 151)
+texture = ExtResource("15_x2u4r")
 
-[node name="Boss Room" type="Node" parent="."]
+[node name="DesertGroundLarge3" type="Sprite2D" parent="."]
+position = Vector2(1278, 151)
+texture = ExtResource("15_x2u4r")
 
-[node name="Engineer" parent="Boss Room" instance=ExtResource("16_afpsc")]
-position = Vector2(12722, -603)
+[node name="DesertGroundLarge2" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(-934, 329)
+texture = ExtResource("15_x2u4r")
 
-[node name="BossSpawnCutscene" type="Area2D" parent="Boss Room"]
-position = Vector2(12115, -651.722)
+[node name="DesertGroundLarge" type="Sprite2D" parent="."]
+position = Vector2(148, 329)
+texture = ExtResource("15_x2u4r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss Room/BossSpawnCutscene"]
-position = Vector2(-5.04688, -1.2782)
-shape = SubResource("RectangleShape2D_afpsc")
+[node name="SpringJump1" type="Sprite2D" parent="."]
+position = Vector2(759, 36)
+texture = ExtResource("16_afpsc")
 
-[node name="SpikeWallFlag" type="Area2D" parent="."]
-position = Vector2(6663.26, -610.778)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeWallFlag"]
-position = Vector2(4.55713, -18.6665)
-shape = SubResource("RectangleShape2D_aodkb")
-
-[node name="SpikeWall" parent="." groups=["spikeWall"] instance=ExtResource("17_jjqte")]
-position = Vector2(6538, -695)
-
-[node name="SpikeWallSequeunceBoxes" type="Node" parent="."]
-
-[node name="Node2D" parent="SpikeWallSequeunceBoxes" instance=ExtResource("9_51y5g")]
-position = Vector2(6809, -568)
-
-[node name="Node2D2" parent="SpikeWallSequeunceBoxes" instance=ExtResource("9_51y5g")]
-position = Vector2(6809, -584)
-
-[node name="Node2D3" parent="SpikeWallSequeunceBoxes" instance=ExtResource("9_51y5g")]
-position = Vector2(6809, -600)
-
-[node name="Node2D4" parent="SpikeWallSequeunceBoxes" instance=ExtResource("9_51y5g")]
-position = Vector2(6809, -616)
-
-[node name="Node2D5" parent="SpikeWallSequeunceBoxes" instance=ExtResource("9_51y5g")]
-position = Vector2(6809, -632)
-
-[node name="Node2D6" parent="SpikeWallSequeunceBoxes" instance=ExtResource("9_51y5g")]
-position = Vector2(6809, -648)
-
-[node name="Node2D7" parent="SpikeWallSequeunceBoxes" instance=ExtResource("9_51y5g")]
-position = Vector2(6809, -664)
-
-[node name="Crane" type="Node2D" parent="."]
-
-[node name="Crane-Chain2" type="Sprite2D" parent="Crane"]
-position = Vector2(8570, -693)
-texture = ExtResource("19_w3hsh")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Crane/Crane-Chain2"]
-visible = false
-position = Vector2(-8566.2, 692.5)
-polygon = PackedVector2Array(8464, -775, 8464, -775, 8467, -775, 8467, -774, 8468, -774, 8468, -773, 8469, -773, 8469, -772, 8470, -772, 8470, -771, 8471, -771, 8471, -770, 8472, -770, 8472, -769, 8474, -769, 8474, -768, 8475, -768, 8475, -767, 8477, -767, 8477, -766, 8478, -766, 8478, -766, 8478, -765, 8480, -765, 8480, -764, 8481, -764, 8481, -763, 8483, -763, 8483, -762, 8486, -762, 8486, -761, 8488, -761, 8488, -760, 8490, -760, 8490, -759, 8492, -759, 8492, -758, 8495, -758, 8495, -757, 8498, -757, 8498, -756, 8498, -756, 8502, -756, 8502, -755, 8505, -755, 8505, -754, 8510, -754, 8510, -753, 8514, -753, 8514, -752, 8518, -752, 8518, -751, 8595, -751, 8595, -752, 8599, -752, 8599, -753, 8603, -753, 8603, -754, 8607, -754, 8607, -755, 8609, -755, 8609, -756, 8613, -756, 8613, -757, 8617, -757, 8617, -758, 8622, -758, 8622, -759, 8626, -759, 8626, -760, 8626, -760, 8630, -760, 8630, -761, 8634, -761, 8634, -762, 8638, -762, 8638, -763, 8640, -763, 8640, -764, 8643, -764, 8643, -764, 8643, -765, 8645, -765, 8645, -757, 8644, -757, 8644, -755, 8643, -755, 8643, -753, 8642, -753, 8642, -751, 8642, -751, 8641, -751, 8641, -749, 8640, -749, 8640, -749, 8640, -747, 8639, -747, 8639, -745, 8638, -745, 8638, -743, 8637, -743, 8637, -742, 8636, -742, 8636, -740, 8635, -740, 8635, -739, 8633, -739, 8633, -738, 8632, -738, 8632, -737, 8632, -737, 8630, -737, 8630, -735, 8627, -735, 8627, -735, 8627, -734, 8625, -734, 8625, -733, 8624, -733, 8624, -732, 8614, -732, 8614, -731, 8602, -731, 8602, -730, 8585, -730, 8585, -731, 8570, -731, 8570, -732, 8562, -732, 8562, -733, 8553, -733, 8553, -734, 8543, -734, 8543, -735, 8540, -735, 8540, -736, 8533, -736, 8533, -737, 8529, -737, 8529, -738, 8525, -738, 8525, -739, 8518, -739, 8518, -740, 8515, -740, 8515, -741, 8512, -741, 8511, -741, 8511, -742, 8508, -742, 8508, -743, 8502, -743, 8502, -743, 8502, -744, 8500, -744, 8500, -745, 8497, -745, 8497, -746, 8492, -746, 8492, -747, 8490, -748, 8490, -747, 8491, -747, 8489, -748, 8487, -748, 8487, -749, 8484, -749, 8484, -750, 8482, -750, 8482, -751, 8481, -751, 8481, -752, 8479, -752, 8479, -753, 8477, -753, 8477, -754, 8476, -754, 8476, -755, 8474, -755, 8474, -756, 8473, -756, 8473, -757, 8472, -757, 8472, -758, 8471, -758, 8471, -760, 8470, -760, 8470, -760, 8470, -761, 8469, -761, 8469, -762, 8469, -762, 8468, -762, 8468, -765, 8467, -765, 8467, -766, 8466, -766, 8466, -769, 8466, -769, 8466, -769, 8466, -767, 8466, -766, 8466, -769, 8465, -772, 8464, -772)
-
-[node name="Crane-Chain" type="Sprite2D" parent="Crane"]
-position = Vector2(8570, -693)
-texture = ExtResource("19_w3hsh")
-
-[node name="Crane-Head" type="Sprite2D" parent="Crane"]
-top_level = true
-visibility_layer = 3
-position = Vector2(8570, -598)
-texture = ExtResource("19_kw0sq")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Crane"]
-position = Vector2(8555, -745)
-script = ExtResource("20_aenrt")
-
-[node name="Crean-Trash" type="Sprite2D" parent="Crane/StaticBody2D"]
-show_behind_parent = true
-position = Vector2(15.8037, 14.4996)
-texture = ExtResource("20_kw0sq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crane/StaticBody2D"]
-position = Vector2(3, -11)
-shape = SubResource("RectangleShape2D_kw0sq")
-
-[connection signal="body_entered" from="Boss Room/BossSpawnCutscene" to="." method="_on_boss_spawn_cutscene_body_entered"]
-[connection signal="body_entered" from="SpikeWallFlag" to="." method="_on_spike_wall_flag_body_entered"]
+[node name="TrashPile1" type="Sprite2D" parent="."]
+position = Vector2(9, 200)
+texture = ExtResource("17_jjqte")
