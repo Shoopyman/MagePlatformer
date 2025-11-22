@@ -38,5 +38,5 @@ func _on_quit_pressed() -> void:
 	print("quit")
 	get_tree().quit()
 	
-func _process(_delta):
+func _process(delta):
 	testEsc()

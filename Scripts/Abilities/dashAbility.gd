@@ -49,6 +49,3 @@ func update(player, delta):
 func on_equipped(player):
 	var dash_available = true
 	print("equipped")
-	
-func isDashing():
-	return is_dashing

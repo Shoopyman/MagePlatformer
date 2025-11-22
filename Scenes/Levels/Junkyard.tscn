@@ -1,7 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://dg4i4ki85xwdj"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
-[ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
 [ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Ability Pickups/CymbalsPickup.tscn" id="2_yfloh"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="3_y0tkb"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="4_yfloh"]
@@ -15,139 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://dloyktlfuoply" path="res://Scenes/Objects/Crusher.tscn" id="12_uae6t"]
 [ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="13_ky3da"]
 [ext_resource type="PackedScene" uid="uid://ceuvj4j0nv0n8" path="res://Scenes/Objects/Spring.tscn" id="14_plxt6"]
-[ext_resource type="PackedScene" uid="uid://dwybafb7q1xds" path="res://Scenes/Bosses/Junkyard_Boss/Engineer.tscn" id="16_afpsc"]
-[ext_resource type="PackedScene" uid="uid://dxq4cb7hq4old" path="res://Scenes/Objects/spikeWall.tscn" id="17_jjqte"]
-[ext_resource type="Texture2D" uid="uid://cn84m0c3v18so" path="res://art/objects/crane/pixil-frame-0 (5).png" id="19_kw0sq"]
-[ext_resource type="Texture2D" uid="uid://clgw7d7t4jrwq" path="res://art/objects/crane/pixil-frame-0 (7).png" id="19_w3hsh"]
-[ext_resource type="Script" uid="uid://ckq05pyi2i45h" path="res://Scripts/objects/crane.gd" id="20_aenrt"]
-[ext_resource type="Texture2D" uid="uid://cnkyknl3lc0ch" path="res://art/objects/crane/pixil-frame-0 (9).png" id="20_kw0sq"]
-
-[sub_resource type="Animation" id="Animation_wuiqu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Crane/Crane-Head:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Crane/Crane-Head:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8570, -598)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Crane/Crane-Chain:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8570, -693)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Crane/Crane-Chain:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_aenrt"]
-resource_name = "crane-swing"
-length = 12.044
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Crane/Crane-Head:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Crane/Crane-Head:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8570, -598)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Crane/Crane-Chain:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0217, 0.0402, 0.0618, 0.0914, 0.1161, 0.1415, 0.162, 0.1839, 0.2064, 0.2246, 0.2491, 0.2704, 0.42, 0.86, 1.33, 1.57, 2.1, 2.33, 2.64, 3.01, 3.32, 4.05, 5, 5.46, 6.03, 6.24, 6.46, 6.67, 7.06, 7.52, 7.98, 8.25, 8.41, 9.04, 9.05325, 9.22325, 9.64325, 10.2733, 11.0033, 11.2233, 11.4533, 12.04),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(8570, -693), Vector2(8567, -693), Vector2(8564, -693), Vector2(8561, -693), Vector2(8557, -693), Vector2(8554, -693), Vector2(8551, -693), Vector2(8548, -693), Vector2(8546, -693), Vector2(8543, -693), Vector2(8540, -693), Vector2(8538, -693), Vector2(8534, -693), Vector2(8515, -694), Vector2(8457, -702), Vector2(8399, -719), Vector2(8377, -731), Vector2(8318, -763), Vector2(8295, -780), Vector2(8264, -805), Vector2(8233, -836), Vector2(8261, -809), Vector2(8334, -754), Vector2(8443, -708), Vector2(8499, -697), Vector2(8570, -693), Vector2(8597, -694), Vector2(8624, -699), Vector2(8650, -704), Vector2(8698, -717), Vector2(8751, -741), Vector2(8801, -771), Vector2(8828, -791), Vector2(8843, -805), Vector2(8896, -863), Vector2(8894, -861), Vector2(8881, -844), Vector2(8844, -806), Vector2(8782, -757), Vector2(8698, -717), Vector2(8672, -709), Vector2(8643, -702), Vector2(8570, -693)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Crane/Crane-Chain:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 3, 6.03, 9.03, 12.04),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.884882, 0.0, -0.884882, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ixbka"]
-_data = {
-&"RESET": SubResource("Animation_wuiqu"),
-&"crane-swing": SubResource("Animation_aenrt")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_afpsc"]
-size = Vector2(142.953, 113)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aodkb"]
-size = Vector2(122.371, 137.111)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw0sq"]
-size = Vector2(180, 40)
+[ext_resource type="Texture2D" uid="uid://xainptpsvom1" path="res://art/JunkyardArt/desertGroundLarge.png" id="15_x2u4r"]
+[ext_resource type="Texture2D" uid="uid://denbuxarwj8af" path="res://art/JunkyardArt/springJump1.png" id="16_afpsc"]
+[ext_resource type="Texture2D" uid="uid://blwevcw5cou5s" path="res://art/JunkyardArt/trashPile1.png" id="17_jjqte"]
 
 [node name="Junkyard" type="Node2D"]
-script = ExtResource("1_x2u4r")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ixbka")
-}
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(1, 0)
@@ -163,13 +34,6 @@ player_path = NodePath("../Player")
 
 [node name="NPC" parent="." instance=ExtResource("6_bfxy4")]
 position = Vector2(2060, -569)
-
-[node name="EndOfLevel" parent="." instance=ExtResource("11_xfyea")]
-position = Vector2(13701, -607)
-
-[node name="TEMP DEATH BOX" parent="." instance=ExtResource("8_dgo5n")]
-position = Vector2(4515, -413)
-scale = Vector2(1.52, 1)
 
 [node name="Delete LATER" type="Node" parent="."]
 
@@ -240,6 +104,10 @@ text = "Swinging platform here that goes from one side to the other.
 Shaped like a claw, (think of fire pit scene from toy story 3)
 "
 
+[node name="TEMP DEATH BOX" parent="." instance=ExtResource("8_dgo5n")]
+position = Vector2(4367, -127)
+scale = Vector2(1.52, 1)
+
 [node name="Boxes" type="Node" parent="."]
 
 [node name="Node2D" parent="Boxes" instance=ExtResource("9_51y5g")]
@@ -259,6 +127,9 @@ position = Vector2(5881, -631)
 
 [node name="Node2D6" parent="Boxes" instance=ExtResource("9_51y5g")]
 position = Vector2(5881, -646)
+
+[node name="EndOfLevel" parent="." instance=ExtResource("11_xfyea")]
+position = Vector2(13701, -607)
 
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 
@@ -313,7 +184,7 @@ position = Vector2(3227, -570)
 position = Vector2(1585, 32)
 
 [node name="AbilityPickup9" parent="Abilities" instance=ExtResource("7_mkn5q")]
-position = Vector2(12007, -606)
+position = Vector2(11888, -602)
 
 [node name="Checkpoints" type="Node" parent="."]
 
@@ -330,20 +201,17 @@ position = Vector2(5970, -575)
 position = Vector2(9581, -607)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("5_y0tkb")]
-position = Vector2(11962, -607)
+position = Vector2(11824, -607)
 
 [node name="Checkpoint1" parent="Checkpoints" instance=ExtResource("5_y0tkb")]
 position = Vector2(1538, 33)
-
-[node name="Area2D4" parent="Checkpoints" instance=ExtResource("5_y0tkb")]
-position = Vector2(509, 209)
 
 [node name="Springs" type="Node" parent="."]
 
 [node name="Spring" parent="Springs" instance=ExtResource("14_plxt6")]
 position = Vector2(652, 208)
 
-[node name="Spring2" parent="Springs" instance=ExtResource("14_plxt6")]
+[node name="Spring" parent="." instance=ExtResource("14_plxt6")]
 position = Vector2(2212, -576)
 
 [node name="Spring3" parent="Springs" instance=ExtResource("14_plxt6")]
