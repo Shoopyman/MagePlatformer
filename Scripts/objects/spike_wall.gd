@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var direction = 1 #Direction of spike wall movinf
-var speed = 100 #How fast spike wall moves
+var speed = 150 #How fast spike wall moves
 var active: bool = false
 
 func _ready() -> void:
