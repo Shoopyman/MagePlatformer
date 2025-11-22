@@ -57,4 +57,4 @@ func _on_timer_timeout():
 
 func _on_area_2d_body_entered(body: Node2D):
 	if body.is_in_group("player"):
-		CheckpointManager.load_saved_progression()
+		CheckpointManager.respawn_player()
