@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://vguwotrmwrxp" path="res://Scripts/Abilities/dashAbility.gd" id="3_e80uo"]
 [ext_resource type="Script" uid="uid://d3cv5n13qgmla" path="res://Scripts/Abilities/double_jump.gd" id="3_kne1u"]
 [ext_resource type="Script" uid="uid://dhw2vwj3rejvx" path="res://Scripts/Abilities/wallJumpAbility.gd" id="4_cxr5p"]
-[ext_resource type="Script" uid="uid://44yscbb408yf" path="res://Scripts/Abilities/slamAbility.gd" id="6_t26db"]
+[ext_resource type="Script" path="res://Scripts/Abilities/slamAbility.gd" id="6_t26db"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kpjcp"]
 points = PackedVector2Array(-5, 15, -5, 0, 0, -12, 5, 0, 5, 15)
