@@ -139,12 +139,13 @@ rotates = false
 [node name="PlatformBody" parent="Node2D/PathFollow2D" instance=ExtResource("20_wtv56")]
 
 [node name="MoveText" type="Label" parent="."]
-offset_left = -88.0
-offset_top = 23.0
-offset_right = 205.0
-offset_bottom = 72.0
+offset_left = -86.0
+offset_top = 7.0
+offset_right = 207.0
+offset_bottom = 82.0
 text = "Use the left arrow key to move left
-Use the Right arrow key to move right"
+Use the Right arrow key to move right
+Press E to interact with signs"
 
 [node name="DespawnSign" type="Area2D" parent="."]
 
