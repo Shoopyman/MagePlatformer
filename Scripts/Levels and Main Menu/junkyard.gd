@@ -46,7 +46,7 @@ func _on_test_sign_body_entered(body: Node2D) -> void:
 			{
 				"speaker": "Man",
 				"portrait": "smug",
-				"text": "This is the first message. Make sure that the text wraps properly. Press F to go next."
+				"text": "This is the first message. Make sure that the text wraps properly. Press E to go next."
 			},
 			{
 				"speaker": "Man",

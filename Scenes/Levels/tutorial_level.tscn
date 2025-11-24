@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://l0ckr8va6384"]
+[gd_scene load_steps=24 format=4 uid="uid://l0ckr8va6384"]
 
 [ext_resource type="PackedScene" uid="uid://blnhngp26b6wi" path="res://Scenes/Background/background.tscn" id="1_ibv4f"]
 [ext_resource type="Script" uid="uid://1y0w3off4fxo" path="res://Scripts/Levels and Main Menu/tutorial_level.gd" id="1_w35ah"]
@@ -21,9 +21,16 @@
 [ext_resource type="PackedScene" uid="uid://1pdug1ys861t" path="res://Scenes/Objects/Platform/platformpath.tscn" id="18_ck3nf"]
 [ext_resource type="PackedScene" uid="uid://b5ixcin3rvvwq" path="res://Scenes/Objects/Platform/path_follow_2d.tscn" id="19_w35ah"]
 [ext_resource type="PackedScene" uid="uid://bs6e1utqbt606" path="res://Scenes/Objects/Platform/platform_body.tscn" id="20_wtv56"]
+[ext_resource type="PackedScene" uid="uid://b4ysj3okglx3m" path="res://Scenes/Objects/sign.tscn" id="22_wtv56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtv56"]
+size = Vector2(63, 60)
 
 [node name="Tutorial Level" type="Node2D"]
 script = ExtResource("1_w35ah")
+
+[node name="Basic Control Sign" parent="." instance=ExtResource("22_wtv56")]
+position = Vector2(-81, 157)
 
 [node name="Background" parent="." instance=ExtResource("1_ibv4f")]
 offset = Vector2(0, 180)
@@ -130,3 +137,20 @@ position = Vector2(-137.212, 4.9575)
 rotates = false
 
 [node name="PlatformBody" parent="Node2D/PathFollow2D" instance=ExtResource("20_wtv56")]
+
+[node name="MoveText" type="Label" parent="."]
+offset_left = -86.0
+offset_top = 7.0
+offset_right = 207.0
+offset_bottom = 82.0
+text = "Use the left arrow key to move left
+Use the Right arrow key to move right
+Press E to interact with signs"
+
+[node name="DespawnSign" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DespawnSign"]
+position = Vector2(77.5, 133)
+shape = SubResource("RectangleShape2D_wtv56")
+
+[connection signal="body_shape_entered" from="DespawnSign" to="." method="_on_despawn_sign_body_shape_entered"]

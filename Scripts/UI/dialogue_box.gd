@@ -40,7 +40,7 @@ func draw_dialogue():
 	pause = 0
 
 func _unhandled_input(event):
-	if visible and event.is_action_pressed("ui_next"):
+	if visible and event.is_action_pressed("Interact"):
 		index += 1
 		draw_dialogue()
 
