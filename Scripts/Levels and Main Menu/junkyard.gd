@@ -3,6 +3,7 @@ extends Node2D
 @onready var animations = $AnimationPlayer
 @onready var boss = $"Boss Room/Engineer"
 @onready var spikeWall =$SpikeWall/CharacterBody2D
+@onready var testDialogue = $Camera2D/dialogue1
 
 func _ready()->void:
 	CheckpointManager.respawn_player()
@@ -37,3 +38,24 @@ func _on_spike_wall_flag_body_entered(body: Node2D) -> void:
 		spikeWall.show()
 		spikeWall.active = true
 		
+
+
+func _on_test_sign_body_entered(body: Node2D) -> void:
+	if testDialogue.visible == false:
+		testDialogue.start_dialogue([
+			{
+				"speaker": "Man",
+				"portrait": "smug",
+				"text": "This is the first message. Make sure that the text wraps properly. Press F to go next."
+			},
+			{
+				"speaker": "Man",
+				"portrait": "sad",
+				"text": "This is the second message. Periods and exclamation marks have a slight delay. 67! 67! 67!"
+			},
+			{
+				"speaker": "Man",
+				"portrait": "laugh",
+				"text": "This is the last message. If the dialogue box closes without breaking everything, success!"
+			},
+		]) # Replace with function body.

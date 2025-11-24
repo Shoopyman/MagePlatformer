@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtknkjjlbmpa7"]
+
+[ext_resource type="Script" uid="uid://jra78d6c0po3" path="res://Scripts/UI/dialogue_box.gd" id="1_c67c5"]
+[ext_resource type="Texture2D" uid="uid://cmyta7jodvpbo" path="res://art/UI/dialogueBox.png" id="1_tpmx7"]
+[ext_resource type="Texture2D" uid="uid://olm6vsbtmamy" path="res://art/Portraits/junkyardBossPortraits.png" id="2_obhul"]
+[ext_resource type="FontFile" uid="uid://pjdle0u4t032" path="res://art/Fonts/Game Font.ttf" id="3_obhul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8610a"]
+atlas = ExtResource("2_obhul")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0df3s"]
+atlas = ExtResource("2_obhul")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1spsb"]
+atlas = ExtResource("2_obhul")
+region = Rect2(256, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4x3g"]
+atlas = ExtResource("2_obhul")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uogrq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8610a")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0df3s")
+}],
+"loop": true,
+"name": &"laugh",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1spsb")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4x3g")
+}],
+"loop": true,
+"name": &"smug",
+"speed": 5.0
+}]
+
+[node name="DialogueBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -320.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c67c5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 7.0
+offset_right = 310.0
+offset_bottom = 76.0
+color = Color(0.752941, 0.580392, 0.45098, 1)
+
+[node name="Portrait" type="AnimatedSprite2D" parent="."]
+position = Vector2(276, 44)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_uogrq")
+animation = &"smug"
+
+[node name="Wrapper" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_tpmx7")
+
+[node name="DialogueText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 29.0
+offset_right = 229.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+theme_override_fonts/font = ExtResource("3_obhul")
+autowrap_mode = 2
+
+[node name="NameText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 6.0
+offset_right = 239.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+theme_override_fonts/font = ExtResource("3_obhul")

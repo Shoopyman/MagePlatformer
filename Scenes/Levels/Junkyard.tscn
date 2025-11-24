@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dg4i4ki85xwdj"]
+[gd_scene load_steps=34 format=4 uid="uid://dg4i4ki85xwdj"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
 [ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="5_y0tkb"]
 [ext_resource type="PackedScene" uid="uid://cswc02wnt828d" path="res://Scenes/NPCS/BlackGuy1.tscn" id="6_bfxy4"]
 [ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="7_mkn5q"]
+[ext_resource type="PackedScene" uid="uid://dtknkjjlbmpa7" path="res://Scenes/UI/dialogue_box.tscn" id="8_adk4t"]
 [ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scenes/Objects/DeathBox.tscn" id="8_dgo5n"]
 [ext_resource type="PackedScene" uid="uid://cjtrm40afwx2n" path="res://Scenes/Objects/DestructibleBox.tscn" id="9_51y5g"]
 [ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="10_tocsk"]
@@ -136,6 +137,8 @@ _data = {
 &"crane-swing": SubResource("Animation_aenrt")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adk4t"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afpsc"]
 size = Vector2(142.953, 113)
 
@@ -160,10 +163,18 @@ tile_set = ExtResource("1_euawg")
 
 [node name="Player" parent="." instance=ExtResource("3_y0tkb")]
 position = Vector2(1, 1)
+collision_layer = 3
 
 [node name="Camera2D" parent="." instance=ExtResource("4_yfloh")]
 position = Vector2(-3, -3)
 player_path = NodePath("../Player")
+
+[node name="dialogue1" parent="Camera2D" instance=ExtResource("8_adk4t")]
+z_index = 1
+offset_left = -51.0
+offset_top = 71.0
+offset_right = -51.0
+offset_bottom = 71.0
 
 [node name="NPC" parent="." instance=ExtResource("6_bfxy4")]
 position = Vector2(2060, -569)
@@ -244,6 +255,24 @@ text = "Swinging platform here that goes from one side to the other.
 Shaped like a claw, (think of fire pit scene from toy story 3)
 "
 
+[node name="testSign" type="Area2D" parent="Delete LATER"]
+position = Vector2(300, 220)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Delete LATER/testSign"]
+shape = SubResource("RectangleShape2D_adk4t")
+
+[node name="ColorRect" type="ColorRect" parent="Delete LATER/testSign"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Boxes" type="Node" parent="."]
 
 [node name="Node2D" parent="Boxes" instance=ExtResource("9_51y5g")]
@@ -267,8 +296,7 @@ position = Vector2(5881, -646)
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="PauseScreen" instance=ExtResource("13_ky3da")]
-offset_left = 10.0
-offset_right = 10.0
+visible = false
 
 [node name="Crushers" type="Node" parent="."]
 
@@ -1011,5 +1039,6 @@ texture = ExtResource("22_wuiqu")
 position = Vector2(2360, 151)
 texture = ExtResource("22_wuiqu")
 
+[connection signal="body_entered" from="Delete LATER/testSign" to="." method="_on_test_sign_body_entered"]
 [connection signal="body_entered" from="Boss Room/BossSpawnCutscene" to="." method="_on_boss_spawn_cutscene_body_entered"]
 [connection signal="body_entered" from="SpikeWallFlag" to="." method="_on_spike_wall_flag_body_entered"]
