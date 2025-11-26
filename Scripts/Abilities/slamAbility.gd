@@ -37,3 +37,6 @@ func update(player, delta):
 		slam_available = false
 		is_slaming = true
 		#play sound of slam
+		
+func isSlamming():
+	return is_slaming

@@ -118,11 +118,14 @@ func is_dashing() -> bool:
 
 func is_slamming() -> bool:
 	if ability_manager.get_ability("tuba"):
-		return ability_manager.current_ability.isDashing()
+		return ability_manager.current_ability.isSlamming()
 	else:
 		return false
 	
 func bounce(bounceHeight: float):
+	if(ability_manager.get_ability("tuba")):
+		ability_manager.current_ability.is_slaming = false
+		ability_manager.current_ability.slam_available = true
 	velocity.y -= bounceHeight
 	bounce_timer = .2
 	
