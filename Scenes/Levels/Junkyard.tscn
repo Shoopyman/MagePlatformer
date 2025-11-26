@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=34 format=4 uid="uid://dg4i4ki85xwdj"]
-=======
-[gd_scene load_steps=36 format=4 uid="uid://bqigd2uimwm3p"]
->>>>>>> 95cd9ceab6e75e56d16c068e1cf0beff20c5f96d
+[gd_scene load_steps=36 format=4 uid="uid://cr27r82w54xsc"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
 [ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
@@ -30,11 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://denbuxarwj8af" path="res://art/JunkyardArt/springJump1.png" id="23_ixbka"]
 [ext_resource type="Texture2D" uid="uid://blwevcw5cou5s" path="res://art/JunkyardArt/trashPile1.png" id="24_ixbka"]
 [ext_resource type="PackedScene" uid="uid://nb0u26qaagmq" path="res://Scenes/Objects/garabge_box.tscn" id="25_xw7x4"]
-<<<<<<< HEAD
-=======
 [ext_resource type="AudioStream" uid="uid://2afrrarjtqo1" path="res://Sound/Music/metForGame25.wav" id="26_adk4t"]
 [ext_resource type="Texture2D" uid="uid://bef0gsfji2dgo" path="res://art/JunkyardArt/FactoryArt/factory1.png" id="28_t0hv4"]
->>>>>>> 95cd9ceab6e75e56d16c068e1cf0beff20c5f96d
 
 [sub_resource type="Animation" id="Animation_wuiqu"]
 length = 0.001
@@ -1057,8 +1050,6 @@ z_index = -1
 position = Vector2(2360, 151)
 texture = ExtResource("22_wuiqu")
 
-<<<<<<< HEAD
-=======
 [node name="Factory1" type="Sprite2D" parent="."]
 position = Vector2(1756, -247)
 texture = ExtResource("28_t0hv4")
@@ -1066,7 +1057,6 @@ texture = ExtResource("28_t0hv4")
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_adk4t")
 
->>>>>>> 95cd9ceab6e75e56d16c068e1cf0beff20c5f96d
 [connection signal="body_entered" from="Delete LATER/testSign" to="." method="_on_test_sign_body_entered"]
 [connection signal="body_entered" from="Boss Room/BossSpawnCutscene" to="." method="_on_boss_spawn_cutscene_body_entered"]
 [connection signal="body_entered" from="SpikeWallFlag" to="." method="_on_spike_wall_flag_body_entered"]

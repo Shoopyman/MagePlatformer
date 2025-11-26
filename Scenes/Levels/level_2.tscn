@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c11k1l0un8rdd"]
+[gd_scene load_steps=22 format=4 uid="uid://cq11iqby101wx"]
 
 [ext_resource type="Script" uid="uid://0cywh3j5a3u7" path="res://Scenes/Levels/ForestLevel.gd" id="1_blpqv"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_ovj6s"]
@@ -20,9 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bs6e1utqbt606" path="res://Scenes/Objects/Platform/platform_body.tscn" id="17_5buja"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="18_5buja"]
 [ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="19_wyygt"]
-[ext_resource type="PackedScene" uid="uid://cdxkmookr0s" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u87on"]
+[ext_resource type="PackedScene" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
 
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_blpqv")
@@ -205,8 +203,8 @@ position = Vector2(6046, -602)
 position = Vector2(6987, -233)
 
 [node name="PathFollow2D" parent="Node2D11" instance=ExtResource("16_ia1lp")]
-position = Vector2(-145.871, 15.5834)
-rotation = -0.0109969
+position = Vector2(-169.665, 1.41667)
+rotation = 0.465535
 
 [node name="PlatformBody" parent="Node2D11/PathFollow2D" instance=ExtResource("17_5buja")]
 
@@ -228,4 +226,3 @@ position = Vector2(4608, -605)
 
 [node name="Mushroom4" parent="." instance=ExtResource("20_u87on")]
 position = Vector2(4857, -907)
->>>>>>> 95cd9ceab6e75e56d16c068e1cf0beff20c5f96d
