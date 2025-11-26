@@ -1,40 +1,35 @@
 extends Node
 
-signal beat()        # full beat (1, 2, 3, 4)
-signal half_beat()   # halfway between beats (1.5, 2.5, 3.5)
+signal beat
+signal half_beat
 
-var bpm: float = 120.0
-var last_beat_index := -1     # last full beat emitted
-var last_half_index := -1     # last half beat emitted
-var beat_offset := 0.0
+var bpm: float = 120
+var seconds_per_beat: float
+
+var timer := 0.0
+var half_beat_fired := false
+
+func _ready():
+	set_bpm(bpm)
 
 func set_bpm(new_bpm: float) -> void:
 	bpm = new_bpm
-	# Do NOT reset beat indices. We want to continue syncing with the music.
+	seconds_per_beat = 60.0 / bpm
 
-func get_level_beat() -> float:
-	return get_beat_position() + beat_offset
-
-func get_beat_position() -> float:
-	var spb = 60.0 / bpm  # seconds per beat
-	var t = MusicManager.player.get_playback_position()
-	return t / spb        # beat count as a float
+func reset_beat_timer() -> void:
+	timer = 0.0
+	half_beat_fired = false
 
 func _process(delta: float) -> void:
-	var beat_pos = get_beat_position()
-	
-	# full beat index (0,1,2,3,...)
-	var beat_index = int(floor(beat_pos))
+	timer += delta
 
-	# half beat index (0,1,2,3,... for each 0.5)
-	var half_index = int(floor(beat_pos * 2.0))
-
-	# Emit full beat when crossing into next beat
-	if beat_index != last_beat_index:
-		last_beat_index = beat_index
-		emit_signal("beat")
-
-	# Emit half beat
-	if half_index != last_half_index:
-		last_half_index = half_index
+	# Half-beat at exactly 50% point
+	if not half_beat_fired and timer >= seconds_per_beat * 0.5:
+		half_beat_fired = true
 		emit_signal("half_beat")
+
+	# Full beat
+	if timer >= seconds_per_beat:
+		timer -= seconds_per_beat
+		half_beat_fired = false
+		emit_signal("beat")
