@@ -1,9 +1,10 @@
 extends Node2D
 
 
-@export var bpm: int = 126
-@onready var music_player: AudioStreamPlayer = $"MusicPlayer"
+@export var bpm: float = 126.0
+@onready var camera = $Camera2D
 
+<<<<<<< HEAD
 @onready var testDialogue = $Camera2D/dialogue1
 
 func _ready()->void:
@@ -39,3 +40,10 @@ func _on_test_sign_body_entered(body: Node2D) -> void:
 				"text": "This is the last message. If the dialogue box closes without breaking everything, success!"
 			},
 		]) # Replace with function body.
+=======
+func _ready():
+	CheckpointManager.respawn_player()
+	camera.matchPositionToPlayer()
+	MusicManager.play_track("res://Sound/Music/metForGame25.wav")
+	BeatManager.set_bpm(bpm)
+>>>>>>> 95cd9ceab6e75e56d16c068e1cf0beff20c5f96d
