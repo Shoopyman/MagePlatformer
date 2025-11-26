@@ -19,7 +19,6 @@ enum FollowMode {
 
 var player: Node2D
 
-
 func _ready():
 	if player_path != null:
 		player = get_node(player_path)
@@ -51,3 +50,6 @@ func _process(delta):
 	# Smooth follow
 	var target_position = global_position + move
 	global_position = global_position.lerp(target_position, follow_speed * delta)
+
+func matchPositionToPlayer():
+	global_position = player.position
