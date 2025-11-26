@@ -47,10 +47,10 @@ offset_bottom = 167.0
 text = "Level One"
 
 [node name="Level_2_button" type="Button" parent="."]
-offset_left = 254.0
-offset_top = 176.0
-offset_right = 355.0
-offset_bottom = 210.0
+offset_left = 252.0
+offset_top = 177.0
+offset_right = 353.0
+offset_bottom = 211.0
 text = "Level Two"
 
 [connection signal="pressed" from="Demo_button" to="." method="_on_demo_button_pressed"]
