@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 #Constant variables
-@export var bounceHeight = 1000
-@export var walkSpeed = 0
+@export var bounceHeightTuba = 1030
+@export var smallHeight = 150
+@export var walkSpeed = 100
 @export var direction = 1
 @export var accel = 2400
 
@@ -15,6 +16,7 @@ extends CharacterBody2D
 enum State {WALKING, STUNNED}
 var defualtState: State = State.WALKING
 var current_body: Node = null
+var tubaSlammed = false
 
 
 func _ready():
@@ -48,9 +50,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		#CheckpointManager.load_saved_progression()
 		
 func calcluateBounce(body: Node2D):
-	current_body.bounce(bounceHeight)
+	if(tubaSlammed):
+		current_body.bounce(bounceHeightTuba)
+	else:
+		current_body.bounce(smallHeight)
 	changeState(State.WALKING)
-	
 
 
 func _on_bounce_body_entered(body: Node2D) -> void:
@@ -59,9 +63,12 @@ func _on_bounce_body_entered(body: Node2D) -> void:
 		current_body = body
 		changeState(State.STUNNED)
 		walkSpeed = 0
+		tubaSlammed = true
 	elif (body.is_in_group("player") && body.is_slamming() == false):
-		CheckpointManager.load_saved_progression()
+		current_body = body
+		changeState(State.STUNNED)
+		walkSpeed = 0
 
 
 func _on_bounce_body_exited(body: Node2D) -> void:
-	walkSpeed = 0
+	walkSpeed = 100

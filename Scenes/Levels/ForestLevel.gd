@@ -6,7 +6,7 @@ extends Node2D
 
 
 func _ready()->void:
-	
+	CheckpointManager.respawn_player()
 	# Set BPM before starting
 	BeatManager.set_bpm(bpm)
 

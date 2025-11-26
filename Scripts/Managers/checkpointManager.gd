@@ -3,6 +3,7 @@ extends Node
 @export var default_spawn_position: Vector2 
 var current_checkpoint_position: Vector2
 var current_scene_progression = null
+var playerRespawned = false
 
 func _ready() -> void:
 	current_checkpoint_position = default_spawn_position

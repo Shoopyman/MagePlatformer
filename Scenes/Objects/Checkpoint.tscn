@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bm6valxgmkmtm"]
 
-[ext_resource type="Script" uid="uid://cd03ir75hihsy" path="res://Objects/checkpoint.gd" id="1_awlgn"]
+[ext_resource type="Script" uid="uid://cd03ir75hihsy" path="res://Scripts/Objectsstuff/checkpoint.gd" id="1_awlgn"]
 [ext_resource type="Texture2D" uid="uid://dk4dw5s6614sv" path="res://art/objects/checkpoints/musicStand.png" id="2_7vnxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo3y2"]

@@ -32,5 +32,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		return
 	
 	if(body.is_in_group('player')):
-		CheckpointManager.load_saved_progression()
+		CheckpointManager.respawn_player()
 	
