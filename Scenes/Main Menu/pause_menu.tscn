@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2rlgs2g6ri05"]
+[gd_scene load_steps=10 format=3 uid="uid://d2rlgs2g6ri05"]
 
 [ext_resource type="Script" uid="uid://td70s4eoa58c" path="res://Scripts/Levels and Main Menu/pause_menu.gd" id="1_q4tua"]
 [ext_resource type="Shader" uid="uid://d1vk87ila47js" path="res://art/pause_menu.gdshader" id="2_mgtps"]
+[ext_resource type="PackedScene" uid="uid://duq7wnfk3yhgj" path="res://Scenes/UI/pixel_button.tscn" id="3_8qdxq"]
+[ext_resource type="PackedScene" uid="uid://b321ofoneqa3o" path="res://Scenes/UI/long_pixel_button.tscn" id="4_e6jpk"]
+[ext_resource type="FontFile" uid="uid://pjdle0u4t032" path="res://art/Fonts/Game Font.ttf" id="7_yb6hn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n3ft6"]
 shader = ExtResource("2_mgtps")
@@ -81,8 +84,10 @@ script = ExtResource("1_q4tua")
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_n3ft6")
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 361.0
+offset_left = -9.0
+offset_top = -12.0
+offset_right = 631.0
+offset_bottom = 349.0
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -98,34 +103,48 @@ offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel"]
 layout_mode = 2
-text = "==Paused=="
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 213.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+theme_override_fonts/font = ExtResource("7_yb6hn")
+text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
+[node name="Resume" parent="Panel" instance=ExtResource("3_8qdxq")]
+layout_mode = 1
+offset_left = 69.0
+offset_top = 29.0
+offset_right = -71.0
+offset_bottom = -110.0
 text = "Resume"
 
-[node name="Main_Menu" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
+[node name="Main Menu" parent="Panel" instance=ExtResource("4_e6jpk")]
+layout_mode = 1
+offset_left = 65.0
+offset_top = 64.0
+offset_right = -149.0
+offset_bottom = -105.0
 text = "Main Menu"
 
-[node name="Restart" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
+[node name="Restart" parent="Panel" instance=ExtResource("3_8qdxq")]
+layout_mode = 1
+offset_left = 72.0
+offset_top = 98.0
+offset_right = -68.0
+offset_bottom = -41.0
 text = "Restart"
 
-[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
+[node name="Quit" parent="Panel" instance=ExtResource("3_8qdxq")]
+layout_mode = 1
+offset_left = 71.0
+offset_top = 133.0
+offset_right = -69.0
+offset_bottom = -6.0
 text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -133,7 +152,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_7q0wm")
 }
 
-[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Main_Menu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]

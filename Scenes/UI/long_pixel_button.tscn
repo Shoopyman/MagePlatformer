@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://b321ofoneqa3o"]
+
+[ext_resource type="PackedScene" uid="uid://duq7wnfk3yhgj" path="res://Scenes/UI/pixel_button.tscn" id="1_wy4js"]
+[ext_resource type="Texture2D" uid="uid://u5c17ynuigds" path="res://art/UI/longButton1.png" id="2_0it6b"]
+[ext_resource type="Texture2D" uid="uid://byxmscpcqf0he" path="res://art/UI/longButton3.png" id="3_nnqxp"]
+[ext_resource type="Texture2D" uid="uid://bx2mgph6ofwn7" path="res://art/UI/longButton2.png" id="4_lldft"]
+
+[node name="LongPixelButton" instance=ExtResource("1_wy4js")]
+offset_right = -554.0
+offset_bottom = -328.0
+
+[node name="TextureButton" parent="." index="0"]
+texture_normal = ExtResource("2_0it6b")
+texture_pressed = ExtResource("3_nnqxp")
+texture_hover = ExtResource("4_lldft")

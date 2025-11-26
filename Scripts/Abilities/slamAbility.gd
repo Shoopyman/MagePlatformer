@@ -19,7 +19,6 @@ func update(player, delta):
 		
 	# Update movement when slamming
 	if is_slaming:
-		print("Tuba slam working")
 		#override velocity
 		player.velocity.y = falling_speed
 		
