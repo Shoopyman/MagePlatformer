@@ -14,6 +14,8 @@ var full_pauses = [".", "!", "?", "_"]
 var dialogue := []
 var index := 0
 
+signal dialogue_closed()
+
 var sub_text := ""
 var pause := 0
 var cur := 0
@@ -28,6 +30,7 @@ func start_dialogue(entries: Array):
 func draw_dialogue():
 	if index >= dialogue.size():
 		hide()
+		emit_signal("dialogue_closed")
 		return
 	
 	var entry = dialogue[index]

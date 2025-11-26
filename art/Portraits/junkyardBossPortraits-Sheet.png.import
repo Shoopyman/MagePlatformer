@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://olm6vsbtmamy"
-path="res://.godot/imported/junkyardBossPortraits.png-5807a94d58b3d9a34b651b2d5192e021.ctex"
+uid="uid://cn1jy87hkymav"
+path="res://.godot/imported/junkyardBossPortraits-Sheet.png-1c528fb3df601d75e4190afdb9a4ab8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Portraits/junkyardBossPortraits.png"
-dest_files=["res://.godot/imported/junkyardBossPortraits.png-5807a94d58b3d9a34b651b2d5192e021.ctex"]
+source_file="res://art/Portraits/junkyardBossPortraits-Sheet.png"
+dest_files=["res://.godot/imported/junkyardBossPortraits-Sheet.png-1c528fb3df601d75e4190afdb9a4ab8b.ctex"]
 
 [params]
 
