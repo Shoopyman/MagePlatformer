@@ -2,9 +2,10 @@ extends CharacterBody2D
 
 #Constant variables
 @export var bounceHeight = 1000
-@export var walkSpeed = 100
+@export var walkSpeed = 0
 @export var direction = 1
 @export var accel = 2400
+
 
 # Nodes
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -47,7 +48,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		#CheckpointManager.load_saved_progression()
 		
 func calcluateBounce(body: Node2D):
-	print("Making Player bounce")
 	current_body.bounce(bounceHeight)
 	changeState(State.WALKING)
 	
@@ -64,4 +64,4 @@ func _on_bounce_body_entered(body: Node2D) -> void:
 
 
 func _on_bounce_body_exited(body: Node2D) -> void:
-	walkSpeed = 100 
+	walkSpeed = 0

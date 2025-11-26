@@ -20,7 +20,6 @@ func update(player, delta):
 		
 	# Update movement when slamming
 	if is_slaming:
-		print("Tuba slam working")
 		#override velocity
 		player.velocity.y = falling_speed
 		
@@ -33,7 +32,6 @@ func update(player, delta):
 	
 	# Activate Slam  
 	if Input.is_action_just_pressed("slam") and slam_available and cooldown_timer <= 0.0:
-		print("Tuba slam pressed")
 		slam_available = false
 		is_slaming = true
 		#play sound of slam

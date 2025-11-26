@@ -12,6 +12,7 @@ extends CharacterBody2D
 @export var jump_buffer = 0.1 # seconds
 @export var coyote_time = 0.1 # seconds
 
+
 # --- ability reference ---
 var ability_manager: Node = null
 
@@ -123,7 +124,8 @@ func is_slamming() -> bool:
 		return false
 	
 func bounce(bounceHeight: float):
-	if(ability_manager.get_ability("tuba")):
+	velocity.y = 0 #This line makes boucning more consistent when slamming, if causing trouble can delete
+	if(ability_manager.get_ability("tuba")):  #Allows player to slam again
 		ability_manager.current_ability.is_slaming = false
 		ability_manager.current_ability.slam_available = true
 	velocity.y -= bounceHeight
