@@ -17,8 +17,8 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 CheckpointManager="*res://Scripts/Managers/checkpointManager.gd"
-BeatManager="*res://Scripts/Managers/beat_manager.gd"
 DialogueManager="*res://Scripts/Managers/dialogueManager.gd"
+BeatManager="*res://Scripts/Managers/BeatManager.gd"
 
 [display]
 
@@ -26,6 +26,10 @@ window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/mode=3
 window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom_font="uid://pjdle0u4t032"
 
 [input]
 

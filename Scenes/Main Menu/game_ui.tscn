@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5icb3e88qgtq"]
+
+[ext_resource type="Texture2D" uid="uid://bvwn014v6aa1k" path="res://art/UI/mediumButton2.png" id="1_omunj"]
+[ext_resource type="Texture2D" uid="uid://bgoqu20wkoyyq" path="res://art/UI/mediumButton1.png" id="2_cieph"]
+[ext_resource type="Texture2D" uid="uid://baa32jf6qg383" path="res://art/UI/mediumButton3.png" id="3_ygggw"]
+[ext_resource type="Script" uid="uid://dbio36awcx5vn" path="res://Scripts/UI/pause_menu.gd" id="4_cieph"]
+[ext_resource type="Texture2D" uid="uid://cydrx01qyd11q" path="res://art/UI/panelRect.png" id="4_omunj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_omunj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0p2mk"]
+texture = ExtResource("1_omunj")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opqkc"]
+texture = ExtResource("2_cieph")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k68a8"]
+content_margin_top = 2.0
+content_margin_bottom = 0.0
+texture = ExtResource("3_ygggw")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cieph"]
+
+[sub_resource type="Theme" id="Theme_2whrp"]
+/colors/background = Color(0.752941, 0.580392, 0.45098, 1)
+/colors/border = Color(0.203922, 0.109804, 0.152941, 1)
+Button/colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+Button/colors/font_focus_color = Color(0.203922, 0.109804, 0.152941, 1)
+Button/colors/font_hover_color = Color(0.203922, 0.109804, 0.152941, 1)
+Button/colors/font_hover_pressed_color = Color(0.203922, 0.109804, 0.152941, 1)
+Button/colors/font_pressed_color = Color(0.203922, 0.109804, 0.152941, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_omunj")
+Button/styles/hover = SubResource("StyleBoxTexture_0p2mk")
+Button/styles/normal = SubResource("StyleBoxTexture_opqkc")
+Button/styles/pressed = SubResource("StyleBoxTexture_k68a8")
+HSeparator/styles/separator = SubResource("StyleBoxEmpty_cieph")
+Label/colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+MarginContainer/constants/margin_bottom = 14
+MarginContainer/constants/margin_left = 14
+MarginContainer/constants/margin_right = 14
+MarginContainer/constants/margin_top = 14
+
+[node name="game_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2whrp")
+
+[node name="screen" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pauseMenu" type="Control" parent="screen"]
+layout_mode = 2
+script = ExtResource("4_cieph")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="screen/pauseMenu"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+offset_left = 206.0
+offset_top = 66.0
+offset_right = 406.0
+offset_bottom = 266.0
+texture = ExtResource("4_omunj")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="screen/pauseMenu/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="screen/pauseMenu/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Paused" type="Label" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Resume" type="Button" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "   Main Menu   "
+
+[node name="Restart" type="Button" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer/Resume" to="screen/pauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer/Main Menu" to="screen/pauseMenu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer/Restart" to="screen/pauseMenu" method="_on_restart_pressed"]
+[connection signal="pressed" from="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer/Quit" to="screen/pauseMenu" method="_on_quit_pressed"]

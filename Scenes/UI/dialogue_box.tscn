@@ -3,50 +3,50 @@
 [ext_resource type="Script" uid="uid://jra78d6c0po3" path="res://Scripts/UI/dialogue_box.gd" id="1_c67c5"]
 [ext_resource type="Texture2D" uid="uid://cmyta7jodvpbo" path="res://art/UI/dialogueBox.png" id="1_tpmx7"]
 [ext_resource type="Texture2D" uid="uid://cq65qca0vjc7h" path="res://art/Portraits/forestBossPortraits-Sheet.png" id="2_8610a"]
-[ext_resource type="Texture2D" uid="uid://olm6vsbtmamy" path="res://art/Portraits/junkyardBossPortraits.png" id="2_obhul"]
+[ext_resource type="Texture2D" uid="uid://cn1jy87hkymav" path="res://art/Portraits/junkyardBossPortraits-Sheet.png" id="3_8610a"]
 [ext_resource type="FontFile" uid="uid://pjdle0u4t032" path="res://art/Fonts/Game Font.ttf" id="3_obhul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0df3s"]
+atlas = ExtResource("2_8610a")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1spsb"]
+atlas = ExtResource("2_8610a")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4x3g"]
+atlas = ExtResource("2_8610a")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uogrq"]
 atlas = ExtResource("2_8610a")
-region = Rect2(0, 0, 128, 128)
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4stw"]
 atlas = ExtResource("2_8610a")
-region = Rect2(384, 0, 128, 128)
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75ffr"]
-atlas = ExtResource("2_8610a")
-region = Rect2(512, 0, 128, 128)
+atlas = ExtResource("3_8610a")
+region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qrsnc"]
-atlas = ExtResource("2_8610a")
-region = Rect2(128, 0, 128, 128)
+atlas = ExtResource("3_8610a")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3j2nu"]
-atlas = ExtResource("2_8610a")
-region = Rect2(256, 0, 128, 128)
+atlas = ExtResource("3_8610a")
+region = Rect2(64, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8610a"]
-atlas = ExtResource("2_obhul")
-region = Rect2(0, 256, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0df3s"]
-atlas = ExtResource("2_obhul")
-region = Rect2(256, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1spsb"]
-atlas = ExtResource("2_obhul")
-region = Rect2(256, 256, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4x3g"]
-atlas = ExtResource("2_obhul")
-region = Rect2(0, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_06q0h"]
+atlas = ExtResource("3_8610a")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uogrq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uogrq")
+"texture": SubResource("AtlasTexture_0df3s")
 }],
 "loop": true,
 "name": &"forest_eyes_closed",
@@ -54,10 +54,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q4stw")
+"texture": SubResource("AtlasTexture_1spsb")
+}],
+"loop": true,
+"name": &"forest_neutral",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_75ffr")
+"texture": SubResource("AtlasTexture_o4x3g")
 }],
 "loop": true,
 "name": &"forest_smile",
@@ -65,7 +70,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qrsnc")
+"texture": SubResource("AtlasTexture_uogrq")
 }],
 "loop": true,
 "name": &"forest_surprised",
@@ -73,7 +78,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3j2nu")
+"texture": SubResource("AtlasTexture_q4stw")
 }],
 "loop": true,
 "name": &"forest_talking",
@@ -81,7 +86,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8610a")
+"texture": SubResource("AtlasTexture_75ffr")
 }],
 "loop": true,
 "name": &"junkyard_angry",
@@ -89,7 +94,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0df3s")
+"texture": SubResource("AtlasTexture_qrsnc")
 }],
 "loop": true,
 "name": &"junkyard_laugh",
@@ -97,7 +102,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1spsb")
+"texture": SubResource("AtlasTexture_3j2nu")
 }],
 "loop": true,
 "name": &"junkyard_sad",
@@ -105,7 +110,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o4x3g")
+"texture": SubResource("AtlasTexture_06q0h")
 }],
 "loop": true,
 "name": &"junkyard_smug",
@@ -133,9 +138,8 @@ color = Color(0.752941, 0.580392, 0.45098, 1)
 
 [node name="Portrait" type="AnimatedSprite2D" parent="."]
 position = Vector2(276, 44)
-scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_uogrq")
-animation = &"forest_eyes_closed"
+animation = &"junkyard_sad"
 
 [node name="Wrapper" type="TextureRect" parent="."]
 layout_mode = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c11k1l0un8rdd"]
+[gd_scene load_steps=21 format=4 uid="uid://c2eo6y01taim7"]
 
 [ext_resource type="Script" uid="uid://0cywh3j5a3u7" path="res://Scenes/Levels/ForestLevel.gd" id="1_blpqv"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_ovj6s"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="2_w2ac1"]
 [ext_resource type="PackedScene" uid="uid://blnhngp26b6wi" path="res://Scenes/Background/background.tscn" id="3_ovj6s"]
 [ext_resource type="PackedScene" uid="uid://cucjxmvqj81xo" path="res://Scenes/Ability Pickups/TubaPickup.tscn" id="5_8qsmg"]
+[ext_resource type="PackedScene" uid="uid://dtknkjjlbmpa7" path="res://Scenes/UI/dialogue_box.tscn" id="6_wyygt"]
 [ext_resource type="PackedScene" uid="uid://cjtrm40afwx2n" path="res://Scenes/Objects/DestructibleBox.tscn" id="7_1jlnc"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="8_u40f0"]
 [ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="10_uqiic"]
@@ -18,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://b5ixcin3rvvwq" path="res://Scenes/Objects/Platform/path_follow_2d.tscn" id="16_ia1lp"]
 [ext_resource type="PackedScene" uid="uid://bs6e1utqbt606" path="res://Scenes/Objects/Platform/platform_body.tscn" id="17_5buja"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="18_5buja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u87on"]
 
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_blpqv")
@@ -42,6 +45,12 @@ text = "bouncy mushroom"
 [node name="Camera2D" parent="." instance=ExtResource("2_w2ac1")]
 position = Vector2(-3, -3)
 player_path = NodePath("../Player")
+
+[node name="dialogue1" parent="Camera2D" instance=ExtResource("6_wyygt")]
+offset_left = -152.0
+offset_top = 78.0
+offset_right = -152.0
+offset_bottom = 78.0
 
 [node name="Background" parent="." instance=ExtResource("3_ovj6s")]
 offset = Vector2(0, 180)
@@ -201,14 +210,28 @@ position = Vector2(6046, -602)
 
 [node name="Node2D11" parent="." instance=ExtResource("15_t27xo")]
 position = Vector2(6987, -233)
-scale = Vector2(1.73872, 1.41176)
 
 [node name="PathFollow2D" parent="Node2D11" instance=ExtResource("16_ia1lp")]
-position = Vector2(-127.285, 2881.01)
-rotation = 0.674054
-scale = Vector2(1, 1)
+position = Vector2(-145.871, 15.5834)
+rotation = -0.0109969
 
 [node name="PlatformBody" parent="Node2D11/PathFollow2D" instance=ExtResource("17_5buja")]
 
 [node name="EndOfLevel" parent="." instance=ExtResource("18_5buja")]
 position = Vector2(10545, 223)
+
+[node name="testSign" type="Area2D" parent="."]
+position = Vector2(254, 342)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testSign"]
+shape = SubResource("RectangleShape2D_u87on")
+
+[node name="ColorRect" type="ColorRect" parent="testSign"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="testSign" to="." method="_on_test_sign_body_entered"]
