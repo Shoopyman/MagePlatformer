@@ -201,12 +201,10 @@ position = Vector2(6046, -602)
 
 [node name="Node2D11" parent="." instance=ExtResource("15_t27xo")]
 position = Vector2(6987, -233)
-scale = Vector2(1.73872, 1.41176)
 
 [node name="PathFollow2D" parent="Node2D11" instance=ExtResource("16_ia1lp")]
-position = Vector2(-127.285, 2881.01)
-rotation = 0.674054
-scale = Vector2(1, 1)
+position = Vector2(-145.871, 15.5834)
+rotation = -0.0109969
 
 [node name="PlatformBody" parent="Node2D11/PathFollow2D" instance=ExtResource("17_5buja")]
 
