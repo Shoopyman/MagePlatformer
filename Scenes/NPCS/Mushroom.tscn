@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdxkmookr0s"]
+
+[ext_resource type="Script" uid="uid://rsjqgah2gdr7" path="res://Scripts/objects/mushroom.gd" id="1_cj7ho"]
+[ext_resource type="Texture2D" uid="uid://b35d4u3qp4mc6" path="res://art/goomba.jpg" id="2_1in5c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgifi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1in5c")
+}],
+"loop": true,
+"name": &"Bouncing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1in5c")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c36l8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj7ho"]
+size = Vector2(109.75, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1in5c"]
+size = Vector2(39, 21.5)
+
+[node name="Mushroom" type="CharacterBody2D"]
+script = ExtResource("1_cj7ho")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -1)
+scale = Vector2(-0.0874823, 0.0859312)
+sprite_frames = SubResource("SpriteFrames_kgifi")
+animation = &"Bouncing"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_c36l8")
+
+[node name="bounce" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounce"]
+position = Vector2(4.875, -19)
+shape = SubResource("RectangleShape2D_cj7ho")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_1in5c")
+
+[connection signal="body_entered" from="bounce" to="." method="_on_bounce_body_entered"]
+[connection signal="body_exited" from="bounce" to="." method="_on_bounce_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

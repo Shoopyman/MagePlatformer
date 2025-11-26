@@ -15,6 +15,7 @@ animations = [{
 }]
 
 [node name="AbilityPickup" instance=ExtResource("1_dvhip")]
+ability_name = "tuba"
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_4ugow")
