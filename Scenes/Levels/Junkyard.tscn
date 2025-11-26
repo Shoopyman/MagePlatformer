@@ -176,6 +176,12 @@ offset_top = 71.0
 offset_right = -51.0
 offset_bottom = 71.0
 
+[node name="dialogue2" parent="Camera2D" instance=ExtResource("8_adk4t")]
+offset_left = -160.0
+offset_top = -136.0
+offset_right = -160.0
+offset_bottom = -136.0
+
 [node name="NPC" parent="." instance=ExtResource("6_bfxy4")]
 position = Vector2(2060, -569)
 

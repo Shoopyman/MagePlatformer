@@ -45,17 +45,17 @@ func _on_test_sign_body_entered(body: Node2D) -> void:
 		testDialogue.start_dialogue([
 			{
 				"speaker": "Man",
-				"portrait": "smug",
+				"portrait": "junkyard_smug",
 				"text": "This is the first message. Make sure that the text wraps properly. Press E to go next."
 			},
 			{
 				"speaker": "Man",
-				"portrait": "sad",
+				"portrait": "junkyard_sad",
 				"text": "This is the second message. Periods and exclamation marks have a slight delay. 67! 67! 67!"
 			},
 			{
 				"speaker": "Man",
-				"portrait": "laugh",
+				"portrait": "junkyard_laugh",
 				"text": "This is the last message. If the dialogue box closes without breaking everything, success!"
 			},
 		]) # Replace with function body.
