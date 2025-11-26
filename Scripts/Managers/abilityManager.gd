@@ -5,6 +5,7 @@ var registered_abilities = {
 	"trombone": preload("res://Scripts/Abilities/dashAbility.gd"),
 	"cymbals": preload("res://Scripts/Abilities/wallJumpAbility.gd"),
 	"bongos": preload("res://Scripts/Abilities/double_jump.gd"),
+	"tuba": preload("res://Scripts/Abilities/slamAbility.gd")
 }
 
 var current_ability: Node = null

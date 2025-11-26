@@ -118,7 +118,7 @@ func is_dashing() -> bool:
 
 func is_slamming() -> bool:
 	if ability_manager.get_ability("tuba"):
-		return ability_manager.current_ability.isDashing()
+		return ability_manager.current_ability.isSlamming()
 	else:
 		return false
 	

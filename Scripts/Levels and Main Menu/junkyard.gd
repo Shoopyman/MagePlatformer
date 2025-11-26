@@ -3,6 +3,9 @@ extends Node2D
 @onready var animations = $AnimationPlayer
 @onready var boss = $"Boss Room/Engineer"
 @onready var spikeWall =$SpikeWall/CharacterBody2D
+@export var bpm: int = 126
+@onready var music_player: AudioStreamPlayer = $"MusicPlayer"
+
 
 func _ready()->void:
 	CheckpointManager.respawn_player()
@@ -12,6 +15,15 @@ func _ready()->void:
 	boss.connect("boss_defeated", Callable(self, "_on_boss_defeated"))
 	spikeWall.hide()
 	animations.play('crane-swing')
+	
+	# Set BPM before starting
+	BeatManager.set_bpm(bpm)
+
+	# Start beat tracking at exactly the same audio frame
+	BeatManager.reset_beat_timer()
+
+	# Start the music
+	music_player.play()
 #Add Area 2d for when spike wall to descend
 #Add area 2d to begin cutscene of boss intro
 

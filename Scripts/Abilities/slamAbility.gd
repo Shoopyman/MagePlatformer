@@ -14,7 +14,6 @@ func on_unlock():
 	pass
 
 func update(player, delta):
-	
 	if cooldown_timer > 0.0:
 		cooldown_timer -= delta	
 		
@@ -32,8 +31,11 @@ func update(player, delta):
 		return
 	
 	# Activate Slam  
-	if Input.is_action_just_pressed("slam") and slam_available and cooldown_timer <= 0.0:
+	if Input.is_action_just_pressed("dash") and slam_available and cooldown_timer <= 0.0:
 		print("Tuba slam pressed")
 		slam_available = false
 		is_slaming = true
 		#play sound of slam
+
+func isSlamming():
+	return is_slaming

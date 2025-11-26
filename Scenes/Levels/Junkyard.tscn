@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dg4i4ki85xwdj"]
+[gd_scene load_steps=33 format=4 uid="uid://dg4i4ki85xwdj"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
 [ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://denbuxarwj8af" path="res://art/JunkyardArt/springJump1.png" id="23_ixbka"]
 [ext_resource type="Texture2D" uid="uid://blwevcw5cou5s" path="res://art/JunkyardArt/trashPile1.png" id="24_ixbka"]
 [ext_resource type="PackedScene" uid="uid://nb0u26qaagmq" path="res://Scenes/Objects/garabge_box.tscn" id="25_xw7x4"]
+[ext_resource type="AudioStream" uid="uid://2afrrarjtqo1" path="res://Sound/Music/metForGame25.wav" id="26_adk4t"]
 
 [sub_resource type="Animation" id="Animation_wuiqu"]
 length = 0.001
@@ -1010,6 +1011,9 @@ texture = ExtResource("22_wuiqu")
 [node name="DesertGroundLarge4" type="Sprite2D" parent="."]
 position = Vector2(2360, 151)
 texture = ExtResource("22_wuiqu")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_adk4t")
 
 [connection signal="body_entered" from="Boss Room/BossSpawnCutscene" to="." method="_on_boss_spawn_cutscene_body_entered"]
 [connection signal="body_entered" from="SpikeWallFlag" to="." method="_on_spike_wall_flag_body_entered"]

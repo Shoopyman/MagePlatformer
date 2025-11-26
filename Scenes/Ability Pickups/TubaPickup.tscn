@@ -15,6 +15,12 @@ animations = [{
 }]
 
 [node name="AbilityPickup" instance=ExtResource("1_dvhip")]
+ability_name = "tuba"
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(11, 4)
+scale = Vector2(0.705, 0.6675)
 sprite_frames = SubResource("SpriteFrames_4ugow")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 2.5)
