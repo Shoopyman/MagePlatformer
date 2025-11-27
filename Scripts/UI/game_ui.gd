@@ -3,7 +3,8 @@ extends Control
 @onready var dialogueBox = $screen/bottomDialogue
 
 func speak(entries: Array):
-	dialogueBox.start_dialogue(entries);
+	if !dialogueBox.active:
+		dialogueBox.start_dialogue(entries);
 
-func _ready():
-	speak([{"speaker": "Lady", "text": "Gyatt~!", "portrait": "forest_surprised"}])
+#func _ready():
+#	speak([{"speaker": "Lady", "text": "Gyatt~!", "portrait": "forest_surprised"}])

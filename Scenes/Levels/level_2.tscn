@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="2_w2ac1"]
 [ext_resource type="PackedScene" uid="uid://blnhngp26b6wi" path="res://Scenes/Background/background.tscn" id="3_ovj6s"]
 [ext_resource type="PackedScene" uid="uid://cucjxmvqj81xo" path="res://Scenes/Ability Pickups/TubaPickup.tscn" id="5_8qsmg"]
-[ext_resource type="PackedScene" uid="uid://dtknkjjlbmpa7" path="res://Scenes/UI/dialogue_box.tscn" id="6_wyygt"]
+[ext_resource type="PackedScene" uid="uid://g4ykkl16skln" path="res://Scenes/UI/game_ui.tscn" id="6_iunut"]
 [ext_resource type="PackedScene" uid="uid://cjtrm40afwx2n" path="res://Scenes/Objects/DestructibleBox.tscn" id="7_1jlnc"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="8_u40f0"]
 [ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="10_uqiic"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bs6e1utqbt606" path="res://Scenes/Objects/Platform/platform_body.tscn" id="17_5buja"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="18_5buja"]
 [ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="19_wyygt"]
-[ext_resource type="PackedScene" uid="uid://cdxkmookr0s" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
+[ext_resource type="PackedScene" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
 
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_blpqv")
@@ -46,11 +46,9 @@ text = "bouncy mushroom"
 position = Vector2(-3, -3)
 player_path = NodePath("../Player")
 
-[node name="dialogue1" parent="Camera2D" instance=ExtResource("6_wyygt")]
-offset_left = -152.0
-offset_top = 78.0
-offset_right = -152.0
-offset_bottom = 78.0
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="game_ui" parent="UILayer" instance=ExtResource("6_iunut")]
 
 [node name="Background" parent="." instance=ExtResource("3_ovj6s")]
 offset = Vector2(0, 180)

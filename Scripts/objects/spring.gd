@@ -13,7 +13,7 @@ enum State { WAITING, RISING }
 var state: State = State.WAITING
 var objectInArea := false
 var current_body: Node = null
-var beat_counter := 0
+var beat_counter := -1
 
 func _ready():
 	BeatManager.beat.connect(_on_beat)
@@ -37,21 +37,10 @@ func _on_body_exited(body: Node2D) -> void:
 	current_body = null
 
 
-
 func _on_beat() -> void:
-	if state != State.WAITING:
-		return  # ignore beats during action animation
-
-	beat_counter += 1
-
-	if beat_counter < beats_between_bounce:
-		return  # not time yet
-
-	# RESET counter for next cycle
-	beat_counter = 0
-
-	# Trigger bounce sequence
-	_activate_spring()
+	if int(floor(BeatManager.get_level_beat())) % 4 == 0:
+		# trigger spring on downbeat
+		_activate_spring()
 
 
 # -----------------------------------------

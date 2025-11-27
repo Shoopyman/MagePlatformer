@@ -1,0 +1,310 @@
+[gd_scene load_steps=28 format=3 uid="uid://g4ykkl16skln"]
+
+[ext_resource type="Texture2D" uid="uid://bvwn014v6aa1k" path="res://art/UI/mediumButton2.png" id="1_0pgsb"]
+[ext_resource type="Texture2D" uid="uid://bgoqu20wkoyyq" path="res://art/UI/mediumButton1.png" id="2_q6rob"]
+[ext_resource type="Texture2D" uid="uid://baa32jf6qg383" path="res://art/UI/mediumButton3.png" id="3_wkbk7"]
+[ext_resource type="Script" uid="uid://crvetdvruqn3y" path="res://Scripts/UI/game_ui.gd" id="4_f07i2"]
+[ext_resource type="Script" uid="uid://jra78d6c0po3" path="res://Scripts/UI/dialogue_box.gd" id="5_pwiya"]
+[ext_resource type="Texture2D" uid="uid://cq65qca0vjc7h" path="res://art/Portraits/forestBossPortraits-Sheet.png" id="6_fd57w"]
+[ext_resource type="Texture2D" uid="uid://cn1jy87hkymav" path="res://art/Portraits/junkyardBossPortraits-Sheet.png" id="7_m2lyg"]
+[ext_resource type="Texture2D" uid="uid://cmyta7jodvpbo" path="res://art/UI/dialogueBox.png" id="8_llaam"]
+[ext_resource type="FontFile" uid="uid://pjdle0u4t032" path="res://art/Fonts/Game Font.ttf" id="9_sr7wx"]
+[ext_resource type="Script" uid="uid://dbio36awcx5vn" path="res://Scripts/UI/pause_menu.gd" id="10_3nq5v"]
+[ext_resource type="Texture2D" uid="uid://cydrx01qyd11q" path="res://art/UI/panelRect.png" id="11_n1yqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_omunj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0p2mk"]
+texture = ExtResource("1_0pgsb")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opqkc"]
+texture = ExtResource("2_q6rob")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k68a8"]
+content_margin_top = 2.0
+content_margin_bottom = 0.0
+texture = ExtResource("3_wkbk7")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cieph"]
+
+[sub_resource type="Theme" id="Theme_2whrp"]
+/colors/background = Color(0.752941, 0.580392, 0.45098, 1)
+/colors/border = Color(0.203922, 0.109804, 0.152941, 1)
+Button/colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+Button/colors/font_focus_color = Color(0.203922, 0.109804, 0.152941, 1)
+Button/colors/font_hover_color = Color(0.203922, 0.109804, 0.152941, 1)
+Button/colors/font_hover_pressed_color = Color(0.203922, 0.109804, 0.152941, 1)
+Button/colors/font_pressed_color = Color(0.203922, 0.109804, 0.152941, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_omunj")
+Button/styles/hover = SubResource("StyleBoxTexture_0p2mk")
+Button/styles/normal = SubResource("StyleBoxTexture_opqkc")
+Button/styles/pressed = SubResource("StyleBoxTexture_k68a8")
+HSeparator/styles/separator = SubResource("StyleBoxEmpty_cieph")
+Label/colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+MarginContainer/constants/margin_bottom = 14
+MarginContainer/constants/margin_left = 14
+MarginContainer/constants/margin_right = 14
+MarginContainer/constants/margin_top = 14
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0df3s"]
+atlas = ExtResource("6_fd57w")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1spsb"]
+atlas = ExtResource("6_fd57w")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4x3g"]
+atlas = ExtResource("6_fd57w")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uogrq"]
+atlas = ExtResource("6_fd57w")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4stw"]
+atlas = ExtResource("6_fd57w")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75ffr"]
+atlas = ExtResource("7_m2lyg")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrsnc"]
+atlas = ExtResource("7_m2lyg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j2nu"]
+atlas = ExtResource("7_m2lyg")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06q0h"]
+atlas = ExtResource("7_m2lyg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6o8g2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0df3s")
+}],
+"loop": true,
+"name": &"forest_eyes_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1spsb")
+}],
+"loop": true,
+"name": &"forest_neutral",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4x3g")
+}],
+"loop": true,
+"name": &"forest_smile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uogrq")
+}],
+"loop": true,
+"name": &"forest_surprised",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4stw")
+}],
+"loop": true,
+"name": &"forest_talking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75ffr")
+}],
+"loop": true,
+"name": &"junkyard_angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrsnc")
+}],
+"loop": true,
+"name": &"junkyard_laugh",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j2nu")
+}],
+"loop": true,
+"name": &"junkyard_sad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06q0h")
+}],
+"loop": true,
+"name": &"junkyard_smug",
+"speed": 5.0
+}]
+
+[node name="game_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2whrp")
+script = ExtResource("4_f07i2")
+
+[node name="screen" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bottomDialogue" type="Control" parent="screen"]
+layout_mode = 2
+script = ExtResource("5_pwiya")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="screen/bottomDialogue"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_right = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="dialogueBox" type="Control" parent="screen/bottomDialogue/VBoxContainer"]
+custom_minimum_size = Vector2(320, 88)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 12.0
+offset_right = 309.0
+offset_bottom = 76.0
+color = Color(0.752941, 0.580392, 0.45098, 1)
+
+[node name="Portrait" type="AnimatedSprite2D" parent="screen/bottomDialogue/VBoxContainer/dialogueBox/ColorRect"]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_6o8g2")
+animation = &"forest_eyes_closed"
+
+[node name="Wrapper" type="TextureRect" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 88.0
+texture = ExtResource("8_llaam")
+
+[node name="DialogueText" type="Label" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 28.0
+offset_right = 229.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+theme_override_fonts/font = ExtResource("9_sr7wx")
+autowrap_mode = 2
+
+[node name="NameText" type="Label" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 5.0
+offset_right = 240.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+theme_override_fonts/font = ExtResource("9_sr7wx")
+
+[node name="HSeparator" type="HSeparator" parent="screen/bottomDialogue/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="pauseMenu" type="Control" parent="screen"]
+visible = false
+layout_mode = 2
+script = ExtResource("10_3nq5v")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="screen/pauseMenu"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+offset_left = 206.0
+offset_top = 66.0
+offset_right = 406.0
+offset_bottom = 266.0
+texture = ExtResource("11_n1yqq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="screen/pauseMenu/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="screen/pauseMenu/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Paused" type="Label" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Resume" type="Button" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "   Main Menu   "
+
+[node name="Restart" type="Button" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer/Resume" to="screen/pauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer/Main Menu" to="screen/pauseMenu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer/Restart" to="screen/pauseMenu" method="_on_restart_pressed"]
+[connection signal="pressed" from="screen/pauseMenu/NinePatchRect/MarginContainer/VBoxContainer/Quit" to="screen/pauseMenu" method="_on_quit_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://bh41kylebmio8"]
 
-[ext_resource type="Script" uid="uid://2vvp0a8x6n82" path="res://Scripts/Levels and Main Menu/demo_stageDELETELATER.gd" id="1_els2u"]
+[ext_resource type="Script" path="res://Scripts/Levels and Main Menu/demo_stageDELETELATER.gd" id="1_els2u"]
 [ext_resource type="Texture2D" uid="uid://ie7gjg58csbl" path="res://art/PLACEHOLDER/Placeholder Tile.png" id="1_fegxi"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="2_d7dw7"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="3_fkv8s"]

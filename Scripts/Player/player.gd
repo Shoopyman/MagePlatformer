@@ -16,8 +16,6 @@ extends CharacterBody2D
 # --- ability reference ---
 var ability_manager: Node = null
 
-@onready var double_jump = $double_jump
-
 # --- Timers ---
 var coyote_timer = 0.0
 var jump_buffer_timer = 0.0
@@ -28,6 +26,8 @@ var bounce_timer := 0.0
 var last_position: Vector2
 var current_position: Vector2
 var facing_direction = 1
+
+@onready var animated_sprite = $Visual/AnimatedSprite2D
 
 func _ready():
 	last_position = global_position
@@ -104,6 +104,14 @@ func _physics_process(delta):
 	
 	current_position = global_position
 	
+	if velocity.x != 0 and velocity.y == 0:
+		animated_sprite.play("running")
+	elif velocity.y > 0:
+		animated_sprite.play("falling")
+	elif velocity.y < 0:
+		animated_sprite.play("jumping")
+	else:
+		animated_sprite.play("default")
 	
 	
 func _process(delta):

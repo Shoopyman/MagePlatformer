@@ -1,25 +1,23 @@
 extends Node2D
 
-@onready var label =$Label
-var inArea: bool = false
-var textShowing: bool = false
+@onready var label = $Label
+@onready var hover = $hover
+@export var text = ""
 
 func _ready() -> void:
+	label.text = text
 	label.hide()
+	hover.hide()
 
 func _physics_process(delta: float) -> void:
-	if(inArea):
-		if (Input.is_action_just_pressed('Interact')) && textShowing == false:
+	if hover.visible:
+		if (Input.is_action_just_pressed('Interact')) && !label.visible:
 			label.show()
-			textShowing = true
-		elif (Input.is_action_just_pressed('Interact')) && textShowing == true:
-			print("Bye Label")
+		elif (Input.is_action_just_pressed('Interact')) && label.visible:
 			label.hide()
-			textShowing = false
 			
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if(body.is_in_group('player')):
-		inArea = true
+	hover.show()
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	inArea = false
+	hover.hide()
