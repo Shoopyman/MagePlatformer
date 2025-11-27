@@ -51,7 +51,14 @@ func _activate_spring() -> void:
 	sprite.play("Action")
 
 	# small delay before bounce happens
-	await get_tree().create_timer(0.08).timeout  # THIS LINE CRASGES GAME
+	var t = get_tree().create_timer(0.08)
+	await t.timeout
+
+	if !is_inside_tree():
+		return
+
+	if current_body != null and !is_instance_valid(current_body) and current_body.is_in_group("player"):
+		current_body = null
 
 	# bounce if object is on the spring
 	if objectInArea and current_body and current_body.has_method("bounce"):
@@ -59,6 +66,9 @@ func _activate_spring() -> void:
 
 	# wait for animation to finish
 	await get_tree().create_timer(0.16).timeout
+	
+	if !is_inside_tree():
+		return
 
 	state = State.WAITING
 	sprite.play("Idle")

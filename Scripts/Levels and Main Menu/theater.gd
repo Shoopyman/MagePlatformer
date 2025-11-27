@@ -44,7 +44,6 @@ func _on_warp_1_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	TheaterManager.phase += 1
 	if TheaterManager.phase == 0:
 		player.global_position.x = 3801
 		player.global_position.y = -24
@@ -52,13 +51,14 @@ func _on_timer_timeout() -> void:
 		player.global_position.x = 5786
 		player.global_position.y = -126
 		TheaterManager.platformEnabled = true
+	TheaterManager.phase += 1
 		
 
 #DELETE LATER WHEN FINISHED
 func _on_bug_test_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
-		player.global_position.x = 580
-		player.global_position.y = 1746
+		player.global_position.x = 5786
+		player.global_position.y = -126
 		TheaterManager.platformEnabled = true
 
 
