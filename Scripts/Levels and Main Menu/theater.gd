@@ -54,11 +54,11 @@ func _on_timer_timeout() -> void:
 		TheaterManager.platformEnabled = true
 		
 
-
+#DELETE LATER WHEN FINISHED
 func _on_bug_test_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
-		player.global_position.x = 5786
-		player.global_position.y = -126 
+		player.global_position.x = 580
+		player.global_position.y = 1746
 		TheaterManager.platformEnabled = true
 
 
@@ -74,5 +74,12 @@ func _on_warp_2_body_entered(body: Node2D) -> void:
 
 func _on_warp_3_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
-		player.global_position.x = 5786
-		player.global_position.y = -126 
+		player.global_position.x = 3723
+		player.global_position.y = 1489
+
+
+func _on_warp_4_body_entered(body: Node2D) -> void:
+	if(body.is_in_group("player")):
+		player.global_position.x = 580
+		player.global_position.y = 1746
+		
