@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpxvn2aid2471"
-path="res://.godot/imported/factory1.png-af8b64852de34521b653d2419da93bdb.ctex"
+uid="uid://dl0sm3c832xpc"
+path="res://.godot/imported/junkPLight.png-0c350ae5ec85ed0c57dd8663a94e095f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/JunkyardArt/FactoryArt/factory1.png"
-dest_files=["res://.godot/imported/factory1.png-af8b64852de34521b653d2419da93bdb.ctex"]
+source_file="res://art/JunkyardArt/JunkyardParallax/junkPLight.png"
+dest_files=["res://.godot/imported/junkPLight.png-0c350ae5ec85ed0c57dd8663a94e095f.ctex"]
 
 [params]
 
