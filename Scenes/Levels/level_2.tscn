@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://cq11iqby101wx"]
 
-[ext_resource type="Script" uid="uid://0cywh3j5a3u7" path="res://Scripts/Levels and Main Menu/ForestLevel.gd" id="1_blpqv"]
+[ext_resource type="Script" path="res://Scripts/Levels and Main Menu/ForestLevel.gd" id="1_blpqv"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_ovj6s"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="1_oylv5"]
 [ext_resource type="AudioStream" uid="uid://2afrrarjtqo1" path="res://Sound/Music/metForGame25.wav" id="2_uqiic"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="18_5buja"]
 [ext_resource type="PackedScene" uid="uid://dpkar0c6ctslm" path="res://Scenes/Objects/movingPlatform2.0/MovingPlatform2.tscn" id="19_u87on"]
 [ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="19_wyygt"]
-[ext_resource type="PackedScene" uid="uid://cdxkmookr0s" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
+[ext_resource type="PackedScene" uid="uid://muamej5lnim0" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
 
 [sub_resource type="Curve2D" id="Curve2D_wyygt"]
 _data = {
@@ -200,21 +200,23 @@ position = Vector2(6046, -602)
 [node name="EndOfLevel" parent="." instance=ExtResource("18_5buja")]
 position = Vector2(10545, 223)
 
-[node name="Mushroom" parent="." instance=ExtResource("20_u87on")]
-position = Vector2(930, 339)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("19_wyygt")]
 
+[node name="Mushroom" parent="." instance=ExtResource("20_u87on")]
+position = Vector2(930, 339)
+
 [node name="Mushroom2" parent="." instance=ExtResource("20_u87on")]
 position = Vector2(3503, -268)
+color = "brown"
 
 [node name="Mushroom3" parent="." instance=ExtResource("20_u87on")]
 position = Vector2(4608, -605)
 
 [node name="Mushroom4" parent="." instance=ExtResource("20_u87on")]
 position = Vector2(4857, -907)
+<<<<<<< HEAD
 
 [node name="movingPlatform2" parent="." instance=ExtResource("19_u87on")]
 position = Vector2(6711, -246)
@@ -222,3 +224,6 @@ curve = SubResource("Curve2D_wyygt")
 loop = false
 speed = 1.0
 speed_scale = 0.5
+=======
+color = "brown"
+>>>>>>> 3e246db2503cc602a081a7d10f9625a40f77aad3
