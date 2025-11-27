@@ -4,12 +4,14 @@ extends Node2D
 @onready var player = $Player
 @onready var moveTest = $MoveText
 
+var firstLoad = true
+
 var moveTextDeleted = false
 
 func _ready()->void:
 	CheckpointManager.respawn_player()
 	sign1.text = "To jump Press C\n"
-	player.global_position = Vector2(-145, 148)
+	
 
 
 func _on_despawn_sign_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:

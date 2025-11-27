@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dloyktlfuoply"]
+[gd_scene load_steps=7 format=3 uid="uid://dloyktlfuoply"]
 
 [ext_resource type="Script" uid="uid://bes05jv1sifbh" path="res://Scripts/objects/crusher.gd" id="1_5pam8"]
 [ext_resource type="Texture2D" uid="uid://yylfgm1w0qev" path="res://art/objects/Crusher/crusher.png" id="2_o76kb"]
+[ext_resource type="PackedScene" uid="uid://c3wghnumteccn" path="res://Scenes/Objects/spikes.tscn" id="3_cep3w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5pam8"]
 animations = [{
@@ -39,5 +40,14 @@ shape = SubResource("RectangleShape2D_o76kb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_cep3w")
+
+[node name="Spikes3" parent="." instance=ExtResource("3_cep3w")]
+position = Vector2(2, -30)
+
+[node name="Spikes" parent="." instance=ExtResource("3_cep3w")]
+position = Vector2(-19, -30)
+
+[node name="Spikes2" parent="." instance=ExtResource("3_cep3w")]
+position = Vector2(19, -30)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

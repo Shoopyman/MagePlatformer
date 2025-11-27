@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://wsmo6qw0yllq"]
 
-[ext_resource type="Script" uid="uid://dmdhhmfvlrguf" path="res://Objects/death_box.gd" id="1_b3knp"]
+[ext_resource type="Script" uid="uid://dmdhhmfvlrguf" path="res://Scripts/Objectsstuff/death_box.gd" id="1_b3knp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pnmo"]
 size = Vector2(1981, 172)

@@ -20,6 +20,7 @@ CheckpointManager="*res://Scripts/Managers/checkpointManager.gd"
 DialogueManager="*res://Scripts/Managers/dialogueManager.gd"
 BeatManager="*res://Scripts/Managers/BeatManager.gd"
 MusicManager="*res://Scripts/Managers/musicManager.gd"
+TheaterManager="*res://Scripts/Managers/theaterManager.gd"
 
 [display]
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3wghnumteccn"]
+
+[ext_resource type="Texture2D" uid="uid://dhqugjjkekk37" path="res://art/objects/spike.png" id="1_8h1qs"]
+[ext_resource type="Script" uid="uid://dmdhhmfvlrguf" path="res://Scripts/Objectsstuff/death_box.gd" id="2_osawo"]
+
+[node name="Spikes" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8h1qs")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_osawo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-1, 0)
+polygon = PackedVector2Array(-7, 7, 1, -8, 8, 7)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
