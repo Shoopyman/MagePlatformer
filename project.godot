@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="MagicPlatformer2025"
-run/main_scene="uid://l0ckr8va6384"
+run/main_scene="uid://cf2w4lbwfyrow"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[audio]
+
+buses/default_bus_layout="res://Sound/default_bus_layout.tres"
 
 [autoload]
 

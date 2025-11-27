@@ -23,6 +23,7 @@ func _ready()->void:
 	var spb = 60.0 / bpm
 	var t = MusicManager.player.get_playback_position()
 	BeatManager.beat_offset = ceil(t / spb) - (t / spb)
+	camera.follow_mode = "FULL_FOLLOW"
 #Add Area 2d for when spike wall to descend
 #Add area 2d to begin cutscene of boss intro
 
