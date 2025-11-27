@@ -59,15 +59,15 @@ func calcluateBounce(body: Node2D):
 
 func _on_bounce_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player") && body.is_slamming()):
-		print("Player Bounced")
 		current_body = body
-		changeState(State.STUNNED)
-		walkSpeed = 0
 		tubaSlammed = true
+		walkSpeed = 0
+		changeState(State.STUNNED)
 	elif (body.is_in_group("player") && body.is_slamming() == false):
 		current_body = body
-		changeState(State.STUNNED)
+		tubaSlammed = false
 		walkSpeed = 0
+		changeState(State.STUNNED)
 
 
 func _on_bounce_body_exited(body: Node2D) -> void:

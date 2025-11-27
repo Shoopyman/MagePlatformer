@@ -1,28 +1,36 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpkar0c6ctslm"]
+[gd_scene load_steps=13 format=3 uid="uid://dpkar0c6ctslm"]
 
+[ext_resource type="Script" uid="uid://nogoplyghuaa" path="res://Scripts/objects/moving_platform_2.gd" id="1_cxp7w"]
 [ext_resource type="Texture2D" uid="uid://c8d6t0u7mtvcw" path="res://art/movingPlatformSS.png" id="1_r6cmb"]
 
-[sub_resource type="Curve2D" id="Curve2D_r6cmb"]
+[sub_resource type="Curve2D" id="Curve2D_cxp7w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 53, 0)
+}
+point_count = 2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6jd50"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxp7w"]
 atlas = ExtResource("1_r6cmb")
 region = Rect2(0, 0, 64, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m3hii"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jd50"]
 atlas = ExtResource("1_r6cmb")
 region = Rect2(64, 0, 64, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8xwbx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3hii"]
 atlas = ExtResource("1_r6cmb")
 region = Rect2(128, 0, 64, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pefqo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xwbx"]
 atlas = ExtResource("1_r6cmb")
 region = Rect2(192, 0, 64, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cxp7w"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pefqo"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxp7w")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6jd50")
 }, {
@@ -31,37 +39,75 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8xwbx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pefqo")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jd50"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw2hm"]
 size = Vector2(48, 6)
 
+[sub_resource type="Animation" id="Animation_cxp7w"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_6jd50"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3hii"]
+_data = {
+&"RESET": SubResource("Animation_6jd50"),
+&"move": SubResource("Animation_cxp7w")
+}
+
 [node name="movingPlatform2" type="Path2D"]
-curve = SubResource("Curve2D_r6cmb")
+curve = SubResource("Curve2D_cxp7w")
+script = ExtResource("1_cxp7w")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-visible = false
+rotates = false
+loop = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
-visible = false
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
-position = Vector2(-8, 11)
-sprite_frames = SubResource("SpriteFrames_cxp7w")
+sprite_frames = SubResource("SpriteFrames_pefqo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_6jd50")
+position = Vector2(8, -13)
+shape = SubResource("RectangleShape2D_gw2hm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_m3hii")
+}

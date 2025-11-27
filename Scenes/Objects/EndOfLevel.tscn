@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3e1uu6sba3m1"]
 
-[ext_resource type="Script" uid="uid://ceufx2olbtb7y" path="res://Objects/end_of_level.gd" id="1_ochb5"]
+[ext_resource type="Script" uid="uid://ceufx2olbtb7y" path="res://Scripts/Objectsstuff/end_of_level.gd" id="1_ochb5"]
 [ext_resource type="Texture2D" uid="uid://cb81jnn2yiv4e" path="res://art/objects/endLevelSprites/pixil-frame-0 (4).png" id="2_xhcoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhcoq"]
