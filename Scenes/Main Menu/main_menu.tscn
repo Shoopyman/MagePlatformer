@@ -53,8 +53,16 @@ offset_right = 353.0
 offset_bottom = 211.0
 text = "Level Two"
 
+[node name="Level Three" type="Button" parent="."]
+offset_left = 263.0
+offset_top = 221.0
+offset_right = 347.0
+offset_bottom = 258.0
+text = "Level Three"
+
 [connection signal="pressed" from="Demo_button" to="." method="_on_demo_button_pressed"]
 [connection signal="pressed" from="Tutorial_Button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Exit_button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level_1_button" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Level_2_button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="Level Three" to="." method="_on_level_three_pressed"]
