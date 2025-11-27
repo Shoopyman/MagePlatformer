@@ -19,7 +19,7 @@ func _ready():
 	BeatManager.beat.connect(_on_beat)
 	sprite.play("Idle")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	match state:
 		State.WAITING:
 			sprite.play("Idle")
@@ -32,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 	current_body = body
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	objectInArea = false
 	current_body = null
 
@@ -51,7 +51,7 @@ func _activate_spring() -> void:
 	sprite.play("Action")
 
 	# small delay before bounce happens
-	await get_tree().create_timer(0.08).timeout
+	await get_tree().create_timer(0.08).timeout  # THIS LINE CRASGES GAME
 
 	# bounce if object is on the spring
 	if objectInArea and current_body and current_body.has_method("bounce"):
