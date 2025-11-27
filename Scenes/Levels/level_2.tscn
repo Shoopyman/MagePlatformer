@@ -216,7 +216,7 @@ position = Vector2(4608, -605)
 
 [node name="Mushroom4" parent="." instance=ExtResource("20_u87on")]
 position = Vector2(4857, -907)
-<<<<<<< HEAD
+color = "brown"
 
 [node name="movingPlatform2" parent="." instance=ExtResource("19_u87on")]
 position = Vector2(6711, -246)
@@ -224,6 +224,5 @@ curve = SubResource("Curve2D_wyygt")
 loop = false
 speed = 1.0
 speed_scale = 0.5
-=======
-color = "brown"
->>>>>>> 3e246db2503cc602a081a7d10f9625a40f77aad3
+
+
