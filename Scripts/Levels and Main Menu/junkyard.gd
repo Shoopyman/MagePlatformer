@@ -4,30 +4,25 @@ extends Node2D
 @onready var boss = $"Boss Room/Engineer"
 @onready var spikeWall =$SpikeWall/CharacterBody2D
 
-@export var bpm: int = 126
-@onready var music_player: AudioStreamPlayer = $"MusicPlayer"
-
+@export var bpm: float = 126.0
 
 @onready var testDialogue = $Camera2D/dialogue1
-
+@onready var camera = $Camera2D
 
 func _ready()->void:
 	CheckpointManager.respawn_player()
+	camera.matchPositionToPlayer()
 	boss.process_mode = Node.PROCESS_MODE_DISABLED
 	boss.set_physics_process(false)
 	boss.set_process(false)
 	boss.connect("boss_defeated", Callable(self, "_on_boss_defeated"))
 	spikeWall.hide()
 	animations.play('crane-swing')
-	
-	# Set BPM before starting
+	MusicManager.play_track("res://Sound/Music/metForGame25.wav")
 	BeatManager.set_bpm(bpm)
-
-	# Start beat tracking at exactly the same audio frame
-	BeatManager.reset_beat_timer()
-
-	# Start the music
-	music_player.play()
+	var spb = 60.0 / bpm
+	var t = MusicManager.player.get_playback_position()
+	BeatManager.beat_offset = ceil(t / spb) - (t / spb)
 #Add Area 2d for when spike wall to descend
 #Add area 2d to begin cutscene of boss intro
 
@@ -60,17 +55,17 @@ func _on_test_sign_body_entered(body: Node2D) -> void:
 		testDialogue.start_dialogue([
 			{
 				"speaker": "Man",
-				"portrait": "junkyard_smug",
+				"portrait": "smug",
 				"text": "This is the first message. Make sure that the text wraps properly. Press E to go next."
 			},
 			{
 				"speaker": "Man",
-				"portrait": "junkyard_sad",
+				"portrait": "sad",
 				"text": "This is the second message. Periods and exclamation marks have a slight delay. 67! 67! 67!"
 			},
 			{
 				"speaker": "Man",
-				"portrait": "junkyard_laugh",
+				"portrait": "laugh",
 				"text": "This is the last message. If the dialogue box closes without breaking everything, success!"
 			},
 		]) # Replace with function body.

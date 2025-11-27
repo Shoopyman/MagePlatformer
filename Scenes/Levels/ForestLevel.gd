@@ -1,17 +1,11 @@
 extends Node2D
 
 
-@export var bpm: int = 126
-@onready var music_player: AudioStreamPlayer = $"MusicPlayer"
+@export var bpm: float = 126.0
+@onready var camera = $Camera2D
 
-
-func _ready()->void:
+func _ready():
 	CheckpointManager.respawn_player()
-	# Set BPM before starting
+	camera.matchPositionToPlayer()
+	MusicManager.play_track("res://Sound/Music/metForGame25.wav")
 	BeatManager.set_bpm(bpm)
-
-	# Start beat tracking at exactly the same audio frame
-	BeatManager.reset_beat_timer()
-
-	# Start the music
-	music_player.play()
