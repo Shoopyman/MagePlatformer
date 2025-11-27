@@ -133,7 +133,7 @@ position = Vector2(-409, 138)
 scale = Vector2(-0.911, 1.412)
 
 [node name="PathFollow2D" parent="Node2D" instance=ExtResource("19_w35ah")]
-position = Vector2(-145.871, 15.5834)
+position = Vector2(-169.665, 1.41667)
 rotates = false
 
 [node name="PlatformBody" parent="Node2D/PathFollow2D" instance=ExtResource("20_wtv56")]

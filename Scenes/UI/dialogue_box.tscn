@@ -118,6 +118,7 @@ animations = [{
 }]
 
 [node name="DialogueBox" type="Control"]
+custom_minimum_size = Vector2(320, 88)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -126,29 +127,31 @@ offset_right = -320.0
 offset_bottom = -272.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_c67c5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 241.0
-offset_top = 7.0
-offset_right = 310.0
+layout_mode = 1
+offset_left = 245.0
+offset_top = 12.0
+offset_right = 309.0
 offset_bottom = 76.0
 color = Color(0.752941, 0.580392, 0.45098, 1)
 
-[node name="Portrait" type="AnimatedSprite2D" parent="."]
-position = Vector2(276, 44)
+[node name="Portrait" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_uogrq")
-animation = &"junkyard_sad"
+animation = &"forest_eyes_closed"
 
 [node name="Wrapper" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_right = 320.0
+offset_bottom = 88.0
 texture = ExtResource("1_tpmx7")
 
 [node name="DialogueText" type="Label" parent="."]
-layout_mode = 0
+layout_mode = 1
 offset_left = 6.0
 offset_top = 29.0
 offset_right = 229.0
@@ -158,7 +161,7 @@ theme_override_fonts/font = ExtResource("3_obhul")
 autowrap_mode = 2
 
 [node name="NameText" type="Label" parent="."]
-layout_mode = 0
+layout_mode = 1
 offset_left = 117.0
 offset_top = 6.0
 offset_right = 239.0

@@ -1,8 +1,8 @@
 extends Control
 
-@onready var body: Label = $DialogueText
-@onready var speaker: Label = $NameText
-@onready var portrait: AnimatedSprite2D = $Portrait
+@onready var body: Label = $VBoxContainer/dialogueBox/DialogueText
+@onready var speaker: Label = $VBoxContainer/dialogueBox/NameText
+@onready var portrait: AnimatedSprite2D = $VBoxContainer/dialogueBox/ColorRect/Portrait
 
 const TEXT_RATE = 1 #number of frames between updates
 const SHORT_PAUSE = 6 #number of frames to wait on a comma, dash, etc.
@@ -50,7 +50,7 @@ func _unhandled_input(event):
 func _ready():
 	hide()
 
-func _process(delta):
+func _process(_delta):
 	if cur < length:
 		if pause == 0:
 			body.text = sub_text.substr(0, cur+1)

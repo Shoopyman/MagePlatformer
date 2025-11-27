@@ -1,10 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5icb3e88qgtq"]
+[gd_scene load_steps=28 format=3 uid="uid://c5icb3e88qgtq"]
 
 [ext_resource type="Texture2D" uid="uid://bvwn014v6aa1k" path="res://art/UI/mediumButton2.png" id="1_omunj"]
 [ext_resource type="Texture2D" uid="uid://bgoqu20wkoyyq" path="res://art/UI/mediumButton1.png" id="2_cieph"]
 [ext_resource type="Texture2D" uid="uid://baa32jf6qg383" path="res://art/UI/mediumButton3.png" id="3_ygggw"]
 [ext_resource type="Script" uid="uid://dbio36awcx5vn" path="res://Scripts/UI/pause_menu.gd" id="4_cieph"]
+[ext_resource type="Script" uid="uid://crvetdvruqn3y" path="res://Scripts/UI/game_ui.gd" id="4_lwlhg"]
 [ext_resource type="Texture2D" uid="uid://cydrx01qyd11q" path="res://art/UI/panelRect.png" id="4_omunj"]
+[ext_resource type="Script" uid="uid://jra78d6c0po3" path="res://Scripts/UI/dialogue_box.gd" id="5_736t3"]
+[ext_resource type="Texture2D" uid="uid://cq65qca0vjc7h" path="res://art/Portraits/forestBossPortraits-Sheet.png" id="6_jb7yb"]
+[ext_resource type="Texture2D" uid="uid://cmyta7jodvpbo" path="res://art/UI/dialogueBox.png" id="6_ygggw"]
+[ext_resource type="Texture2D" uid="uid://cn1jy87hkymav" path="res://art/Portraits/junkyardBossPortraits-Sheet.png" id="7_nlpps"]
+[ext_resource type="FontFile" uid="uid://pjdle0u4t032" path="res://art/Fonts/Game Font.ttf" id="9_5uvth"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_omunj"]
 
@@ -52,6 +58,117 @@ MarginContainer/constants/margin_left = 14
 MarginContainer/constants/margin_right = 14
 MarginContainer/constants/margin_top = 14
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0df3s"]
+atlas = ExtResource("6_jb7yb")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1spsb"]
+atlas = ExtResource("6_jb7yb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4x3g"]
+atlas = ExtResource("6_jb7yb")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uogrq"]
+atlas = ExtResource("6_jb7yb")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4stw"]
+atlas = ExtResource("6_jb7yb")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75ffr"]
+atlas = ExtResource("7_nlpps")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrsnc"]
+atlas = ExtResource("7_nlpps")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j2nu"]
+atlas = ExtResource("7_nlpps")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06q0h"]
+atlas = ExtResource("7_nlpps")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6o8g2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0df3s")
+}],
+"loop": true,
+"name": &"forest_eyes_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1spsb")
+}],
+"loop": true,
+"name": &"forest_neutral",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4x3g")
+}],
+"loop": true,
+"name": &"forest_smile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uogrq")
+}],
+"loop": true,
+"name": &"forest_surprised",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4stw")
+}],
+"loop": true,
+"name": &"forest_talking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75ffr")
+}],
+"loop": true,
+"name": &"junkyard_angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrsnc")
+}],
+"loop": true,
+"name": &"junkyard_laugh",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j2nu")
+}],
+"loop": true,
+"name": &"junkyard_sad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06q0h")
+}],
+"loop": true,
+"name": &"junkyard_smug",
+"speed": 5.0
+}]
+
 [node name="game_ui" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -60,6 +177,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_2whrp")
+script = ExtResource("4_lwlhg")
 
 [node name="screen" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -69,7 +187,70 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="bottomDialogue" type="Control" parent="screen"]
+layout_mode = 2
+script = ExtResource("5_736t3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="screen/bottomDialogue"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_right = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="dialogueBox" type="Control" parent="screen/bottomDialogue/VBoxContainer"]
+custom_minimum_size = Vector2(320, 88)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 12.0
+offset_right = 309.0
+offset_bottom = 76.0
+color = Color(0.752941, 0.580392, 0.45098, 1)
+
+[node name="Portrait" type="AnimatedSprite2D" parent="screen/bottomDialogue/VBoxContainer/dialogueBox/ColorRect"]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_6o8g2")
+animation = &"forest_eyes_closed"
+
+[node name="Wrapper" type="TextureRect" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 88.0
+texture = ExtResource("6_ygggw")
+
+[node name="DialogueText" type="Label" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 28.0
+offset_right = 229.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+theme_override_fonts/font = ExtResource("9_5uvth")
+autowrap_mode = 2
+
+[node name="NameText" type="Label" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 5.0
+offset_right = 240.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
+theme_override_fonts/font = ExtResource("9_5uvth")
+
+[node name="HSeparator" type="HSeparator" parent="screen/bottomDialogue/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
 [node name="pauseMenu" type="Control" parent="screen"]
+visible = false
 layout_mode = 2
 script = ExtResource("4_cieph")
 
