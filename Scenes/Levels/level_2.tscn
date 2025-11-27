@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bs6e1utqbt606" path="res://Scenes/Objects/Platform/platform_body.tscn" id="17_5buja"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="18_5buja"]
 [ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="19_wyygt"]
-[ext_resource type="PackedScene" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
+[ext_resource type="PackedScene" uid="uid://cdxkmookr0s" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
 
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_blpqv")
