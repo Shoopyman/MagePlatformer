@@ -3,22 +3,6 @@
 [ext_resource type="Script" uid="uid://coegbra3d6t22" path="res://Scripts/Bosses/boss2/key_listener.gd" id="1_s4tn8"]
 [ext_resource type="Texture2D" uid="uid://b4540u3f4bci2" path="res://art/boss/boss2/yuh.png" id="3_545ah"]
 
-[sub_resource type="Animation" id="Animation_su2gw"]
-resource_name = "key_hit"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GlowOverlay:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1.3, 1, 1, 0.996), Color(1.3, 1, 1, 1), Color(1.3, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_545ah"]
 length = 0.001
 tracks/0/type = "value"
@@ -47,6 +31,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1.3, 1, 1, 0), Color(1.3, 1, 1, 0), Color(1.3, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_su2gw"]
+resource_name = "key_hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlowOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1.3, 1, 1, 0.996), Color(1.3, 1, 1, 1), Color(1.3, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v5af3"]
