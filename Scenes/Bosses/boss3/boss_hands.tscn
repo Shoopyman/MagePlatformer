@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://bx88o5um1f1ut"]
+
+[ext_resource type="Texture2D" uid="uid://cm0pkvykmosbs" path="res://art/PLACEHOLDER/Lord_Nightmare.webp" id="1_l1vce"]
+[ext_resource type="Script" uid="uid://dhpbt4krappca" path="res://Scripts/Bosses/boss3/boss_hands.gd" id="1_ypwr6"]
+[ext_resource type="PackedScene" uid="uid://cfcxidavbhrv8" path="res://Scenes/Bosses/boss3/beam.tscn" id="2_eirty"]
+[ext_resource type="Texture2D" uid="uid://cjcnjhl3ds2sa" path="res://art/PLACEHOLDER/gloveHand.jpg" id="2_ypwr6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eirty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l1vce")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptb6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ypwr6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipmhi"]
+size = Vector2(18, 224)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6rihn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ypwr6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_douwv"]
+size = Vector2(16, 226)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypwr6"]
+size = Vector2(837, 894)
+
+[node name="BossHands" type="Node2D"]
+script = ExtResource("1_ypwr6")
+beam_scene = ExtResource("2_eirty")
+metadata/_edit_vertical_guides_ = [365.0]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eirty")
+animation = &"Idle"
+
+[node name="Left hand" type="Area2D" parent="." groups=["leftHand"]]
+position = Vector2(-221, -153)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Left hand"]
+sprite_frames = SubResource("SpriteFrames_ptb6e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left hand"]
+position = Vector2(-61, 0)
+shape = SubResource("RectangleShape2D_ipmhi")
+
+[node name="Right Hand" type="Area2D" parent="." groups=["rightHand"]]
+position = Vector2(221, -153)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Right Hand"]
+sprite_frames = SubResource("SpriteFrames_6rihn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Hand"]
+position = Vector2(75, 1)
+shape = SubResource("RectangleShape2D_douwv")
+
+[node name="TrackPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrackPlayer"]
+position = Vector2(-24.5, 75)
+shape = SubResource("RectangleShape2D_ypwr6")
+
+[connection signal="body_entered" from="Left hand" to="." method="_on_left_hand_body_entered"]
+[connection signal="body_entered" from="Right Hand" to="." method="_on_right_hand_body_entered"]
+[connection signal="body_entered" from="TrackPlayer" to="." method="_on_track_player_body_entered"]
+[connection signal="body_exited" from="TrackPlayer" to="." method="_on_track_player_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://dui3ywekby665"]
+[gd_scene load_steps=27 format=4 uid="uid://dui3ywekby665"]
 
 [ext_resource type="AudioStream" uid="uid://2afrrarjtqo1" path="res://Sound/Music/metForGame25.wav" id="1_7in3v"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_m8xdt"]
@@ -19,11 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://c3wghnumteccn" path="res://Scenes/Objects/spikes.tscn" id="15_vatl4"]
 [ext_resource type="PackedScene" uid="uid://brji4uwu2lgx5" path="res://Scenes/Objects/invisble_checkpoint.tscn" id="18_aa36c"]
 [ext_resource type="PackedScene" uid="uid://bxgx6nhnwr3g8" path="res://Scenes/Bosses/boss3/boss_summon_notes.tscn" id="19_hbm7r"]
-[ext_resource type="PackedScene" uid="uid://bx88o5um1f1ut" path="res://Scenes/Bosses/boss3/boss_hands.tscn" id="19_jdej3"]
-[ext_resource type="PackedScene" uid="uid://dfrfyj5aq70qr" path="res://Scenes/Bosses/boss3/random_note_spawn.tscn" id="20_btmye"]
-[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="21_oyp8n"]
-[ext_resource type="PackedScene" uid="uid://bld8owfpk3cm2" path="res://Scenes/Camera/zoomBox.tscn" id="22_7scol"]
-[ext_resource type="PackedScene" uid="uid://dbuiqbosflmb7" path="res://Scenes/Bosses/boss3/boss_chase.tscn" id="23_7scol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbm7r"]
 size = Vector2(41.5, 10.5)
@@ -46,12 +41,8 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7scol"]
-size = Vector2(577, 9.46936)
-
 [node name="Theater" type="Node2D"]
 script = ExtResource("1_t5hsn")
-metadata/_edit_vertical_guides_ = [560.0, 1330.0]
 
 [node name="TestTimer" type="Label" parent="."]
 offset_left = 1194.06
@@ -126,7 +117,7 @@ position = Vector2(5510, -354)
 position = Vector2(3913, 1478)
 
 [node name="AbilityPickup14" parent="Abilties" instance=ExtResource("6_7in3v")]
-position = Vector2(626, 951)
+position = Vector2(599, 818)
 
 [node name="AbilityPickup15" parent="Abilties" instance=ExtResource("12_1c3eu")]
 position = Vector2(1161, 1141)
@@ -342,74 +333,20 @@ speed_scale = 0.05
 
 [node name="Checkpoints" type="Node" parent="."]
 
-[node name="InvisibleCheckpoint" parent="Checkpoints" instance=ExtResource("18_aa36c")]
+[node name="Area2D" parent="Checkpoints" instance=ExtResource("18_aa36c")]
 position = Vector2(5834, 77)
 
 [node name="Area2D2" parent="Checkpoints" instance=ExtResource("18_aa36c")]
-position = Vector2(3723, 1485)
+position = Vector2(3901, -35)
 
 [node name="Area2D3" parent="Checkpoints" instance=ExtResource("18_aa36c")]
-position = Vector2(3766, -36)
+position = Vector2(3901, -35)
 
 [node name="Area2D4" parent="Checkpoints" instance=ExtResource("18_aa36c")]
 position = Vector2(1252, -2276)
 
-[node name="InvisibleCheckpoint3" parent="Checkpoints" instance=ExtResource("18_aa36c")]
-position = Vector2(583, 1741)
-
-[node name="NoteRoom" type="Node" parent="."]
-
-[node name="Boss_Summon_Notes" parent="NoteRoom" instance=ExtResource("19_hbm7r")]
+[node name="Boss_Summon_Notes" parent="." instance=ExtResource("19_hbm7r")]
 position = Vector2(1228, -2567)
-
-[node name="RandomNoteSpawn" parent="NoteRoom" instance=ExtResource("20_btmye")]
-position = Vector2(1248, -2773)
-
-[node name="CameraLockNotes" parent="NoteRoom" instance=ExtResource("21_oyp8n")]
-position = Vector2(2904, -2676)
-scale = Vector2(2.65, 2)
-camera_mode = "LOCKED"
-
-[node name="Label" type="Label" parent="NoteRoom/CameraLockNotes"]
-offset_left = -8.8739
-offset_top = 162.038
-offset_right = 31.1261
-offset_bottom = 177.038
-text = "Position was 1246, -2408"
-
-[node name="CameraNotesZoom" parent="NoteRoom" instance=ExtResource("22_7scol")]
-position = Vector2(2905, -2674)
-scale = Vector2(2.735, 1)
-zoomFactor = Vector2(0.4, 0.5)
-
-[node name="CameraLocks" type="Node" parent="."]
-
-[node name="Area2D" parent="CameraLocks" instance=ExtResource("21_oyp8n")]
-position = Vector2(3416, 406)
-scale = Vector2(1.8, 1)
-camera_mode = "VERTICAL_ONLY"
-
-[node name="BossChase" type="Node" parent="."]
-
-[node name="BossChase1" parent="BossChase" instance=ExtResource("23_7scol")]
-position = Vector2(3271, -195)
-
-[node name="BossChase2" parent="BossChase" instance=ExtResource("23_7scol")]
-position = Vector2(5213, -131)
-
-[node name="BossChase3" parent="BossChase" instance=ExtResource("23_7scol")]
-position = Vector2(9078, -23)
-horiztonal = false
-
-[node name="BossChase3Spawn" type="Area2D" parent="BossChase"]
-position = Vector2(9055.42, -380.469)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BossChase/BossChase3Spawn"]
-position = Vector2(51.083, -5.26532)
-shape = SubResource("RectangleShape2D_7scol")
-
-[node name="BossHands" parent="." instance=ExtResource("19_jdej3")]
-position = Vector2(973, 1244)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Abilties/SpeicalAbility" to="." method="_on_area_2d_body_entered"]
@@ -418,6 +355,3 @@ position = Vector2(973, 1244)
 [connection signal="body_entered" from="Warps/Warp3" to="." method="_on_warp_3_body_entered"]
 [connection signal="body_entered" from="Warps/Warp4" to="." method="_on_warp_4_body_entered"]
 [connection signal="body_entered" from="Warps/Warp2" to="." method="_on_warp_2_body_entered"]
-[connection signal="body_entered" from="Checkpoints/InvisibleCheckpoint" to="." method="_on_invisible_checkpoint_body_entered"]
-[connection signal="body_entered" from="Checkpoints/Area2D3" to="." method="_on_area_2d_3_body_entered"]
-[connection signal="body_entered" from="BossChase/BossChase3Spawn" to="." method="_on_boss_chase_3_spawn_body_entered"]

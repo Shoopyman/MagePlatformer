@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm87oa50utiq1"]
+
+[ext_resource type="Texture2D" uid="uid://c8xwy2o8vt81b" path="res://art/boss/boss3/musicNotes/pixil-frame-0 (7).png" id="1_473tg"]
+[ext_resource type="Script" uid="uid://cklxr8kyqocwn" path="res://Scripts/Bosses/boss3/notes.gd" id="2_a178a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rth6"]
+size = Vector2(39, 40)
+
+[node name="EighthNotes" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_a178a")
+noteSpeed = 140
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-6.5, -1)
+shape = SubResource("RectangleShape2D_2rth6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_473tg")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
