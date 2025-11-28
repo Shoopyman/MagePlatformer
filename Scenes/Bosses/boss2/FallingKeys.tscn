@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg5gyrnqvf320"]
+
+[ext_resource type="Texture2D" uid="uid://b4540u3f4bci2" path="res://art/boss/boss2/yuh.png" id="1_bgp2k"]
+[ext_resource type="Script" uid="uid://d36aqiajd2xuh" path="res://Scripts/Bosses/boss2/falling_keys.gd" id="1_vs57k"]
+
+[node name="FallingKeys" type="Sprite2D"]
+texture = ExtResource("1_bgp2k")
+hframes = 4
+vframes = 3
+script = ExtResource("1_vs57k")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]

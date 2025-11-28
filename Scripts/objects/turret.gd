@@ -108,5 +108,6 @@ func fireBullets():
 	
 	print("Bullet going this direction")
 
-
+func _ready() -> void:
+	$Animations.play("scanning")
 		

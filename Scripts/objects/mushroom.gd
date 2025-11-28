@@ -50,9 +50,8 @@ func changeState(newState: State):
 
 #checks if 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
-	#if(body.is_in_group("player")):
-		#CheckpointManager.load_saved_progression()
+	if(body.is_in_group("player")):
+		CheckpointManager.load_saved_progression()
 
 
 func _on_bounce_body_entered(body: Node2D) -> void:

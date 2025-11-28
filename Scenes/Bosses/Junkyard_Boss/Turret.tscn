@@ -118,7 +118,8 @@ bullet_scene = ExtResource("2_3snqa")
 shape = SubResource("RectangleShape2D_3snqa")
 
 [node name="TurretHead" type="Sprite2D" parent="."]
-position = Vector2(0, -12)
+z_index = 1
+position = Vector2(1.66798, -12)
 texture = ExtResource("4_ypih2")
 
 [node name="RayCast2D" type="RayCast2D" parent="TurretHead"]

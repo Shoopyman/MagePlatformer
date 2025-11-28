@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhdoytjacbi3"]
+
+[ext_resource type="Script" uid="uid://01p77kmgbshs" path="res://Scripts/Bosses/boss2/boss_2_ui.gd" id="1_5qs8c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbk73"]
+bg_color = Color(0.136826, 0.136826, 0.136826, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qs8c"]
+bg_color = Color(0.679802, 0, 0.155734, 1)
+
+[node name="Boss2Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5qs8c")
+
+[node name="HealthBarPlayer" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 67.0
+offset_bottom = 6.0
+theme_override_styles/background = SubResource("StyleBoxFlat_fbk73")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5qs8c")
+value = 50.0
+show_percentage = false
