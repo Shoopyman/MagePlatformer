@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://6evi5sfmtnj7"]
+
+[ext_resource type="PackedScene" uid="uid://bsw88bn1riogf" path="res://Scenes/Bosses/boss2/KeyListener.tscn" id="2_q2to2"]
+[ext_resource type="Texture2D" uid="uid://1rmuy40qo006" path="res://art/Player/mainCharacter.png" id="2_r60uj"]
+[ext_resource type="Script" uid="uid://bn441iwruhew4" path="res://Scripts/Bosses/boss2/playerRythm.gd" id="3_uxruc"]
+[ext_resource type="PackedScene" uid="uid://dhdoytjacbi3" path="res://Scenes/Bosses/boss2/Boss2 UI.tscn" id="4_n5cy7"]
+[ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="5_uxruc"]
+[ext_resource type="PackedScene" uid="uid://deytoupfm2vp2" path="res://Scenes/Bosses/boss2/levelEditor.tscn" id="6_n5cy7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u63wg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r60uj")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r60uj"]
+
+[sub_resource type="Environment" id="Environment_uxruc"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+
+[node name="TestScene" type="Node2D"]
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_uxruc")]
+
+[node name="KeyListener" parent="." instance=ExtResource("2_q2to2")]
+position = Vector2(-132, 280)
+key_name = "left"
+
+[node name="KeyListener2" parent="." instance=ExtResource("2_q2to2")]
+position = Vector2(0, 280)
+frame = 1
+key_name = "down"
+
+[node name="KeyListener3" parent="." instance=ExtResource("2_q2to2")]
+position = Vector2(132, 280)
+frame = 3
+key_name = "right"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.59, 0.59)
+
+[node name="Player" type="AnimatedSprite2D" parent="." groups=["player"]]
+position = Vector2(-388, 204)
+sprite_frames = SubResource("SpriteFrames_u63wg")
+animation = &"Idle"
+script = ExtResource("3_uxruc")
+
+[node name="Boss2Ui" parent="Player" instance=ExtResource("4_n5cy7")]
+offset_left = -97.0
+offset_top = -458.0
+offset_right = -97.0
+offset_bottom = -458.0
+
+[node name="Boss" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(388, -204)
+sprite_frames = SubResource("SpriteFrames_r60uj")
+
+[node name="Boss2Ui" parent="Player/Boss" instance=ExtResource("4_n5cy7")]
+offset_left = 377.0
+offset_top = -266.0
+offset_right = 377.0
+offset_bottom = -266.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uxruc")
+
+[node name="LevelEditor" parent="." instance=ExtResource("6_n5cy7")]
+position = Vector2(-652, 22)

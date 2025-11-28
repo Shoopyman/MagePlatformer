@@ -765,7 +765,7 @@ camera_mode = "LOCKED"
 [node name="Area2D5" parent="Spikes" instance=ExtResource("38_frwo4")]
 position = Vector2(12719, -794)
 scale = Vector2(2.735, 1.385)
-zoomFactor = Vector2(0.5, 0.5)
+zoomFactor = Vector2(0.45, 0.5)
 
 [node name="GrabageBoxes" type="Node2D" parent="."]
 
