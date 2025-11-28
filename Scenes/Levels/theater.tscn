@@ -85,13 +85,13 @@ position = Vector2(642, -121)
 position = Vector2(4027, -29)
 
 [node name="AbilityPickup4" parent="Abilties" instance=ExtResource("10_t2spc")]
-position = Vector2(4171, -110)
+position = Vector2(4173, -141)
 
 [node name="AbilityPickup5" parent="Abilties" instance=ExtResource("10_t2spc")]
-position = Vector2(4287, -176)
+position = Vector2(4298, -193)
 
 [node name="AbilityPickup6" parent="Abilties" instance=ExtResource("10_t2spc")]
-position = Vector2(4366, -227)
+position = Vector2(4383, -247)
 
 [node name="AbilityPickup8" parent="Abilties" instance=ExtResource("12_1c3eu")]
 position = Vector2(5165, -70)

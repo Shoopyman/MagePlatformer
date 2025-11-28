@@ -205,14 +205,14 @@ position = Vector2(10545, 223)
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("19_wyygt")]
 
 [node name="Mushroom" parent="." instance=ExtResource("20_u87on")]
-position = Vector2(930, 339)
+position = Vector2(927, 341)
 
 [node name="Mushroom2" parent="." instance=ExtResource("20_u87on")]
 position = Vector2(3503, -268)
 color = "brown"
 
 [node name="Mushroom3" parent="." instance=ExtResource("20_u87on")]
-position = Vector2(4608, -605)
+position = Vector2(4607, -603)
 
 [node name="Mushroom4" parent="." instance=ExtResource("20_u87on")]
 position = Vector2(4857, -907)
