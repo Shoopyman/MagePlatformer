@@ -27,7 +27,8 @@ var last_position: Vector2
 var current_position: Vector2
 var facing_direction = 1
 
-@onready var animated_sprite = $Visual/AnimatedSprite2D
+@onready var sprite = $Visual/playerAnim
+var oneOff := false
 
 func _ready():
 	last_position = global_position
@@ -99,20 +100,11 @@ func _physics_process(delta):
 	if ability_manager:
 		ability_manager.update_all(self, delta)
 	
-	$Visual/AnimatedSprite2D.flip_h = facing_direction < 0
 	move_and_slide()
 	
 	current_position = global_position
 	
-	if velocity.x != 0 and velocity.y == 0:
-		animated_sprite.play("running")
-	elif velocity.y > 0:
-		animated_sprite.play("falling")
-	elif velocity.y < 0:
-		animated_sprite.play("jumping")
-	else:
-		animated_sprite.play("default")
-	
+	sprite.animate(self)
 	
 func _process(delta):
 	var alpha = Engine.get_physics_interpolation_fraction()
@@ -138,4 +130,7 @@ func bounce(bounceHeight: float):
 		ability_manager.current_ability.slam_available = true
 	velocity.y -= bounceHeight
 	bounce_timer = .2
-	
+
+
+func _on_animation_finished() -> void:
+	oneOff = false
