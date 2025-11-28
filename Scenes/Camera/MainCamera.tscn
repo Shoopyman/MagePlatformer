@@ -3,6 +3,6 @@
 [ext_resource type="Script" uid="uid://41brvx2n6y38" path="res://Scripts/camera/cameraScript.gd" id="1_ma5mu"]
 
 [node name="Camera2D" type="Camera2D"]
-offset = Vector2(100, 0)
+offset = Vector2(100, 20)
 process_callback = 0
 script = ExtResource("1_ma5mu")

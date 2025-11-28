@@ -4,7 +4,8 @@ extends Area2D
 @export var move_to_center := true
 @export_enum("FULL_FOLLOW", "LOCKED", "VERTICAL_ONLY", "HORIZONTAL_ONLY") var camera_restore := "FULL_FOLLOW"
 func _on_body_entered(body):
-	print("body entered")
+	if not body. is_in_group("player"):
+		return
 	var cam := get_tree().current_scene.get_node("Camera2D")
 	cam.follow_mode = camera_mode
 	
@@ -16,5 +17,7 @@ func _on_body_entered(body):
 		cam.locked_position.x = global_position.x
 
 func _on_body_exited(body):
+	if not body. is_in_group("player"):
+		return
 	var cam := get_tree().current_scene.get_node("Camera2D")
 	cam.follow_mode = camera_restore

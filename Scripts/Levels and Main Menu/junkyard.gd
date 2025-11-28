@@ -9,6 +9,8 @@ extends Node2D
 @onready var UI = $UILayer/game_ui
 @onready var camera = $Camera2D
 
+@onready var player = $Player
+
 func _ready()->void:
 	CheckpointManager.respawn_player()
 	camera.matchPositionToPlayer()
@@ -49,6 +51,14 @@ func _on_spike_wall_flag_body_entered(body: Node2D) -> void:
 		spikeWall.show()
 		spikeWall.active = true
 		
+		
+
+func _on_bug_test_body_entered(body: Node2D) -> void:
+	if(body.is_in_group("player")):
+		player.global_position.x = 11962
+		player.global_position.y = -607
+		camera.global_position.x = 11962
+		camera.global_position.y = -607
 
 
 func _on_test_sign_body_entered(_body) -> void:

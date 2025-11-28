@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cp2ub5msivbls" path="res://art/objects/Spring/spring4.png" id="4_tlo4n"]
 [ext_resource type="Texture2D" uid="uid://jwke2y1lwstr" path="res://art/objects/Spring/spring5.png" id="5_m53wi"]
 [ext_resource type="Script" uid="uid://uwlivhvylje2" path="res://Scripts/objects/spring.gd" id="6_78g4v"]
-[ext_resource type="Script" uid="uid://d2bol7fn2brxe" path="res://Scenes/Objects/springAnime.gd" id="7_gylv2"]
+[ext_resource type="Script" uid="uid://d2bol7fn2brxe" path="res://Scripts/objects/springAnime.gd" id="7_gylv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yntkp"]
 size = Vector2(23, 3)

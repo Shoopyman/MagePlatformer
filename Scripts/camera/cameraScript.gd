@@ -53,3 +53,7 @@ func _process(delta):
 
 func matchPositionToPlayer():
 	global_position = player.position
+	
+func set_zoom_smooth(target: Vector2, duration := 0.5):
+	var tween := get_tree().create_tween()
+	tween.tween_property(self, "zoom", target, duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
