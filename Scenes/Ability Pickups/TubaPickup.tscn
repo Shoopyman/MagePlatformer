@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cucjxmvqj81xo"]
 
 [ext_resource type="PackedScene" uid="uid://2yfk2pgcmdyi" path="res://Scenes/Inheritance/AbilityPickup.tscn" id="1_dvhip"]
-[ext_resource type="Texture2D" uid="uid://crk3pru427tin" path="res://art/Instruments/TubaOverworld/pixil-frame-0.png" id="2_r8rr2"]
+[ext_resource type="Texture2D" uid="uid://6w3jjlfhicvj" path="res://art/Instruments/TubaOverworld/tuba.png" id="2_r8rr2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4ugow"]
 animations = [{
@@ -18,8 +18,7 @@ animations = [{
 ability_name = "tuba"
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(11, 4)
-scale = Vector2(0.705, 0.6675)
+position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_4ugow")
 
 [node name="CollisionShape2D" parent="." index="1"]

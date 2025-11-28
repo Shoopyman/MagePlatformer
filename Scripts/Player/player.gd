@@ -46,16 +46,10 @@ func _physics_process(delta):
 	last_position = global_position
 	var velocity = self.velocity
 	
-	#bounce timer
-	if bounce_timer > 0:
-		bounce_timer -= delta
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	else:
-		# Gravity
-		if not is_on_floor():
-			velocity.y += gravity * delta
-		else:
-			velocity.y = 0
-			coyote_timer = coyote_time #grounded, so reset coyote timer
+		coyote_timer = coyote_time #grounded, so reset coyote timer
 
 	# Update timers
 	if coyote_timer > 0:

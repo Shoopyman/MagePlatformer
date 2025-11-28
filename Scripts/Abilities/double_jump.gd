@@ -15,7 +15,9 @@ func update(player, delta):
 	if Input.is_action_just_pressed("jump") and not player.is_on_floor() and not player.is_on_wall() and jumps_left > 0:
 		jumps_left -= 1
 		player.velocity.y = jump_velocity
-		#player.oneOff = true
+		var bongoAnim = preload("res://Scenes/Particles/double_jump_bongo.tscn").instantiate()
+		bongoAnim.global_position = player.global_position + Vector2(0, 10)
+		get_tree().current_scene.add_child(bongoAnim)
 	
 func on_equipped(player):
 	jumps_left = max_extra_jumps

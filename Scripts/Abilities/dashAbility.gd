@@ -50,6 +50,10 @@ func update(player, delta):
 		dash_dir = axis if axis != 0 else player.facing_direction
 		player.velocity.y = 0
 		player.oneOff = true
+		var puffAnim = preload("res://Scenes/Particles/puff.tscn").instantiate()
+		puffAnim.global_position = player.global_position + Vector2(0, -5)
+		puffAnim.scale.x = dash_dir
+		get_tree().current_scene.add_child(puffAnim)
 		# PLAY SOUND OF DASH
 		
 		

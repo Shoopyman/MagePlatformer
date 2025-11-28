@@ -651,7 +651,6 @@ texture = ExtResource("33_2exlh")
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="PauseScreen" instance=ExtResource("13_ky3da")]
-visible = false
 
 [node name="Area2D" parent="." instance=ExtResource("8_dgo5n")]
 position = Vector2(2470, -1078)

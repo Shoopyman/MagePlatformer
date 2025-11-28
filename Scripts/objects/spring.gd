@@ -1,7 +1,7 @@
 extends Area2D
 
 # constant values
-@export var bounceHeight := 600
+@export var bounceHeight := 800
 @export var beats_between_bounce := 4
 
 
