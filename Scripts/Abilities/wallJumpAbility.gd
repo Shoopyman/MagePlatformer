@@ -24,6 +24,8 @@ func update(player, delta):
 			player.coyote_timer = 0
 		if "jump_buffer_timer" in player:
 			player.jump_buffer_timer = 0
+		
+		#player.oneOff = true
 
 # no coyote time for the walljumps,
 # but they should be more precise and less forgiving

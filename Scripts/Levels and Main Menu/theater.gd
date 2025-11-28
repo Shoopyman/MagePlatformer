@@ -8,6 +8,7 @@ extends Node2D
 @onready var test = $TestTimer
 @onready var warp2 = $Warps/Warp2/CollisionShape2D
 @onready var movingPlatform = $movingPlatform2
+@onready var cam = $Camera2D
 
 var timeLeft = 30
 var inBox = false
@@ -57,8 +58,10 @@ func _on_timer_timeout() -> void:
 #DELETE LATER WHEN FINISHED
 func _on_bug_test_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
-		player.global_position.x = 3801
-		player.global_position.y = -24
+		player.global_position.x = 3723
+		player.global_position.y = 1469
+		cam.global_position.x = 3723
+		cam.global_position.y = 1469
 		TheaterManager.platformEnabled = true
 
 

@@ -34,6 +34,7 @@ func update(player, delta):
 		print("Tuba slam pressed")
 		slam_available = false
 		is_slaming = true
+		#player.oneOff = true
 		#play sound of slam
 
 func isSlamming():

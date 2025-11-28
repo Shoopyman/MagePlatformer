@@ -30,6 +30,12 @@ func update(player, delta):
 		if dash_timer <= 0.0:
 			is_dashing = false
 			cooldown_timer = dash_cooldown
+		
+		if dash_dir == 1:
+			player.sprite.play("dash_right")
+		elif dash_dir == -1:
+			player.sprite.play("dash_left")
+		
 		return
 	
 	if player.is_on_floor():
@@ -43,6 +49,7 @@ func update(player, delta):
 		var axis = int(sign(Input.get_axis("ui_left","ui_right")))
 		dash_dir = axis if axis != 0 else player.facing_direction
 		player.velocity.y = 0
+		player.oneOff = true
 		# PLAY SOUND OF DASH
 		
 		

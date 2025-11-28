@@ -1,38 +1,42 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1ygk4fgelae"]
+[gd_scene load_steps=8 format=3 uid="uid://d1ygk4fgelae"]
 
 [ext_resource type="PackedScene" uid="uid://2yfk2pgcmdyi" path="res://Scenes/Inheritance/AbilityPickup.tscn" id="1_f4dh7"]
-[ext_resource type="Texture2D" uid="uid://r4m1ndt417kd" path="res://art/Instruments/CymbalsOverworld/cymbals.png" id="2_0x8fn"]
+[ext_resource type="Texture2D" uid="uid://dvvbndee7kemu" path="res://art/Instruments/CymbalsOverworld/cymbals-Sheet.png" id="2_w01i5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gxgwt"]
-atlas = ExtResource("2_0x8fn")
-region = Rect2(0, 0, 30, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu8og"]
+atlas = ExtResource("2_w01i5")
+region = Rect2(0, 0, 24, 26)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_glmsv"]
-atlas = ExtResource("2_0x8fn")
-region = Rect2(30, 0, 30, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk4xc"]
+atlas = ExtResource("2_w01i5")
+region = Rect2(24, 0, 24, 26)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pltv5"]
-atlas = ExtResource("2_0x8fn")
-region = Rect2(60, 0, 30, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hovgi"]
+atlas = ExtResource("2_w01i5")
+region = Rect2(48, 0, 24, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwjb8"]
+atlas = ExtResource("2_w01i5")
+region = Rect2(24, 0, 24, 26)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iftnh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gxgwt")
+"texture": SubResource("AtlasTexture_wu8og")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_glmsv")
+"texture": SubResource("AtlasTexture_tk4xc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pltv5")
+"texture": SubResource("AtlasTexture_hovgi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_glmsv")
+"texture": SubResource("AtlasTexture_uwjb8")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 4.0
+"speed": 5.0
 }]
 
 [node name="AbilityPickup" instance=ExtResource("1_f4dh7")]

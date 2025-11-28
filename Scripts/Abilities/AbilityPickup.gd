@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var ability_name := ""            # e.g. "trombone", "cymbals", "bongos"
+@export_enum("trombone", "cymbals", "bongos", "tuba") var ability_name := ""
 @export var float_height := 4.0
 @export var float_speed := 2.0
 @export var respawn_time := 3.0           # seconds before the pickup reappears

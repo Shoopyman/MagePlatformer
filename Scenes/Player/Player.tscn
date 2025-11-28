@@ -1,15 +1,58 @@
-[gd_scene load_steps=19 format=3 uid="uid://cjk38ntrabpqb"]
+[gd_scene load_steps=32 format=3 uid="uid://cjk38ntrabpqb"]
 
 [ext_resource type="Script" uid="uid://711d1tg6d08w" path="res://Scripts/Player/player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://bowertruo2lo1" path="res://art/Player/dashLeft-Sheet.png" id="2_825xp"]
 [ext_resource type="Script" uid="uid://dnb1yxo4jc72l" path="res://Scripts/Managers/abilityManager.gd" id="3_cxr5p"]
 [ext_resource type="Script" uid="uid://vguwotrmwrxp" path="res://Scripts/Abilities/dashAbility.gd" id="3_e80uo"]
 [ext_resource type="Texture2D" uid="uid://c1dgdk6ng3lsu" path="res://art/Player/runningAnim Copy-Sheet.png" id="3_fk5o5"]
+[ext_resource type="Texture2D" uid="uid://71pxipn5cjn3" path="res://art/Player/dashRight-Sheet.png" id="3_ji083"]
 [ext_resource type="Script" uid="uid://d3cv5n13qgmla" path="res://Scripts/Abilities/double_jump.gd" id="3_kne1u"]
 [ext_resource type="Script" uid="uid://dhw2vwj3rejvx" path="res://Scripts/Abilities/wallJumpAbility.gd" id="4_cxr5p"]
+[ext_resource type="Script" uid="uid://c3ijfc5ie6i1i" path="res://Scripts/Player/player_anim.gd" id="5_ji083"]
 [ext_resource type="Script" uid="uid://44yscbb408yf" path="res://Scripts/Abilities/slamAbility.gd" id="6_t26db"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kpjcp"]
 points = PackedVector2Array(-5, 15, -5, 0, 0, -12, 5, 0, 5, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tu5v"]
+atlas = ExtResource("2_825xp")
+region = Rect2(0, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spxdj"]
+atlas = ExtResource("2_825xp")
+region = Rect2(32, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0objx"]
+atlas = ExtResource("2_825xp")
+region = Rect2(64, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w71ue"]
+atlas = ExtResource("2_825xp")
+region = Rect2(96, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e6p3"]
+atlas = ExtResource("2_825xp")
+region = Rect2(128, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb677"]
+atlas = ExtResource("3_ji083")
+region = Rect2(0, 0, 32, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cj01"]
+atlas = ExtResource("3_ji083")
+region = Rect2(32, 0, 32, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2g7t"]
+atlas = ExtResource("3_ji083")
+region = Rect2(64, 0, 32, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io2mu"]
+atlas = ExtResource("3_ji083")
+region = Rect2(96, 0, 32, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5iqy"]
+atlas = ExtResource("3_ji083")
+region = Rect2(128, 0, 32, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t26db"]
 atlas = ExtResource("3_fk5o5")
@@ -49,6 +92,52 @@ region = Rect2(100, 29, 20, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kpjcp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tu5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spxdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0objx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0objx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w71ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e6p3")
+}],
+"loop": false,
+"name": &"dash_left",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb677")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cj01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2g7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2g7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io2mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5iqy")
+}],
+"loop": false,
+"name": &"dash_right",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t26db")
@@ -110,11 +199,13 @@ shape = SubResource("ConvexPolygonShape2D_kpjcp")
 
 [node name="Visual" type="Node2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual"]
+[node name="playerAnim" type="AnimatedSprite2D" parent="Visual"]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_kpjcp")
+animation = &"dash_right"
+script = ExtResource("5_ji083")
 
 [node name="AbilityManager" type="Node" parent="."]
 script = ExtResource("3_cxr5p")
@@ -132,3 +223,5 @@ script = ExtResource("3_kne1u")
 
 [node name="tuba" type="Node" parent="AbilityManager"]
 script = ExtResource("6_t26db")
+
+[connection signal="animation_finished" from="Visual/playerAnim" to="." method="_on_animation_finished"]

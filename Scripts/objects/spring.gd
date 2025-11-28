@@ -43,32 +43,15 @@ func _on_beat() -> void:
 		_activate_spring()
 
 
-# -----------------------------------------
-# Internal animation + bounce sequence
-# -----------------------------------------
 func _activate_spring() -> void:
 	state = State.RISING
 	sprite.play("Action")
 
-	# small delay before bounce happens
-	var t = get_tree().create_timer(0.08)
-	await t.timeout
+func spring_bounce() -> void:
+	if objectInArea and current_body and is_instance_valid(current_body):
+		if current_body.has_method("bounce"):
+			current_body.bounce(bounceHeight)
 
-	if !is_inside_tree():
-		return
-
-	if current_body != null and !is_instance_valid(current_body) and current_body.is_in_group("player"):
-		current_body = null
-
-	# bounce if object is on the spring
-	if objectInArea and current_body and current_body.has_method("bounce"):
-		current_body.bounce(bounceHeight)
-
-	# wait for animation to finish
-	await get_tree().create_timer(0.16).timeout
-	
-	if !is_inside_tree():
-		return
-
+func spring_reset() -> void:
 	state = State.WAITING
 	sprite.play("Idle")

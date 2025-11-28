@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceuvj4j0nv0n8"]
+[gd_scene load_steps=10 format=3 uid="uid://ceuvj4j0nv0n8"]
 
 [ext_resource type="Texture2D" uid="uid://b0d5u35syqhwi" path="res://art/objects/Spring/Spring1.png" id="1_yntkp"]
 [ext_resource type="Texture2D" uid="uid://cf842r2r61pux" path="res://art/objects/Spring/spring2.png" id="2_78g4v"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cp2ub5msivbls" path="res://art/objects/Spring/spring4.png" id="4_tlo4n"]
 [ext_resource type="Texture2D" uid="uid://jwke2y1lwstr" path="res://art/objects/Spring/spring5.png" id="5_m53wi"]
 [ext_resource type="Script" uid="uid://uwlivhvylje2" path="res://Scripts/objects/spring.gd" id="6_78g4v"]
+[ext_resource type="Script" uid="uid://d2bol7fn2brxe" path="res://Scripts/objects/springAnime.gd" id="7_gylv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yntkp"]
 size = Vector2(23, 3)
@@ -27,6 +28,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_m53wi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yntkp")
 }],
 "loop": true,
 "name": &"Action",
@@ -56,7 +60,7 @@ wait_time = 5.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_5fcqt")
 animation = &"Action"
-frame_progress = 0.0718749
+script = ExtResource("7_gylv2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-13, 16, -13, 14, -12, 14, -12, 13, -10, 13, -10, 11, 10, 11, 10, 13, 12, 13, 12, 14, 13, 14, 13, 16)

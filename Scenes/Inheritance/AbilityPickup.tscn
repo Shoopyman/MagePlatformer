@@ -1,38 +1,42 @@
-[gd_scene load_steps=8 format=3 uid="uid://2yfk2pgcmdyi"]
+[gd_scene load_steps=9 format=3 uid="uid://2yfk2pgcmdyi"]
 
 [ext_resource type="Script" uid="uid://cjespq3gqpux5" path="res://Scripts/Abilities/AbilityPickup.gd" id="1_hdy6j"]
-[ext_resource type="Texture2D" uid="uid://cbwpri62eo3f3" path="res://art/Instruments/TromboneOverworld/PixelTromboneSheet.png" id="2_qg4ei"]
+[ext_resource type="Texture2D" uid="uid://cb1dib4gmamcm" path="res://art/Instruments/TromboneOverworld/trombone-Sheet.png" id="2_ryro4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2kggq"]
-atlas = ExtResource("2_qg4ei")
-region = Rect2(0, 0, 50, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ucyd"]
+atlas = ExtResource("2_ryro4")
+region = Rect2(0, 0, 52, 19)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rqiim"]
-atlas = ExtResource("2_qg4ei")
-region = Rect2(50, 0, 50, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_oroq8"]
+atlas = ExtResource("2_ryro4")
+region = Rect2(52, 0, 52, 19)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tes6p"]
-atlas = ExtResource("2_qg4ei")
-region = Rect2(100, 0, 50, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2snn"]
+atlas = ExtResource("2_ryro4")
+region = Rect2(104, 0, 52, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijg5d"]
+atlas = ExtResource("2_ryro4")
+region = Rect2(52, 0, 52, 19)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u62tx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2kggq")
+"texture": SubResource("AtlasTexture_2ucyd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rqiim")
+"texture": SubResource("AtlasTexture_oroq8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tes6p")
+"texture": SubResource("AtlasTexture_b2snn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rqiim")
+"texture": SubResource("AtlasTexture_ijg5d")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 4.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s75b6"]
