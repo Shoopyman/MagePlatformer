@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://1rmuy40qo006" path="res://art/Player/mainCharacter.png" id="2_r60uj"]
 [ext_resource type="Script" uid="uid://bn441iwruhew4" path="res://Scripts/Bosses/boss2/playerRythm.gd" id="3_uxruc"]
 [ext_resource type="PackedScene" uid="uid://dhdoytjacbi3" path="res://Scenes/Bosses/boss2/Boss2 UI.tscn" id="4_n5cy7"]
-[ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="5_uxruc"]
 [ext_resource type="PackedScene" uid="uid://deytoupfm2vp2" path="res://Scenes/Bosses/boss2/levelEditor.tscn" id="6_n5cy7"]
+[ext_resource type="PackedScene" uid="uid://g4ykkl16skln" path="res://Scenes/UI/game_ui.tscn" id="7_u63wg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u63wg"]
 animations = [{
@@ -28,6 +28,8 @@ glow_blend_mode = 1
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_u63wg")
+metadata/_edit_vertical_guides_ = [-543.0, 543.0, -5.0]
+metadata/_edit_horizontal_guides_ = [-305.0, 305.0]
 
 [node name="KeyListener" parent="." instance=ExtResource("2_q2to2")]
 position = Vector2(-132, 280)
@@ -67,9 +69,10 @@ environment = SubResource("Environment_uxruc")
 [node name="LevelEditor" parent="." instance=ExtResource("6_n5cy7")]
 position = Vector2(-652, 22)
 
-[node name="PauseMenu" parent="." instance=ExtResource("5_uxruc")]
-top_level = true
-offset_left = -329.0
-offset_top = -188.0
-offset_right = -329.0
-offset_bottom = -188.0
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="game_ui" parent="UILayer" instance=ExtResource("7_u63wg")]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = -3.0
+offset_bottom = -3.0
