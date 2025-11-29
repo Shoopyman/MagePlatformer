@@ -33,8 +33,10 @@ func update(player, delta):
 		
 		if dash_dir == 1:
 			player.sprite.play("dash_right")
+			player.dashParticlesRight.emitting = true
 		elif dash_dir == -1:
 			player.sprite.play("dash_left")
+			player.dashParticlesLeft.emitting = true
 		
 		return
 	
