@@ -30,24 +30,24 @@ sprite_frames = SubResource("SpriteFrames_x12sy")
 animation = &"Idle"
 
 [node name="Turret" parent="." instance=ExtResource("2_ibf24")]
-position = Vector2(-297, 3.9)
+position = Vector2(-297, 7)
 scale = Vector2(-1, 1)
 
 [node name="Turret2" parent="." instance=ExtResource("2_ibf24")]
-position = Vector2(197, -76)
+position = Vector2(256, -73)
 
 [node name="Turret3" parent="." instance=ExtResource("2_ibf24")]
-position = Vector2(308, 3.9)
+position = Vector2(308, 7)
 
 [node name="Turret4" parent="." instance=ExtResource("2_ibf24")]
-position = Vector2(-183, -76)
+position = Vector2(-245, -73)
 scale = Vector2(-1, 1)
 
 [node name="Turret5" parent="." instance=ExtResource("2_ibf24")]
-position = Vector2(675, -188)
+position = Vector2(349, -169)
 
 [node name="Turret6" parent="." instance=ExtResource("2_ibf24")]
-position = Vector2(-668, -188)
+position = Vector2(-335, -169)
 scale = Vector2(-1, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

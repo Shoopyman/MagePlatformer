@@ -215,6 +215,32 @@ position = Vector2(0, 0.5)
 sprite_frames = SubResource("SpriteFrames_kpjcp")
 script = ExtResource("5_ji083")
 
+[node name="DashParticlesRight" type="CPUParticles2D" parent="Visual"]
+position = Vector2(18, 0)
+emitting = false
+amount = 25
+lifetime = 0.36
+one_shot = true
+explosiveness = 0.75
+emission_shape = 3
+emission_rect_extents = Vector2(22, 8)
+gravity = Vector2(0, 0)
+radial_accel_min = -3.92
+radial_accel_max = 3.69
+
+[node name="DashParticlesLeft" type="CPUParticles2D" parent="Visual"]
+position = Vector2(-18, 0)
+emitting = false
+amount = 25
+lifetime = 0.36
+one_shot = true
+explosiveness = 0.75
+emission_shape = 3
+emission_rect_extents = Vector2(22, 8)
+gravity = Vector2(0, 0)
+radial_accel_min = -3.92
+radial_accel_max = 3.69
+
 [node name="AbilityManager" type="Node" parent="."]
 script = ExtResource("3_cxr5p")
 

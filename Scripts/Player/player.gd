@@ -30,6 +30,9 @@ var facing_direction = 1
 @onready var sprite = $Visual/playerAnim
 var oneOff := false
 
+@onready var dashParticlesRight = $Visual/DashParticlesRight
+@onready var dashParticlesLeft = $Visual/DashParticlesLeft
+
 func _ready():
 	last_position = global_position
 	current_position = global_position

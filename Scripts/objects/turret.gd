@@ -14,7 +14,7 @@ enum TurretState{
 
 #Vars for bullets
 @export var bullet_scene: PackedScene
-@export var bullet_speed := 400.0
+@export var bullet_speed := 250.0
 
 #Grab refrences to nodes needed
 
