@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
 @onready var health_bar = $Boss2Ui/HealthBarPlayer
-
+@onready var boss_bar = $Boss/Boss2Ui
 var hp = 100
 
 func _ready():

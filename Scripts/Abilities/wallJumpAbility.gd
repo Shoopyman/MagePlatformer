@@ -25,7 +25,9 @@ func update(player, delta):
 		if "jump_buffer_timer" in player:
 			player.jump_buffer_timer = 0
 		
-		#player.oneOff = true
+		var cymbalsAnim = preload("res://Scenes/Particles/wall_jump_cymbals.tscn").instantiate()
+		cymbalsAnim.global_position = player.global_position + Vector2(0, 10)
+		get_tree().current_scene.add_child(cymbalsAnim)
 
 # no coyote time for the walljumps,
 # but they should be more precise and less forgiving

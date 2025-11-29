@@ -12,7 +12,7 @@ var pass_threshold = 330
 func _init() -> void:
 	set_process(false)
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	global_position += Vector2(0, fall_speed)
 	
 	if not $Timer.is_stopped():

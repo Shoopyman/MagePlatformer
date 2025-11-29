@@ -11,7 +11,7 @@ func animate(player):
 	
 	flip_h = player.facing_direction < 0
 	
-	if player.velocity.x != 0 and player.velocity.y == 0:
+	if player.velocity.x != 0 and player.velocity.y == 0 and player.is_on_floor():
 		anim = "running"
 	elif player.velocity.y > 0:
 		anim = "falling"

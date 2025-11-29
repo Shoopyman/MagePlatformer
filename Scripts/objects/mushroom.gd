@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 #Constant variables
 @export_enum("red", "brown") var color := "red"
-@export var bounceHeightTuba = 1030
-@export var smallHeight = 300
+@export var bounceHeightTuba = 1250
+@export var smallHeight = 450
 @export var walkSpeed = 50
 @export var direction = 1
 @export var accel = 2400
@@ -50,12 +50,11 @@ func changeState(newState: State):
 
 #checks if 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if(body.is_in_group("player")):
-		CheckpointManager.load_saved_progression()
+	CheckpointManager.load_saved_progression()
 
 
 func _on_bounce_body_entered(body: Node2D) -> void:
-
+	
 	changeState(State.STUNNED)
 	if(body.is_slamming()):
 		print("Player Bounced")

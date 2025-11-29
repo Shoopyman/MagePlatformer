@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://df1o08m3rlo7s"]
+
+[ext_resource type="Texture2D" uid="uid://buofbf4hjclpk" path="res://art/Instruments/CymbalsOverworld/wallJump-Sheet.png" id="1_eobdt"]
+[ext_resource type="Script" uid="uid://cb1ob2r35bgj8" path="res://Scenes/Particles/one_off_particle.gd" id="2_dg3p8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lm5b7"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="wallJumpCymbals" type="CPUParticles2D"]
+material = SubResource("CanvasItemMaterial_lm5b7")
+emitting = false
+amount = 1
+texture = ExtResource("1_eobdt")
+lifetime = 0.5
+one_shot = true
+gravity = Vector2(0, 0)
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+script = ExtResource("2_dg3p8")

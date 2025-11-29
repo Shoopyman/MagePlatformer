@@ -353,10 +353,10 @@ animations = [{
 size = Vector2(25, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cj7ho"]
-size = Vector2(25, 7)
+size = Vector2(31, 8.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1in5c"]
-size = Vector2(25, 14)
+size = Vector2(29, 12)
 
 [node name="Mushroom" type="CharacterBody2D"]
 script = ExtResource("1_cj7ho")
@@ -367,21 +367,21 @@ animation = &"redBouncing"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(17.5, 19.5)
+position = Vector2(17.5, 20.5)
 shape = SubResource("RectangleShape2D_c36l8")
 
 [node name="bounce" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bounce"]
-position = Vector2(17.5, 9.5)
+position = Vector2(17.5, 1.75)
 shape = SubResource("RectangleShape2D_cj7ho")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(17.5, 20)
+position = Vector2(17.5, 21)
 shape = SubResource("RectangleShape2D_1in5c")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

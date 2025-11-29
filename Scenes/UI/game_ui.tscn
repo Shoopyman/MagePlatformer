@@ -250,7 +250,8 @@ custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="pauseMenu" type="Control" parent="screen"]
-visible = false
+process_mode = 3
+z_index = 2
 layout_mode = 2
 script = ExtResource("10_3nq5v")
 
