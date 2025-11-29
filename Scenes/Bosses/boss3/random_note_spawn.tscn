@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfrfyj5aq70qr"]
+
+[ext_resource type="Script" uid="uid://f31ndetp7ke0" path="res://Scripts/Bosses/boss3/randomNoteSpawn.gd" id="1_1b2fq"]
+[ext_resource type="PackedScene" uid="uid://cm87oa50utiq1" path="res://Scenes/Bosses/boss3/eighth_notes.tscn" id="2_yv0tg"]
+[ext_resource type="PackedScene" uid="uid://83ko82gttins" path="res://Scenes/Bosses/boss3/half_note.tscn" id="3_0qc4w"]
+[ext_resource type="PackedScene" uid="uid://nbui4yf31ajs" path="res://Scenes/Bosses/boss3/quarterNote.tscn" id="4_1gyfw"]
+[ext_resource type="PackedScene" uid="uid://dn7728ud0syy5" path="res://Scenes/Bosses/boss3/whole_note.tscn" id="5_rg2qw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fg4l2"]
+size = Vector2(1308, 22)
+
+[node name="RandomNoteSpawn" type="Node2D"]
+script = ExtResource("1_1b2fq")
+quarterNote = ExtResource("4_1gyfw")
+eighthNote = ExtResource("2_yv0tg")
+halfNote = ExtResource("3_0qc4w")
+wholeNote = ExtResource("5_rg2qw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fg4l2")
+
+[node name="Camera2D" type="Camera2D" parent="."]

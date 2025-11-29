@@ -37,7 +37,7 @@ func _on_body_entered(body: Node2D) -> void:
 	respawning = true
 	visible = false
 	if has_node("CollisionShape2D"):
-		$CollisionShape2D.disabled = true
+		$CollisionShape2D.call_deferred("disabled", true)
 
 	await get_tree().create_timer(respawn_time).timeout
 

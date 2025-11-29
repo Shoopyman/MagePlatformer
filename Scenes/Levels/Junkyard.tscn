@@ -766,6 +766,10 @@ position = Vector2(12406, -783)
 scale = Vector2(1.505, 1.385)
 zoomFactor = Vector2(0.75, 0.75)
 
+[node name="Area2D6" parent="Spikes" instance=ExtResource("38_iu1xn")]
+position = Vector2(13666, -744)
+camera_mode = "HORIZONTAL_ONLY"
+
 [node name="GrabageBoxes" type="Node2D" parent="."]
 
 [node name="GarabgeBox" parent="GrabageBoxes" instance=ExtResource("25_xw7x4")]
