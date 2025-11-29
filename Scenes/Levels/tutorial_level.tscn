@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://doesmkcx8bki5" path="res://art/CityArt/buildings/building5.png" id="11_8yvus"]
 [ext_resource type="Texture2D" uid="uid://b2h2x54lg3fd0" path="res://art/CityArt/buildings/buildingx.png" id="11_ot486"]
 [ext_resource type="Texture2D" uid="uid://dlt08r3j34xg7" path="res://art/CityArt/buildings/building5tall.png" id="12_8yvus"]
-[ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="13_5pgco"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="13_u4lmr"]
+[ext_resource type="PackedScene" uid="uid://g4ykkl16skln" path="res://Scenes/UI/game_ui.tscn" id="16_0v71k"]
 [ext_resource type="Texture2D" uid="uid://dyouoo0rgyix4" path="res://art/CityArt/big1.png" id="16_5pgco"]
 [ext_resource type="Texture2D" uid="uid://5fvd6ej1uc4h" path="res://art/CityArt/big2.png" id="16_w685s"]
 [ext_resource type="Texture2D" uid="uid://crovm6n74clmy" path="res://art/CityArt/big3.png" id="17_w685s"]
@@ -113,9 +113,13 @@ position = Vector2(1637, -1002)
 [node name="Area2D10" parent="Checkpoints" instance=ExtResource("6_ohf4p")]
 position = Vector2(2295.82, -1161)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="Checkpoints"]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("13_5pgco")]
+[node name="game_ui" parent="Checkpoints/UILayer" instance=ExtResource("16_0v71k")]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = -3.0
+offset_bottom = -3.0
 
 [node name="Big1" type="Sprite2D" parent="."]
 position = Vector2(2119.82, -50)

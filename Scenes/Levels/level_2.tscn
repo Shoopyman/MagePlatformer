@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cq11iqby101wx"]
+[gd_scene load_steps=22 format=4 uid="uid://cq11iqby101wx"]
 
 [ext_resource type="Script" uid="uid://0cywh3j5a3u7" path="res://Scripts/Levels and Main Menu/ForestLevel.gd" id="1_blpqv"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_ovj6s"]
@@ -15,8 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="12_t27xo"]
 [ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scenes/Objects/DeathBox.tscn" id="14_eopvx"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="18_5buja"]
+[ext_resource type="Texture2D" uid="uid://c4nv0hn1gr2py" path="res://art/ForestArt/gravestone.png" id="19_iunut"]
 [ext_resource type="PackedScene" uid="uid://dpkar0c6ctslm" path="res://Scenes/Objects/movingPlatform2.0/MovingPlatform2.tscn" id="19_u87on"]
 [ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="19_wyygt"]
+[ext_resource type="Texture2D" uid="uid://cwshtdp02icil" path="res://art/ForestArt/log_on_side.png" id="20_jd2hh"]
 [ext_resource type="PackedScene" uid="uid://muamej5lnim0" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
 
 [sub_resource type="Curve2D" id="Curve2D_wyygt"]
@@ -201,6 +203,7 @@ position = Vector2(6046, -602)
 position = Vector2(10545, 223)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("19_wyygt")]
 
@@ -224,3 +227,11 @@ curve = SubResource("Curve2D_wyygt")
 loop = false
 speed = 1.0
 speed_scale = 0.5
+
+[node name="Gravestone" type="Sprite2D" parent="."]
+position = Vector2(584, 350)
+texture = ExtResource("19_iunut")
+
+[node name="LogOnSide" type="Sprite2D" parent="."]
+position = Vector2(638, 353)
+texture = ExtResource("20_jd2hh")
