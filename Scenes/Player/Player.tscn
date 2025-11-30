@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cjk38ntrabpqb"]
+[gd_scene load_steps=37 format=3 uid="uid://cjk38ntrabpqb"]
 
 [ext_resource type="Script" uid="uid://711d1tg6d08w" path="res://Scripts/Player/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bowertruo2lo1" path="res://art/Player/dashLeft-Sheet.png" id="2_825xp"]
@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://dd8qsy7okckgd" path="res://art/Player/slam.png" id="5_0kmp4"]
 [ext_resource type="Script" uid="uid://c3ijfc5ie6i1i" path="res://Scripts/Player/player_anim.gd" id="5_ji083"]
 [ext_resource type="Script" uid="uid://44yscbb408yf" path="res://Scripts/Abilities/slamAbility.gd" id="6_t26db"]
+[ext_resource type="AudioStream" uid="uid://iv8hidqmu04f" path="res://Sound/SFX/trombone.mp3" id="12_esmjy"]
+[ext_resource type="AudioStream" uid="uid://dh3ac02jymcst" path="res://Sound/SFX/cymbalCrash.mp3" id="13_6tu5v"]
+[ext_resource type="AudioStream" uid="uid://btnmsjyqbhclk" path="res://Sound/SFX/bongo.mp3" id="14_spxdj"]
+[ext_resource type="AudioStream" uid="uid://ofoib8p1tmv8" path="res://Sound/SFX/tuba.mp3" id="15_0objx"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kpjcp"]
 points = PackedVector2Array(-5, 15, -5, -2, 0, -13, 4, -2, 4, 15)
@@ -257,5 +261,19 @@ script = ExtResource("3_kne1u")
 
 [node name="tuba" type="Node" parent="AbilityManager"]
 script = ExtResource("6_t26db")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Trombone" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_esmjy")
+
+[node name="Cymbal" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_6tu5v")
+
+[node name="Bongo" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_spxdj")
+
+[node name="Tuba" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("15_0objx")
 
 [connection signal="animation_finished" from="Visual/playerAnim" to="." method="_on_animation_finished"]

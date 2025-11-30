@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://btmxprif3bbq"]
+
+[ext_resource type="Texture2D" uid="uid://c3oh8mmgg7kgv" path="res://art/objects/smallSpikeRow.png" id="1_33erx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hpny2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_33erx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33erx"]
+size = Vector2(29, 4)
+
+[node name="Node2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_hpny2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 2)
+shape = SubResource("RectangleShape2D_33erx")

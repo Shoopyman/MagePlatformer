@@ -56,9 +56,10 @@ func update(player, delta):
 		puffAnim.global_position = player.global_position + Vector2(0, -5)
 		puffAnim.scale.x = dash_dir
 		get_tree().current_scene.add_child(puffAnim)
+		get_parent().play_sfx("dash")
 		# PLAY SOUND OF DASH
-		
-		
+
+
 func on_equipped(player):
 	var dash_available = true
 	print("equipped")

@@ -11,7 +11,10 @@ var slam_available = true
 var is_slaming = false
 var cooldown_timer = 0.0
 var ricochet_timer = -10.0
+
 var rebound_timer = 0.0
+signal ability_used(ability_name)
+
 
 func on_unlock():
 	#play SFX of unlocking
@@ -42,6 +45,7 @@ func update(player, delta):
 		slam_available = false
 		is_slaming = true
 		#play sound of slam
+		get_parent().play_sfx("slam")
 	
 	if cooldown_timer > 0.0:
 		cooldown_timer -= delta
