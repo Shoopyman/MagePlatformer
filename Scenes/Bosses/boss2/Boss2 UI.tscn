@@ -19,8 +19,8 @@ script = ExtResource("1_5qs8c")
 
 [node name="HealthBarPlayer" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_right = 67.0
-offset_bottom = 6.0
+offset_right = 311.0
+offset_bottom = 8.0
 theme_override_styles/background = SubResource("StyleBoxFlat_fbk73")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5qs8c")
 value = 50.0

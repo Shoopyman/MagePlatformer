@@ -225,6 +225,7 @@ size = Vector2(180, 40)
 
 [node name="Junkyard" type="Node2D"]
 script = ExtResource("1_x2u4r")
+metadata/_edit_vertical_guides_ = [8049.0, 9187.0]
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_adk4t")
