@@ -1,6 +1,5 @@
-[gd_scene load_steps=31 format=4 uid="uid://cq11iqby101wx"]
+[gd_scene load_steps=31 format=4 uid="uid://cq11iqby101wx"][ext_resource type="Script" uid="uid://0cywh3j5a3u7" path="res://Scripts/Levels and Main Menu/ForestLevel.gd" id="1_blpqv"]
 
-[ext_resource type="Script" uid="uid://0cywh3j5a3u7" path="res://Scripts/Levels and Main Menu/ForestLevel.gd" id="1_blpqv"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_ovj6s"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="1_oylv5"]
 [ext_resource type="AudioStream" uid="uid://2afrrarjtqo1" path="res://Sound/Music/metForGame25.wav" id="2_uqiic"]
@@ -24,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://muamej5lnim0" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
 [ext_resource type="Script" uid="uid://cvu8he3q8j1hm" path="res://Scripts/objects/platformFollow.gd" id="23_1xj2d"]
 [ext_resource type="PackedScene" uid="uid://bs6e1utqbt606" path="res://Scenes/Objects/Platform/platform_body.tscn" id="24_7h8th"]
+[ext_resource type="Texture2D" uid="uid://b2qn1rapx5jg4" path="res://art/ForestArt/16place.png" id="21_iunut"]
+
 
 [sub_resource type="Curve2D" id="Curve2D_m4i1e"]
 _data = {
@@ -281,7 +282,7 @@ visible = false
 position = Vector2(927, 341)
 
 [node name="Mushroom2" parent="." instance=ExtResource("20_u87on")]
-position = Vector2(3503, -268)
+position = Vector2(3503, -267)
 color = "brown"
 
 [node name="Mushroom3" parent="." instance=ExtResource("20_u87on")]
@@ -291,8 +292,13 @@ position = Vector2(4607, -603)
 position = Vector2(4857, -907)
 color = "brown"
 
+
+[node name="Gravestone2" type="Sprite2D" parent="."]
+position = Vector2(384, 349)
+texture = ExtResource("19_iunut")
+
 [node name="Gravestone" type="Sprite2D" parent="."]
-position = Vector2(584, 350)
+position = Vector2(556, 349)
 texture = ExtResource("19_iunut")
 
 [node name="LogOnSide" type="Sprite2D" parent="."]
@@ -445,3 +451,6 @@ position = Vector2(8558, -1515)
 [node name="Mushroom14" parent="mushrooms for last gauntlet" instance=ExtResource("20_u87on")]
 position = Vector2(8606, -1499)
 smallHeight = 900
+[node name="16Place" type="Sprite2D" parent="."]
+position = Vector2(456, 336)
+texture = ExtResource("21_iunut")

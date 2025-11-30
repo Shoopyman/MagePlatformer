@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://6evi5sfmtnj7"]
+[gd_scene load_steps=12 format=3 uid="uid://6evi5sfmtnj7"]
 
 [ext_resource type="Script" uid="uid://cxn33e8bbygnm" path="res://Scripts/Levels and Main Menu/test_scene.gd" id="1_u63wg"]
+[ext_resource type="Texture2D" uid="uid://b7ltvj1rvbcyl" path="res://art/boss/boss2/RyhtmBackground.png" id="2_4m670"]
 [ext_resource type="PackedScene" uid="uid://bsw88bn1riogf" path="res://Scenes/Bosses/boss2/KeyListener.tscn" id="2_q2to2"]
 [ext_resource type="Texture2D" uid="uid://1rmuy40qo006" path="res://art/Player/mainCharacter.png" id="2_r60uj"]
 [ext_resource type="Script" uid="uid://bn441iwruhew4" path="res://Scripts/Bosses/boss2/playerRythm.gd" id="3_uxruc"]
@@ -31,6 +32,10 @@ script = ExtResource("1_u63wg")
 metadata/_edit_vertical_guides_ = [-543.0, 543.0, -5.0]
 metadata/_edit_horizontal_guides_ = [-305.0, 305.0]
 
+[node name="BAckground" type="Sprite2D" parent="."]
+scale = Vector2(1, 1.00329)
+texture = ExtResource("2_4m670")
+
 [node name="KeyListener" parent="." instance=ExtResource("2_q2to2")]
 position = Vector2(-132, 280)
 key_name = "left"
@@ -55,10 +60,10 @@ animation = &"Idle"
 script = ExtResource("3_uxruc")
 
 [node name="Boss2Ui" parent="Player" instance=ExtResource("4_n5cy7")]
-offset_left = -99.0
-offset_top = -461.0
-offset_right = -84.0
-offset_bottom = -512.0
+offset_left = -131.0
+offset_top = -476.0
+offset_right = -116.0
+offset_bottom = -527.0
 
 [node name="Boss" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r60uj")

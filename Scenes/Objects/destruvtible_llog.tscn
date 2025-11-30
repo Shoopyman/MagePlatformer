@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://ot3w0dkcuro8"]
+
+[ext_resource type="Texture2D" uid="uid://ckb75av44swuf" path="res://art/ForestArt/breakable-Log.png" id="1_6yvf4"]
+[ext_resource type="Script" uid="uid://cikiuwvcni4d" path="res://Scripts/Objectsstuff/destructible_box.gd" id="2_2rel0"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_2rel0"]
+points = PackedVector2Array(35.75, -10, 35.75, 3, -35.25, 5, -34.25, -4, 18.75, -8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eanmy"]
+size = Vector2(107.252, 19.2271)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6yvf4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.25, 7)
+shape = SubResource("ConvexPolygonShape2D_2rel0")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+scale = Vector2(1, 1.4)
+script = ExtResource("2_2rel0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 4.64286)
+scale = Vector2(0.745906, 0.854449)
+shape = SubResource("RectangleShape2D_eanmy")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
