@@ -3,7 +3,6 @@ extends Node
 #Constants
 @export var jump_velocity = -370
 @export var max_extra_jumps = 1
-
 #Setting up variables
 var jumps_left = 0
 var is_enabled = true
@@ -18,6 +17,8 @@ func update(player, delta):
 		var bongoAnim = preload("res://Scenes/Particles/double_jump_bongo.tscn").instantiate()
 		bongoAnim.global_position = player.global_position + Vector2(0, 10)
 		get_tree().current_scene.add_child(bongoAnim)
+		
+		get_parent().play_sfx("double_jump")
 	
 func on_equipped(player):
 	jumps_left = max_extra_jumps

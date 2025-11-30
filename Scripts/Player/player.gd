@@ -27,6 +27,14 @@ var last_position: Vector2
 var current_position: Vector2
 var facing_direction = 1
 
+# -- Audio ---
+@onready var sfx = {
+	"dash": $Audio/Trombone,
+	"slam": $Audio/Tuba,
+	"double_jump": $Audio/Bongo,
+	"wall_jump": $Audio/Cymbal
+}
+
 @onready var sprite = $Visual/playerAnim
 var oneOff := false
 
@@ -44,6 +52,12 @@ func _ready():
 	# ability_manager.unlock("cymbals")
 	# ability_manager.unlock("tuba")
 	
+
+
+
+func play_sfx(name: String):
+	if name in sfx:
+		sfx[name].play()
 
 func _physics_process(delta):
 	last_position = global_position
