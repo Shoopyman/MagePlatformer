@@ -350,13 +350,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c36l8"]
-size = Vector2(25, 13)
+size = Vector2(10, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cj7ho"]
-size = Vector2(31, 8.5)
+size = Vector2(40, 8.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1in5c"]
-size = Vector2(29, 12)
+size = Vector2(10, 12)
 
 [node name="Mushroom" type="CharacterBody2D"]
 script = ExtResource("1_cj7ho")
@@ -374,7 +374,7 @@ shape = SubResource("RectangleShape2D_c36l8")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bounce"]
-position = Vector2(17.5, 1.75)
+position = Vector2(18, 5)
 shape = SubResource("RectangleShape2D_cj7ho")
 
 [node name="Area2D" type="Area2D" parent="."]
