@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://dui3ywekby665"]
+[gd_scene load_steps=34 format=4 uid="uid://dui3ywekby665"]
 
 [ext_resource type="AudioStream" uid="uid://2afrrarjtqo1" path="res://Sound/Music/metForGame25.wav" id="1_7in3v"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_m8xdt"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bld8owfpk3cm2" path="res://Scenes/Camera/zoomBox.tscn" id="22_7scol"]
 [ext_resource type="PackedScene" uid="uid://dbuiqbosflmb7" path="res://Scenes/Bosses/boss3/boss_chase.tscn" id="23_7scol"]
 [ext_resource type="PackedScene" uid="uid://g4ykkl16skln" path="res://Scenes/UI/game_ui.tscn" id="24_jdej3"]
+[ext_resource type="PackedScene" uid="uid://dq07qx6s5y7yk" path="res://Scenes/Objects/wall_turret.tscn" id="25_wdfhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbm7r"]
 size = Vector2(41.5, 10.5)
@@ -333,7 +334,7 @@ scale = Vector2(3.12, 1.00707)
 position = Vector2(4477, 124)
 scale = Vector2(0.83999, 1)
 
-[node name="movingPlatform2" parent="." instance=ExtResource("14_40p0g")]
+[node name="movingPlatform2" parent="." groups=["movingPlatform"] instance=ExtResource("14_40p0g")]
 position = Vector2(5992, 38)
 curve = SubResource("Curve2D_dmxka")
 loop = false
@@ -391,6 +392,41 @@ camera_mode = "VERTICAL_ONLY"
 
 [node name="BossChase" type="Node" parent="."]
 
+[node name="WallTurret" parent="BossChase" instance=ExtResource("25_wdfhh")]
+position = Vector2(9342, -349)
+
+[node name="WallTurret2" parent="BossChase" instance=ExtResource("25_wdfhh")]
+position = Vector2(8898, -349)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="WallTurret3" parent="BossChase" instance=ExtResource("25_wdfhh")]
+position = Vector2(9335, -544)
+
+[node name="WallTurret4" parent="BossChase" instance=ExtResource("25_wdfhh")]
+position = Vector2(8901, -545)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="WallTurret5" parent="BossChase" instance=ExtResource("25_wdfhh")]
+position = Vector2(8901, -712)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="WallTurret6" parent="BossChase" instance=ExtResource("25_wdfhh")]
+position = Vector2(9334, -712)
+
+[node name="WallTurret7" parent="BossChase" instance=ExtResource("25_wdfhh")]
+position = Vector2(9335, -861)
+
+[node name="WallTurret8" parent="BossChase" instance=ExtResource("25_wdfhh")]
+position = Vector2(8902, -861)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="WallTurret9" parent="BossChase" instance=ExtResource("25_wdfhh")]
+position = Vector2(1028, -29)
+
 [node name="BossChase1" parent="BossChase" instance=ExtResource("23_7scol")]
 position = Vector2(3271, -195)
 
@@ -398,7 +434,7 @@ position = Vector2(3271, -195)
 position = Vector2(5213, -131)
 
 [node name="BossChase3" parent="BossChase" instance=ExtResource("23_7scol")]
-position = Vector2(9078, -23)
+position = Vector2(10435, -94)
 horiztonal = false
 
 [node name="BossChase3Spawn" type="Area2D" parent="BossChase"]

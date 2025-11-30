@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=3 uid="uid://dq07qx6s5y7yk"]
+
+[ext_resource type="Texture2D" uid="uid://cmquhctrwsg6k" path="res://art/objects/turret/turretHead.png" id="1_jvub6"]
+[ext_resource type="Script" uid="uid://boui2ickrpaw" path="res://Scripts/objects/turret.gd" id="1_rfxur"]
+[ext_resource type="PackedScene" uid="uid://dg2wxwqucn12u" path="res://Scenes/Objects/Bullet.tscn" id="2_bgmjx"]
+
+[sub_resource type="Animation" id="Animation_pbqu6"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_kfiig"]
+resource_name = "attack"
+length = 0.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurretHead:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -12), Vector2(3, -12), Vector2(0, -12)]
+}
+
+[sub_resource type="Animation" id="Animation_ypih2"]
+resource_name = "broken"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurretHead:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.773181]
+}
+
+[sub_resource type="Animation" id="Animation_tgnak"]
+resource_name = "recharging"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurretHead:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.97, 1.34, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.57054, 1.57054, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TurretHead:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.29, 0.8, 0.97, 0.98, 1.18, 1.33, 1.63, 1.82, 2.1, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -12), Vector2(-1, -11), Vector2(-3, -13), Vector2(-2, -17), Vector2(0, -18), Vector2(0, -18), Vector2(0, -15), Vector2(1, -18), Vector2(-2, -18), Vector2(7.15256e-07, -15), Vector2(-1, -13), Vector2(0, -12)]
+}
+
+[sub_resource type="Animation" id="Animation_7yicx"]
+resource_name = "scanning"
+length = 4.05
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurretHead:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3.03, 4.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.579449, -0.581195, 0.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ypih2"]
+_data = {
+&"RESET": SubResource("Animation_pbqu6"),
+&"attack": SubResource("Animation_kfiig"),
+&"broken": SubResource("Animation_ypih2"),
+&"recharging": SubResource("Animation_tgnak"),
+&"scanning": SubResource("Animation_7yicx")
+}
+
+[node name="WallTurret" type="Node2D"]
+script = ExtResource("1_rfxur")
+bullet_scene = ExtResource("2_bgmjx")
+
+[node name="TurretHead" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -12)
+texture = ExtResource("1_jvub6")
+
+[node name="RayCast2D" type="RayCast2D" parent="TurretHead"]
+position = Vector2(-8, -1)
+target_position = Vector2(-1042, 0)
+
+[node name="Line2D" type="Line2D" parent="TurretHead"]
+position = Vector2(0, 12)
+points = PackedVector2Array(-8, -13)
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ypih2")
+}

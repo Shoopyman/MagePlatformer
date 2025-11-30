@@ -109,8 +109,8 @@ func _on_timer_timeout() -> void:
 #DELETE LATER WHEN FINISHED
 func _on_bug_test_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
-		player.global_position.x = 580
-		player.global_position.y = 1746
+		player.global_position.x = 5860
+		player.global_position.y = 80
 		cam.global_position.x = 3723
 		cam.global_position.y = 1469
 		TheaterManager.platformEnabled = true
@@ -207,4 +207,5 @@ func _on_boss_chase_3_spawn_body_entered(body: Node2D) -> void:
 		bossChase3.process_mode = Node.PROCESS_MODE_INHERIT
 		bossChase3.set_physics_process(true)
 		bossChase3.set_process(true)
+		
 		

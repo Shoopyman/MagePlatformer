@@ -20,6 +20,8 @@ func _ready() -> void:
 	else:
 		collison.position.x = 19.667 
 		collison.position.y = -96.275
+		collison.shape.size.x = 892.866
+		collison.shape.size.y = 89.857
 		shape_resource = Vector2(893, 90)
 
 

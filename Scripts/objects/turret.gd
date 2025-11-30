@@ -52,6 +52,7 @@ func change_state(new_state: TurretState):
 
 
 func _physics_process(_delta: float) -> void:
+	print("Ready to fire Bullets")
 	if current_state != TurretState.Scanning:
 		return
 	
@@ -88,10 +89,10 @@ func fireBullets():
 	var collider = raycast.get_collider()
 	if collider == null:
 		return
-	if not collider.is_in_group('player') :
+	if not collider.is_in_group('player') and not collider.is_in_group('movingPlatform') :
 		return
 	
-	# Get player position when collided with raycast
+	# Get player position  when collided with raycast
 	print("Firing Bullets")
 	var target_pos = collider.global_position
 	
@@ -109,5 +110,6 @@ func fireBullets():
 	print("Bullet going this direction")
 
 func _ready() -> void:
+	print("hi")
 	$Animations.play("scanning")
 		

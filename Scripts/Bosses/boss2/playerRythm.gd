@@ -9,7 +9,7 @@ func _ready():
 	Signals.IncremetScore.connect(IncremetScore)
 	Signals.DecremetScore.connect(DecremetScore)
 	
-func _process(delta):
+func _process(_delta):
 	health_bar.value = hp
 
 func IncremetScore (incr: int):

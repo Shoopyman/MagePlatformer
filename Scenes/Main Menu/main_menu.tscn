@@ -8,13 +8,6 @@ font_size = 40
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_28flt")
 
-[node name="Demo_button" type="Button" parent="."]
-offset_left = 31.0
-offset_top = 313.0
-offset_right = 132.0
-offset_bottom = 344.0
-text = "Demo Stage"
-
 [node name="Tutorial_Button" type="Button" parent="."]
 offset_left = 245.0
 offset_top = 84.0
@@ -60,7 +53,6 @@ offset_right = 347.0
 offset_bottom = 258.0
 text = "Level Three"
 
-[connection signal="pressed" from="Demo_button" to="." method="_on_demo_button_pressed"]
 [connection signal="pressed" from="Tutorial_Button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Exit_button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level_1_button" to="." method="_on_level_1_button_pressed"]

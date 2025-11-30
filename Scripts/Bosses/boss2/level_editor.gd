@@ -52,7 +52,7 @@ func _ready()->void:
 				SpawnFallingKey(button_name, delay)
 			counter += 1
 
-func KeyListenerPress(button_name: String, array_num: int):
+func KeyListenerPress(_button_name: String, array_num: int):
 	print(str(array_num) + " " + str($MusicPlayer.get_playback_position()))
 	fk_output_arr[array_num].append($MusicPlayer.get_playback_position() - fk_fall_time)
 
