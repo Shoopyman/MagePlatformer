@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://d2rlgs2g6ri05"]
 
 [ext_resource type="Script" uid="uid://td70s4eoa58c" path="res://Scripts/Levels and Main Menu/pause_menu.gd" id="1_q4tua"]
-[ext_resource type="Shader" uid="uid://d1vk87ila47js" path="res://art/pause_menu.gdshader" id="2_mgtps"]
+[ext_resource type="Shader" uid="uid://d1vk87ila47js" path="res://art/UI/pause_menu.gdshader" id="2_mgtps"]
 [ext_resource type="PackedScene" uid="uid://duq7wnfk3yhgj" path="res://Scenes/UI/pixel_button.tscn" id="3_8qdxq"]
 [ext_resource type="PackedScene" uid="uid://b321ofoneqa3o" path="res://Scenes/UI/long_pixel_button.tscn" id="4_e6jpk"]
 [ext_resource type="FontFile" uid="uid://pjdle0u4t032" path="res://art/Fonts/Game Font.ttf" id="7_yb6hn"]

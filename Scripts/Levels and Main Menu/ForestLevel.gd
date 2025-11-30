@@ -8,6 +8,6 @@ extends Node2D
 func _ready():
 	CheckpointManager.respawn_player()
 	camera.matchPositionToPlayer()
-	MusicManager.play_track("res://Sound/Music/metForGame25.wav")
+	MusicManager.play_track("res://Sound/Music/ForestMusic.mp3")
 	BeatManager.set_bpm(bpm)
 	
