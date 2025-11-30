@@ -1,5 +1,6 @@
 [gd_scene load_steps=34 format=4 uid="uid://cq11iqby101wx"]
 
+
 [ext_resource type="Script" uid="uid://0cywh3j5a3u7" path="res://Scripts/Levels and Main Menu/ForestLevel.gd" id="1_blpqv"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_ovj6s"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="1_oylv5"]
@@ -505,11 +506,15 @@ position = Vector2(8558, -1515)
 
 [node name="Mushroom14" parent="mushrooms for last gauntlet" instance=ExtResource("20_u87on")]
 position = Vector2(8606, -1499)
-smallHeight = 1000
+
+smallHeight = 900
+
+
 
 [node name="16Place" type="Sprite2D" parent="."]
 position = Vector2(456, 336)
 texture = ExtResource("21_iunut")
+
 
 [node name="Camera2D" parent="." instance=ExtResource("2_w2ac1")]
 position = Vector2(-3, -3)
@@ -527,3 +532,4 @@ scale_amount_max = 3.0
 color = Color(0.616654, 0.752155, 1, 1)
 hue_variation_min = 0.02
 hue_variation_max = 0.5
+
