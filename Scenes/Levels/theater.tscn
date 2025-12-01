@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ceuvj4j0nv0n8" path="res://Scenes/Objects/Spring.tscn" id="4_7in3v"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="5_x1eyc"]
 [ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="6_7in3v"]
-[ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scenes/Objects/DeathBox.tscn" id="9_jwx0b"]
+[ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scripts/DeathBox.tscn" id="9_jwx0b"]
 [ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="10_t2spc"]
 [ext_resource type="PackedScene" uid="uid://cucjxmvqj81xo" path="res://Scenes/Ability Pickups/TubaPickup.tscn" id="11_oj7lm"]
 [ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Ability Pickups/CymbalsPickup.tscn" id="12_1c3eu"]

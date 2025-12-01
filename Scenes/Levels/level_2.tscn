@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="10_uqiic"]
 [ext_resource type="PackedScene" uid="uid://d1ygk4fgelae" path="res://Scenes/Ability Pickups/CymbalsPickup.tscn" id="11_eopvx"]
 [ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="12_t27xo"]
-[ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scenes/Objects/DeathBox.tscn" id="14_eopvx"]
+[ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scripts/DeathBox.tscn" id="14_eopvx"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="18_5buja"]
 [ext_resource type="Texture2D" uid="uid://c4nv0hn1gr2py" path="res://art/ForestArt/gravestone.png" id="19_iunut"]
 [ext_resource type="Texture2D" uid="uid://cwshtdp02icil" path="res://art/ForestArt/log_on_side.png" id="20_jd2hh"]

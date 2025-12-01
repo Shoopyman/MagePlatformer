@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="12_rbpxy"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="15_uxcut"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="16_8loo1"]
-[ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scenes/Objects/DeathBox.tscn" id="17_4hk1l"]
+[ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scripts/DeathBox.tscn" id="17_4hk1l"]
 [ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="18_4hk1l"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vkf7a"]

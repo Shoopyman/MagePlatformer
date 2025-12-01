@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://1y0w3off4fxo" path="res://Scripts/Levels and Main Menu/tutorial_level.gd" id="1_w35ah"]
 [ext_resource type="PackedScene" uid="uid://cc5ixko7l578w" path="res://Scenes/Level Building/TileMap.tscn" id="2_f5ku8"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="3_tbcxr"]
-[ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scenes/Objects/DeathBox.tscn" id="4_ohf4p"]
+[ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scripts/DeathBox.tscn" id="4_ohf4p"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="5_tbcxr"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="6_ohf4p"]
 [ext_resource type="PackedScene" uid="uid://e40ojd5hmhpl" path="res://Scenes/Ability Pickups/BongosPickup.tscn" id="7_68caq"]
