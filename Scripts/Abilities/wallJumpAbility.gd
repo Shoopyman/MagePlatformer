@@ -2,17 +2,36 @@ extends Node
 
 @export var wall_jump_hori = 550
 @export var wall_jump_verti = -400
-
-
-func on_unlock():
-	#play SFX of unlcoking
-	pass
+@export var wall_slide_gravity = 150      # lower gravity while sliding
+@export var wall_slide_max_speed = 120    # downward cap while sliding
+@export var enable_wall_slide = true
 
 func update(player, delta):
-	
-	if Input.is_action_just_pressed("jump") and player.is_on_wall() and not player.is_on_floor():
-		var normal = player.get_wall_normal()
+
+	# ---- WALL SLIDE ----
+	var sliding = false
+
+	if enable_wall_slide \
+	and player.is_on_wall() \
+	and not player.is_on_floor() \
+	and player.velocity.y > 0:    # only slide when falling
+
+		sliding = true
+
+		# apply reduced gravity
+		player.velocity.y += wall_slide_gravity * delta
 		
+		# cap slide speed
+		if player.velocity.y > wall_slide_max_speed:
+			player.velocity.y = wall_slide_max_speed
+
+	# ---- WALL JUMP ----
+	if Input.is_action_just_pressed("jump") \
+	and player.is_on_wall() \
+	and not player.is_on_floor():
+
+		var normal = player.get_wall_normal()
+
 		if normal.x > 0:
 			player.velocity.x = wall_jump_hori
 			player.velocity.y = wall_jump_verti
@@ -20,7 +39,7 @@ func update(player, delta):
 			player.velocity.x = -wall_jump_hori
 			player.velocity.y = wall_jump_verti
 
-		# reset coyote/jump buffer
+		# reset buffer timers
 		if "coyote_timer" in player:
 			player.coyote_timer = 0
 		if "jump_buffer_timer" in player:
@@ -30,6 +49,3 @@ func update(player, delta):
 		cymbalsAnim.global_position = player.global_position + Vector2(0, 10)
 		get_tree().current_scene.add_child(cymbalsAnim)
 		get_parent().play_sfx("wall_jump")
-
-# no coyote time for the walljumps,
-# but they should be more precise and less forgiving
