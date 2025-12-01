@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfrfyj5aq70qr"]
+[gd_scene load_steps=11 format=3 uid="uid://dfrfyj5aq70qr"]
 
 [ext_resource type="Script" uid="uid://f31ndetp7ke0" path="res://Scripts/Bosses/boss3/randomNoteSpawn.gd" id="1_1b2fq"]
 [ext_resource type="PackedScene" uid="uid://cm87oa50utiq1" path="res://Scenes/Bosses/boss3/eighth_notes.tscn" id="2_yv0tg"]
 [ext_resource type="PackedScene" uid="uid://83ko82gttins" path="res://Scenes/Bosses/boss3/half_note.tscn" id="3_0qc4w"]
 [ext_resource type="PackedScene" uid="uid://nbui4yf31ajs" path="res://Scenes/Bosses/boss3/quarterNote.tscn" id="4_1gyfw"]
 [ext_resource type="PackedScene" uid="uid://dn7728ud0syy5" path="res://Scenes/Bosses/boss3/whole_note.tscn" id="5_rg2qw"]
+[ext_resource type="PackedScene" uid="uid://b7bobg4kf5ujh" path="res://Scenes/Bosses/boss3/largeQuarter.tscn" id="6_1gyfw"]
+[ext_resource type="PackedScene" uid="uid://bl0mk66snuqhe" path="res://Scenes/Bosses/boss3/largeEighth.tscn" id="7_fg4l2"]
+[ext_resource type="PackedScene" uid="uid://bys6s3d7k0ay3" path="res://Scenes/Bosses/boss3/large_half.tscn" id="7_rg2qw"]
+[ext_resource type="PackedScene" uid="uid://daf44m6jlbiwr" path="res://Scenes/Bosses/boss3/largeWhole.tscn" id="8_fg4l2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg4l2"]
 size = Vector2(1308, 22)
@@ -15,10 +19,12 @@ quarterNote = ExtResource("4_1gyfw")
 eighthNote = ExtResource("2_yv0tg")
 halfNote = ExtResource("3_0qc4w")
 wholeNote = ExtResource("5_rg2qw")
+largeQuarterNote = ExtResource("6_1gyfw")
+largeEighthNote = ExtResource("7_fg4l2")
+largeHalfNote = ExtResource("7_rg2qw")
+largeWholeNote = ExtResource("8_fg4l2")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_fg4l2")
-
-[node name="Camera2D" type="Camera2D" parent="."]

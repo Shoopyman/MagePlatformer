@@ -10,19 +10,21 @@ func _physics_process(delta: float) -> void:
 		position.x += direction*speed*delta
 	else:
 		position.y -= speed*delta
+	print(horiztonal)
 
 func _ready() -> void:
-	var shape_resource = collison.shape
+	collison.shape = collison.shape.duplicate()
+	print(horiztonal)
 	if(horiztonal):
-		collison.shape.size.x = 124.067
-		collison.shape.size.y = 843.373
-		shape_resource = Vector2(124, 843)
-	else:
+		collison.shape.size.x = 48.511
+		collison.shape.size.y = 612.312
+		collison.position.x = 48.511
+		collison.position.y = 67.393
+	elif not horiztonal:
 		collison.position.x = 19.667 
 		collison.position.y = -96.275
 		collison.shape.size.x = 892.866
 		collison.shape.size.y = 89.857
-		shape_resource = Vector2(893, 90)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

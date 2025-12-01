@@ -38,10 +38,12 @@ func _ready() -> void:
 	bossChase1.process_mode = Node.PROCESS_MODE_DISABLED
 	bossChase1.set_physics_process(false)
 	bossChase1.set_process(false)
+	bossChase1.horiztonal = true
 	bossChase2.hide()
 	bossChase2.process_mode = Node.PROCESS_MODE_DISABLED
 	bossChase2.set_physics_process(false)
 	bossChase2.set_process(false)
+	bossChase2.horiztonal = true
 	bossChase3.hide()
 	bossChase3.process_mode = Node.PROCESS_MODE_DISABLED
 	bossChase3.set_physics_process(false)
@@ -97,6 +99,7 @@ func _on_timer_timeout() -> void:
 	notes.process_mode = Node.PROCESS_MODE_DISABLED
 	notes.set_physics_process(false)
 	notes.set_process(false)
+	notes.phase += 1
 	noteBoss.process_mode = Node.PROCESS_MODE_DISABLED
 	noteBoss.set_physics_process(false)
 	noteBoss.set_process(false)
@@ -131,6 +134,7 @@ func _on_warp_2_body_entered(body: Node2D) -> void:
 		bossChase1.process_mode = Node.PROCESS_MODE_DISABLED
 		bossChase1.set_physics_process(false)
 		bossChase1.set_process(false)
+		bossChase1.horiztonal = true
 		
 
 #Teleport to mushroom bounce and despawns third chase boss
@@ -159,9 +163,7 @@ func _on_warp_4_body_entered(body: Node2D) -> void:
 #SCRIPT FOR SPECIAL INSTRUMENT TO SPAWN BOSS IN MUSIC ROOM
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
-		print("hi")
 		timer.start()
-		var hi = timer.is_stopped()
 		inBox = true
 		var am = body.get_node("AbilityManager") if body.has_node("AbilityManager") else null
 		if am:
@@ -187,6 +189,7 @@ func _on_area_2d_3_body_entered(body: Node2D) -> void:
 		bossChase1.process_mode = Node.PROCESS_MODE_INHERIT
 		bossChase1.set_physics_process(true)
 		bossChase1.set_process(true)
+		bossChase1.horiztonal = true
 
 #CHECKPOINT THAT SPAWNS SECOND CHASE BOSS
 func _on_invisible_checkpoint_body_entered(body: Node2D) -> void:
@@ -195,6 +198,7 @@ func _on_invisible_checkpoint_body_entered(body: Node2D) -> void:
 		bossChase2.process_mode = Node.PROCESS_MODE_INHERIT
 		bossChase2.set_physics_process(true)
 		bossChase2.set_process(true)
+		bossChase2.horiztonal = true
 
 #AREA2D that spawns 3rd boss going vertical and despawns second chase boss
 func _on_boss_chase_3_spawn_body_entered(body: Node2D) -> void:
@@ -203,6 +207,7 @@ func _on_boss_chase_3_spawn_body_entered(body: Node2D) -> void:
 		bossChase2.process_mode = Node.PROCESS_MODE_DISABLED
 		bossChase2.set_physics_process(false)
 		bossChase2.set_process(false)
+		bossChase2.horiztonal = true
 		bossChase3.show()
 		bossChase3.process_mode = Node.PROCESS_MODE_INHERIT
 		bossChase3.set_physics_process(true)

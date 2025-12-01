@@ -52,14 +52,13 @@ func change_state(new_state: TurretState):
 
 
 func _physics_process(_delta: float) -> void:
-	print("Ready to fire Bullets")
 	if current_state != TurretState.Scanning:
 		return
 	
 	# Fire when the Player intersects the raycast.
 	var collider = raycast.get_collider()
 	if collider and collider.is_in_group('player'):
-		print("Ready to fire Bullets")
+		print("Ready to fire Bullets physcis process")
 		change_state(TurretState.Attack)
 
 # Count down the timers and transition states when appropriate
@@ -73,13 +72,11 @@ func _process(delta: float) -> void:
 
 			state_timer -= delta
 			if state_timer <= 0.0:
-				print("Recharging")
 				change_state(TurretState.Recharging)
 				fire_timer = 0.0  # reset for next Attack
 		TurretState.Recharging:
 			state_timer -= delta
 			if state_timer <= 0.0:
-				print("Looking for player")
 				change_state(TurretState.Scanning)
 		TurretState.Broken:
 			print("Broken Turret")
@@ -89,13 +86,14 @@ func fireBullets():
 	var collider = raycast.get_collider()
 	if collider == null:
 		return
-	if not collider.is_in_group('player') and not collider.is_in_group('movingPlatform') :
+	if not collider.is_in_group('player') or not collider.is_in_group('movingPlatform') :
+		return
+	if collider is TileMapLayer:
 		return
 	
 	# Get player position  when collided with raycast
-	print("Firing Bullets")
 	var target_pos = collider.global_position
-	
+	print("Ready to fire Bullets ACTUALLY FR")
 	var bullet = bullet_scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = turretHead.global_position
@@ -110,6 +108,5 @@ func fireBullets():
 	print("Bullet going this direction")
 
 func _ready() -> void:
-	print("hi")
 	$Animations.play("scanning")
 		
