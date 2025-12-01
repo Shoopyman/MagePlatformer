@@ -109,10 +109,10 @@ func _on_timer_timeout() -> void:
 #DELETE LATER WHEN FINISHED
 func _on_bug_test_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
-		player.global_position.x = 5860
-		player.global_position.y = 80
-		cam.global_position.x = 3723
-		cam.global_position.y = 1469
+		player.global_position.x = 580
+		player.global_position.y = 1746
+		cam.global_position.x = 580
+		cam.global_position.y = 1746
 		TheaterManager.platformEnabled = true
 
 

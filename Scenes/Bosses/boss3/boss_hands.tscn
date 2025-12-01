@@ -42,10 +42,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_douwv"]
-size = Vector2(16, 226)
+size = Vector2(34, 226)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypwr6"]
-size = Vector2(837, 894)
+size = Vector2(1084, 834)
 
 [node name="BossHands" type="Node2D"]
 script = ExtResource("1_ypwr6")
@@ -57,29 +57,29 @@ sprite_frames = SubResource("SpriteFrames_eirty")
 animation = &"Idle"
 
 [node name="Left hand" type="Area2D" parent="." groups=["leftHand"]]
-position = Vector2(-221, -153)
+position = Vector2(-511, -159)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Left hand"]
 sprite_frames = SubResource("SpriteFrames_ptb6e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left hand"]
-position = Vector2(-61, 0)
+position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_ipmhi")
 
 [node name="Right Hand" type="Area2D" parent="." groups=["rightHand"]]
-position = Vector2(221, -153)
+position = Vector2(444, -148)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Right Hand"]
 sprite_frames = SubResource("SpriteFrames_6rihn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Hand"]
-position = Vector2(75, 1)
+position = Vector2(9, 1)
 shape = SubResource("RectangleShape2D_douwv")
 
 [node name="TrackPlayer" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrackPlayer"]
-position = Vector2(-24.5, 75)
+position = Vector2(-36, 105)
 shape = SubResource("RectangleShape2D_ypwr6")
 
 [connection signal="body_entered" from="Left hand" to="." method="_on_left_hand_body_entered"]
