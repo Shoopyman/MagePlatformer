@@ -397,6 +397,16 @@ position = Vector2(3416, 406)
 scale = Vector2(1.8, 1)
 camera_mode = "VERTICAL_ONLY"
 
+[node name="Area2D2" parent="CameraLocks" instance=ExtResource("22_7scol")]
+position = Vector2(958, 1349)
+scale = Vector2(2.185, 2.715)
+zoomFactor = Vector2(0.85, 1)
+
+[node name="Area2D5" parent="CameraLocks" instance=ExtResource("21_oyp8n")]
+position = Vector2(652, 1608)
+camera_mode = "VERTICAL_ONLY"
+camera_restore = "VERTICAL_ONLY"
+
 [node name="BossChase" type="Node" parent="."]
 
 [node name="WallTurret" parent="BossChase" instance=ExtResource("25_wdfhh")]
@@ -430,9 +440,6 @@ position = Vector2(9335, -861)
 position = Vector2(8902, -861)
 rotation = 3.14159
 scale = Vector2(1, -1)
-
-[node name="WallTurret9" parent="BossChase" instance=ExtResource("25_wdfhh")]
-position = Vector2(1028, -29)
 
 [node name="BossChase1" parent="BossChase" instance=ExtResource("23_7scol")]
 position = Vector2(3271, -195)
@@ -828,16 +835,6 @@ position = Vector2(4942, 1058)
 
 [node name="AbilityPickup120" parent="Cymbal Obstacles" instance=ExtResource("12_1c3eu")]
 position = Vector2(4963, 1058)
-
-[node name="Area2D" parent="." instance=ExtResource("22_7scol")]
-position = Vector2(958, 1349)
-scale = Vector2(2.185, 2.715)
-zoomFactor = Vector2(0.85, 1)
-
-[node name="Area2D5" parent="." instance=ExtResource("21_oyp8n")]
-position = Vector2(652, 1608)
-camera_mode = "VERTICAL_ONLY"
-camera_restore = "VERTICAL_ONLY"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Abilties/SpeicalAbility" to="." method="_on_area_2d_body_entered"]

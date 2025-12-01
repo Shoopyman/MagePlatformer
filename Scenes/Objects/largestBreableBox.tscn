@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://sh6u4i7k5sew"]
+
+[ext_resource type="Texture2D" uid="uid://dba7fm80cs07c" path="res://art/ForestArt/largestBreakableBox.png" id="1_vjrpb"]
+[ext_resource type="Script" uid="uid://cikiuwvcni4d" path="res://Scripts/Objectsstuff/destructible_box.gd" id="2_l037q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq0w4"]
+size = Vector2(383, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qin0f"]
+size = Vector2(526.876, 22.153)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vjrpb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_vq0w4")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1.4)
+script = ExtResource("2_l037q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.5, 1.60714)
+scale = Vector2(0.745906, 0.854449)
+shape = SubResource("RectangleShape2D_qin0f")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

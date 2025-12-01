@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cq11iqby101wx"]
+[gd_scene load_steps=35 format=4 uid="uid://cq11iqby101wx"]
 
 [ext_resource type="Script" uid="uid://0cywh3j5a3u7" path="res://Scripts/Levels and Main Menu/ForestLevel.gd" id="1_blpqv"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_ovj6s"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://f7vivcfy0r6l" path="res://art/ForestArt/parallax/forestFourth.png" id="5_ixm8h"]
 [ext_resource type="PackedScene" uid="uid://g4ykkl16skln" path="res://Scenes/UI/game_ui.tscn" id="6_iunut"]
 [ext_resource type="Texture2D" uid="uid://ji1kxb168usw" path="res://art/ForestArt/parallax/forestThird.png" id="6_xk8vt"]
-[ext_resource type="PackedScene" uid="uid://cjtrm40afwx2n" path="res://Scenes/Objects/DestructibleBox.tscn" id="7_1jlnc"]
 [ext_resource type="Texture2D" uid="uid://cuiahyfvvff2p" path="res://art/ForestArt/parallax/forestSecond.png" id="7_umcau"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="8_u40f0"]
 [ext_resource type="Texture2D" uid="uid://cw7ea7u1mlyh7" path="res://art/ForestArt/parallax/forestFirst.png" id="8_ud172"]
@@ -21,12 +20,14 @@
 [ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scenes/Objects/DeathBox.tscn" id="14_eopvx"]
 [ext_resource type="PackedScene" uid="uid://b3e1uu6sba3m1" path="res://Scenes/Objects/EndOfLevel.tscn" id="18_5buja"]
 [ext_resource type="Texture2D" uid="uid://c4nv0hn1gr2py" path="res://art/ForestArt/gravestone.png" id="19_iunut"]
-[ext_resource type="PackedScene" uid="uid://d2rlgs2g6ri05" path="res://Scenes/Main Menu/pause_menu.tscn" id="19_wyygt"]
 [ext_resource type="Texture2D" uid="uid://cwshtdp02icil" path="res://art/ForestArt/log_on_side.png" id="20_jd2hh"]
 [ext_resource type="PackedScene" uid="uid://muamej5lnim0" path="res://Scenes/NPCS/Mushroom.tscn" id="20_u87on"]
 [ext_resource type="Texture2D" uid="uid://b2qn1rapx5jg4" path="res://art/ForestArt/16place.png" id="21_iunut"]
 [ext_resource type="Script" uid="uid://cvu8he3q8j1hm" path="res://Scripts/objects/platformFollow.gd" id="23_1xj2d"]
 [ext_resource type="PackedScene" uid="uid://bs6e1utqbt606" path="res://Scenes/Objects/Platform/platform_body.tscn" id="24_7h8th"]
+[ext_resource type="PackedScene" uid="uid://ot3w0dkcuro8" path="res://Scenes/Objects/destruvtible_llog.tscn" id="28_xk8vt"]
+[ext_resource type="PackedScene" uid="uid://sh6u4i7k5sew" path="res://Scenes/Objects/largestBreableBox.tscn" id="29_ud172"]
+[ext_resource type="PackedScene" uid="uid://dyuiy7vdkyk7o" path="res://Scenes/Objects/destructibleLog2.tscn" id="29_umcau"]
 
 [sub_resource type="Curve2D" id="Curve2D_m4i1e"]
 _data = {
@@ -66,6 +67,7 @@ point_count = 3
 
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_blpqv")
+metadata/_edit_vertical_guides_ = [5024.0, 5408.0]
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_uqiic")
@@ -113,237 +115,15 @@ motion_mirroring = Vector2(1000, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 texture = ExtResource("8_ud172")
 
-[node name="Node2D13" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(7885, -1644)
-rotation = 3.14159
-
-[node name="Node2D14" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(7949, -1644)
-rotation = 3.14159
-
-[node name="Node2D15" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(7917, -1644)
-rotation = 3.14159
-
-[node name="Node2D16" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(8077, -1644)
-rotation = 3.14159
-
-[node name="Node2D17" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(8137, -1660)
-rotation = 3.14159
-
-[node name="Node2D18" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(8169, -1660)
-rotation = 3.14159
-
-[node name="Node2D19" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(8201, -1660)
-rotation = 3.14159
-
-[node name="Node2D20" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(8625, -1724)
-rotation = 3.14159
-
-[node name="Node2D21" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(8657, -1724)
-rotation = 3.14159
-
-[node name="Node2D23" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(8045, -1644)
-rotation = 3.14159
-
-[node name="Node2D24" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(8013, -1644)
-rotation = 3.14159
-
-[node name="Node2D25" parent="." instance=ExtResource("9_ixm8h")]
-position = Vector2(7981, -1644)
-rotation = 3.14159
-
 [node name="Player" parent="." instance=ExtResource("1_oylv5")]
 position = Vector2(1, 1)
-
-[node name="Label5" type="Label" parent="."]
-offset_left = 3478.0
-offset_top = -213.0
-offset_right = 3518.0
-offset_bottom = -190.0
-text = "bouncy mushroom"
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="game_ui" parent="UILayer" instance=ExtResource("6_iunut")]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 368.0
-offset_top = 411.0
-offset_right = 536.0
-offset_bottom = 434.0
-text = "tree stump type thing"
-
-[node name="Label6" type="Label" parent="."]
-offset_left = 713.0
-offset_top = 406.0
-offset_right = 994.0
-offset_bottom = 455.0
-text = "press jump on beat for 
-superbounce with the spring"
-
-[node name="Label7" type="Label" parent="."]
-offset_left = 3362.0
-offset_top = -396.0
-offset_right = 3643.0
-offset_bottom = -347.0
-text = "press jump on beat for 
-superbounce with the spring"
-
-[node name="AbilityPickup" parent="." instance=ExtResource("5_8qsmg")]
-position = Vector2(466, 277)
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 368.0
-offset_top = 215.0
-offset_right = 536.0
-offset_bottom = 238.0
-text = "press \"x\" while in midair to play the tuba."
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 833.0
-offset_top = 271.0
-offset_right = 1011.0
-offset_bottom = 320.0
-text = "bouncy mushroom guy
-or just a spring idc"
-
-[node name="Node2D" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(1585, -290)
-scale = Vector2(7.235, 1.318)
-
-[node name="Node2D11" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(1585, -248)
-scale = Vector2(7.235, 1.318)
-
-[node name="Node2D12" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(1587, -161)
-scale = Vector2(7.235, 1.318)
-
-[node name="Label4" type="Label" parent="."]
-offset_left = 1498.0
-offset_top = -405.0
-offset_right = 1795.0
-offset_bottom = -382.0
-text = "preferably one large breakable branch"
-
-[node name="Area2D" parent="." instance=ExtResource("8_u40f0")]
-position = Vector2(49, 289)
-
-[node name="Area2D2" parent="." instance=ExtResource("8_u40f0")]
-position = Vector2(1869, -63)
-
-[node name="AbilityPickup2" parent="." instance=ExtResource("10_uqiic")]
-position = Vector2(2223, -109)
-
-[node name="AbilityPickup3" parent="." instance=ExtResource("11_eopvx")]
-position = Vector2(2668, -111)
-
-[node name="AbilityPickup4" parent="." instance=ExtResource("12_t27xo")]
-position = Vector2(2848, -333)
-
-[node name="AbilityPickup5" parent="." instance=ExtResource("5_8qsmg")]
-position = Vector2(3357, -284)
-
-[node name="Area2D3" parent="." instance=ExtResource("8_u40f0")]
-position = Vector2(3732, -800)
-
-[node name="Area2D4" parent="." instance=ExtResource("14_eopvx")]
-position = Vector2(4518, 505)
-scale = Vector2(6, 1)
-
-[node name="Area2D5" parent="." instance=ExtResource("14_eopvx")]
-position = Vector2(3311, 83)
-
-[node name="AbilityPickup6" parent="." instance=ExtResource("12_t27xo")]
-position = Vector2(3882, -798)
-
-[node name="AbilityPickup7" parent="." instance=ExtResource("5_8qsmg")]
-position = Vector2(4124, -850)
-
-[node name="AbilityPickup8" parent="." instance=ExtResource("12_t27xo")]
-position = Vector2(4126, -730)
-
-[node name="AbilityPickup9" parent="." instance=ExtResource("5_8qsmg")]
-position = Vector2(4610, -687)
-
-[node name="Node2D2" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(4051, -879)
-scale = Vector2(1, 9.37)
-
-[node name="Node2D4" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(4241, -659)
-scale = Vector2(1, 9.37)
-
-[node name="Node2D5" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(4505, -674)
-scale = Vector2(1, 9.37)
-
-[node name="Node2D6" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(4463, -671)
-scale = Vector2(1, 9.37)
-
-[node name="Node2D7" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(4486, -676)
-scale = Vector2(1, 9.37)
-
-[node name="Node2D8" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(4523, -676)
-scale = Vector2(1, 9.37)
-
-[node name="Node2D3" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(4126, -782)
-scale = Vector2(8.985, 1)
-
-[node name="AbilityPickup10" parent="." instance=ExtResource("10_uqiic")]
-position = Vector2(5172, -462)
-
-[node name="Area2D6" parent="." instance=ExtResource("8_u40f0")]
-position = Vector2(5233, -464)
-
-[node name="Node2D9" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(5165, -1132)
-scale = Vector2(14.64, 1)
-
-[node name="Node2D10" parent="." instance=ExtResource("7_1jlnc")]
-position = Vector2(5237, -844)
-scale = Vector2(31.095, 1)
-
-[node name="AbilityPickup11" parent="." instance=ExtResource("12_t27xo")]
-position = Vector2(5678, -701)
-
-[node name="AbilityPickup12" parent="." instance=ExtResource("12_t27xo")]
-position = Vector2(6046, -602)
-
 [node name="EndOfLevel" parent="." instance=ExtResource("18_5buja")]
 position = Vector2(9081, 217)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("19_wyygt")]
-
-[node name="Mushroom" parent="." instance=ExtResource("20_u87on")]
-position = Vector2(927, 341)
-
-[node name="Mushroom2" parent="." instance=ExtResource("20_u87on")]
-position = Vector2(3503, -267)
-color = "brown"
-
-[node name="Mushroom3" parent="." instance=ExtResource("20_u87on")]
-position = Vector2(4607, -603)
-
-[node name="Mushroom4" parent="." instance=ExtResource("20_u87on")]
-position = Vector2(4857, -907)
-color = "brown"
 
 [node name="Gravestone2" type="Sprite2D" parent="."]
 position = Vector2(384, 349)
@@ -356,13 +136,6 @@ texture = ExtResource("19_iunut")
 [node name="LogOnSide" type="Sprite2D" parent="."]
 position = Vector2(638, 353)
 texture = ExtResource("20_jd2hh")
-
-[node name="Area2D10" parent="." instance=ExtResource("14_eopvx")]
-position = Vector2(5360, -245)
-scale = Vector2(0.36, 1)
-
-[node name="Area2D9" parent="." instance=ExtResource("14_eopvx")]
-position = Vector2(6746, -24)
 
 [node name="moving platforms" type="Node2D" parent="."]
 
@@ -443,33 +216,80 @@ pixels_per_step = 50.0
 [node name="AbilityPickup" parent="moving platforms" instance=ExtResource("12_t27xo")]
 position = Vector2(6628, -267)
 
-[node name="Area2D7" parent="." instance=ExtResource("8_u40f0")]
-position = Vector2(6578, -271)
+[node name="16Place" type="Sprite2D" parent="."]
+position = Vector2(456, 336)
+texture = ExtResource("21_iunut")
 
-[node name="AbilityPickup13" parent="." instance=ExtResource("11_eopvx")]
-position = Vector2(6825, -719)
+[node name="Camera2D" parent="." instance=ExtResource("2_w2ac1")]
+position = Vector2(-3, -3)
+player_path = NodePath("../Player")
 
-[node name="AbilityPickup14" parent="." instance=ExtResource("10_uqiic")]
-position = Vector2(7628, -610)
+[node name="Rain" type="CPUParticles2D" parent="Camera2D"]
+position = Vector2(0, -200)
+amount = 170
+lifetime = 1.4
+emission_shape = 3
+emission_rect_extents = Vector2(840, 1)
+gravity = Vector2(-300, 780)
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.616654, 0.752155, 1, 1)
+hue_variation_min = 0.02
+hue_variation_max = 0.5
 
-[node name="Mushroom5" parent="." instance=ExtResource("20_u87on")]
-position = Vector2(7911, -603)
+[node name="DestructibleLogs" type="Node" parent="."]
 
-[node name="Mushroom6" parent="." instance=ExtResource("20_u87on")]
-position = Vector2(7766, -907)
-bounceHeightTuba = 1400
+[node name="Node2D22" parent="DestructibleLogs" instance=ExtResource("28_xk8vt")]
+position = Vector2(1575, -300)
+scale = Vector2(1.05, 1)
 
-[node name="AbilityPickup15" parent="." instance=ExtResource("5_8qsmg")]
-position = Vector2(7927, -660)
+[node name="Node2D" parent="DestructibleLogs" instance=ExtResource("28_xk8vt")]
+position = Vector2(1575, -265)
+scale = Vector2(1.055, 1)
 
-[node name="AbilityPickup16" parent="." instance=ExtResource("5_8qsmg")]
-position = Vector2(8727, -1635)
+[node name="Node2D11" parent="DestructibleLogs" instance=ExtResource("28_xk8vt")]
+position = Vector2(1583, -157)
+scale = Vector2(1.265, 1)
 
-[node name="AbilityPickup17" parent="." instance=ExtResource("12_t27xo")]
-position = Vector2(7713, -1606)
+[node name="Node2D2" parent="DestructibleLogs" instance=ExtResource("28_xk8vt")]
+position = Vector2(4057, -882)
+rotation = 1.5708
+scale = Vector2(1.69, 1)
 
-[node name="Area2D8" parent="." instance=ExtResource("8_u40f0")]
-position = Vector2(7643, -1600)
+[node name="Node2D3" parent="DestructibleLogs" instance=ExtResource("28_xk8vt")]
+position = Vector2(4118, -786)
+scale = Vector2(1.485, 1)
+
+[node name="Node2D4" parent="DestructibleLogs" instance=ExtResource("28_xk8vt")]
+position = Vector2(4259, -674)
+rotation = 1.5708
+scale = Vector2(1.285, 1)
+
+[node name="Node2D5" parent="DestructibleLogs" instance=ExtResource("28_xk8vt")]
+position = Vector2(4417, -673.5)
+rotation = 1.5708
+scale = Vector2(1.27, 1)
+
+[node name="Node2D6" parent="DestructibleLogs" instance=ExtResource("28_xk8vt")]
+position = Vector2(4428, -671)
+rotation = -1.5708
+scale = Vector2(1.27, 1)
+
+[node name="Node2D7" parent="DestructibleLogs" instance=ExtResource("28_xk8vt")]
+position = Vector2(4469, -673.5)
+rotation = 1.5708
+scale = Vector2(1.27, 1)
+
+[node name="Node2D8" parent="DestructibleLogs" instance=ExtResource("28_xk8vt")]
+position = Vector2(4475, -671)
+rotation = -1.5708
+scale = Vector2(1.27, 1)
+
+[node name="DestructibleLogBig" parent="DestructibleLogs" instance=ExtResource("29_umcau")]
+position = Vector2(5160, -1204)
+
+[node name="Node2D9" parent="DestructibleLogs" instance=ExtResource("29_ud172")]
+position = Vector2(5216, -845)
 
 [node name="mushrooms for last gauntlet" type="Node2D" parent="."]
 
@@ -507,23 +327,218 @@ position = Vector2(8558, -1515)
 position = Vector2(8606, -1499)
 smallHeight = 900
 
-[node name="16Place" type="Sprite2D" parent="."]
-position = Vector2(456, 336)
-texture = ExtResource("21_iunut")
+[node name="Spikes" type="Node" parent="."]
 
-[node name="Camera2D" parent="." instance=ExtResource("2_w2ac1")]
-position = Vector2(-3, -3)
-player_path = NodePath("../Player")
+[node name="Node2D13" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(7885, -1644)
+rotation = 3.14159
 
-[node name="Rain" type="CPUParticles2D" parent="Camera2D"]
-position = Vector2(0, -200)
-amount = 170
-lifetime = 1.4
-emission_shape = 3
-emission_rect_extents = Vector2(840, 1)
-gravity = Vector2(-300, 780)
-scale_amount_min = 2.0
-scale_amount_max = 3.0
-color = Color(0.616654, 0.752155, 1, 1)
-hue_variation_min = 0.02
-hue_variation_max = 0.5
+[node name="Node2D14" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(7949, -1644)
+rotation = 3.14159
+
+[node name="Node2D15" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(7917, -1644)
+rotation = 3.14159
+
+[node name="Node2D16" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(8077, -1644)
+rotation = 3.14159
+
+[node name="Node2D17" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(8137, -1660)
+rotation = 3.14159
+
+[node name="Node2D18" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(8169, -1660)
+rotation = 3.14159
+
+[node name="Node2D19" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(8201, -1660)
+rotation = 3.14159
+
+[node name="Node2D20" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(8625, -1724)
+rotation = 3.14159
+
+[node name="Node2D21" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(8657, -1724)
+rotation = 3.14159
+
+[node name="Node2D23" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(8045, -1644)
+rotation = 3.14159
+
+[node name="Node2D24" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(8013, -1644)
+rotation = 3.14159
+
+[node name="Node2D25" parent="Spikes" instance=ExtResource("9_ixm8h")]
+position = Vector2(7981, -1644)
+rotation = 3.14159
+
+[node name="DESTROYLATER" type="Node" parent="."]
+
+[node name="Label5" type="Label" parent="DESTROYLATER"]
+offset_left = 3478.0
+offset_top = -213.0
+offset_right = 3587.0
+offset_bottom = -190.0
+text = "bouncy mushroom"
+
+[node name="Label2" type="Label" parent="DESTROYLATER"]
+offset_left = 368.0
+offset_top = 215.0
+offset_right = 627.0
+offset_bottom = 238.0
+text = "press \"x\" while in midair to play the tuba."
+
+[node name="Label3" type="Label" parent="DESTROYLATER"]
+offset_left = 833.0
+offset_top = 271.0
+offset_right = 1011.0
+offset_bottom = 320.0
+text = "bouncy mushroom guy
+or just a spring idc"
+
+[node name="Label4" type="Label" parent="DESTROYLATER"]
+offset_left = 1498.0
+offset_top = -405.0
+offset_right = 1795.0
+offset_bottom = -382.0
+text = "preferably one large breakable branch"
+
+[node name="Label" type="Label" parent="DESTROYLATER"]
+offset_left = 368.0
+offset_top = 411.0
+offset_right = 536.0
+offset_bottom = 434.0
+text = "tree stump type thing"
+
+[node name="Label6" type="Label" parent="DESTROYLATER"]
+offset_left = 713.0
+offset_top = 406.0
+offset_right = 994.0
+offset_bottom = 455.0
+text = "press jump on beat for 
+superbounce with the spring"
+
+[node name="Label7" type="Label" parent="DESTROYLATER"]
+offset_left = 3362.0
+offset_top = -396.0
+offset_right = 3643.0
+offset_bottom = -347.0
+text = "press jump on beat for 
+superbounce with the spring"
+
+[node name="Mushrooms" type="Node" parent="."]
+
+[node name="Mushroom5" parent="Mushrooms" instance=ExtResource("20_u87on")]
+position = Vector2(7911, -603)
+
+[node name="Mushroom6" parent="Mushrooms" instance=ExtResource("20_u87on")]
+position = Vector2(7766, -907)
+bounceHeightTuba = 1400
+
+[node name="Mushroom" parent="Mushrooms" instance=ExtResource("20_u87on")]
+position = Vector2(927, 341)
+
+[node name="Mushroom2" parent="Mushrooms" instance=ExtResource("20_u87on")]
+position = Vector2(3503, -267)
+color = "brown"
+
+[node name="Mushroom3" parent="Mushrooms" instance=ExtResource("20_u87on")]
+position = Vector2(4607, -603)
+
+[node name="Mushroom4" parent="Mushrooms" instance=ExtResource("20_u87on")]
+position = Vector2(4857, -907)
+color = "brown"
+
+[node name="Checkpoints" type="Node" parent="."]
+
+[node name="Area2D8" parent="Checkpoints" instance=ExtResource("8_u40f0")]
+position = Vector2(7643, -1599)
+
+[node name="Area2D7" parent="Checkpoints" instance=ExtResource("8_u40f0")]
+position = Vector2(6578, -271)
+
+[node name="Area2D" parent="Checkpoints" instance=ExtResource("8_u40f0")]
+position = Vector2(49, 289)
+
+[node name="Area2D2" parent="Checkpoints" instance=ExtResource("8_u40f0")]
+position = Vector2(1869, -63)
+
+[node name="Area2D3" parent="Checkpoints" instance=ExtResource("8_u40f0")]
+position = Vector2(3732, -799)
+
+[node name="Area2D6" parent="Checkpoints" instance=ExtResource("8_u40f0")]
+position = Vector2(5233, -463)
+
+[node name="Abilities" type="Node" parent="."]
+
+[node name="AbilityPickup13" parent="Abilities" instance=ExtResource("11_eopvx")]
+position = Vector2(6825, -719)
+
+[node name="AbilityPickup14" parent="Abilities" instance=ExtResource("10_uqiic")]
+position = Vector2(7628, -610)
+
+[node name="AbilityPickup15" parent="Abilities" instance=ExtResource("5_8qsmg")]
+position = Vector2(7927, -660)
+
+[node name="AbilityPickup16" parent="Abilities" instance=ExtResource("5_8qsmg")]
+position = Vector2(8727, -1635)
+
+[node name="AbilityPickup17" parent="Abilities" instance=ExtResource("12_t27xo")]
+position = Vector2(7713, -1606)
+
+[node name="AbilityPickup11" parent="Abilities" instance=ExtResource("12_t27xo")]
+position = Vector2(5678, -701)
+
+[node name="AbilityPickup12" parent="Abilities" instance=ExtResource("12_t27xo")]
+position = Vector2(6046, -602)
+
+[node name="AbilityPickup6" parent="Abilities" instance=ExtResource("12_t27xo")]
+position = Vector2(3882, -798)
+
+[node name="AbilityPickup7" parent="Abilities" instance=ExtResource("5_8qsmg")]
+position = Vector2(4124, -850)
+
+[node name="AbilityPickup8" parent="Abilities" instance=ExtResource("12_t27xo")]
+position = Vector2(4126, -730)
+
+[node name="AbilityPickup9" parent="Abilities" instance=ExtResource("5_8qsmg")]
+position = Vector2(4610, -687)
+
+[node name="AbilityPickup10" parent="Abilities" instance=ExtResource("10_uqiic")]
+position = Vector2(5172, -462)
+
+[node name="AbilityPickup2" parent="Abilities" instance=ExtResource("10_uqiic")]
+position = Vector2(2223, -109)
+
+[node name="AbilityPickup3" parent="Abilities" instance=ExtResource("11_eopvx")]
+position = Vector2(2668, -111)
+
+[node name="AbilityPickup4" parent="Abilities" instance=ExtResource("12_t27xo")]
+position = Vector2(2848, -333)
+
+[node name="AbilityPickup5" parent="Abilities" instance=ExtResource("5_8qsmg")]
+position = Vector2(3357, -284)
+
+[node name="AbilityPickup" parent="Abilities" instance=ExtResource("5_8qsmg")]
+position = Vector2(466, 277)
+
+[node name="DeathBoxes" type="Node" parent="."]
+
+[node name="Area2D10" parent="DeathBoxes" instance=ExtResource("14_eopvx")]
+position = Vector2(5360, -245)
+scale = Vector2(0.4, 1)
+
+[node name="Area2D9" parent="DeathBoxes" instance=ExtResource("14_eopvx")]
+position = Vector2(6746, -24)
+
+[node name="Area2D4" parent="DeathBoxes" instance=ExtResource("14_eopvx")]
+position = Vector2(4518, 505)
+scale = Vector2(6, 1)
+
+[node name="Area2D5" parent="DeathBoxes" instance=ExtResource("14_eopvx")]
+position = Vector2(3311, 83)
