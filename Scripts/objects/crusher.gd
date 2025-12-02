@@ -18,14 +18,11 @@ var start_position: Vector2
 
 func _ready():
 	start_position = global_position
+	BeatManager.beat.connect(_on_beat)
 
-	# Timer setup
-	timer.stop()
-	timer.wait_time = cycle_time
-	timer.timeout.connect(_on_timer_timeout)
-	timer.start()
-
-
+func _on_beat() -> void:
+	if int(floor(BeatManager.get_level_beat())) % 4 == 0:
+		activate_crusher()
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -36,7 +33,6 @@ func _physics_process(delta):
 			if is_on_floor():
 				velocity.y = 0
 				state = State.WAITING
-				timer.start(wait_time)
 
 		State.RISING:
 			# move up manually, ignoring collisions
@@ -48,7 +44,7 @@ func _physics_process(delta):
 		State.WAITING:
 			velocity.y = 0
 
-func _on_timer_timeout():
+func activate_crusher():
 	if state == State.WAITING:
 		if global_position.y <= start_position.y + 1:
 			state = State.FALLING
