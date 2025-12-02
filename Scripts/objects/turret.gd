@@ -86,9 +86,7 @@ func fireBullets():
 	var collider = raycast.get_collider()
 	if collider == null:
 		return
-	if not collider.is_in_group('player') or not collider.is_in_group('movingPlatform') :
-		return
-	if collider is TileMapLayer:
+	if not collider.is_in_group('player'):
 		return
 	
 	# Get player position  when collided with raycast
