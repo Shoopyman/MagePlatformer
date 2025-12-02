@@ -342,6 +342,7 @@ speed_scale = 0.5
 
 [node name="CharacterBody2D2" parent="Crushers" instance=ExtResource("12_uae6t")]
 position = Vector2(1133, -77)
+offset = 2
 
 [node name="CharacterBody2D3" parent="Crushers" instance=ExtResource("12_uae6t")]
 position = Vector2(1375, -77)
@@ -351,9 +352,11 @@ position = Vector2(1744, -694)
 
 [node name="CharacterBody2D5" parent="Crushers" instance=ExtResource("12_uae6t")]
 position = Vector2(4887, -701)
+offset = 2
 
 [node name="CharacterBody2D6" parent="Crushers" instance=ExtResource("12_uae6t")]
 position = Vector2(5624, -701)
+offset = 2
 
 [node name="CharacterBody2D7" parent="Crushers" instance=ExtResource("12_uae6t")]
 position = Vector2(5218, -701)
@@ -1251,7 +1254,7 @@ position = Vector2(2387.5, -390.5)
 texture = ExtResource("39_frwo4")
 
 [node name="BigJunk" type="Sprite2D" parent="."]
-position = Vector2(5682, -728.5)
+position = Vector2(8573, -728.5)
 texture = ExtResource("40_sgyyx")
 
 [node name="Area2D11" parent="." instance=ExtResource("5_y0tkb")]

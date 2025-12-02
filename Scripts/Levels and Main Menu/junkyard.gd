@@ -4,7 +4,7 @@ extends Node2D
 @onready var boss = $"Boss Room/Engineer"
 @onready var spikeWall =$SpikeWall/CharacterBody2D
 
-@export var bpm: float = 126.0
+@export var bpm: float = 110.0
 
 @onready var UI = $UILayer/game_ui
 @onready var camera = $Camera2D
@@ -20,12 +20,13 @@ func _ready()->void:
 	boss.connect("boss_defeated", Callable(self, "_on_boss_defeated"))
 	spikeWall.hide()
 	animations.play('crane-swing')
-	MusicManager.play_track("res://Sound/Music/metForGame25.wav")
+	MusicManager.play_track("res://Sound/Music/JunkyardFRFR.mp3")
 	BeatManager.set_bpm(bpm)
 	var spb = 60.0 / bpm
 	var t = MusicManager.player.get_playback_position()
 	BeatManager.beat_offset = ceil(t / spb) - (t / spb)
 	camera.follow_mode = "FULL_FOLLOW"
+	CheckpointManager.respawn_player()
 #Add Area 2d for when spike wall to descend
 #Add area 2d to begin cutscene of boss intro
 

@@ -5,11 +5,11 @@ extends CharacterBody2D
 @export var rise_speed := 200.0
 @export var wait_time := 1.0
 @export var cycle_time := 5.0
+@export var offset = 0
 
 # ---- Node references ----
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area: Area2D = $Area2D
-@onready var timer: Timer = $Timer
 
 # ---- State machine ----
 enum State { WAITING, FALLING, RISING }
@@ -21,7 +21,7 @@ func _ready():
 	BeatManager.beat.connect(_on_beat)
 
 func _on_beat() -> void:
-	if int(floor(BeatManager.get_level_beat())) % 4 == 0:
+	if int(floor(BeatManager.get_level_beat()) + offset) % 4 == 0:
 		activate_crusher()
 
 func _physics_process(delta):
