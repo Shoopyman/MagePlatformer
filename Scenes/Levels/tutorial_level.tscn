@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://5fvd6ej1uc4h" path="res://art/CityArt/big2.png" id="16_w685s"]
 [ext_resource type="Texture2D" uid="uid://crovm6n74clmy" path="res://art/CityArt/big3.png" id="17_w685s"]
 [ext_resource type="PackedScene" uid="uid://b4ysj3okglx3m" path="res://Scenes/Objects/sign.tscn" id="22_wtv56"]
-[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/cameraBounds.tscn" id="23_0v71k"]
+[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="23_0v71k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtv56"]
 size = Vector2(63, 60)
@@ -80,7 +80,7 @@ position = Vector2(3201, 57)
 scale = Vector2(2, 1)
 
 [node name="Area2D4" parent="DeathBoxes" instance=ExtResource("4_ohf4p")]
-position = Vector2(662, -504)
+position = Vector2(693, -504)
 
 [node name="Area2D7" parent="DeathBoxes" instance=ExtResource("4_ohf4p")]
 position = Vector2(914, -904)
@@ -150,5 +150,52 @@ shape = SubResource("RectangleShape2D_wtv56")
 position = Vector2(559, -86)
 scale = Vector2(2.765, 1)
 camera_mode = "HORIZONTAL_ONLY"
+
+[node name="Area2D2" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(1541, -228)
+camera_mode = "HORIZONTAL_ONLY"
+
+[node name="Area2D3" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(2362, -409)
+camera_mode = "VERTICAL_ONLY"
+
+[node name="Area2D4" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(1936, -830)
+camera_mode = "FULL_FOLLOW"
+
+[node name="Area2D5" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(1414, -764)
+scale = Vector2(0.96, 1)
+camera_mode = "LOCKED"
+
+[node name="Area2D6" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(58, -794)
+camera_mode = "VERTICAL_ONLY"
+
+[node name="Area2D7" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(488, -1138)
+scale = Vector2(1.865, 1)
+camera_mode = "FULL_FOLLOW"
+
+[node name="Area2D8" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(1426, -1145)
+camera_mode = "FULL_FOLLOW"
+
+[node name="Area2D9" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(2311, -1257)
+scale = Vector2(1, 0.69)
+
+[node name="Area2D10" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(2681, -1529)
+camera_mode = "FULL_FOLLOW"
+
+[node name="Area2D11" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(936, -754)
+scale = Vector2(0.84, 1)
+camera_mode = "LOCKED"
+
+[node name="Area2D12" parent="." instance=ExtResource("23_0v71k")]
+position = Vector2(437, -762)
+camera_mode = "LOCKED"
 
 [connection signal="body_shape_entered" from="DespawnSign" to="." method="_on_despawn_sign_body_shape_entered"]

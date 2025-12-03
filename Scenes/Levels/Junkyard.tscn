@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://dpkar0c6ctslm" path="res://Scenes/Objects/movingPlatform2.0/MovingPlatform2.tscn" id="36_ltmyy"]
 [ext_resource type="PackedScene" uid="uid://c3wghnumteccn" path="res://Scenes/Objects/spikes.tscn" id="37_2exlh"]
 [ext_resource type="PackedScene" uid="uid://bld8owfpk3cm2" path="res://Scenes/Camera/zoomBox.tscn" id="38_frwo4"]
-[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/cameraBounds.tscn" id="38_iu1xn"]
+[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="38_iu1xn"]
 [ext_resource type="Texture2D" uid="uid://ct5ij8tmyfc2r" path="res://art/JunkyardArt/FactoryArt/factoryFirst.png" id="39_frwo4"]
 [ext_resource type="Texture2D" uid="uid://c60pq2kpfpp4w" path="res://art/JunkyardArt/bigJunk.png" id="40_sgyyx"]
 

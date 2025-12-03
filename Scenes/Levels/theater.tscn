@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bxgx6nhnwr3g8" path="res://Scenes/Bosses/boss3/boss_summon_notes.tscn" id="19_hbm7r"]
 [ext_resource type="PackedScene" uid="uid://bx88o5um1f1ut" path="res://Scenes/Bosses/boss3/boss_hands.tscn" id="19_jdej3"]
 [ext_resource type="PackedScene" uid="uid://dfrfyj5aq70qr" path="res://Scenes/Bosses/boss3/random_note_spawn.tscn" id="20_btmye"]
-[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/cameraBounds.tscn" id="21_oyp8n"]
+[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="21_oyp8n"]
 [ext_resource type="PackedScene" uid="uid://bld8owfpk3cm2" path="res://Scenes/Camera/zoomBox.tscn" id="22_7scol"]
 [ext_resource type="PackedScene" uid="uid://dbuiqbosflmb7" path="res://Scenes/Bosses/boss3/boss_chase.tscn" id="23_7scol"]
 [ext_resource type="PackedScene" uid="uid://g4ykkl16skln" path="res://Scenes/UI/game_ui.tscn" id="24_jdej3"]
