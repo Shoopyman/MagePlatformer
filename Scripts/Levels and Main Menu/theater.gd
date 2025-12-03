@@ -48,6 +48,8 @@ func _ready() -> void:
 	bossChase3.process_mode = Node.PROCESS_MODE_DISABLED
 	bossChase3.set_physics_process(false)
 	bossChase3.set_process(false)
+	if(TheaterManager.warp2Enabled == false):
+		warp2.set_deferred("disabled", true)
 	randomize()
 func _physics_process(delta: float) -> void:
 	#SET TIMER CAN DELETE THE FIRST IF STATEMENT LATER
@@ -129,7 +131,7 @@ func _on_warp_2_body_entered(body: Node2D) -> void:
 		$Abilties/SpeicalAbility/CollisionShape2D.disabled = false
 		$Abilties/SpeicalAbility/Sprite2D.show()
 		body.ability_manager.current_ability = null
-		warp2.set_deferred("disabled", true)
+		TheaterManager.warp2Enabled = false
 		bossChase1.hide()
 		bossChase1.process_mode = Node.PROCESS_MODE_DISABLED
 		bossChase1.set_physics_process(false)

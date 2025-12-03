@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://nb0u26qaagmq"]
 
 [ext_resource type="Texture2D" uid="uid://yfifn5udlwrl" path="res://art/JunkyardArt/pixil-frame-0 (10).png" id="1_v34wk"]
-[ext_resource type="Script" uid="uid://cikiuwvcni4d" path="res://Objects/destructible_box.gd" id="2_7v6us"]
+[ext_resource type="Script" uid="uid://cikiuwvcni4d" path="res://Scripts/Objectsstuff/destructible_box.gd" id="2_7v6us"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41x1l"]
 size = Vector2(16, 16)

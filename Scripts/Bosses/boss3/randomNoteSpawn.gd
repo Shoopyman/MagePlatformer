@@ -8,7 +8,7 @@ extends Node2D
 @export var largeEighthNote: PackedScene 
 @export var largeHalfNote: PackedScene 
 @export var largeWholeNote: PackedScene 
-@export var spawn_interval: float = .20  # seconds between spawns
+@export var spawn_interval: float = .10  # seconds between spawns
 @export var max_attempts: int = 20
 
 
