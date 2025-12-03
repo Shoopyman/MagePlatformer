@@ -451,7 +451,7 @@ speed = 110
 position = Vector2(5213, -131)
 
 [node name="BossChase3" parent="BossChase" instance=ExtResource("23_7scol")]
-position = Vector2(10435, -94)
+position = Vector2(9108, -135)
 horiztonal = false
 
 [node name="BossChase3Spawn" type="Area2D" parent="BossChase"]
@@ -840,6 +840,10 @@ position = Vector2(4963, 1058)
 
 [node name="Area2D" parent="." instance=ExtResource("21_oyp8n")]
 position = Vector2(1098, 763)
+camera_mode = "FULL_FOLLOW"
+
+[node name="Area2D3" parent="." instance=ExtResource("21_oyp8n")]
+position = Vector2(5953, -50)
 camera_mode = "FULL_FOLLOW"
 
 [node name="Area2D2" parent="." instance=ExtResource("21_oyp8n")]

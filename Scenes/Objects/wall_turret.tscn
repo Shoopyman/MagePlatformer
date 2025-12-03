@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dq07qx6s5y7yk"]
 
 [ext_resource type="Texture2D" uid="uid://cmquhctrwsg6k" path="res://art/objects/turret/turretHead.png" id="1_jvub6"]
-[ext_resource type="Script" uid="uid://boui2ickrpaw" path="res://Scripts/objects/turret.gd" id="1_rfxur"]
+[ext_resource type="Script" uid="uid://nvmjan6i6dxl" path="res://Scripts/objects/wallTurret.gd" id="1_rfxur"]
 [ext_resource type="PackedScene" uid="uid://dg2wxwqucn12u" path="res://Scenes/Objects/Bullet.tscn" id="2_bgmjx"]
 
 [sub_resource type="Animation" id="Animation_pbqu6"]
@@ -107,6 +107,7 @@ _data = {
 
 [node name="WallTurret" type="Node2D"]
 script = ExtResource("1_rfxur")
+recharge_time = 2.5
 bullet_scene = ExtResource("2_bgmjx")
 
 [node name="TurretHead" type="Sprite2D" parent="."]
