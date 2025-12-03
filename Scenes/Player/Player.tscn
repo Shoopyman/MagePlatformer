@@ -266,14 +266,18 @@ script = ExtResource("6_t26db")
 
 [node name="Trombone" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("12_esmjy")
+volume_db = -8.59
 
 [node name="Cymbal" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("13_6tu5v")
+volume_db = -15.905
 
 [node name="Bongo" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("14_spxdj")
+volume_db = -3.671
 
 [node name="Tuba" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("15_0objx")
+volume_db = -14.683
 
 [connection signal="animation_finished" from="Visual/playerAnim" to="." method="_on_animation_finished"]

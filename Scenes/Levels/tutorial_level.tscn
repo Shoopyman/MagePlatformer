@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://5fvd6ej1uc4h" path="res://art/CityArt/big2.png" id="16_w685s"]
 [ext_resource type="Texture2D" uid="uid://crovm6n74clmy" path="res://art/CityArt/big3.png" id="17_w685s"]
 [ext_resource type="PackedScene" uid="uid://b4ysj3okglx3m" path="res://Scenes/Objects/sign.tscn" id="22_wtv56"]
-[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="23_0v71k"]
+[ext_resource type="PackedScene" path="res://Scenes/Camera/cameraBounds.tscn" id="23_0v71k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtv56"]
 size = Vector2(63, 60)

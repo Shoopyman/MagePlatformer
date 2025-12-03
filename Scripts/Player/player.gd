@@ -37,6 +37,7 @@ var facing_direction = 1
 
 @onready var sprite = $Visual/playerAnim
 var oneOff := false
+var inDialogue := false
 
 @onready var dashParticlesRight = $Visual/DashParticlesRight
 @onready var dashParticlesLeft = $Visual/DashParticlesLeft
@@ -106,6 +107,9 @@ func _physics_process(delta):
 		velocity.y = 400.0
 		
 	self.velocity = velocity
+	
+	if Global.input_locked:
+		self.velocity = Vector2.ZERO
   
   # update ability activation
 	if ability_manager:
