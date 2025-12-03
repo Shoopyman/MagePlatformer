@@ -13,6 +13,7 @@ var step_progress := 0.0
 var steps := 1
 
 
+
 func _ready():
 	# How many discrete steps fit along the path?
 	# (rounding ensures perfect alignment and prevents accumulating error)
@@ -30,6 +31,7 @@ func _process(delta):
 	if abs(progress_ratio - target_progress) < 0.001:
 		progress_ratio = target_progress
 
+func 
 
 func _on_beat():
 	# Advance exactly one quantized step each beat
