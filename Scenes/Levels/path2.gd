@@ -31,8 +31,6 @@ func _process(delta):
 	if abs(progress_ratio - target_progress) < 0.001:
 		progress_ratio = target_progress
 
-func 
-
 func _on_beat():
 	# Advance exactly one quantized step each beat
 	if not active:
@@ -44,3 +42,7 @@ func loop_lerp(current: float, target: float, t: float) -> float:
 	# Handles wrapping around 0–1 cleanly
 	var diff = wrapf(target - current, -0.5, 0.5)
 	return current + diff * t
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		active = true

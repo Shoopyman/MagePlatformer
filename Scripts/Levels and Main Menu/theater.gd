@@ -32,7 +32,7 @@ func _ready() -> void:
 	noteBoss.set_physics_process(false)
 	noteBoss.set_process(false)
 	noteBoss.hide()
-	timer.wait_time = 30
+	timer.wait_time = 2
 	timer.one_shot = true
 	bossChase1.hide()
 	bossChase1.process_mode = Node.PROCESS_MODE_DISABLED
@@ -57,16 +57,6 @@ func _physics_process(delta: float) -> void:
 		test.text = "Time Left: %.0f" % timeLeft
 		timeLeft -= delta
 	#Makes sure platfoprm runs if player dies during that sequeunce
-	if(TheaterManager.platformEnabled):
-		movingPlatform.process_mode = Node.PROCESS_MODE_INHERIT
-		movingPlatform.set_physics_process(true)
-		movingPlatform.set_process(true)
-	#Makes sure PLATFORMS DOES NOT RUN WHEN NOT IN THAT SEQUENCE
-	else:
-		movingPlatform.process_mode = Node.PROCESS_MODE_DISABLED
-		movingPlatform.set_physics_process(false)
-		movingPlatform.set_process(false)
-		
 
 func _on_warp_1_body_entered(body: Node2D) -> void:
 	#Teleports player/Camera to note room
@@ -84,7 +74,7 @@ func _on_timer_timeout() -> void:
 		player.global_position.x = 3766
 		player.global_position.y = -36
 		player.ability_manager.current_ability = null
-		timer.wait_time = 30
+		timer.wait_time = 2
 		timer.one_shot = true
 		cam.global_position.x = 3766
 		cam.global_position.y = -36
@@ -216,3 +206,7 @@ func _on_boss_chase_3_spawn_body_entered(body: Node2D) -> void:
 		bossChase3.set_process(true)
 		
 		
+
+
+func _on_body_entered_area2dplatform(body: Node2D) -> void:
+	pass # Replace with function body.
