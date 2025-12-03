@@ -26,6 +26,7 @@ BeatManager="*res://Scripts/Managers/BeatManager.gd"
 MusicManager="*res://Scripts/Managers/musicManager.gd"
 TheaterManager="*res://Scripts/Managers/theaterManager.gd"
 Signals="*res://Scripts/Bosses/boss2/signals.gd"
+Global="*res://Scripts/global.gd"
 
 [display]
 

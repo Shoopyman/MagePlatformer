@@ -3,7 +3,7 @@ extends Control
 @onready var dialogueBox = $screen/bottomDialogue
 
 func speak(entries: Array):
-	if !dialogueBox.active:
+	if not Global.input_locked:
 		dialogueBox.start_dialogue(entries);
 
 #func _ready():

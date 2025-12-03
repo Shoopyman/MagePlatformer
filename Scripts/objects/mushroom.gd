@@ -50,11 +50,11 @@ func changeState(newState: State):
 
 #checks if 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	CheckpointManager.load_saved_progression()
+	if body.velocity.y <= 0:
+		CheckpointManager.load_saved_progression()
 
 
 func _on_bounce_body_entered(body: Node2D) -> void:
-	
 	changeState(State.STUNNED)
 	if(body.is_slamming()):
 		print("Player Bounced")

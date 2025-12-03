@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://6evi5sfmtnj7"]
 
-[ext_resource type="Script" uid="uid://cxn33e8bbygnm" path="res://Scripts/Levels and Main Menu/test_scene.gd" id="1_u63wg"]
+[ext_resource type="Script" path="res://Scripts/Levels and Main Menu/test_scene.gd" id="1_u63wg"]
 [ext_resource type="Texture2D" uid="uid://b7ltvj1rvbcyl" path="res://art/boss/boss2/RyhtmBackground.png" id="2_4m670"]
 [ext_resource type="PackedScene" uid="uid://bsw88bn1riogf" path="res://Scenes/Bosses/boss2/KeyListener.tscn" id="2_q2to2"]
 [ext_resource type="Texture2D" uid="uid://1rmuy40qo006" path="res://art/Player/mainCharacter.png" id="2_r60uj"]
