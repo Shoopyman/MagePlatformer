@@ -11,7 +11,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
 		CheckpointManager.load_saved_progression()
 		return
-	elif (body is TileMapLayer and TheaterManager.phase == 0):
+	elif (body is TileMapLayer):
+		get_parent().explode()
 		queue_free()
 		return
 	elif body.is_in_group("noteDelete"):

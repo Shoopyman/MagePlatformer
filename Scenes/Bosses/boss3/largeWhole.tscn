@@ -1,12 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://daf44m6jlbiwr"]
+[gd_scene load_steps=6 format=3 uid="uid://daf44m6jlbiwr"]
 
 [ext_resource type="Script" uid="uid://cklxr8kyqocwn" path="res://Scripts/Bosses/boss3/notes.gd" id="1_tud3d"]
+[ext_resource type="Script" uid="uid://cnw43om685vbm" path="res://Scenes/Bosses/boss3/noteParent.gd" id="1_xbu3w"]
 [ext_resource type="Texture2D" uid="uid://b57nolll53mcj" path="res://art/boss/boss3/musicNotes/pixil-frame-0 (10).png" id="2_xbu3w"]
+
+[sub_resource type="Curve" id="Curve_tud3d"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 360), 0.0, 0.0, 0, 0, Vector2(0.6875, 360), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qx7qt"]
 size = Vector2(27, 12)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_xbu3w")
+
+[node name="explosion" type="CPUParticles2D" parent="."]
+position = Vector2(-8, 18)
+scale = Vector2(2, 2)
+emitting = false
+amount = 100
+lifetime = 1.22
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 24.41
+spread = 174.8
+gravity = Vector2(0, 100)
+angular_velocity_curve = SubResource("Curve_tud3d")
+linear_accel_max = 100.0
+radial_accel_min = 100.0
+radial_accel_max = 100.0
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2)
