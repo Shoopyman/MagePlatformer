@@ -6,7 +6,7 @@ extends Node2D
 const in_edit_mode: bool = false
 var current_level_name = "Forest_Boss1"
 
-var fk_fall_time: float = 1.85
+var fk_fall_time: float = 1.75
 var fk_output_arr = [[], [], [], []]
 
 var level_info = {
@@ -62,7 +62,7 @@ func KeyListenerPress(_button_name: String, array_num: int):
 	fk_output_arr[array_num].append($MusicPlayer.get_playback_position() - fk_fall_time)
 
 func SpawnFallingKey(button_name: String, delay: float):
-	await get_tree().create_timer(delay).timeout
+	await get_tree().create_timer(delay + 0.06, false).timeout
 	Signals.CreateFallingKey.emit(button_name)
 
 
