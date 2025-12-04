@@ -1,16 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwybafb7q1xds"]
+[gd_scene load_steps=11 format=3 uid="uid://dwybafb7q1xds"]
 
 [ext_resource type="Script" uid="uid://bwl1ii2047ece" path="res://Scripts/Bosses/Engineer.gd" id="1_p8h64"]
 [ext_resource type="PackedScene" uid="uid://cfu0iwx6p66rw" path="res://Scenes/Bosses/Junkyard_Boss/Turret.tscn" id="2_ibf24"]
-[ext_resource type="Texture2D" uid="uid://bhsnb7rtf8bnp" path="res://art/NPCS/black guy  1-Sheet.png" id="2_lctre"]
+[ext_resource type="Texture2D" uid="uid://do2775msof04y" path="res://art/boss/junkyardBossIdle-Sheet.png" id="2_lctre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrp3f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x12sy"]
+atlas = ExtResource("2_lctre")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfseb"]
+atlas = ExtResource("2_lctre")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdbe4"]
+atlas = ExtResource("2_lctre")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my7pw"]
+atlas = ExtResource("2_lctre")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1yw6"]
+atlas = ExtResource("2_lctre")
+region = Rect2(0, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x12sy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_lctre")
+"texture": SubResource("AtlasTexture_x12sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfseb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdbe4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my7pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1yw6")
 }],
 "loop": true,
 "name": &"Idle",
@@ -26,8 +58,10 @@ script = ExtResource("1_p8h64")
 shape = SubResource("RectangleShape2D_hrp3f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(-7, -3)
 sprite_frames = SubResource("SpriteFrames_x12sy")
 animation = &"Idle"
+frame_progress = 0.128026
 
 [node name="Turret" parent="." instance=ExtResource("2_ibf24")]
 position = Vector2(-297, 7)

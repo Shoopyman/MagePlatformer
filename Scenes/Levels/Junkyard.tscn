@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://cr27r82w54xsc"]
+[gd_scene load_steps=53 format=4 uid="uid://cr27r82w54xsc"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
 [ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="4_yfloh"]
 [ext_resource type="Texture2D" uid="uid://di3coq327vu6u" path="res://art/JunkyardArt/JunkyardParallax/junkPDark.png" id="5_ltmyy"]
 [ext_resource type="PackedScene" uid="uid://bm6valxgmkmtm" path="res://Scenes/Objects/Checkpoint.tscn" id="5_y0tkb"]
-[ext_resource type="PackedScene" uid="uid://cswc02wnt828d" path="res://Scenes/NPCS/BlackGuy1.tscn" id="6_bfxy4"]
 [ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="7_mkn5q"]
 [ext_resource type="PackedScene" uid="uid://wsmo6qw0yllq" path="res://Scripts/DeathBox.tscn" id="8_dgo5n"]
 [ext_resource type="PackedScene" uid="uid://g4ykkl16skln" path="res://Scenes/UI/game_ui.tscn" id="9_3iwg6"]
@@ -176,9 +175,6 @@ position = Vector2(1, 1)
 [node name="Camera2D" parent="." instance=ExtResource("4_yfloh")]
 position = Vector2(-3, -3)
 player_path = NodePath("../Player")
-
-[node name="NPC" parent="." instance=ExtResource("6_bfxy4")]
-position = Vector2(2060, -569)
 
 [node name="EndOfLevel" parent="." instance=ExtResource("11_xfyea")]
 position = Vector2(13701, -607)

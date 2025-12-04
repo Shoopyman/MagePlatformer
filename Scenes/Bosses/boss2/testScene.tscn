@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://6evi5sfmtnj7"]
+[gd_scene load_steps=19 format=3 uid="uid://6evi5sfmtnj7"]
 
 [ext_resource type="Script" uid="uid://cxn33e8bbygnm" path="res://Scripts/Levels and Main Menu/test_scene.gd" id="1_u63wg"]
 [ext_resource type="Texture2D" uid="uid://b7ltvj1rvbcyl" path="res://art/boss/boss2/RyhtmBackground.png" id="2_4m670"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dhdoytjacbi3" path="res://Scenes/Bosses/boss2/Boss2 UI.tscn" id="4_n5cy7"]
 [ext_resource type="PackedScene" uid="uid://deytoupfm2vp2" path="res://Scenes/Bosses/boss2/levelEditor.tscn" id="6_n5cy7"]
 [ext_resource type="PackedScene" uid="uid://g4ykkl16skln" path="res://Scenes/UI/game_ui.tscn" id="7_u63wg"]
+[ext_resource type="Texture2D" uid="uid://cag75vletv7ha" path="res://art/boss/boss2/forestBossIdle-Sheet.png" id="9_ds0p6"]
+[ext_resource type="Texture2D" uid="uid://dive1xhmvonuo" path="res://art/boss/boss2/piano.png" id="10_ag07u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r60uj"]
 
@@ -24,6 +26,42 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag07u"]
+atlas = ExtResource("9_ds0p6")
+region = Rect2(0, 0, 14, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maa72"]
+atlas = ExtResource("9_ds0p6")
+region = Rect2(14, 0, 14, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eapun"]
+atlas = ExtResource("9_ds0p6")
+region = Rect2(28, 0, 14, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtn3c"]
+atlas = ExtResource("9_ds0p6")
+region = Rect2(42, 0, 14, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghl1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag07u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maa72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eapun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtn3c")
+}],
+"loop": true,
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -82,3 +120,14 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = -3.0
 offset_bottom = -3.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(377, 198)
+scale = Vector2(3.83145, 4.08638)
+sprite_frames = SubResource("SpriteFrames_ghl1p")
+frame_progress = 0.770299
+
+[node name="Piano" type="Sprite2D" parent="."]
+position = Vector2(266, 221)
+scale = Vector2(1.42188, 1.32031)
+texture = ExtResource("10_ag07u")
