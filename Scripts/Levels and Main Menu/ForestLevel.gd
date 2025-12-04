@@ -27,6 +27,11 @@ func _on_boss_spawn_2_body_entered(body: Node2D) -> void:
 			{
 				"speaker": "Madam",
 				"portrait": "forest_eyes_closed",
+				"text": ""
+			},
+			{
+				"speaker": "Madam",
+				"portrait": "forest_eyes_closed",
 				"text": "goo goo ga ga"
 			},
 		], change_scene)

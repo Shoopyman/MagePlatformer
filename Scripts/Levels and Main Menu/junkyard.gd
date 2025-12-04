@@ -50,10 +50,24 @@ func _on_boss_spawn_cutscene_body_entered(body: Node2D) -> void:
 				},
 				{
 					"speaker": "Junkyard Boss",
+					"portrait": "junkyard_angry",
+					"text": "A little twerp thinks he can pass by in my territtory."
+				},
+				{
+					"speaker": "Junkyard Boss",
 					"portrait": "junkyard_smug",
-					"text": "A ."
-				}
-
+					"text": "Well, I think you are the best test subject for my little friends."
+				},
+				{
+					"speaker": "Junkyard Boss",
+					"portrait": "junkyard_sad",
+					"text": "Now stand still and don't dash around."
+				},
+				{
+					"speaker": "Junkyard Boss",
+					"portrait": "junkyard_sad",
+					"text": "Those dashes seem like they hurt me a lot."
+				},
 			], _on_boss_spawn)
 			Global.didBoss1Dialogue = true
 		else:

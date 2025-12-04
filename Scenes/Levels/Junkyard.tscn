@@ -567,16 +567,14 @@ scale = Vector2(1.1, 1)
 camera_mode = "FULL_FOLLOW"
 
 [node name="Area2D4" parent="Spikes" instance=ExtResource("38_iu1xn")]
-visible = false
 position = Vector2(12301, -775)
 scale = Vector2(1.09, 1.365)
 camera_mode = "LOCKED"
 
 [node name="Area2D5" parent="Spikes" instance=ExtResource("38_frwo4")]
-visible = false
 position = Vector2(12406, -783)
 scale = Vector2(1.505, 1.385)
-zoomFactor = Vector2(0.75, 0.75)
+zoomFactor = Vector2(0.8, 0.8)
 
 [node name="Area2D6" parent="Spikes" instance=ExtResource("38_iu1xn")]
 position = Vector2(13666, -744)
