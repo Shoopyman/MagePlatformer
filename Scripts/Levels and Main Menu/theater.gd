@@ -20,6 +20,7 @@ extends Node2D
 
 var timeLeft = 30
 var inBox = false
+var timer_started = false
 
 func _ready() -> void:
 	#SETUP AND HIDE NODES IN BACKGROUND
@@ -112,7 +113,6 @@ func _on_timer_timeout() -> void:
 		player.global_position.y = -36
 		player.ability_manager.current_ability = null
 		timer.wait_time = 2
-		timer.one_shot = true
 		cam.global_position.x = 3766
 		cam.global_position.y = -36
 	#Teleorts player to second half of chase with floating platform
@@ -137,6 +137,7 @@ func _on_timer_timeout() -> void:
 	for child in notes.get_children():
 		if child != notes.get_node("Area2D"):  # Keep the Area2D if needed
 			child.queue_free()
+	timer_started = false
 
 #DELETE LATER WHEN FINISHED
 func _on_bug_test_body_entered(body: Node2D) -> void:
@@ -191,8 +192,9 @@ func _on_warp_4_body_entered(body: Node2D) -> void:
 
 #SCRIPT FOR SPECIAL INSTRUMENT TO SPAWN BOSS IN MUSIC ROOM
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if(body.is_in_group("player")):
+	if(body.is_in_group("player") and not timer_started):
 		timer.start()
+		timer_started = true
 		inBox = true
 		var am = body.get_node("AbilityManager") if body.has_node("AbilityManager") else null
 		if am:
