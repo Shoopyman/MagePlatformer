@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://dui3ywekby665"]
+[gd_scene load_steps=58 format=4 uid="uid://dui3ywekby665"]
 
 [ext_resource type="AudioStream" uid="uid://2afrrarjtqo1" path="res://Sound/Music/metForGame25.wav" id="1_7in3v"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_m8xdt"]
@@ -75,6 +75,8 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbm7r"]
 size = Vector2(41.5, 10.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2spc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5hsn"]
 size = Vector2(20, 429)
@@ -327,6 +329,13 @@ texture = ExtResource("14_hbm7r")
 hframes = 3
 
 [node name="Delete later" type="Node" parent="."]
+
+[node name="BugTest" type="Area2D" parent="Delete later"]
+position = Vector2(130.516, -1.01511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Delete later/BugTest"]
+position = Vector2(-282.516, 2.01511)
+shape = SubResource("RectangleShape2D_t2spc")
 
 [node name="Node2D" parent="Delete later" instance=ExtResource("13_4yqip")]
 position = Vector2(5493, -123)
@@ -892,7 +901,6 @@ position = Vector2(3880, -167)
 camera_mode = "FULL_FOLLOW"
 
 [node name="Area2D4" parent="." instance=ExtResource("21_oyp8n")]
-visible = false
 position = Vector2(72, -121)
 camera_mode = "HORIZONTAL_ONLY"
 
@@ -1106,6 +1114,7 @@ animation = &"Idle"
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="break_finished" from="AnimationPlayer" to="." method="_on_animation_player_break_finished"]
 [connection signal="body_entered" from="Abilties/SpeicalAbility" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Delete later/BugTest" to="." method="_on_bug_test_body_entered"]
 [connection signal="body_entered" from="Warps/Warp1" to="." method="_on_warp_1_body_entered"]
 [connection signal="body_entered" from="Warps/Warp3" to="." method="_on_warp_3_body_entered"]
 [connection signal="body_entered" from="Warps/Warp4" to="." method="_on_warp_4_body_entered"]

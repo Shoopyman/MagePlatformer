@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxgx6nhnwr3g8"]
 
 [ext_resource type="Script" uid="uid://bftchcboa50pn" path="res://Scripts/Bosses/boss3/boss_summon_notes.gd" id="1_qcqbm"]
-[ext_resource type="Texture2D" uid="uid://cm0pkvykmosbs" path="res://art/PLACEHOLDER/Lord_Nightmare.webp" id="2_nsl8t"]
+[ext_resource type="Texture2D" uid="uid://c22xdp6o285rg" path="res://art/boss/boss3/handSprite.png" id="2_1bb4n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fi5kr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nsl8t")
+"texture": ExtResource("2_1bb4n")
 }],
 "loop": true,
 "name": &"Idle",

@@ -4,6 +4,7 @@
 extends Camera2D
 
 @export var player_path: NodePath
+@export var piano_path: NodePath
 @export var follow_speed := 6.0
 @export var deadzone_size := Vector2(32, 16)
 var locked_position: Vector2 = Vector2.ZERO
@@ -12,12 +13,15 @@ var locked_position: Vector2 = Vector2.ZERO
 @export_enum("FULL_FOLLOW", "LOCKED", "VERTICAL_ONLY", "HORIZONTAL_ONLY") var follow_mode := "FULL_FOLLOW"
 
 var player: Node2D
+var piano: Node2D
 
 func _ready():
 	if player_path != null:
 		player = get_node(player_path)
 	else:
 		push_warning("Player path not assigned to Camera2D!")
+	if piano_path != null:
+		piano = get_node(piano_path)
 
 
 func _process(delta):
@@ -50,6 +54,8 @@ func _process(delta):
 	# Smooth follow
 	target_position += move
 	global_position = global_position.lerp(target_position, follow_speed * delta)
+	if(TheaterManager.pianoCutscene):
+		global_position = piano.global_position
 
 func matchPositionToPlayer():
 	global_position = player.position

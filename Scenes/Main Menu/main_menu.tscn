@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf2w4lbwfyrow"]
+[gd_scene load_steps=4 format=3 uid="uid://cf2w4lbwfyrow"]
 
 [ext_resource type="Script" uid="uid://da3e2xt23gpb4" path="res://Scripts/Levels and Main Menu/sceneChangerMenu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://cbkr5x7wgt06b" path="res://art/virtuosoTitlet.png" id="2_armea"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_erv1k"]
 font_size = 40
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_28flt")
+
+[node name="VirtuosoTitlet" type="Sprite2D" parent="."]
+position = Vector2(324.5, 181)
+scale = Vector2(1.01094, 1.01667)
+texture = ExtResource("2_armea")
 
 [node name="Tutorial_Button" type="Button" parent="."]
 offset_left = 245.0

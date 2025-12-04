@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbuiqbosflmb7"]
+[gd_scene load_steps=6 format=3 uid="uid://dbuiqbosflmb7"]
 
 [ext_resource type="Texture2D" uid="uid://cm0pkvykmosbs" path="res://art/PLACEHOLDER/Lord_Nightmare.webp" id="1_0y3ld"]
 [ext_resource type="Script" uid="uid://ddoxuuv7mhiv1" path="res://Scripts/Bosses/boss3/boss_chase.gd" id="1_5ffry"]
+[ext_resource type="Texture2D" uid="uid://c22xdp6o285rg" path="res://art/boss/boss3/handSprite.png" id="2_64cv6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5ffry"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0y3ld")
+"texture": ExtResource("2_64cv6")
 }],
 "loop": true,
 "name": &"Chase_Horizontal",
@@ -38,7 +39,6 @@ animation = &"Chase_Horizontal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(15.0778, 67.3928)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_64cv6")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

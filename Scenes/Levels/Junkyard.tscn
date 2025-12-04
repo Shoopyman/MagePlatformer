@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://cr27r82w54xsc"]
+[gd_scene load_steps=54 format=4 uid="uid://cr27r82w54xsc"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
 [ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
@@ -145,8 +145,6 @@ size = Vector2(142.953, 113)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aodkb"]
 size = Vector2(122.371, 137.111)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_frwo4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu1xn"]
 size = Vector2(14, 60)
@@ -439,6 +437,11 @@ texture = ExtResource("24_ixbka")
 
 [node name="DesertGroundLarge" type="Sprite2D" parent="."]
 position = Vector2(148, 329)
+texture = ExtResource("22_wuiqu")
+
+[node name="DesertGroundLarge" type="Sprite2D" parent="DesertGroundLarge"]
+position = Vector2(1082, 35)
+rotation = 3.14159
 texture = ExtResource("22_wuiqu")
 
 [node name="DesertGroundLarge2" type="Sprite2D" parent="."]
@@ -1165,6 +1168,7 @@ camera_mode = "LOCKED"
 camera_restore = "LOCKED"
 
 [node name="Area2D3" parent="." instance=ExtResource("38_iu1xn")]
+visible = false
 position = Vector2(267, 93)
 scale = Vector2(1.67, 1.755)
 camera_mode = "HORIZONTAL_ONLY"
@@ -1201,13 +1205,6 @@ camera_restore = "LOCKED"
 position = Vector2(5508, -672)
 scale = Vector2(9.9, 1)
 camera_mode = "HORIZONTAL_ONLY"
-
-[node name="BugTest" type="Area2D" parent="."]
-position = Vector2(204, 209)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BugTest"]
-position = Vector2(-282.516, 2.01511)
-shape = SubResource("RectangleShape2D_frwo4")
 
 [node name="Area2D10" parent="." instance=ExtResource("38_iu1xn")]
 position = Vector2(13054, -727)
@@ -1307,4 +1304,3 @@ texture = ExtResource("36_2exlh")
 [connection signal="boss_spawn" from="." to="." method="_on_boss_spawn"]
 [connection signal="body_entered" from="Boss Room/BossSpawnCutscene" to="." method="_on_boss_spawn_cutscene_body_entered"]
 [connection signal="body_entered" from="SpikeWallFlag" to="." method="_on_spike_wall_flag_body_entered"]
-[connection signal="body_entered" from="BugTest" to="." method="_on_bug_test_body_entered"]

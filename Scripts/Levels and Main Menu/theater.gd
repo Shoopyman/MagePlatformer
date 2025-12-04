@@ -16,6 +16,7 @@ extends Node2D
 @onready var animationPlayer1 = $AnimationPlayer
 @onready var fallingPiano = $FallingPiano
 @onready var bossSpriteIntro = $AnimatedSprite2D
+@onready var UI = $UILayer/game_ui
 
 var timeLeft = 30
 var inBox = false
@@ -53,7 +54,7 @@ func _ready() -> void:
 		warp2.set_deferred("disabled", true)
 	randomize()
 	bossSpriteIntro.play("Idle")
-	
+	$AnimatedSprite2D/AnimatedSprite2D.play("Idle")
 	
 	
 	
@@ -68,11 +69,47 @@ func _physics_process(delta: float) -> void:
 func _on_warp_1_body_entered(body: Node2D) -> void:
 	#Teleports player/Camera to note room
 	if(body.is_in_group("player")):
-		player.global_position.x = 1259 
-		player.global_position.y = -2266
-		cam.global_position.x = 1259
-		cam.global_position.y = -2266
-		body.ability_manager.current_ability = null #Get rid of player ability
+		UI.speak([
+				{
+					"speaker": "Dux of Sound",
+					"portrait": "theater_talking",
+					"text": "Welcome one and all to a grand performace."
+				},
+				{
+					"speaker": "Dux of Sound",
+					"portrait": "theater_smirk",
+					"text": "Here you will be witnessing the show of a lifetime."
+				},
+				{
+					"speaker": "Dux of Sound",
+					"portrait": "theater_smirk",
+					"text": "Your lead performer, the star of the theater, the greatest actor of all time"
+				},
+				{
+					"speaker": "Dux of Sound",
+					"portrait": "theater_nervous",
+					"text": "Will be performing with a plebaian."
+				},
+				{
+					"speaker": "Dux of Sound",
+					"portrait": "theater_angry",
+					"text": "Honestly, it annoys me that anyone think they can just walk in and perfrom with a star actor"
+				},
+				{
+					"speaker": "Dux of Sound",
+					"portrait": "theater_smirk",
+					"text": "Oh well, let the show begin."
+				},
+			],hi)
+		
+			
+func hi():
+	player.global_position.x = 1259 
+	player.global_position.y = -2266
+	cam.global_position.x = 1259
+	cam.global_position.y = -2266
+	
+		
 
 
 func _on_timer_timeout() -> void:
@@ -225,4 +262,6 @@ func _on_animation_player_break_finished() -> void:
 
 func _on_falling_piano_player_cutting_piano() -> void:
 	print("AnimationPlayer please play")
+	TheaterManager.pianoCutscene = true
+	
 	animationPlayer1.play("pianoFalling") 
