@@ -58,13 +58,7 @@ func _ready() -> void:
 	
 	
 	
-	
-func _physics_process(delta: float) -> void:
-	#SET TIMER CAN DELETE THE FIRST IF STATEMENT LATER
-	if(inBox):
-		test.text = "Time Left: %.0f" % timeLeft
-		timeLeft -= delta
-	#Makes sure platfoprm runs if player dies during that sequeunce
+
 
 func _on_warp_1_body_entered(body: Node2D) -> void:
 	#Teleports player/Camera to note room
