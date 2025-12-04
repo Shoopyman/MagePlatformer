@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://cq11iqby101wx"]
+[gd_scene load_steps=45 format=4 uid="uid://cq11iqby101wx"]
 
 [ext_resource type="Script" uid="uid://0cywh3j5a3u7" path="res://Scripts/Levels and Main Menu/ForestLevel.gd" id="1_blpqv"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_ovj6s"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dyuiy7vdkyk7o" path="res://Scenes/Objects/destructibleLog2.tscn" id="29_umcau"]
 [ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="30_ud172"]
 [ext_resource type="PackedScene" uid="uid://b4ysj3okglx3m" path="res://Scenes/Objects/sign.tscn" id="31_s5367"]
+[ext_resource type="Texture2D" uid="uid://cag75vletv7ha" path="res://art/boss/boss2/forestBossIdle-Sheet.png" id="32_blyvk"]
 
 [sub_resource type="Curve2D" id="Curve2D_m4i1e"]
 _data = {
@@ -70,6 +71,42 @@ point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ud172"]
 size = Vector2(79.5, 355)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts3wb"]
+atlas = ExtResource("32_blyvk")
+region = Rect2(0, 0, 14, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chm77"]
+atlas = ExtResource("32_blyvk")
+region = Rect2(14, 0, 14, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srchd"]
+atlas = ExtResource("32_blyvk")
+region = Rect2(28, 0, 14, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6e1f"]
+atlas = ExtResource("32_blyvk")
+region = Rect2(42, 0, 14, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xo6ri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts3wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chm77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srchd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6e1f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_blpqv")
@@ -613,18 +650,23 @@ position = Vector2(8650, -1298)
 camera_mode = "VERTICAL_ONLY"
 
 [node name="Area2D24" parent="camera bounds" instance=ExtResource("30_ud172")]
-position = Vector2(8920, 104)
+position = Vector2(8919, 131)
 camera_mode = "LOCKED"
 
 [node name="bossSpawn2" type="Area2D" parent="."]
-position = Vector2(8866, 144)
+position = Vector2(8862, 147)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bossSpawn2"]
-position = Vector2(103.25, -79.5)
+position = Vector2(112, -49)
 shape = SubResource("RectangleShape2D_ud172")
 
 [node name="Sign" parent="." instance=ExtResource("31_s5367")]
 position = Vector2(3324, -282)
 text = "Press x to Slam"
+
+[node name="ForestBossIdle-sheet" type="AnimatedSprite2D" parent="."]
+position = Vector2(9134, 229)
+sprite_frames = SubResource("SpriteFrames_xo6ri")
+autoplay = "default"
 
 [connection signal="body_entered" from="bossSpawn2" to="." method="_on_boss_spawn_2_body_entered"]

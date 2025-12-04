@@ -1,11 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://6evi5sfmtnj7"]
+[gd_scene load_steps=23 format=3 uid="uid://6evi5sfmtnj7"]
 
 [ext_resource type="Script" uid="uid://cxn33e8bbygnm" path="res://Scripts/Levels and Main Menu/test_scene.gd" id="1_u63wg"]
 [ext_resource type="Texture2D" uid="uid://b7ltvj1rvbcyl" path="res://art/boss/boss2/RyhtmBackground.png" id="2_4m670"]
 [ext_resource type="PackedScene" uid="uid://bsw88bn1riogf" path="res://Scenes/Bosses/boss2/KeyListener.tscn" id="2_q2to2"]
-[ext_resource type="Texture2D" uid="uid://1rmuy40qo006" path="res://art/Player/mainCharacter.png" id="2_r60uj"]
 [ext_resource type="Script" uid="uid://bn441iwruhew4" path="res://Scripts/Bosses/boss2/playerRythm.gd" id="3_uxruc"]
 [ext_resource type="PackedScene" uid="uid://dhdoytjacbi3" path="res://Scenes/Bosses/boss2/Boss2 UI.tscn" id="4_n5cy7"]
+[ext_resource type="Texture2D" uid="uid://5ge4u7hpmkej" path="res://art/THEATER/mainCharacterFUNK.png" id="5_ag07u"]
 [ext_resource type="PackedScene" uid="uid://deytoupfm2vp2" path="res://Scenes/Bosses/boss2/levelEditor.tscn" id="6_n5cy7"]
 [ext_resource type="PackedScene" uid="uid://g4ykkl16skln" path="res://Scenes/UI/game_ui.tscn" id="7_u63wg"]
 [ext_resource type="Texture2D" uid="uid://cag75vletv7ha" path="res://art/boss/boss2/forestBossIdle-Sheet.png" id="9_ds0p6"]
@@ -18,11 +18,36 @@ background_mode = 3
 glow_enabled = true
 glow_blend_mode = 1
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghl1p"]
+atlas = ExtResource("5_ag07u")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3uqy"]
+atlas = ExtResource("5_ag07u")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5fqa"]
+atlas = ExtResource("5_ag07u")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45vel"]
+atlas = ExtResource("5_ag07u")
+region = Rect2(192, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_u63wg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_r60uj")
+"texture": SubResource("AtlasTexture_ghl1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3uqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5fqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45vel")
 }],
 "loop": true,
 "name": &"Idle",
@@ -128,6 +153,6 @@ sprite_frames = SubResource("SpriteFrames_ghl1p")
 animation = &"Idle"
 
 [node name="Piano" type="Sprite2D" parent="."]
-position = Vector2(266, 221)
-scale = Vector2(1.42188, 1.32031)
+position = Vector2(267, 208)
+scale = Vector2(2, 2)
 texture = ExtResource("10_ag07u")
