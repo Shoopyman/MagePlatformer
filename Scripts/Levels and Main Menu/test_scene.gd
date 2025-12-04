@@ -6,6 +6,9 @@ extends Node2D
 @onready var KeyListener3 = $KeyListener3
 @onready var UI = $UILayer/game_ui
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("Idle")
+
 func _process(delta: float) -> void:
 	if(player.hp <0):
 		KeyListener1.falling_key_queue.clear()

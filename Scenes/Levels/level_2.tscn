@@ -29,7 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://1ojufienr6t7" path="res://art/ForestArt/forestFloor3.png" id="29_s5367"]
 [ext_resource type="PackedScene" uid="uid://sh6u4i7k5sew" path="res://Scenes/Objects/largestBreableBox.tscn" id="29_ud172"]
 [ext_resource type="PackedScene" uid="uid://dyuiy7vdkyk7o" path="res://Scenes/Objects/destructibleLog2.tscn" id="29_umcau"]
-[ext_resource type="PackedScene" path="res://Scenes/Camera/cameraBounds.tscn" id="30_ud172"]
+[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="30_ud172"]
+[ext_resource type="PackedScene" uid="uid://b4ysj3okglx3m" path="res://Scenes/Objects/sign.tscn" id="31_s5367"]
 
 [sub_resource type="Curve2D" id="Curve2D_m4i1e"]
 _data = {
@@ -367,60 +368,6 @@ rotation = 3.14159
 position = Vector2(7981, -1644)
 rotation = 3.14159
 
-[node name="DESTROYLATER" type="Node" parent="."]
-
-[node name="Label5" type="Label" parent="DESTROYLATER"]
-offset_left = 3478.0
-offset_top = -213.0
-offset_right = 3587.0
-offset_bottom = -190.0
-text = "bouncy mushroom"
-
-[node name="Label2" type="Label" parent="DESTROYLATER"]
-offset_left = 368.0
-offset_top = 215.0
-offset_right = 627.0
-offset_bottom = 238.0
-text = "press \"x\" while in midair to play the tuba."
-
-[node name="Label3" type="Label" parent="DESTROYLATER"]
-offset_left = 833.0
-offset_top = 271.0
-offset_right = 1011.0
-offset_bottom = 320.0
-text = "bouncy mushroom guy
-or just a spring idc"
-
-[node name="Label4" type="Label" parent="DESTROYLATER"]
-offset_left = 1498.0
-offset_top = -405.0
-offset_right = 1795.0
-offset_bottom = -382.0
-text = "preferably one large breakable branch"
-
-[node name="Label" type="Label" parent="DESTROYLATER"]
-offset_left = 368.0
-offset_top = 411.0
-offset_right = 536.0
-offset_bottom = 434.0
-text = "tree stump type thing"
-
-[node name="Label6" type="Label" parent="DESTROYLATER"]
-offset_left = 713.0
-offset_top = 406.0
-offset_right = 994.0
-offset_bottom = 455.0
-text = "press jump on beat for 
-superbounce with the spring"
-
-[node name="Label7" type="Label" parent="DESTROYLATER"]
-offset_left = 3362.0
-offset_top = -396.0
-offset_right = 3643.0
-offset_bottom = -347.0
-text = "press jump on beat for 
-superbounce with the spring"
-
 [node name="Mushrooms" type="Node" parent="."]
 
 [node name="Mushroom5" parent="Mushrooms" instance=ExtResource("20_u87on")]
@@ -669,6 +616,7 @@ camera_mode = "VERTICAL_ONLY"
 position = Vector2(8920, 104)
 camera_mode = "LOCKED"
 
+
 [node name="bossSpawn2" type="Area2D" parent="."]
 position = Vector2(8866, 144)
 
@@ -677,3 +625,8 @@ position = Vector2(103.25, -79.5)
 shape = SubResource("RectangleShape2D_ud172")
 
 [connection signal="body_entered" from="bossSpawn2" to="." method="_on_boss_spawn_2_body_entered"]
+
+[node name="Sign" parent="." instance=ExtResource("31_s5367")]
+position = Vector2(3324, -282)
+text = "Press x to Slam"
+
