@@ -88,12 +88,12 @@ func _on_warp_1_body_entered(body: Node2D) -> void:
 				{
 					"speaker": "Dux of Sound",
 					"portrait": "theater_nervous",
-					"text": "Will be performing with a plebaian."
+					"text": "Will be performing with a plebeian."
 				},
 				{
 					"speaker": "Dux of Sound",
 					"portrait": "theater_angry",
-					"text": "Honestly, it annoys me that anyone think they can just walk in and perfrom with a star actor"
+					"text": "Honestly, it annoys me that anyone think they can just walk in and perform with a star actor"
 				},
 				{
 					"speaker": "Dux of Sound",
