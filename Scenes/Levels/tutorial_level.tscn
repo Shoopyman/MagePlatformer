@@ -21,7 +21,7 @@
 [ext_resource type="Script" uid="uid://cvu8he3q8j1hm" path="res://Scripts/objects/platformFollow.gd" id="21_wtv56"]
 [ext_resource type="PackedScene" uid="uid://bs6e1utqbt606" path="res://Scenes/Objects/Platform/platform_body.tscn" id="22_0v71k"]
 [ext_resource type="PackedScene" uid="uid://b4ysj3okglx3m" path="res://Scenes/Objects/sign.tscn" id="22_wtv56"]
-[ext_resource type="PackedScene" path="res://Scenes/Camera/cameraBounds.tscn" id="23_0v71k"]
+[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="23_0v71k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtv56"]
 size = Vector2(63, 60)

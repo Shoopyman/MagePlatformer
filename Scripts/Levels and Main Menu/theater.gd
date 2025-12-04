@@ -34,7 +34,6 @@ func _ready() -> void:
 	noteBoss.set_physics_process(false)
 	noteBoss.set_process(false)
 	noteBoss.hide()
-	timer.wait_time = 20
 	timer.one_shot = true
 	bossChase1.hide()
 	bossChase1.process_mode = Node.PROCESS_MODE_DISABLED

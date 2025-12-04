@@ -17,7 +17,7 @@ func _ready() -> void:
 	print(horiztonal)
 	if(horiztonal):
 		collison.shape.size.x = 48.511
-		collison.shape.size.y = 612.312
+		collison.shape.size.y = 500.312
 		collison.position.x = 48.511
 		collison.position.y = 67.393
 	elif not horiztonal:
