@@ -5,6 +5,9 @@ extends Node2D
 @onready var KeyListener2 = $KeyListener2
 @onready var KeyListener3 = $KeyListener3
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("Idle")
+
 
 func _process(delta: float) -> void:
 	if(player.hp <0):
