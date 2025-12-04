@@ -24,6 +24,7 @@ var inBox = false
 func _ready() -> void:
 	#SETUP AND HIDE NODES IN BACKGROUND
 	CheckpointManager.respawn_player()
+	MusicManager.play_track("res://Sound/Music/theaterBoss.mp3")
 	BeatManager.set_bpm(bpm)
 	camera.matchPositionToPlayer()
 	notes.process_mode = Node.PROCESS_MODE_DISABLED
@@ -107,8 +108,6 @@ func hi():
 	player.global_position.y = -2266
 	cam.global_position.x = 1259
 	cam.global_position.y = -2266
-	MusicManager.play_track("res://Sound/Music/theaterBoss.mp3")
-	BeatManager.set_bpm(bpm)
 	
 		
 
