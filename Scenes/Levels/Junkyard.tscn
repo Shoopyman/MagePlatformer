@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://cr27r82w54xsc"]
+[gd_scene load_steps=52 format=4 uid="uid://cr27r82w54xsc"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
 [ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
@@ -31,8 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://s6jqoa50rcqe" path="res://Scenes/Objects/jump_through_platforms.tscn" id="35_7qy2n"]
 [ext_resource type="PackedScene" uid="uid://dpkar0c6ctslm" path="res://Scenes/Objects/movingPlatform2.0/MovingPlatform2.tscn" id="36_ltmyy"]
 [ext_resource type="PackedScene" uid="uid://c3wghnumteccn" path="res://Scenes/Objects/spikes.tscn" id="37_2exlh"]
-[ext_resource type="PackedScene" uid="uid://bld8owfpk3cm2" path="res://Scenes/Camera/zoomBox.tscn" id="38_frwo4"]
-[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="38_iu1xn"]
+[ext_resource type="PackedScene" path="res://Scenes/Camera/zoomBox.tscn" id="38_frwo4"]
+[ext_resource type="PackedScene" path="res://Scenes/Camera/cameraBounds.tscn" id="38_iu1xn"]
 [ext_resource type="Texture2D" uid="uid://ct5ij8tmyfc2r" path="res://art/JunkyardArt/FactoryArt/factoryFirst.png" id="39_frwo4"]
 [ext_resource type="Texture2D" uid="uid://c60pq2kpfpp4w" path="res://art/JunkyardArt/bigJunk.png" id="40_sgyyx"]
 
@@ -49,8 +49,6 @@ _data = {
 &"RESET": SubResource("Animation_wuiqu"),
 &"crane-swing": SubResource("Animation_aenrt")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_adk4t"]
 
 [sub_resource type="Curve2D" id="Curve2D_ltmyy"]
 _data = {
@@ -229,25 +227,6 @@ offset_top = -783.0
 offset_right = 6842.0
 offset_bottom = -760.0
 text = "Spike wall descends and begins chasing player here"
-
-[node name="testSign" type="Area2D" parent="Delete LATER"]
-position = Vector2(300, 220)
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Delete LATER/testSign"]
-shape = SubResource("RectangleShape2D_adk4t")
-
-[node name="ColorRect" type="ColorRect" parent="Delete LATER/testSign"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Sign" parent="." instance=ExtResource("13_b0wad")]
 position = Vector2(274, 211)
@@ -1315,7 +1294,7 @@ rotation = -3.14159
 position = Vector2(2570, -969)
 rotation = -3.14159
 
-[connection signal="body_entered" from="Delete LATER/testSign" to="." method="_on_test_sign_body_entered"]
+[connection signal="boss_spawn" from="." to="." method="_on_boss_spawn"]
 [connection signal="body_entered" from="Boss Room/BossSpawnCutscene" to="." method="_on_boss_spawn_cutscene_body_entered"]
 [connection signal="body_entered" from="SpikeWallFlag" to="." method="_on_spike_wall_flag_body_entered"]
 [connection signal="body_entered" from="BugTest" to="." method="_on_bug_test_body_entered"]

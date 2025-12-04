@@ -11,6 +11,8 @@ extends Node2D
 
 @onready var player = $Player
 
+signal boss_spawn()
+
 func _ready()->void:
 	CheckpointManager.respawn_player()
 	camera.matchPositionToPlayer()
@@ -33,10 +35,19 @@ func _ready()->void:
 
 func _on_boss_spawn_cutscene_body_entered(body: Node2D) -> void:
 	if(body.is_in_group('player')):
+		if not Global.didBoss1Dialogue:
+			MusicManager.stop_track()
+			UI.speak([
+				{
+					"speaker": "Junkyard Boss",
+					"portrait": "junkyard_smug",
+					"text": "Well well well."
+				},
+			], _on_boss_spawn)
+			Global.didBoss1Dialogue = true
+		else:
+			emit_signal("boss_spawn")
 		#animations.play('bossSpawn')
-		boss.process_mode = Node.PROCESS_MODE_INHERIT
-		boss.set_physics_process(true)
-		boss.set_process(true)
 	
 func _on_boss_defeated():
 	#Disbale Boss node
@@ -62,21 +73,9 @@ func _on_bug_test_body_entered(body: Node2D) -> void:
 		camera.global_position.y = -607
 
 
-func _on_test_sign_body_entered(_body) -> void:
-		UI.speak([
-			{
-				"speaker": "Man",
-				"portrait": "junkyard_smug",
-				"text": "This is the first message. Make sure that the text wraps properly. Press E to go next."
-			},
-			{
-				"speaker": "Man",
-				"portrait": "junkyard_sad",
-				"text": "This is the second message. Periods and exclamation marks have a slight delay. 67! 67! 67!"
-			},
-			{
-				"speaker": "Man",
-				"portrait": "junkyard_laugh",
-				"text": "This is the last message. If the dialogue box closes without breaking everything, success!"
-			},
-		]) # Replace with function body.
+func _on_boss_spawn() -> void:
+	MusicManager.stop_track()
+	MusicManager.play_track("res://Sound/Music/JunkyardFRFR.mp3")
+	boss.process_mode = Node.PROCESS_MODE_INHERIT
+	boss.set_physics_process(true)
+	boss.set_process(true)

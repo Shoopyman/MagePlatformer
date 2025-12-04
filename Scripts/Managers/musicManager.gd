@@ -15,3 +15,6 @@ func play_track(path: String):
 	current_track_path = path
 	player.stream = load(path)
 	player.play()
+	
+func stop_track():
+	player.stop()

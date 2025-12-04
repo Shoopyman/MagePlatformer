@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://tks65j75tfeu"]
+[gd_scene load_steps=33 format=3 uid="uid://tks65j75tfeu"]
 
 [ext_resource type="Texture2D" uid="uid://bvwn014v6aa1k" path="res://art/UI/mediumButton2.png" id="1_omunj"]
 [ext_resource type="Texture2D" uid="uid://bgoqu20wkoyyq" path="res://art/UI/mediumButton1.png" id="2_cieph"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cq65qca0vjc7h" path="res://art/Portraits/forestBossPortraits-Sheet.png" id="6_jb7yb"]
 [ext_resource type="Texture2D" uid="uid://cmyta7jodvpbo" path="res://art/UI/dialogueBox.png" id="6_ygggw"]
 [ext_resource type="Texture2D" uid="uid://cn1jy87hkymav" path="res://art/Portraits/junkyardBossPortraits-Sheet.png" id="7_nlpps"]
+[ext_resource type="Texture2D" uid="uid://bayt6rcib2w7y" path="res://art/Portraits/theaterBoss-Sheet.png" id="8_736t3"]
 [ext_resource type="FontFile" uid="uid://pjdle0u4t032" path="res://art/Fonts/Game Font.ttf" id="9_5uvth"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_omunj"]
@@ -94,6 +95,22 @@ region = Rect2(64, 64, 64, 64)
 atlas = ExtResource("7_nlpps")
 region = Rect2(0, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb7yb"]
+atlas = ExtResource("8_736t3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlpps"]
+atlas = ExtResource("8_736t3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uvth"]
+atlas = ExtResource("8_736t3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o8g2"]
+atlas = ExtResource("8_736t3")
+region = Rect2(192, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6o8g2"]
 animations = [{
 "frames": [{
@@ -167,6 +184,38 @@ animations = [{
 "loop": true,
 "name": &"junkyard_smug",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb7yb")
+}],
+"loop": true,
+"name": &"theater_angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlpps")
+}],
+"loop": true,
+"name": &"theater_nervous",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uvth")
+}],
+"loop": true,
+"name": &"theater_smirk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o8g2")
+}],
+"loop": true,
+"name": &"theater_talking",
+"speed": 5.0
 }]
 
 [node name="game_ui" type="Control"]
@@ -218,7 +267,7 @@ color = Color(0.752941, 0.580392, 0.45098, 1)
 [node name="Portrait" type="AnimatedSprite2D" parent="screen/bottomDialogue/VBoxContainer/dialogueBox/ColorRect"]
 position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_6o8g2")
-animation = &"forest_eyes_closed"
+animation = &"theater_smirk"
 
 [node name="Wrapper" type="TextureRect" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
 layout_mode = 0

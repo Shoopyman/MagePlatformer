@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://g4ykkl16skln"]
+[gd_scene load_steps=33 format=3 uid="uid://g4ykkl16skln"]
 
 [ext_resource type="Texture2D" uid="uid://bvwn014v6aa1k" path="res://art/UI/mediumButton2.png" id="1_0pgsb"]
 [ext_resource type="Texture2D" uid="uid://bgoqu20wkoyyq" path="res://art/UI/mediumButton1.png" id="2_q6rob"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cq65qca0vjc7h" path="res://art/Portraits/forestBossPortraits-Sheet.png" id="6_fd57w"]
 [ext_resource type="Texture2D" uid="uid://cn1jy87hkymav" path="res://art/Portraits/junkyardBossPortraits-Sheet.png" id="7_m2lyg"]
 [ext_resource type="Texture2D" uid="uid://cmyta7jodvpbo" path="res://art/UI/dialogueBox.png" id="8_llaam"]
+[ext_resource type="Texture2D" uid="uid://bayt6rcib2w7y" path="res://art/Portraits/theaterBoss-Sheet.png" id="8_q6rob"]
 [ext_resource type="FontFile" uid="uid://pjdle0u4t032" path="res://art/Fonts/Game Font.ttf" id="9_sr7wx"]
 [ext_resource type="Script" uid="uid://dbio36awcx5vn" path="res://Scripts/UI/pause_menu.gd" id="10_3nq5v"]
 [ext_resource type="Texture2D" uid="uid://cydrx01qyd11q" path="res://art/UI/panelRect.png" id="11_n1yqq"]
@@ -94,6 +95,22 @@ region = Rect2(64, 64, 64, 64)
 atlas = ExtResource("7_m2lyg")
 region = Rect2(0, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkbk7"]
+atlas = ExtResource("8_q6rob")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f07i2"]
+atlas = ExtResource("8_q6rob")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwiya"]
+atlas = ExtResource("8_q6rob")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd57w"]
+atlas = ExtResource("8_q6rob")
+region = Rect2(192, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6o8g2"]
 animations = [{
 "frames": [{
@@ -167,6 +184,38 @@ animations = [{
 "loop": true,
 "name": &"junkyard_smug",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkbk7")
+}],
+"loop": true,
+"name": &"theater_angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f07i2")
+}],
+"loop": true,
+"name": &"theater_nervous",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwiya")
+}],
+"loop": true,
+"name": &"theater_smirk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd57w")
+}],
+"loop": true,
+"name": &"theater_talking",
+"speed": 5.0
 }]
 
 [node name="game_ui" type="Control"]
@@ -218,7 +267,7 @@ color = Color(0.752941, 0.580392, 0.45098, 1)
 [node name="Portrait" type="AnimatedSprite2D" parent="screen/bottomDialogue/VBoxContainer/dialogueBox/ColorRect"]
 position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_6o8g2")
-animation = &"forest_eyes_closed"
+animation = &"theater_talking"
 
 [node name="Wrapper" type="TextureRect" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
 layout_mode = 0
@@ -244,6 +293,10 @@ offset_right = 240.0
 offset_bottom = 28.0
 theme_override_colors/font_color = Color(0.203922, 0.109804, 0.152941, 1)
 theme_override_fonts/font = ExtResource("9_sr7wx")
+
+[node name="Label" type="Label" parent="screen/bottomDialogue/VBoxContainer"]
+layout_mode = 2
+text = "Press E to go next"
 
 [node name="HSeparator" type="HSeparator" parent="screen/bottomDialogue/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)

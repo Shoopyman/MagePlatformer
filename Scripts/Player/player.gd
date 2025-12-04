@@ -109,7 +109,8 @@ func _physics_process(delta):
 	self.velocity = velocity
 	
 	if Global.input_locked:
-		self.velocity = Vector2.ZERO
+		self.velocity.x = 0
+		self.velocity.y = clamp(self.velocity.y, 0, 1000)
   
   # update ability activation
 	if ability_manager:

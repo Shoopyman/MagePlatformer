@@ -4,7 +4,7 @@ extends Node2D
 @onready var KeyListener1 = $KeyListener
 @onready var KeyListener2 = $KeyListener2
 @onready var KeyListener3 = $KeyListener3
-
+@onready var UI = $UILayer/game_ui
 
 func _process(delta: float) -> void:
 	if(player.hp <0):
