@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhdoytjacbi3"]
 
 [ext_resource type="Script" uid="uid://01p77kmgbshs" path="res://Scripts/Bosses/boss2/boss_2_ui.gd" id="1_5qs8c"]
-[ext_resource type="Texture2D" uid="uid://bl3c6ees03tbd" path="res://art/UI/rhtymUi.png" id="2_b7p0j"]
+[ext_resource type="Texture2D" uid="uid://77cfdggpi61w" path="res://art/boss/boss2/rhtymUi.png" id="2_b7p0j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbk73"]
 bg_color = Color(0.136826, 0.136826, 0.136826, 1)

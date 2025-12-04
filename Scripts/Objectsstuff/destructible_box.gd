@@ -22,7 +22,6 @@ func _check_break() -> void:
 	if player_inside and (player_inside.is_dashing() or player_inside.is_slamming()):
 		_break_box()
 	elif  spikeWall_inside:
-		print("SpikeWallDestroyingBox")
 		_break_box()
 
 func _break_box():
