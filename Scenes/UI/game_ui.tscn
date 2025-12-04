@@ -267,7 +267,7 @@ color = Color(0.752941, 0.580392, 0.45098, 1)
 [node name="Portrait" type="AnimatedSprite2D" parent="screen/bottomDialogue/VBoxContainer/dialogueBox/ColorRect"]
 position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_6o8g2")
-animation = &"theater_talking"
+animation = &"forest_talking"
 
 [node name="Wrapper" type="TextureRect" parent="screen/bottomDialogue/VBoxContainer/dialogueBox"]
 layout_mode = 0

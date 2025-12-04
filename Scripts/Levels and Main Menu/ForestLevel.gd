@@ -11,10 +11,6 @@ func _ready():
 	camera.matchPositionToPlayer()
 	MusicManager.play_track("res://Sound/Music/ForestMusic.mp3")
 	BeatManager.set_bpm(bpm)
-	player.global_position.x = 8700
-	player.global_position.y = 144
-	camera.global_position.x = 8700
-	camera.global_position.y = 144
 	
 
 func change_scene():
@@ -25,13 +21,33 @@ func _on_boss_spawn_2_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		UI.speak([
 			{
-				"speaker": "Madam",
-				"portrait": "forest_eyes_closed",
-				"text": ""
+				"speaker": "Lucia",
+				"portrait": "forest_surprised",
+				"text": "Wow, you really made it here quick. "
 			},
 			{
-				"speaker": "Madam",
+				"speaker": "Lucia",
+				"portrait": "forest_talking",
+				"text": "I saw you come into the forest, and you've really outdone yourself on the music!"
+			},
+			{
+				"speaker": "Lucia",
+				"portrait": "forest_neutral",
+				"text": "you know...    I'm somewhat of a composer myself, *#"
+			},
+			{
+				"speaker": "Lucia",
+				"portrait": "forest_smile",
+				"text": "Would you try to do some dance moves to a little song I wrote? &&"
+			},
+			{
+				"speaker": "Lucia",
 				"portrait": "forest_eyes_closed",
-				"text": "goo goo ga ga"
+				"text": "I would be so sad if it was impossible I might kill somebody. &*@"
+			},
+			{
+				"speaker": "Lucia",
+				"portrait": "forest_talking",
+				"text": "I can tell by your face you're ready so lets go RIGHT NOW"
 			},
 		], change_scene)

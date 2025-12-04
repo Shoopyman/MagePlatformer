@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://db1benmw6bee8" path="res://art/THEATER/part1Theatre.png" id="2_kmhw1"]
 [ext_resource type="PackedScene" uid="uid://db6fnkvcts4dc" path="res://Scenes/Bosses/boss3/pianoFalling.tscn" id="3_mx57i"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="3_x1eyc"]
-[ext_resource type="Script" uid="uid://b32f6rkagv2ew" path="res://Scenes/Levels/pianoAnimationFinish.gd" id="4_0kbw7"]
+[ext_resource type="Script" path="res://Scenes/Levels/pianoAnimationFinish.gd" id="4_0kbw7"]
 [ext_resource type="PackedScene" uid="uid://ceuvj4j0nv0n8" path="res://Scenes/Objects/Spring.tscn" id="4_7in3v"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="5_x1eyc"]
 [ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="6_7in3v"]
