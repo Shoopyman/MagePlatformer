@@ -22,7 +22,7 @@ func _ready() -> void:
 		collison.position.y = 67.393
 	elif not horiztonal:
 		collison.position.x = 19.667 
-		collison.position.y = -96.275
+		collison.position.y = -00.275
 		collison.shape.size.x = 892.866
 		collison.shape.size.y = 89.857
 

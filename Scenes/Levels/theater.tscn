@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://db1benmw6bee8" path="res://art/THEATER/part1Theatre.png" id="2_kmhw1"]
 [ext_resource type="PackedScene" uid="uid://db6fnkvcts4dc" path="res://Scenes/Bosses/boss3/pianoFalling.tscn" id="3_mx57i"]
 [ext_resource type="PackedScene" uid="uid://cjk38ntrabpqb" path="res://Scenes/Player/Player.tscn" id="3_x1eyc"]
-[ext_resource type="Script" uid="uid://b32f6rkagv2ew" path="res://Scenes/Levels/pianoAnimationFinish.gd" id="4_0kbw7"]
+[ext_resource type="Script" path="res://Scenes/Levels/pianoAnimationFinish.gd" id="4_0kbw7"]
 [ext_resource type="PackedScene" uid="uid://ceuvj4j0nv0n8" path="res://Scenes/Objects/Spring.tscn" id="4_7in3v"]
 [ext_resource type="PackedScene" uid="uid://dn78h07ttxlp4" path="res://Scenes/Camera/MainCamera.tscn" id="5_x1eyc"]
 [ext_resource type="PackedScene" uid="uid://cvrl1ch5pdoxg" path="res://Scenes/Ability Pickups/TrombonePickup.tscn" id="6_7in3v"]
@@ -190,6 +190,12 @@ texture = ExtResource("35_vkbm4")
 z_index = -1
 position = Vector2(1030, 1363)
 scale = Vector2(2.006, 1.7835)
+texture = ExtResource("35_vkbm4")
+
+[node name="TheaterBackkground4" type="Sprite2D" parent="Background Sprites/TheaterBackkground4"]
+z_index = -1
+position = Vector2(-1210.87, -878.049)
+scale = Vector2(1.11566, 0.696628)
 texture = ExtResource("35_vkbm4")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Background Sprites"]
@@ -396,6 +402,10 @@ position = Vector2(6464, 89)
 position = Vector2(4628, 1669)
 scale = Vector2(1.37, 1.007)
 
+[node name="Area2D6" parent="DeathBoxes" instance=ExtResource("9_jwx0b")]
+position = Vector2(-1566, 285)
+scale = Vector2(1.37, 1.007)
+
 [node name="Area2D4" parent="DeathBoxes" instance=ExtResource("9_jwx0b")]
 position = Vector2(4498, 1202)
 scale = Vector2(0.21, 0.192)
@@ -504,7 +514,8 @@ position = Vector2(3271, -195)
 speed = 110
 
 [node name="BossChase2" parent="BossChase" instance=ExtResource("23_7scol")]
-position = Vector2(5213, -131)
+position = Vector2(5535, -57)
+speed = 70
 
 [node name="BossChase3" parent="BossChase" instance=ExtResource("23_7scol")]
 position = Vector2(9108, -40)

@@ -102,8 +102,8 @@ func hi():
 	player.global_position.y = -2266
 	cam.global_position.x = 1259
 	cam.global_position.y = -2266
-	
-		
+	timer.wait_time = 20
+	timer.start()
 
 
 func _on_timer_timeout() -> void:
@@ -156,6 +156,8 @@ func _on_warp_2_body_entered(body: Node2D) -> void:
 		player.global_position.y = -2266
 		cam.global_position.x = 1259
 		cam.global_position.y = -2266
+		timer.wait_time = 20
+		timer.start()
 		$Abilties/SpeicalAbility/CollisionShape2D.disabled = false
 		$Abilties/SpeicalAbility/Sprite2D.show()
 		body.ability_manager.current_ability = null
