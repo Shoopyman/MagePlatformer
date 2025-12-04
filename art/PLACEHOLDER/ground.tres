@@ -1,6 +1,5 @@
 [gd_resource type="TileSet" load_steps=18 format=3 uid="uid://dppqfr8ac0t41"]
 
-[ext_resource type="Texture2D" uid="uid://dd4tsn3pqbki" path="res://art/PLACEHOLDER/16place.png" id="1_0nh0c"]
 [ext_resource type="Texture2D" uid="uid://duqerkotnk0lv" path="res://art/ForestArt/ActualForestTileSet.png" id="3_bpirq"]
 [ext_resource type="Texture2D" uid="uid://bpj7ww5a8kcry" path="res://art/CityArt/CityObjects/boxes.png" id="3_nvvvh"]
 [ext_resource type="Texture2D" uid="uid://v8jwgknyl2jr" path="res://art/ForestArt/parallax/forestTile.png" id="4_bpirq"]
@@ -8,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cbeuet5mpjgon" path="res://art/THEATER/theatreEnvMap.png" id="6_lng81"]
 [ext_resource type="Texture2D" uid="uid://c5ne0u386dks" path="res://art/THEATER/theatreTileMap.png" id="7_xm1g0"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hufgg"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7gvuw"]
-texture = ExtResource("1_0nh0c")
+texture = SubResource("CompressedTexture2D_hufgg")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 

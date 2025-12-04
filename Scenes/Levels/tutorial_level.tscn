@@ -116,7 +116,7 @@ position = Vector2(25.8178, -714)
 position = Vector2(1637, -1002)
 
 [node name="Area2D10" parent="Checkpoints" instance=ExtResource("6_ohf4p")]
-position = Vector2(2295.82, -1161)
+position = Vector2(2218, -1162)
 
 [node name="UILayer" type="CanvasLayer" parent="Checkpoints"]
 
@@ -125,6 +125,9 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = -3.0
 offset_bottom = -3.0
+
+[node name="AbilityPickup" parent="Checkpoints" instance=ExtResource("8_4kucd")]
+position = Vector2(2258, -1166)
 
 [node name="Big1" type="Sprite2D" parent="."]
 position = Vector2(2119.82, -50)
@@ -191,7 +194,7 @@ position = Vector2(1426, -1145)
 camera_mode = "FULL_FOLLOW"
 
 [node name="Area2D9" parent="." instance=ExtResource("23_0v71k")]
-position = Vector2(2311, -1257)
+position = Vector2(2304, -1257)
 scale = Vector2(1, 0.69)
 camera_mode = "VERTICAL_ONLY"
 
