@@ -191,6 +191,7 @@ func _on_invisible_checkpoint_body_entered(body: Node2D) -> void:
 		bossChase2.set_physics_process(true)
 		bossChase2.set_process(true)
 		bossChase2.horiztonal = true
+		warp2.set_deferred("disabled", true)
 
 #AREA2D that spawns 3rd boss going vertical and despawns second chase boss
 func _on_boss_chase_3_spawn_body_entered(body: Node2D) -> void:
