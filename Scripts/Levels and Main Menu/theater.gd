@@ -15,7 +15,7 @@ extends Node2D
 @onready var bossChase3 = $BossChase/BossChase3
 @onready var animationPlayer1 = $AnimationPlayer
 @onready var fallingPiano = $FallingPiano
-
+@onready var bossSpriteIntro = $AnimatedSprite2D
 
 var timeLeft = 30
 var inBox = false
@@ -52,6 +52,7 @@ func _ready() -> void:
 	if(TheaterManager.warp2Enabled == false):
 		warp2.set_deferred("disabled", true)
 	randomize()
+	bossSpriteIntro.play("Idle")
 	
 	
 	

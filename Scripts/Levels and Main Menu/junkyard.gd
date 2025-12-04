@@ -43,6 +43,17 @@ func _on_boss_spawn_cutscene_body_entered(body: Node2D) -> void:
 					"portrait": "junkyard_smug",
 					"text": "Well well well."
 				},
+				{
+					"speaker": "Junkyard Boss",
+					"portrait": "junkyard_laugh",
+					"text": "What do we have here."
+				},
+				{
+					"speaker": "Junkyard Boss",
+					"portrait": "junkyard_smug",
+					"text": "A ."
+				}
+
 			], _on_boss_spawn)
 			Global.didBoss1Dialogue = true
 		else:
@@ -55,6 +66,7 @@ func _on_boss_defeated():
 	boss.set_physics_process(false)
 	boss.set_process(false)
 	boss.hide()
+	$StaticBody2D.queue_free()
 
 
 func _on_spike_wall_flag_body_entered(body: Node2D) -> void:

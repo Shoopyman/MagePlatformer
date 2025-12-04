@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cq11iqby101wx"]
+[gd_scene load_steps=39 format=4 uid="uid://cq11iqby101wx"]
 
 [ext_resource type="Script" uid="uid://0cywh3j5a3u7" path="res://Scripts/Levels and Main Menu/ForestLevel.gd" id="1_blpqv"]
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_ovj6s"]
@@ -616,7 +616,6 @@ camera_mode = "VERTICAL_ONLY"
 position = Vector2(8920, 104)
 camera_mode = "LOCKED"
 
-
 [node name="bossSpawn2" type="Area2D" parent="."]
 position = Vector2(8866, 144)
 
@@ -624,9 +623,8 @@ position = Vector2(8866, 144)
 position = Vector2(103.25, -79.5)
 shape = SubResource("RectangleShape2D_ud172")
 
-[connection signal="body_entered" from="bossSpawn2" to="." method="_on_boss_spawn_2_body_entered"]
-
 [node name="Sign" parent="." instance=ExtResource("31_s5367")]
 position = Vector2(3324, -282)
 text = "Press x to Slam"
 
+[connection signal="body_entered" from="bossSpawn2" to="." method="_on_boss_spawn_2_body_entered"]

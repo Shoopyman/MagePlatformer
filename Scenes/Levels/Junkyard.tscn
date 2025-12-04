@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://cr27r82w54xsc"]
+[gd_scene load_steps=55 format=4 uid="uid://cr27r82w54xsc"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
 [ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
@@ -29,25 +29,55 @@
 [ext_resource type="AudioStream" uid="uid://2afrrarjtqo1" path="res://Sound/Music/metForGame25.wav" id="26_adk4t"]
 [ext_resource type="Texture2D" uid="uid://cnndjf8qhumwp" path="res://art/JunkyardArt/fence.png" id="33_2exlh"]
 [ext_resource type="PackedScene" uid="uid://s6jqoa50rcqe" path="res://Scenes/Objects/jump_through_platforms.tscn" id="35_7qy2n"]
+[ext_resource type="Texture2D" uid="uid://bt7jclg521ksv" path="res://art/JunkyardArt/bossWall.png" id="36_2exlh"]
 [ext_resource type="PackedScene" uid="uid://dpkar0c6ctslm" path="res://Scenes/Objects/movingPlatform2.0/MovingPlatform2.tscn" id="36_ltmyy"]
 [ext_resource type="PackedScene" uid="uid://c3wghnumteccn" path="res://Scenes/Objects/spikes.tscn" id="37_2exlh"]
-[ext_resource type="PackedScene" path="res://Scenes/Camera/zoomBox.tscn" id="38_frwo4"]
-[ext_resource type="PackedScene" path="res://Scenes/Camera/cameraBounds.tscn" id="38_iu1xn"]
+[ext_resource type="PackedScene" uid="uid://bld8owfpk3cm2" path="res://Scenes/Camera/zoomBox.tscn" id="38_frwo4"]
+[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="38_iu1xn"]
 [ext_resource type="Texture2D" uid="uid://ct5ij8tmyfc2r" path="res://art/JunkyardArt/FactoryArt/factoryFirst.png" id="39_frwo4"]
 [ext_resource type="Texture2D" uid="uid://c60pq2kpfpp4w" path="res://art/JunkyardArt/bigJunk.png" id="40_sgyyx"]
 
 [sub_resource type="Animation" id="Animation_wuiqu"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.681641, -4.17444)]
+}
 
 [sub_resource type="Animation" id="Animation_aenrt"]
 resource_name = "crane-swing"
 length = 12.044
 loop_mode = 1
 
+[sub_resource type="Animation" id="Animation_ltmyy"]
+resource_name = "doorOpen"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.681641, -4.17444), Vector2(0.681641, -71.1744)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixbka"]
 _data = {
 &"RESET": SubResource("Animation_wuiqu"),
-&"crane-swing": SubResource("Animation_aenrt")
+&"crane-swing": SubResource("Animation_aenrt"),
+&"doorOpen": SubResource("Animation_ltmyy")
 }
 
 [sub_resource type="Curve2D" id="Curve2D_ltmyy"]
@@ -117,6 +147,9 @@ size = Vector2(142.953, 113)
 size = Vector2(122.371, 137.111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frwo4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iu1xn"]
+size = Vector2(14, 60)
 
 [node name="Junkyard" type="Node2D"]
 script = ExtResource("1_x2u4r")
@@ -360,7 +393,7 @@ position = Vector2(8036, -576)
 [node name="Boss Room" type="Node" parent="."]
 
 [node name="Engineer" parent="Boss Room" instance=ExtResource("16_afpsc")]
-position = Vector2(12414, -607)
+position = Vector2(12414, -605)
 
 [node name="BossSpawnCutscene" type="Area2D" parent="Boss Room"]
 position = Vector2(12115, -651.722)
@@ -1254,8 +1287,6 @@ rotation = -3.14159
 position = Vector2(2570, -969)
 rotation = -3.14159
 
-[connection signal="boss_spawn" from="." to="." method="_on_boss_spawn"]
-
 [node name="Sign2" parent="." instance=ExtResource("13_b0wad")]
 position = Vector2(3267, -568)
 text = "Press X to dash"
@@ -1264,6 +1295,18 @@ text = "Press X to dash"
 position = Vector2(6019, -572)
 text = "Collecting another ability while in air refreshes it's use"
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(12787.3, -619.826)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5.68164, -2.17444)
+shape = SubResource("RectangleShape2D_iu1xn")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0.681641, -4.17444)
+texture = ExtResource("36_2exlh")
+
+[connection signal="boss_spawn" from="." to="." method="_on_boss_spawn"]
 [connection signal="body_entered" from="Boss Room/BossSpawnCutscene" to="." method="_on_boss_spawn_cutscene_body_entered"]
 [connection signal="body_entered" from="SpikeWallFlag" to="." method="_on_spike_wall_flag_body_entered"]
 [connection signal="body_entered" from="BugTest" to="." method="_on_bug_test_body_entered"]

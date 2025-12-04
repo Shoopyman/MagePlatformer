@@ -40,19 +40,18 @@ func change_state(new_state: BossState) -> void:
 	current_state = new_state
 	match current_state:
 		BossState.Idle:
-			#animations.play("Idle")
-			pass
+			$Area2D/AnimatedSprite2D.play("Idle")
 		BossState.Fix:
-			print("Boss is fixing")
-			#animations.play("Fix")
+			$Area2D/AnimatedSprite2D.play("Idle")
+			
 			
 			
 func _process(delta: float) -> void:
 	if(timePassed > timeTillTurretBreaks):
-		print("Time Has Passed")
+		
 		if(bossPhase == 0):
 			brokenTuret = turret1
-			print("Tuuret1 Breaks")
+			
 			brokenTuret.change_state(brokenTuret.TurretState.Broken)
 			change_state(BossState.Fix)
 		elif(bossPhase == 1):
@@ -72,7 +71,8 @@ func fixTurret(delta: float):
 		return
 	if(hasMoved == false):
 		hitbox.disabled = false
-		area.global_position = brokenTuret.global_position
+		area.global_position.x = brokenTuret.global_position.x+10
+		area.global_position.y = brokenTuret.global_position.y
 		hasMoved = true
 		
 	fixTime += delta
@@ -87,7 +87,7 @@ func fixTurret(delta: float):
 	
 	if(bossAttacked):
 		bossPhase += 1
-		print("Next Phase")
+		
 		#Need to space out so hurt animations fully plays 
 		#
 		#
@@ -156,6 +156,6 @@ func checkPhase(phase: int):
 		turret6.set_process(true)
 		turret6.set_physics_process(true)
 	else:
-		print("Boss phase is 3")
+		
 		isDefeated = true
 		emit_signal("boss_defeated")
