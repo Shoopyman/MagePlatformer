@@ -7,13 +7,14 @@ extends Node2D
 @onready var timer = $Timer
 @onready var test = $TestTimer
 @onready var warp2 = $Warps/Warp2/CollisionShape2D
-@onready var movingPlatform = $movingPlatform2
 @onready var cam = $Camera2D
 @onready var noteBoss = $NoteRoom/Boss_Summon_Notes
 @onready var notes = $NoteRoom/RandomNoteSpawn
 @onready var bossChase1 = $BossChase/BossChase1
 @onready var bossChase2 = $BossChase/BossChase2
 @onready var bossChase3 = $BossChase/BossChase3
+@onready var animationPlayer1 = $AnimationPlayer
+@onready var fallingPiano = $FallingPiano
 
 
 var timeLeft = 30
@@ -51,6 +52,11 @@ func _ready() -> void:
 	if(TheaterManager.warp2Enabled == false):
 		warp2.set_deferred("disabled", true)
 	randomize()
+	
+	
+	
+	
+	
 func _physics_process(delta: float) -> void:
 	#SET TIMER CAN DELETE THE FIRST IF STATEMENT LATER
 	if(inBox):
@@ -209,5 +215,13 @@ func _on_boss_chase_3_spawn_body_entered(body: Node2D) -> void:
 		
 
 
-func _on_body_entered_area2dplatform(body: Node2D) -> void:
-	pass # Replace with function body.
+
+func _on_animation_player_break_finished() -> void:
+	fallingPiano.sprite.play("crash")
+	#DIALOUGE BOXES HERE THAT WILL BE PLAYER TALKING TO DEFEATED BOSS??????
+	get_tree().change_scene_to_file("res://Scenes/Main Menu/main_menu.tscn")
+
+
+func _on_falling_piano_player_cutting_piano() -> void:
+	print("AnimationPlayer please play")
+	animationPlayer1.play("pianoFalling") 

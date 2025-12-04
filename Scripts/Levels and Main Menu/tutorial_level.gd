@@ -4,6 +4,8 @@ extends Node2D
 @onready var player = $Player
 @onready var moveTest = $MoveText
 @onready var camera = $Camera2D
+@onready var sign2 = $Sign
+@onready var sign3 = $Sign2
 var bpm = 126
 
 var firstLoad = true
@@ -13,6 +15,8 @@ var moveTextDeleted = false
 func _ready()->void:
 	CheckpointManager.respawn_player()
 	sign1.text = "To jump Press C\n"
+	sign2.text = "Press C again while in air to double jump"
+	sign3.text = "Press C while facing wall to jump off the wall"
 	MusicManager.play_track("res://Sound/Music/metForGame25.wav")
 	BeatManager.set_bpm(bpm)
 	var spb = 60.0 / bpm

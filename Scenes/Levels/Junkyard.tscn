@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://cr27r82w54xsc"]
+[gd_scene load_steps=52 format=4 uid="uid://cr27r82w54xsc"]
 
 [ext_resource type="TileSet" uid="uid://dppqfr8ac0t41" path="res://art/PLACEHOLDER/ground.tres" id="1_euawg"]
 [ext_resource type="Script" uid="uid://cxvcylxfxm362" path="res://Scripts/Levels and Main Menu/junkyard.gd" id="1_x2u4r"]
@@ -49,8 +49,6 @@ _data = {
 &"RESET": SubResource("Animation_wuiqu"),
 &"crane-swing": SubResource("Animation_aenrt")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_adk4t"]
 
 [sub_resource type="Curve2D" id="Curve2D_ltmyy"]
 _data = {
@@ -190,67 +188,6 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = -3.0
 offset_bottom = -3.0
-
-[node name="Delete LATER" type="Node" parent="."]
-
-[node name="Label5" type="Label" parent="Delete LATER"]
-offset_left = 883.0
-offset_top = 93.0
-offset_right = 1519.0
-offset_bottom = 142.0
-text = "Have cracked floor texture or something smushed for effect. Since I would assume
-Crushers would leaves cracks or smooshed items underneath"
-
-[node name="Label6" type="Label" parent="Delete LATER"]
-offset_left = 883.0
-offset_top = 93.0
-offset_right = 1519.0
-offset_bottom = 142.0
-text = "Have cracked floor texture or something smushed for effect. Since I would assume
-Crushers would leaves cracks or smooshed items underneath"
-
-[node name="Label10" type="Label" parent="Delete LATER"]
-offset_left = 2136.0
-offset_top = -950.0
-offset_right = 2553.0
-offset_bottom = -927.0
-text = "Death Bos above"
-
-[node name="Label11" type="Label" parent="Delete LATER"]
-offset_left = 2674.0
-offset_top = -947.0
-offset_right = 2928.0
-offset_bottom = -924.0
-text = "Death box above"
-
-[node name="Label" type="Label" parent="Delete LATER"]
-offset_left = 6445.0
-offset_top = -783.0
-offset_right = 6842.0
-offset_bottom = -760.0
-text = "Spike wall descends and begins chasing player here"
-
-[node name="testSign" type="Area2D" parent="Delete LATER"]
-position = Vector2(300, 220)
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Delete LATER/testSign"]
-shape = SubResource("RectangleShape2D_adk4t")
-
-[node name="ColorRect" type="ColorRect" parent="Delete LATER/testSign"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Sign" parent="." instance=ExtResource("13_b0wad")]
-position = Vector2(274, 211)
 
 [node name="Boxes" type="Node" parent="."]
 
@@ -597,11 +534,13 @@ scale = Vector2(1.1, 1)
 camera_mode = "FULL_FOLLOW"
 
 [node name="Area2D4" parent="Spikes" instance=ExtResource("38_iu1xn")]
+visible = false
 position = Vector2(12301, -775)
 scale = Vector2(1.09, 1.365)
 camera_mode = "LOCKED"
 
 [node name="Area2D5" parent="Spikes" instance=ExtResource("38_frwo4")]
+visible = false
 position = Vector2(12406, -783)
 scale = Vector2(1.505, 1.385)
 zoomFactor = Vector2(0.75, 0.75)
@@ -1315,7 +1254,14 @@ rotation = -3.14159
 position = Vector2(2570, -969)
 rotation = -3.14159
 
-[connection signal="body_entered" from="Delete LATER/testSign" to="." method="_on_test_sign_body_entered"]
+[node name="Sign2" parent="." instance=ExtResource("13_b0wad")]
+position = Vector2(3267, -568)
+text = "Press X to dash"
+
+[node name="Sign3" parent="." instance=ExtResource("13_b0wad")]
+position = Vector2(6019, -572)
+text = "Collecting another ability while in air refreshes it's use"
+
 [connection signal="body_entered" from="Boss Room/BossSpawnCutscene" to="." method="_on_boss_spawn_cutscene_body_entered"]
 [connection signal="body_entered" from="SpikeWallFlag" to="." method="_on_spike_wall_flag_body_entered"]
 [connection signal="body_entered" from="BugTest" to="." method="_on_bug_test_body_entered"]

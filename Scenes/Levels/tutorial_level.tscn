@@ -155,6 +155,7 @@ position = Vector2(77.5, 133)
 shape = SubResource("RectangleShape2D_wtv56")
 
 [node name="Area2D" parent="." instance=ExtResource("23_0v71k")]
+visible = false
 position = Vector2(559, -86)
 scale = Vector2(2.765, 1)
 camera_mode = "HORIZONTAL_ONLY"
@@ -173,7 +174,7 @@ camera_mode = "FULL_FOLLOW"
 
 [node name="Area2D5" parent="." instance=ExtResource("23_0v71k")]
 position = Vector2(1339, -739)
-scale = Vector2(1.625, 1)
+scale = Vector2(1.625, 0.475)
 camera_mode = "LOCKED"
 
 [node name="Area2D6" parent="." instance=ExtResource("23_0v71k")]
@@ -205,7 +206,7 @@ camera_mode = "LOCKED"
 
 [node name="Area2D12" parent="." instance=ExtResource("23_0v71k")]
 position = Vector2(656, -744)
-scale = Vector2(0.415, 1)
+scale = Vector2(0.675, 1)
 camera_mode = "FULL_FOLLOW"
 
 [node name="Path2D4" type="Path2D" parent="."]
@@ -234,5 +235,13 @@ pixels_per_step = 55.0
 
 [node name="PlatformBody" parent="Path2D3/PathFollow2D" instance=ExtResource("22_0v71k")]
 position = Vector2(-15.0068, 4)
+
+[node name="Sign" parent="." instance=ExtResource("22_wtv56")]
+position = Vector2(918, -1014)
+text = "Press C while in the air to double jump"
+
+[node name="Sign2" parent="." instance=ExtResource("22_wtv56")]
+position = Vector2(2062, -839)
+text = "Press C while facing wall to jump off it"
 
 [connection signal="body_shape_entered" from="DespawnSign" to="." method="_on_despawn_sign_body_shape_entered"]
