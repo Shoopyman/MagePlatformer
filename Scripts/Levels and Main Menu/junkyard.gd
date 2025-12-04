@@ -101,7 +101,7 @@ func _on_bug_test_body_entered(body: Node2D) -> void:
 
 func _on_boss_spawn() -> void:
 	MusicManager.stop_track()
-	MusicManager.play_track("res://Sound/Music/JunkyardFRFR.mp3")
+	MusicManager.play_track("res://Sound/Music/junkyardBoss.mp3")
 	boss.process_mode = Node.PROCESS_MODE_INHERIT
 	boss.set_physics_process(true)
 	boss.set_process(true)

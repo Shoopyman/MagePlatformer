@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://1ojufienr6t7" path="res://art/ForestArt/forestFloor3.png" id="29_s5367"]
 [ext_resource type="PackedScene" uid="uid://sh6u4i7k5sew" path="res://Scenes/Objects/largestBreableBox.tscn" id="29_ud172"]
 [ext_resource type="PackedScene" uid="uid://dyuiy7vdkyk7o" path="res://Scenes/Objects/destructibleLog2.tscn" id="29_umcau"]
-[ext_resource type="PackedScene" uid="uid://c62ws75pckvak" path="res://Scenes/Camera/cameraBounds.tscn" id="30_ud172"]
+[ext_resource type="PackedScene" path="res://Scenes/Camera/cameraBounds.tscn" id="30_ud172"]
 [ext_resource type="PackedScene" uid="uid://b4ysj3okglx3m" path="res://Scenes/Objects/sign.tscn" id="31_s5367"]
 [ext_resource type="Texture2D" uid="uid://cag75vletv7ha" path="res://art/boss/boss2/forestBossIdle-Sheet.png" id="32_blyvk"]
 

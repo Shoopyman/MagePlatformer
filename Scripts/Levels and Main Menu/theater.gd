@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var bpm: float = 126.0
+@export var bpm: float = 108.0
 
 @onready var player = $Player
 @onready var camera = $Camera2D
@@ -25,8 +25,6 @@ func _ready() -> void:
 	#SETUP AND HIDE NODES IN BACKGROUND
 	CheckpointManager.respawn_player()
 	camera.matchPositionToPlayer()
-	MusicManager.play_track("res://Sound/Music/metForGame25.wav")
-	BeatManager.set_bpm(bpm)
 	notes.process_mode = Node.PROCESS_MODE_DISABLED
 	notes.set_physics_process(false)
 	notes.set_process(false)
@@ -108,6 +106,8 @@ func hi():
 	player.global_position.y = -2266
 	cam.global_position.x = 1259
 	cam.global_position.y = -2266
+	MusicManager.play_track("res://Sound/Music/theaterBoss.mp3")
+	BeatManager.set_bpm(bpm)
 	
 		
 
