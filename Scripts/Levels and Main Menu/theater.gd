@@ -24,6 +24,7 @@ var inBox = false
 func _ready() -> void:
 	#SETUP AND HIDE NODES IN BACKGROUND
 	CheckpointManager.respawn_player()
+	BeatManager.set_bpm(bpm)
 	camera.matchPositionToPlayer()
 	notes.process_mode = Node.PROCESS_MODE_DISABLED
 	notes.set_physics_process(false)
